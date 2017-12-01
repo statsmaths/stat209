@@ -20,4 +20,11 @@ Syllabus: <a href="assets/syllabus/STAT209_Syllabus.pdf">STAT209_Syllabus.pdf</a
   <h3>CLASS NOTES</h3>
 
     <h3><strong>2017-08-28</strong>&nbsp;&nbsp;<a href="/stat395/class01/">Class 01: Introduction to Statistical Learning</a></h3>
+
+{% for item in site.notes %}
+  <h2>{{ item.title }}</h2>
+  <p>{{ item.description }}</p>
+  <p><a href="{{ item.url }}">{{ item.title }}</a></p>
+{% endfor %}
+
 </div>
