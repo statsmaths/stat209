@@ -1,0 +1,623 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\geometry{top=1in, bottom=1in, left=1in, right=1in, marginparsep=4pt, marginparwidth=1in}
+
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancyplain}
+\fancyhf{}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% \setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01,
+%  BoldFont={LinLibertine_RB.otf},
+%  ItalicFont={LinLibertine_RI.otf},
+%  BoldItalicFont={LinLibertine_RBI.otf}
+%  ]{LinLibertine_R.otf}
+
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\usepackage{xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+\setromanfont{YaleNew}
+
+\begin{document}
+
+\begin{center}
+{\bf MATH/STAT 209: Introduction to Statistical Modelling, Spring 2018} \\
+Tuesday, Thursday 10:30-11:45 \quad JPSN G23\\
+Tuesday, Thursday 12:00-13:15 \quad JPSN G28\\
+Tuesday, Thursday 15:00-16:15 \quad JPSN G13
+\end{center}
+
+\bigskip
+
+\noindent
+\begin{tabular}{ l l }
+{\bf Instructor:} &  {\bf Taylor Arnold} \\
+E-mail: & \href{mailto:tarnold2@richmond.edu}{tarnold2@richmond.edu} \\
+Office: & Jepson Hall, Rm 218 \\
+Office hours: & Tuesday, Thursday 16:15-17:00
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Course Website:} \vspace{6pt}
+
+All of the materials and assignments for the course will be posted
+on the class website:
+\begin{quote}
+\url{https://statsmaths.github.io/stat209}
+\end{quote}
+The website contains notes, exam dates, assignment details, and
+supplemental materials. At the end of the semester, this version of
+the course will be archived and available for your reference.
+
+\vspace{0.4cm}
+
+\textbf{GitHub:} \vspace{6pt}
+
+Your work for this semester will be submitted through GitHub,
+the same platform that hosts our website, using the GitHub
+classroom program. You will need to set up a free account, which
+we will cover during the week of class.
+
+\vspace{0.4cm}
+
+\textbf{Labs:} \vspace{6pt}
+
+Most class meetings, will have an interactive lab associated with
+it. These consist of a set of questions that must be answered with
+either small snippets of code or short descriptive answers. Your
+solutions must be uploaded to your GitHub page.
+
+\vspace{0.4cm}
+
+\textbf{Quizzes:} \vspace{6pt}
+
+There will be in-class quizzes on most Tuesdays (weeks
+2-13). These will usually be closed notes and serve to
+verify that you are keeping up with the material. Note
+that this includes both a conceptual understanding of
+the topics covered as well as the ability to apply these
+concepts to data with code.
+
+\vspace{0.4cm}
+
+\textbf{Midterms:} \vspace{6pt}
+
+There will be two in-class midterms, scheduled on the
+following two class meetings:
+\begin{itemize}
+\item 2018-02-22 (Week 6)
+\item 2018-04-12 (Week 12)
+\end{itemize}
+Each exam will expect you to have understood all of the
+material up to the point, though the focus will be on
+understanding of new material.
+
+\newpage
+
+\textbf{Projects:} \vspace{6pt}
+
+You will also complete three data-oriented projects throughout
+the semester. These are short written documents that mix code,
+graphics, and prose to provide a comprehensive analysis of a
+data set.  These must also be uploaded to GitHub.
+
+\vspace{0.4cm}
+
+\textbf{Participation, Attendance and Late Policy:} \vspace{6pt}
+
+You are expected to submit work on-time. Late projects will not
+be considered for a grade of Honors and will not be accepted in
+any form after a grace-period of 24 hours. You are expected to both
+attend and participate in class meetings. Excessive absences will
+result in receiving a grade of ``V'' for the semester.
+
+\bigskip
+
+There are no make-up exams or quizzes. In rare instances where
+students have a valid excuse for missing an exam, I will meet
+with the student to establish a fair process for determining their
+final grade (see below).
+
+\vspace{0.4cm}
+
+\textbf{Final Grades:} \vspace{6pt}
+
+Traditional final grades are given by assigning a numeric score
+to every piece of work done in the course, computing a weighted
+average of these scores, and then converting this average to a
+letter grade using a either a fixed or curved set of cut-offs.
+I believe that this approach yields a poor indicator of student
+performance and does not do a good job of incentivizing learning.
+
+\bigskip
+
+As an alternative, I grade homework (labs) and quizzes on a Pass/Fail
+basis, reports on a Honors/Pass/Fail basis, and simply report
+percentages for the exams. These scores, together with your
+attendance and course engagement, yield a final grade based on
+the following criteria. Pluses and minuses are used for students
+who fall between the categories.
+
+\begin{center}
+\begin{tabular}{p{2.5cm}|p{4cm}|p{4cm}|p{4cm}}
+& \quad \textbf{A} & \quad \textbf{B} & \quad \textbf{C} \\ \hline \hline
+\textbf{Participation} & actively present and engaged in almost all classes (miss at most 2) & actively present and engaged in most all classes (miss at most 3)  & actively present and engaged in most classes (miss at most 5)  \\ \hline
+\textbf{Labs} & passing grade on nearly all labs (missing no more than 2) & passing grade on most labs (missing no more than 4) & passing grade on the majority of labs (missing no more than 6) \\ \hline
+\textbf{Quizzes} & pass at least 8 quizzes & pass at least 6 quizzes & pass at least 4 quizzes \\ \hline
+\textbf{Reports} & at least two honors and no failing grades & pass all three data analyses & pass at least two data analyses \\ \hline
+\textbf{Exams} & score above 85\% on both exams & score above 85\% on both exams & score above 85\% on both exams\\ \hline
+\end{tabular}
+\end{center}
+
+You are allowed one `free pass' on these requirements; for example, you
+can get a B if you fail one data analysis but fulfill all other
+requirements. Note that failing to meet the requirements for a B will
+result in a grade no higher than a B; that is, you cannot generally
+make-up for performance in one area of the course with good performance
+in another. Failure to meet the requirements for a C may result in a
+failing grade for the term.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\textbf{Learning Objectives:} \vspace{6pt}
+
+Each week is centered around specific learning objectives,
+which are described below. These objectives will be tested
+in the weekly quizzes and exams. The topics below serve only
+to give a general idea about the direction of the course; the
+exact topics, pace, and coverage may change over the course of
+the semester.
+
+\vspace{1.0cm}
+
+\def\labelitemi{}
+\def\labelitemii{}
+
+\underline{Week 01, Reproducible computing:}
+In this unit we explore the basics of statistical computing.
+We look at examples and benefits of plain text formats for data,
+code, and analyses.
+\begin{itemize}\setlength\itemsep{0em}
+\item
+  install R, RStudio and user-contributed packages
+\item
+  understand basic version control using the web-based GitHub GUI
+\item
+  create CSV files and read them into R
+\item basic techniques for accessing variables in data objects
+\end{itemize}
+
+\bigskip
+
+\underline{Week 02, Variable types and numeric summaries:}
+We begin our study of tabular data, with observations stored in rows and
+variables stored in columns. We start by describing the types of
+data that can be stored. Next, methods for summarizing and graphing
+numeric and categorical data developed.
+\begin{itemize}\setlength\itemsep{0em}
+\item
+  describe and compute means and medians (using R and by hand)
+\item
+  describe and compute quantiles (using R and, for simple cases, by
+  hand)
+\item
+  describe and compute the standard deviation
+\item
+  differentiate between numeric and categorical data
+\item
+  treating numeric data as categorical data
+\item
+  create categorical variables by grouping numeric data
+\end{itemize}
+
+\bigskip
+
+\underline{Week 03, The Grammar of Graphics:}
+Building off of our basic plots, here we describe a self-contained
+system for the creation of statistical graphics. Putting the topics
+together allow for the construction of arbitrarily complex
+visualizations of data.
+\begin{itemize}\setlength\itemsep{0em}
+\item
+  the basic data aesthetics (x, y, label, color, size, and alpha)
+\item
+  the \textbf{ggplot2} syntax
+\item
+  mapping variables to aesthetics
+\item
+  setting fixed aesthetics
+\item
+  constructing layers of points, lines
+\end{itemize}
+
+\bigskip
+
+\underline{Week 04, Advanced Graphics:}
+Here we build off of the grammar of graphics to include
+other layer types, manual annotations, and building
+professional graphics.
+\begin{itemize}\setlength\itemsep{0em}
+\item describe scales and themes in the grammar of graphics
+\item use manual annotations to give context to graphics
+\item make use of multiple datasets within a single plot
+\item
+  faceting by categorical variables
+\end{itemize}
+
+\bigskip
+
+\underline{Week 05, Filtering and Summarizing Data:}
+Often, data is given or found in a different format than is required for
+an analysis. In this unit, we study techniques for filtering and
+restructuring data. One particular focus is the study of how to
+change the \textit{level of analysis} of a data set, such as taking
+data originally about individuals and turning it into a dataset to
+study cities or counties.
+\begin{itemize}\setlength\itemsep{0em}
+\item
+  syntax of the filter command
+\item
+  boolean variables
+\item
+  binary operators: ``and'', ``or''
+\item
+  binary operators: greater than, less than
+\item
+  set containment
+\item
+  random subsets
+\item
+  syntax of the summarize command
+\item
+  counting grouped data
+\end{itemize}
+
+\bigskip
+
+\underline{Week 06, Data Analysis and Review:}
+A review of the prior weeks and applications to a
+new dataset. First midterm on Thursday.
+
+\bigskip
+
+\underline{Week 07, Statistical Inference:}
+Given a sample of data taken from a larger population, we can use
+models to estimate how well the sample resembles the entire population.
+This unit covers an introduction to these techniques, known as statistical
+inference. The same techniques can be used to study the outcome of random
+processes.
+\begin{itemize}\setlength\itemsep{0em}
+\item
+  sample and population statistics
+\item
+  independence
+\item
+  standard errors
+\item
+  confidence intervals
+\item
+  t-tests
+\end{itemize}
+
+\bigskip
+
+\underline{Week 08, Normalized Data:}
+In this unit, we will explore and implement best practices for collecting and
+organizing data.
+\begin{itemize}\setlength\itemsep{0em}
+\item
+  determining table variables
+\item
+  selecting variable names
+\item
+  constructing a data dictionary
+\item
+  specifying variable types
+\item
+  consistency standards
+\item
+  ISO date and time standards (ISO 8601)
+\item
+  standards for location data: country codes (ISO 3166), languages (ISO
+  639), currency (ISO 4217), and US FIPS codes
+\item
+  the tidy data model: rows, columns, and tables
+\end{itemize}
+
+\bigskip
+
+\underline{Week 09, Joining Relational Data:}
+We also build off of the last week's material by exploring
+concepts of data manipulation and data
+collection to describe methods for working simultaneously with many
+tables linked together by common keys.
+\begin{itemize}\setlength\itemsep{0em}
+\item
+  primary keys
+\item
+  foreign keys
+\item
+  composite keys
+\item
+  inner and outer joins
+\item
+  filtering joins
+\end{itemize}
+
+\bigskip
+
+\underline{Week 10, Messy Data:}
+Here
+\begin{itemize}\setlength\itemsep{0em}
+\item
+
+\end{itemize}
+
+\bigskip
+
+\underline{Week 11, Case Study and Review:}
+A review of the prior weeks and applications to a
+new dataset. Second midterm on Thursday.
+
+\bigskip
+
+\underline{Week 12, Communicating Statistical Evidence:}
+In this unit we cover how to construct arguments using evidence derived
+from data.
+\begin{itemize}\setlength\itemsep{0em}
+\item
+  deductive versus inductive reasoning
+\item
+  understanding audience (technical vs.~general)
+\item
+  describe exploratory work and hypothesis / thesis generation
+\item
+  describe inferential statistics and hypothesis validation
+\item
+  include graphical annotations
+\end{itemize}
+
+\bigskip
+
+\underline{Week 13, Working with strings:}
+Here, we study techniques for using manipulating data stored as strings. We use the stringi library in R to apply functions using fixed strings as well as a standard for describing patterns called regular expressions. You will become familiar with the following tasks and concepts:
+\begin{itemize}\setlength\itemsep{0em}
+\item detecting substrings
+\item extracting substrings
+\item removing substrings
+\item counting substrings
+\item describing repeating patterns
+\item denoting letters, numbers, and word boundaries
+\item anchoring regular expressions
+\item the UTF-8 encoding
+\item ICU and ISO-639
+\end{itemize}
+
+\bigskip
+
+\underline{Week 14, Text mining:}
+This unit builds off of the basic string processing tasks to study textual corpora. You will become familiar with the following concepts and comfortable applying them to new, raw textual data:
+\begin{itemize}\setlength\itemsep{0em}
+\item tokenization
+\item term-frequency matricies
+\item lemmatization
+\item part-of-speech tags
+\item dependencies
+\item named entities
+\end{itemize}
+
+% The semester is broken up into two week chunks. Each section
+% is centered around specific learning objectives, which are
+% described below. Sections conclude with an in-class exam
+% and an out-of-class report, each serving to illustrate mastery
+% of learning objectives.
+
+% \vspace{1.0cm}
+
+% \def\labelitemi{}
+% \def\labelitemii{}
+
+% \underline{Weeks 1-2, Reproducible computing:}
+% In this unit we will explore the basics of statistical computing.
+% We look at examples and benefits of plain text formats for data,
+% code, and analyses.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   explain the meaning of plain text formats for data and code
+% \item
+%   create and describe a dataset using comma separated values
+% \item
+%   create and describe XML data
+% \item
+%   create and describe JSON data
+% \item
+%   install R, RStudio and user-contributed packages
+% \item
+%   understand basic version control using the web-based GitHub GUI
+% \item
+%   read CSV, JSON, and XML data into R
+% \item
+%   write and compile reproducible RMarkdown files
+% \item
+%   produce custom website using GitHub pages
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Weeks 3-4, Data types:}
+% We begin our study of tabular data, with observations stored in rows and
+% variables stored in columns. We start by describing the types of
+% data that can be stored. Next, methods for summarizing and graphing
+% numeric and categorical data developed.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   describe and compute means and medians (using R and by hand)
+% \item
+%   describe and compute quantiles (using R and, for simple cases, by
+%   hand)
+% \item
+%   describe and compute the standard deviation
+% \item
+%   produce scatter plots and bar plots
+% \item
+%   produce and describe histograms
+% \item
+%   produce and describe box plots
+% \item
+%   differentiate between numeric and categorical data
+% \item
+%   treating numeric data as categorical data
+% \item
+%   create categorical variables by grouping numeric data
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Weeks 5-6, Statistical inference:}
+% Given a sample of data taken from a larger population, we can use
+% models to estimate how well the sample resembles the entire population.
+% This unit covers an introduction to these techniques, known as statistical
+% inference. The same techniques can be used to study the outcome of random
+% processes.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   sample and population statistics
+% \item
+%   independence
+% \item
+%   standard errors
+% \item
+%   confidence intervals
+% \item
+%   t-tests
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Weeks 7-8, Data manipulation:}
+% Often, data is given or found in a different format than is required for
+% an analysis. In this unit, we study techniques for filtering and
+% restructuring data. One particular focus is the study of how to
+% change the \textit{level of analysis} of a data set, such as taking
+% data originally about individuals and turning it into a dataset to
+% study cities or counties.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   syntax of the filter command
+% \item
+%   boolean variables
+% \item
+%   binary operators: ``and'', ``or''
+% \item
+%   binary operators: greater than, less than
+% \item
+%   set containment
+% \item
+%   random subsets
+% \item
+%   syntax of the summarize command
+% \item
+%   counting grouped data
+% \item
+%   windowing functions
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Weeks 9-10, Statistical graphics}
+% Building off of our basic plots, here we describe a self-contained
+% system for the creation of statistical graphics. Putting the topics
+% together allow for the construction of arbitrarily complex
+% visualizations of data.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   the basic data aesthetics (x, y, label, color, size, and alpha)
+% \item
+%   the \textbf{ggplot2} syntax
+% \item
+%   mapping variables to aesthetics
+% \item
+%   setting fixed aesthetics
+% \item
+%   constructing layers of points, lines
+% \item
+%   producing interactive graphics with \textbf{plotly}
+% \item
+%   faceting by categorical variables
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Weeks 11-12, Collecting relational data}
+% In this unit, we will explore and implement best practices for collecting and
+% organizing data. We also build on the concepts of data manipulation and data
+% collection to describe methods for working simultaneously with many
+% tables linked together by common keys.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   determining table variables
+% \item
+%   selecting variable names
+% \item
+%   constructing a data dictionary
+% \item
+%   specifying variable types
+% \item
+%   consistency standards
+% \item
+%   ISO date and time standards (ISO 8601)
+% \item
+%   standards for location data: country codes (ISO 3166), languages (ISO
+%   639), currency (ISO 4217), and US FIPS codes
+% \item
+%   the tidy data model: rows, columns, and tables
+% \item
+%   primary keys
+% \item
+%   foreign keys
+% \item
+%   composite keys
+% \item
+%   inner and outer joins
+% \item
+%   filtering joins
+% \end{itemize}
+
+% \bigskip
+
+% \underline{Weeks 13-14, Communicating statistical analyses}
+% In this unit we cover how to construct arguments using evidence derived
+% from data.
+% \begin{itemize}\setlength\itemsep{0em}
+% \item
+%   deductive versus inductive reasoning
+% \item
+%   understanding audience (technical vs.~general)
+% \item
+%   describe exploratory work and hypothesis / thesis generation
+% \item
+%   describe inferential statistics and hypothesis validation
+% \item
+%   include graphical annotations
+% \end{itemize}
+
+\end{document}
+
+
+
+
+
