@@ -14,10 +14,6 @@ output: html_notebook
 The goal of today is get you set up on your own computer
 with GitHub, R, and RStudio.
 
-Hopefully you brought your own machine to work with today
-so that you'll have this set up for the remainder of the
-semester.
-
 # GitHub
 
 ### About GitHub
