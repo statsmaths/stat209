@@ -94,13 +94,18 @@ sequence of the integers from 1 to that number:
 
 
 {% highlight r %}
-str_len(happy)
+seq_len(happy)
 {% endhighlight %}
 
 
 
 {% highlight text %}
-## Error in str_len(happy): could not find function "str_len"
+##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+##  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
+##  [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
+##  [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
+##  [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
+##  [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
 {% endhighlight %}
 
 We can save this output as a variable as well using the arrow
@@ -108,13 +113,7 @@ operator:
 
 
 {% highlight r %}
-hundred <- str_len(happy)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in str_len(happy): could not find function "str_len"
+hundred <- seq_len(happy)
 {% endhighlight %}
 
 We will cover more details about R functions in the upcoming classes.
@@ -170,7 +169,66 @@ Interactively in RStudio, you can see the data by clicking on the
 table in the upper right-hand corner. Here, we will look at the first
 few rows of data as a table:
 
-
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;"> head_of_state </th>
+   <th style="text-align:right;"> year </th>
+   <th style="text-align:right;"> boys </th>
+   <th style="text-align:right;"> girls </th>
+   <th style="text-align:right;"> total </th>
+   <th style="text-align:right;"> boy_to_girl_ratio </th>
+  </tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1629 </td>
+   <td style="text-align:right;"> 5218 </td>
+   <td style="text-align:right;"> 4683 </td>
+   <td style="text-align:right;"> 9901 </td>
+   <td style="text-align:right;"> 1.114 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1630 </td>
+   <td style="text-align:right;"> 4858 </td>
+   <td style="text-align:right;"> 4457 </td>
+   <td style="text-align:right;"> 9315 </td>
+   <td style="text-align:right;"> 1.090 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1631 </td>
+   <td style="text-align:right;"> 4422 </td>
+   <td style="text-align:right;"> 4102 </td>
+   <td style="text-align:right;"> 8524 </td>
+   <td style="text-align:right;"> 1.078 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1632 </td>
+   <td style="text-align:right;"> 4994 </td>
+   <td style="text-align:right;"> 4590 </td>
+   <td style="text-align:right;"> 9584 </td>
+   <td style="text-align:right;"> 1.088 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1633 </td>
+   <td style="text-align:right;"> 5158 </td>
+   <td style="text-align:right;"> 4839 </td>
+   <td style="text-align:right;"> 9997 </td>
+   <td style="text-align:right;"> 1.066 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1634 </td>
+   <td style="text-align:right;"> 5035 </td>
+   <td style="text-align:right;"> 4820 </td>
+   <td style="text-align:right;"> 9855 </td>
+   <td style="text-align:right;"> 1.045 </td>
+  </tr>
+</tbody>
+</table>
 
 This is a relatively well-known dataset collected in the 17th century
 to study the secondary sex ratio (ratio of of males to females at birth)
