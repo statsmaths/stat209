@@ -20,192 +20,133 @@ library(dplyr)
 library(viridis)
 ```
 
-# GitHub
+## R Basics
 
-### About GitHub
+The notes here establish the most basic aspects of using
+R. You will understand the basic components of R studio,
+how to create and access variables in R, how to apply simple
+functions, how to load R packages, and how to read in a CSV
+dataset. Make sure you understand these notes very well for
+the next class.
 
-GitHub is a website that provides a public repository for
-code. In the open source software community it has become the
-de facto place to store code.
+### Rstudio
 
-GitHub offers a free tier of its service; the only limitation
-is that all of your repositories will be publicly available.
-
-While the site is a commercial enterprise, the underlying
-technology, **git**, is completely free and open source.
-
-### Create an Account
-
-
-
-### Profile
-
-Click on the icon on the upper right hand side of the screen and
-select *Settings*.
-
-Fill in the following information:
-
-- Your name (first only is OK)
-- A short bio (1-2 sentences)
-- Location (either RVA or your hometown)
-- A profile picture
-
-Make sure to save the information.
-
-### GitHub Classroom
-
-We'll be using GitHub classrooms for this course. I will send
-out a link right now that takes you to the first assignment.
-
-# R and RStudio
-
-### Download R
-
-Next, we need to download the R programming language. To do
-this go to [https://cran.r-project.org/](https://cran.r-project.org/)
-and select your platform:
-
-![](../assets/img/cran01.jpeg)
-
-### Download R
-
-For macOS, just download R-3.4.1 (or whatever is the most recent):
-
-![](../assets/img/cran02.jpeg)
-
-### Download R
-
-For Windows, first select **base**
-
-![](../assets/img/cran03.jpeg)
-
-### Download R
-
-And then *Download R 3.4.1*
-
-![](../assets/img/cran04.jpeg)
-
-### Install R
-
-One you have the .pkg (macOS) or .exe (Windows) file,
-install this on your computer according to the default
-settings.
-
-### RStudio
-
-The files we just downloaded are the core R language files
-doing all the hard work of processing data. Next, we'll
-install a helpful GUI frontend that make calling R easier.
-
-### Download RStudio
-
-Go to [https://www.rstudio.com/](https://www.rstudio.com/).
-Click on Products => RStudio.
-
-![](../assets/img/rstudio01.jpeg)
-
-### Download RStudio
-
-Scroll down to the **DOWNLOAD RSTUDIO DESKTOP** button
-and click on it.
-
-![](../assets/img/rstudio02.jpeg)
-
-### Download RStudio
-
-Scroll down again to the **Installers for Supported Platforms**.
-The Windows link gives you an exe:
-
-![](../assets/img/rstudio03.jpeg)
-
-### Download RStudio
-
-And the macOS link gives a dmg:
-
-![](../assets/img/rstudio04.jpeg)
-
-### Install RStudio
-
-Now, install R or RStudio as you would any other program. It
-should link automatically to the version of R you just
-installed.
-
-# Running R Scripts
-
-### Launch RStudio
-
-Go ahead and launch RStudio. You should see a window that looks like
-this, as we saw on the class computers last time:
-
-![](../assets/img/r-interface-2016.png)
-
-### Open setup.R
-
-Download the file *setup.R* from the course website and save
-it somewhere on your computer (perhaps the desktop?)
-
-Select File => Open File and open the *setup.R* that you just
-downloaded.
-
-### Open setup.R
-
-![](../assets/img/rstudio05.jpeg)
-
-### Running setup.R
-
-We now have a fourth panel in RStudio, which contains an editor
-for the code:
+R studio has four basic panels, as you can see in the following
+diagram:
 
 ![](../assets/img/intro-rstudio.png)
 
-### Running setup.R
+The editor will not be visible until you create or open a code
+script. You can create a new script by clicking on the green plus
+button in the upper left hand corner.
 
-We'll cover more about what types of code happen in the code editor.
-For now, notice that there are two types of code lines:
+The editor is where you write code. This is the only file that
+ultimately gets saved on the computer. The console is the brains
+of R. This is where code is run by the R engine. You can type
+code directly here or, preferably, run it within the editor by
+selecting chunks of code and hitting the Run button. The console
+is also were you will see textual output. The output section in the
+lower right shows plots, which we will study in depth over the next
+few weeks. Finally, the upper right box shows all of the variables
+and datasets that have been created. Clicking on a dataset opens a
+tab in the editor space that lets you look at the raw data.
 
-- comment lines starting with `#`, which contain plain text, and are highlighted in green
-- code lines, which contain R commands in a specific format
+### Variables
 
-To run a line of code, highlight the line or put your cursor in it
-and then hit the **Run** button. The code will run in the Console.
+As in other programming languages, you can store values into an
+object called a variable. The variable can then be accessed and
+manipulated by its name. To assign a variable in R use an arrow
+`<-`. Here we will assign the number 95 to the variable called
+`happy`:
 
-# Lab 02
+```{r}
+happy <- 95
+```
 
-### Download File
+If you run this, you will see the variable `happy` show up in the
+environment box. We can then add one to the variable and see the
+output
 
-Finally, let's download the lab02.R file from the website (note:
-there is no lab01.R)
+```{r}
+happy + 1
+```
 
-Open the file in RStudio, add your name, and save it.
+Notice that this **does not** change the variable `happy`. To change
+the variable we have to re-assign a new value to happy. So, to make
+`happy` equal to 100 we could do this:
 
-### Upload the File
+```{r}
+happy <- happy + 5
+happy
+```
+This behavior, that functions do not change variables unless we
+redefine the variable using `<-`, is ubiquitous in R.
 
-Now, go back to the new GitHub repository you created when you
-accepted the GitHub classroom invitation.
+### Functions
 
-We want to add **lab02.R** to this repository. On Chrome you can
-drag and drop the file from your computer; otherwise, click on
-Upload files and navigate to the file on your computer.
+In R, we can apply what are known as functions in order to do things
+to the variables and data present in the current environment. For
+example, the function `seq_len` takes a single number and create a
+sequence of the integers from 1 to that number:
 
-### Commit Changes
+```{r}
+set_len(happy)
+```
 
-Once the file loads, scroll down to the bottom of the page and
-select **Commit changes** (Note: changes will be lost otherwise)
+We can save this output as a variable as well using the arrow
+operator:
 
-![](../assets/img/github10.jpeg)
+```{r}
+hundred <- set_len(happy)
+```
 
-### Commit Changes
+We will cover more details about R functions in the upcoming classes.
 
-If you navigate to the labs directory, you'll see the **lab02.R**
-file added to the repository. You can see its contents by clicking
-on the file.
+### Packages
 
-![](../assets/img/github11.jpeg)
+In addition to the basic R functions that exist on start-up,
+there are thousands of user-contributed packages the implement
+various add-ons. Several are already installed on the machines
+in class. Instructions for downloaded packages on your own
+machine are included in the setup notes.
 
-### For Next Time
+Once a package is installed, we also need to load it. While
+installing the package only needs to be done once, we have to
+load it each and every time we restart R. To load the **readr**
+package, for instance, we would run the following:
 
-Complete the questions in **lab02.R** and upload the completed file to
-GitHub (just follow the same steps and make sure you commit the
-results).
+```{r}
+library(readr)
+```
+
+Once loaded, we can run commands from the readr package. We will
+do this in just a moment.
+
+### Loading Data
+
+To load a dataset stored as a comma seperated file, we will use the
+function `read_csv`. We will discuss the csv format more in the
+next class. For now, here is the code for loading the Arbuthnot
+dataset into R and storing as a variable called `births`:
+
+```{r}
+births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
+```
+
+Interactively in RStudio, you can see the data by clicking on the
+table in the upper right-hand corner. Here, we will look at the first
+few rows of data as a table:
+
+```{r}
+kable(births)
+```
+
+This is a relatively well-known dataset collected in the 17th century
+to study the secondary sex ratio (ratio of of males to females at birth)
+using baptism records.
+
+
+
+
 
 

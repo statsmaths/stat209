@@ -59,9 +59,11 @@
 
 ##############################################################################
 # 9. We can also read data in from another file. Here we load a dataset from
-# the course website and assign it to a variable named `births`
+# the course website and assign it to a variable named `births`. The first
+# line loads the **readr** package, which gives us the read_csv function.
 
-births <- readr::read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
+library(readr)
+births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
 
 ##############################################################################
 # 10. Click on the dataset in the upper right-hand corner of RStudio. You
