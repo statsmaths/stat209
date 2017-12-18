@@ -14,7 +14,7 @@ setup R on your own machine for working with the homework and
 data reports. R is an open source programming language, meaning
 that you can install it for free on nearly any operating system.
 The note here guide you through install the core R system, the
-RStudio IDE, and relevant R pacakges.
+RStudio IDE, and relevant R packages.
 
 ## Download R
 
@@ -69,7 +69,7 @@ Now, install R or RStudio as you would any other program. It
 should link automatically to the version of R you just
 installed.
 
-## Installing R pacakges
+## Installing R packages
 
 The final step is to download all of the R packages that we will
 need for the semester. It is generally easier to do these all at
@@ -80,24 +80,46 @@ this, as we saw on the class computers:
 
 ![](../assets/img/r-interface-2016.png)
 
-Download the file *setup.R* from the course website and save
-it somewhere on your computer (perhaps the desktop?)
+To install the packages required for class, run the following lines
+of code in the console. There may be a warning about one or two
+packages not being available. Note that this may take 5-10 minutes
+to finish; on slower connections or older computers, it may take even
+longer. If you run into any problems, please let me know!
 
-Select File => Open File and open the *setup.R* that you just
-downloaded.
 
-![](../assets/img/rstudio05.jpeg)
+{% highlight r %}
+pkgs <- c("dplyr", "ggplot2", "stringr", "ggmap", "ggrepel",
+          "devtools", "viridis", "plotly", "jsonlite", "lazyeval",
+          "knitr", "readr")
 
-Finally, run the lines of code in R. If it asks you to select a
-mirror, you can just pick the first option (something with the
-word cloud in it). If that does not show up, just select any
-mirror relatively close to you.
+install.packages(pkgs,
+                 repos = "https://cloud.r-project.org",
+                 type = "binary",
+                 dependencies = TRUE,
+                 quiet = TRUE)
+{% endhighlight %}
 
-And that should be it. You now have the same system running on
+Now, you will also need install the `smodels` package. I have written
+this package for this course, so you need to install it in a slightly
+different way.
+
+
+{% highlight r %}
+devtools::install_github("statsmaths/smodels")
+{% endhighlight %}
+
+Finally, make the following changes in the RStudio IDE. These
+are very important, so don't skip this step:
+
+- In the RStudio menu click on `Tools > Global Options...`
+- Look for the first drop-down: `Save the workspace to .RData on exit`
+- Change this first drop-down to `Never`
+- All of the check-boxes above this dropdown should be unchecked.
+
+And that should be it! You now have the same system running on
 your machine that we have in class. If you run into any issues,
 please let me know. It is likely that I will need to see your
 computer to help, so bring your laptop to class or office hours
 and I will help get you setup.
-
 
 
