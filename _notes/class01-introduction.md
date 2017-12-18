@@ -1,9 +1,8 @@
 ---
-title: "Introduction to R"
+title: "Introduction to R and GitHub"
 author: "Taylor Arnold"
 output: html_notebook
 ---
-
 
 
 
