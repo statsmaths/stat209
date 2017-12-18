@@ -1,5 +1,5 @@
 ---
-title: "Introduction to R and GitHub"
+title: "Introduction to R"
 author: "Taylor Arnold"
 output: html_notebook
 ---
@@ -18,6 +18,7 @@ library(readr)
 library(ggplot2)
 library(dplyr)
 library(viridis)
+library(kableExtra)
 ```
 
 ## R Basics
@@ -90,14 +91,14 @@ example, the function `seq_len` takes a single number and create a
 sequence of the integers from 1 to that number:
 
 ```{r}
-set_len(happy)
+str_len(happy)
 ```
 
 We can save this output as a variable as well using the arrow
 operator:
 
 ```{r}
-hundred <- set_len(happy)
+hundred <- str_len(happy)
 ```
 
 We will cover more details about R functions in the upcoming classes.
@@ -137,8 +138,10 @@ Interactively in RStudio, you can see the data by clicking on the
 table in the upper right-hand corner. Here, we will look at the first
 few rows of data as a table:
 
-```{r}
-kable(births)
+```{r, include = FALSE}
+head(births) %>%
+  kable("html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
 This is a relatively well-known dataset collected in the 17th century
