@@ -130,7 +130,7 @@ function `read_csv`. We will discuss the csv format more in the
 next class. For now, here is the code for loading the Arbuthnot
 dataset into R and storing as a variable called `births`:
 
-```{r}
+```{r, message = FALSE}
 births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
 ```
 
