@@ -68,7 +68,6 @@ median(commute$avg_duration)
 
 ### Measures of Distribution
 
-
 ```{r}
 deciles(commute$avg_duration)
 ```
