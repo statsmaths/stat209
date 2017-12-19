@@ -41,90 +41,6 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
    <td style="text-align:right;"> 2.20 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> Acanthisitta </td>
-   <td style="text-align:left;"> chloris </td>
-   <td style="text-align:left;"> NA </td>
-   <td style="text-align:left;"> Rifleman </td>
-   <td style="text-align:right;"> 1.34 </td>
-   <td style="text-align:right;"> 5.6 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 4.00 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Acanthiza </td>
-   <td style="text-align:left;"> chrysorrhoa </td>
-   <td style="text-align:left;"> Yellow-rumped </td>
-   <td style="text-align:left;"> Thornbill </td>
-   <td style="text-align:right;"> 1.44 </td>
-   <td style="text-align:right;"> 9.4 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 3.50 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Acanthiza </td>
-   <td style="text-align:left;"> ewingii </td>
-   <td style="text-align:left;"> Tasmanian </td>
-   <td style="text-align:left;"> Thornbill </td>
-   <td style="text-align:right;"> 1.46 </td>
-   <td style="text-align:right;"> 7.2 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.50 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Acanthiza </td>
-   <td style="text-align:left;"> lineata </td>
-   <td style="text-align:left;"> Striated </td>
-   <td style="text-align:left;"> Thornbill </td>
-   <td style="text-align:right;"> 1.32 </td>
-   <td style="text-align:right;"> 7.6 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.00 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Acanthiza </td>
-   <td style="text-align:left;"> pusilla </td>
-   <td style="text-align:left;"> Brown </td>
-   <td style="text-align:left;"> Thornbill </td>
-   <td style="text-align:right;"> 1.40 </td>
-   <td style="text-align:right;"> 7.4 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 3.00 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Acanthorhynchus </td>
-   <td style="text-align:left;"> superciliosus </td>
-   <td style="text-align:left;"> Western </td>
-   <td style="text-align:left;"> Spinebill </td>
-   <td style="text-align:right;"> 1.73 </td>
-   <td style="text-align:right;"> 10.5 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1.56 </td>
-  </tr>
-<tr>
-<td style="text-align:left;"> Acrocephalus </td>
-   <td style="text-align:left;"> arundinaceus </td>
-   <td style="text-align:left;"> Great </td>
-   <td style="text-align:left;"> Reed-Warbler </td>
-   <td style="text-align:right;"> 3.15 </td>
-   <td style="text-align:right;"> 32.3 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 4.00 </td>
-  </tr>
-<tr>
 <td style="text-align:left;"> Aegolius </td>
    <td style="text-align:left;"> funereus </td>
    <td style="text-align:left;"> Boreal </td>
@@ -137,16 +53,100 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
    <td style="text-align:right;"> 5.29 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> Agelaius </td>
-   <td style="text-align:left;"> phoeniceus </td>
+<td style="text-align:left;"> Aimophila </td>
+   <td style="text-align:left;"> ruficeps </td>
+   <td style="text-align:left;"> Rufous-crowned </td>
+   <td style="text-align:left;"> Sparrow </td>
+   <td style="text-align:right;"> 2.90 </td>
+   <td style="text-align:right;"> 18.1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3.45 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Ammodramus </td>
+   <td style="text-align:left;"> bairdii </td>
+   <td style="text-align:left;"> Baird's </td>
+   <td style="text-align:left;"> Sparrow </td>
+   <td style="text-align:right;"> 2.21 </td>
+   <td style="text-align:right;"> 18.9 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4.55 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Anas </td>
+   <td style="text-align:left;"> superciliosa </td>
+   <td style="text-align:left;"> Pacific Black </td>
+   <td style="text-align:left;"> Duck </td>
+   <td style="text-align:right;"> 63.00 </td>
+   <td style="text-align:right;"> 1059.0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 11.00 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Aprosmictus </td>
+   <td style="text-align:left;"> erythropterus </td>
    <td style="text-align:left;"> Red-winged </td>
-   <td style="text-align:left;"> Blackbird </td>
-   <td style="text-align:right;"> 3.95 </td>
-   <td style="text-align:right;"> 57.3 </td>
+   <td style="text-align:left;"> Parrot </td>
+   <td style="text-align:right;"> 11.50 </td>
+   <td style="text-align:right;"> 134.7 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5.00 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Asio </td>
+   <td style="text-align:left;"> flammeus </td>
+   <td style="text-align:left;"> Short-eared </td>
+   <td style="text-align:left;"> Owl </td>
+   <td style="text-align:right;"> 21.30 </td>
+   <td style="text-align:right;"> 278.0 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5.60 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Asio </td>
+   <td style="text-align:left;"> otus </td>
+   <td style="text-align:left;"> Long-eared </td>
+   <td style="text-align:left;"> Owl </td>
+   <td style="text-align:right;"> 23.00 </td>
+   <td style="text-align:right;"> 233.0 </td>
+   <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3.00 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Biziura </td>
+   <td style="text-align:left;"> lobata </td>
+   <td style="text-align:left;"> Musk </td>
+   <td style="text-align:left;"> Duck </td>
+   <td style="text-align:right;"> 128.00 </td>
+   <td style="text-align:right;"> 2398.0 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2.80 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Calamospiza </td>
+   <td style="text-align:left;"> melanocorys </td>
+   <td style="text-align:left;"> Lark </td>
+   <td style="text-align:left;"> Bunting </td>
+   <td style="text-align:right;"> 3.14 </td>
+   <td style="text-align:right;"> 36.1 </td>
+   <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 3.28 </td>
+   <td style="text-align:right;"> 3.72 </td>
   </tr>
 </tbody>
 </table>
@@ -197,12 +197,12 @@ qplot(type, data = birds)
 
 
 {% highlight r %}
-birds$mating_system_chr <- as.character(birds$mating_system)
+birds$display_chr <- as.character(birds$display)
 {% endhighlight %}
 
 
 {% highlight r %}
-qplot(mating_system_chr, data = birds)
+qplot(display_chr, data = birds)
 {% endhighlight %}
 
 <img src="../assets/class03-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
@@ -211,22 +211,12 @@ qplot(mating_system_chr, data = birds)
 
 
 {% highlight r %}
-birds$male_mass_bin <- bin(birds$male_mass)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in bin(birds$male_mass): could not find function "bin"
+birds$egg_mass_cut <- cut(birds$egg_mass, breaks = 4)
 {% endhighlight %}
 
 
 {% highlight r %}
-qplot(male_mass_bin, data = birds)
+qplot(egg_mass_cut, data = birds)
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## Error in eval(aesthetics$x, data, env): object 'male_mass_bin' not found
-{% endhighlight %}
+<img src="../assets/class03-variable-types/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />

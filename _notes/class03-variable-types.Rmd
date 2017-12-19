@@ -27,6 +27,7 @@ library(kableExtra)
 birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/birds.csv")
 ```
 ```{r, echo = FALSE}
+birds <- birds[birds$type %in% names(sort(table(birds$type), decreasing = TRUE))[1:15],]
 head(birds, 10) %>%
   kable("html") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
@@ -63,7 +64,7 @@ head(birds, 10) %>%
 qplot(male_mass, egg_mass, data = birds)
 ```
 
-```{r}
+```{r, message = FALSE}
 qplot(type, data = birds)
 ```
 
@@ -71,19 +72,19 @@ qplot(type, data = birds)
 
 
 ```{r}
-birds$mating_system_chr <- as.character(birds$mating_system)
+birds$display_chr <- as.character(birds$display)
 ```
 
-```{r}
-qplot(mating_system_chr, data = birds)
+```{r, message = FALSE}
+qplot(display_chr, data = birds)
 ```
 
 ### Grouping Numeric Data
 
 ```{r}
-birds$male_mass_bin <- bin(birds$male_mass)
+birds$egg_mass_cut <- cut(birds$egg_mass, breaks = 4)
 ```
 
 ```{r}
-qplot(male_mass_bin, data = birds)
+qplot(egg_mass_cut, data = birds)
 ```
