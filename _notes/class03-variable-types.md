@@ -158,21 +158,21 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
 - **egg_mass** (dbl): average mass of an egg when laid (grams)
 - **male_mass** (dbl): average observed mass of an adult male (grams)
 - **mating_system** (int): scores of mating system. Intensity of male-male competition increases from 1 to 5.
-    - polyandry
-    - monogamy (<5% polygyny)
-    - mostly monogamy, but occasional polygyny (5–15% polygyny)
-    - mostly polygyny (> 15% polygyny)
-    - lek or promiscuous
+    - (1) polyandry
+    - (2) monogamy (<5% polygyny)
+    - (3) mostly monogamy, but occasional polygyny (5–15% polygyny)
+    - (4) mostly polygyny (> 15% polygyny)
+    - (5) lek or promiscuous
 - **display** (int): mating display agility
-    - ground displays only, including displays on trees and bushes
-    - ground displays, but with occasional jumps/leaps into the air
-    - both ground and non-acrobatic flight displays
-    - mainly aerial displays, non-acrobatic
-    - mainly aerial displays, acrobatic
+    - (1) ground displays only, including displays on trees and bushes
+    - (2) ground displays, but with occasional jumps/leaps into the air
+    - (3) both ground and non-acrobatic flight displays
+    - (4) mainly aerial displays, non-acrobatic
+    - (5) mainly aerial displays, acrobatic
 - **resource** (int): scores of territoriality and between-mate resource sharing
-    0. males and females don't share resources and they feed away from their breeding territory
-    1. males and females share resources on their territory only during the breeding season
-    2. males and females share resources on their territory all year round.
+    - (0) males and females don't share resources and they feed away from their breeding territory
+    - (1) males and females share resources on their territory only during the breeding season
+    - (2) males and females share resources on their territory all year round.
 - **clutch_size** (dbl): average number of eggs produced per clutch
 
 
@@ -180,13 +180,7 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
 
 
 {% highlight r %}
-qplot(male_mass, data = birds)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+qplot(male_mass, egg_mass, data = birds)
 {% endhighlight %}
 
 <img src="../assets/class03-variable-types/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
@@ -198,11 +192,41 @@ qplot(type, data = birds)
 
 <img src="../assets/class03-variable-types/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
 
+### Converting to Levels to Characters
 
 
-### Converting to Characters
+
+{% highlight r %}
+birds$mating_system_chr <- as.character(birds$mating_system)
+{% endhighlight %}
 
 
-### Converting
+{% highlight r %}
+qplot(mating_system_chr, data = birds)
+{% endhighlight %}
+
+<img src="../assets/class03-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+
+### Grouping Numeric Data
 
 
+{% highlight r %}
+birds$male_mass_bin <- bin(birds$male_mass)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in bin(birds$male_mass): could not find function "bin"
+{% endhighlight %}
+
+
+{% highlight r %}
+qplot(male_mass_bin, data = birds)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in eval(aesthetics$x, data, env): object 'male_mass_bin' not found
+{% endhighlight %}
