@@ -1,0 +1,77 @@
+---
+title: "Variable Types"
+author: "Taylor Arnold"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(fig.path = "../assets/class03-variable-types/")
+knitr::opts_chunk$set(fig.height = 5)
+knitr::opts_chunk$set(fig.width = 8.5)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+```
+
+```{r, message = FALSE, include = FALSE}
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(viridis)
+library(kableExtra)
+```
+
+### Variable Types
+
+```{r, message = FALSE}
+birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/birds.csv")
+```
+```{r, echo = FALSE}
+head(birds, 10) %>%
+  kable("html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+- **genus** (chr): taxonomic rank of the bird
+- **species** (chr): scientific species name of the bird
+- **name** (chr): common name of the bird
+- **type** (chr): common name of the type of bird
+- **egg_mass** (dbl): average mass of an egg when laid (grams)
+- **male_mass** (dbl): average observed mass of an adult male (grams)
+- **mating_system** (int): scores of mating system. Intensity of male-male competition increases from 1 to 5.
+    - polyandry
+    - monogamy (<5% polygyny)
+    - mostly monogamy, but occasional polygyny (5–15% polygyny)
+    - mostly polygyny (> 15% polygyny)
+    - lek or promiscuous
+- **display** (int): mating display agility
+    - ground displays only, including displays on trees and bushes
+    - ground displays, but with occasional jumps/leaps into the air
+    - both ground and non-acrobatic flight displays
+    - mainly aerial displays, non-acrobatic
+    - mainly aerial displays, acrobatic
+- **resource** (int): scores of territoriality and between-mate resource sharing
+    0. males and females don't share resources and they feed away from their breeding territory
+    1. males and females share resources on their territory only during the breeding season
+    2. males and females share resources on their territory all year round.
+- **clutch_size** (dbl): average number of eggs produced per clutch
+
+
+### Simple Plots
+
+```{r}
+qplot(male_mass, data = birds)
+```
+
+```{r}
+qplot(type, data = birds)
+```
+
+
+
+### Converting to Characters
+
+
+### Converting
+
+

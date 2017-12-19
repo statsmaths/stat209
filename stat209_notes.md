@@ -76,7 +76,7 @@ Quiz: how to take mean of a column from dataset with name
 THIS and variable THAT; which of the following are allowed
 variables names in our style guide; generate a short data
 dictionary for a specified task; maximum line length; how
-to read data into R from URL into dataset THIS
+to read CSV data into R from URL into dataset THIS
 
 Lab: Create a data dictionary about your ten closest friends
 and/or family members, then generate the data. Produce some
