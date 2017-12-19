@@ -91,7 +91,6 @@ median(commute$avg_duration)
 ### Measures of Distribution
 
 
-
 {% highlight r %}
 deciles(commute$avg_duration)
 {% endhighlight %}
@@ -99,7 +98,10 @@ deciles(commute$avg_duration)
 
 
 {% highlight text %}
-## Error in deciles(commute$avg_duration): could not find function "deciles"
+##       0%      10%      20%      30%      40%      50%      60%      70% 
+## 11.17422 17.16132 18.55514 19.69376 20.60294 21.46115 22.31963 23.22254 
+##      80%      90%     100% 
+## 24.30367 25.96911 38.86715
 {% endhighlight %}
 
 
@@ -110,7 +112,20 @@ percentiles(commute$public_transit)
 
 
 {% highlight text %}
-## Error in percentiles(commute$public_transit): could not find function "percentiles"
+##   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14% 
+##    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 
+##  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29% 
+##    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 
+##  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44% 
+##    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 
+##  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59% 
+##    0    0    0    0    0    1    1    1    1    1    1    1    1    1    1 
+##  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74% 
+##    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1 
+##  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89% 
+##    1    1    1    1    1    1    1    1    2    2    2    2    2    2    2 
+##  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100% 
+##    2    3    3    3    3    4    4    5    7    9   30
 {% endhighlight %}
 
 ### Measures of Variation
@@ -119,7 +134,7 @@ $$ \text{var}(x) = \frac{(x_1 - mean(x))^2 + (x_2 - mean(x))^2 + \cdots + (x_n -
 
 
 
-$$ \text{sd}(x) = \sqrt{\text{var}(x)}
+$$ \text{sd}(x) = \sqrt{\text{var}(x)} $$
 
 
 
@@ -163,12 +178,6 @@ between 28.8 and 48 years.
 
 {% highlight r %}
 qplot(median_age, data = commute)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 {% endhighlight %}
 
 <img src="../assets/class04-numeric-summaries/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
