@@ -33,6 +33,8 @@ head(birds, 10) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
+### Schema / Data Dictionary
+
 - **genus** (chr): taxonomic rank of the bird
 - **species** (chr): scientific species name of the bird
 - **name** (chr): common name of the bird
@@ -79,6 +81,10 @@ birds$display_chr <- as.character(birds$display)
 qplot(display_chr, data = birds)
 ```
 
+```{r}
+table(birds$display_chr)
+```
+
 ### Grouping Numeric Data
 
 ```{r}
@@ -87,4 +93,8 @@ birds$egg_mass_cut <- cut(birds$egg_mass, breaks = 4)
 
 ```{r}
 qplot(egg_mass_cut, data = birds)
+```
+
+```{r}
+table(birds$display_chr, birds$egg_mass_cut)
 ```
