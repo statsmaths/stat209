@@ -21,6 +21,31 @@ library(viridis)
 library(kableExtra)
 ```
 
+### Loading Data
+
+To load a dataset stored as a comma seperated file, we will use the
+function `read_csv`. We will discuss the csv format more in the
+next class. For now, here is the code for loading the Arbuthnot
+dataset into R and storing as a variable called `births`:
+
+```{r, message = FALSE}
+births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
+```
+
+Interactively in RStudio, you can see the data by clicking on the
+table in the upper right-hand corner. Here, we will look at the first
+few rows of data as a table:
+
+```{r, echo=FALSE}
+head(births) %>%
+  kable("html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+This is a relatively well-known dataset collected in the 17th century
+to study the secondary sex ratio (ratio of of males to females at birth)
+using baptism records.
+
 ### Data Frames
 
 In this course we will store data in a tabular format.
@@ -48,27 +73,6 @@ important as we think about how data is being used.
 
 The type of R object that stores such a dataset is called a
 **data frame**.
-
-### Data Dictionary
-
-It is important to understand and document exactly what each
-variable in a dataset is describing. A description of all the
-variables in a dataset is called a **data dictionary**. Often
-these seem self-explanatory, but it is still useful to briefly
-describe all of the variables. Here is an example of a data
-dictionary for the Arburthnot dataset:
-
-- **head_of_state**: who was the Head of State for the country
-representing London
-- **year**: calendar year of the dataset
-- **boys**: number of male baptised in London in a given year
-- **girls**: number of female baptised in London in a given year
-- **total**: total number of children baptised in London in a given year
-- **boy_to_girl_ratio**: ratio of male births to female births
-in London in a given year
-
-Notice that you probably guess the basic meaning of many of these,
-but may not have been aware of some of the specifics.
 
 ### Accessing data variables
 

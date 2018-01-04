@@ -8,6 +8,87 @@ output: html_notebook
 
 
 
+### Loading Data
+
+To load a dataset stored as a comma seperated file, we will use the
+function `read_csv`. We will discuss the csv format more in the
+next class. For now, here is the code for loading the Arbuthnot
+dataset into R and storing as a variable called `births`:
+
+
+{% highlight r %}
+births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
+{% endhighlight %}
+
+Interactively in RStudio, you can see the data by clicking on the
+table in the upper right-hand corner. Here, we will look at the first
+few rows of data as a table:
+
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;"> head_of_state </th>
+   <th style="text-align:right;"> year </th>
+   <th style="text-align:right;"> boys </th>
+   <th style="text-align:right;"> girls </th>
+   <th style="text-align:right;"> total </th>
+   <th style="text-align:right;"> boy_to_girl_ratio </th>
+  </tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1629 </td>
+   <td style="text-align:right;"> 5218 </td>
+   <td style="text-align:right;"> 4683 </td>
+   <td style="text-align:right;"> 9901 </td>
+   <td style="text-align:right;"> 1.114 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1630 </td>
+   <td style="text-align:right;"> 4858 </td>
+   <td style="text-align:right;"> 4457 </td>
+   <td style="text-align:right;"> 9315 </td>
+   <td style="text-align:right;"> 1.090 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1631 </td>
+   <td style="text-align:right;"> 4422 </td>
+   <td style="text-align:right;"> 4102 </td>
+   <td style="text-align:right;"> 8524 </td>
+   <td style="text-align:right;"> 1.078 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1632 </td>
+   <td style="text-align:right;"> 4994 </td>
+   <td style="text-align:right;"> 4590 </td>
+   <td style="text-align:right;"> 9584 </td>
+   <td style="text-align:right;"> 1.088 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1633 </td>
+   <td style="text-align:right;"> 5158 </td>
+   <td style="text-align:right;"> 4839 </td>
+   <td style="text-align:right;"> 9997 </td>
+   <td style="text-align:right;"> 1.066 </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Charles I </td>
+   <td style="text-align:right;"> 1634 </td>
+   <td style="text-align:right;"> 5035 </td>
+   <td style="text-align:right;"> 4820 </td>
+   <td style="text-align:right;"> 9855 </td>
+   <td style="text-align:right;"> 1.045 </td>
+  </tr>
+</tbody>
+</table>
+
+This is a relatively well-known dataset collected in the 17th century
+to study the secondary sex ratio (ratio of of males to females at birth)
+using baptism records.
+
 ### Data Frames
 
 In this course we will store data in a tabular format.
@@ -123,27 +204,6 @@ important as we think about how data is being used.
 
 The type of R object that stores such a dataset is called a
 **data frame**.
-
-### Data Dictionary
-
-It is important to understand and document exactly what each
-variable in a dataset is describing. A description of all the
-variables in a dataset is called a **data dictionary**. Often
-these seem self-explanatory, but it is still useful to briefly
-describe all of the variables. Here is an example of a data
-dictionary for the Arburthnot dataset:
-
-- **head_of_state**: who was the Head of State for the country
-representing London
-- **year**: calendar year of the dataset
-- **boys**: number of male baptised in London in a given year
-- **girls**: number of female baptised in London in a given year
-- **total**: total number of children baptised in London in a given year
-- **boy_to_girl_ratio**: ratio of male births to female births
-in London in a given year
-
-Notice that you probably guess the basic meaning of many of these,
-but may not have been aware of some of the specifics.
 
 ### Accessing data variables
 

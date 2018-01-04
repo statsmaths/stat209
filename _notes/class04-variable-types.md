@@ -151,6 +151,8 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
 </tbody>
 </table>
 
+### Schema / Data Dictionary
+
 - **genus** (chr): taxonomic rank of the bird
 - **species** (chr): scientific species name of the bird
 - **name** (chr): common name of the bird
@@ -183,14 +185,14 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
 qplot(male_mass, egg_mass, data = birds)
 {% endhighlight %}
 
-<img src="../assets/class03-variable-types/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
+<img src="../assets/class04-variable-types/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
 
 
 {% highlight r %}
 qplot(type, data = birds)
 {% endhighlight %}
 
-<img src="../assets/class03-variable-types/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
+<img src="../assets/class04-variable-types/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
 
 ### Converting to Levels to Characters
 
@@ -205,7 +207,20 @@ birds$display_chr <- as.character(birds$display)
 qplot(display_chr, data = birds)
 {% endhighlight %}
 
-<img src="../assets/class03-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+<img src="../assets/class04-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+
+
+{% highlight r %}
+table(birds$display_chr)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+##  1  2  3  4  5 
+## 42 10 35 13  1
+{% endhighlight %}
 
 ### Grouping Numeric Data
 
@@ -219,4 +234,21 @@ birds$egg_mass_cut <- cut(birds$egg_mass, breaks = 4)
 qplot(egg_mass_cut, data = birds)
 {% endhighlight %}
 
-<img src="../assets/class03-variable-types/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
+<img src="../assets/class04-variable-types/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
+
+
+{% highlight r %}
+table(birds$display_chr, birds$egg_mass_cut)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##    
+##     (0.607,122] (122,243] (243,363] (363,484]
+##   1          41         1         0         0
+##   2          10         0         0         0
+##   3          30         1         2         2
+##   4          13         0         0         0
+##   5           1         0         0         0
+{% endhighlight %}

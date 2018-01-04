@@ -180,4 +180,4 @@ between 28.8 and 48 years.
 qplot(median_age, data = commute)
 {% endhighlight %}
 
-<img src="../assets/class04-numeric-summaries/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
+<img src="../assets/class05-numeric-summaries/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
