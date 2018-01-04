@@ -10,6 +10,26 @@ output: html_notebook
 
 ### Variable Types
 
+Variables in R have different *types* depending on the kind of
+data that they store. The most common types that you will see
+are the following three:
+
+- integers (whole numbers)
+- doubles (decimal numbers)
+- characters
+
+Mostly, you won't need to worry about the difference between
+integers and doubles. R with treat them very similarly. However,
+character vectors are handled quite distinctly from numeric
+data. There are many other data types that you might encounter;
+two other relatively common data types deal with time data:
+
+- dates (day, month, and year)
+- date-times (date plus hour, seconds, and possibly sub-second info)
+
+Let's look at a new dataset to see examples of the kinds of data that
+can be stored in a data frame:
+
 
 {% highlight r %}
 birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/birds.csv")
@@ -151,7 +171,13 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
 </tbody>
 </table>
 
+Do any of the data types surprise you? Hopefully not!
+
 ### Schema / Data Dictionary
+
+We have already discussed a data dictionary. A schema is simply
+a data dictionary that also includes a description of the data
+types. Here is a data dictionary of the birds data:
 
 - **genus** (chr): taxonomic rank of the bird
 - **species** (chr): scientific species name of the bird
@@ -177,15 +203,24 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
     - (2) males and females share resources on their territory all year round.
 - **clutch_size** (dbl): average number of eggs produced per clutch
 
+Notice that the last two variables are integer codes. They are
+stored as numbers but also correspond to a category. The schema
+describes this in detail.
 
-### Simple Plots
+### Plot by Variable Type
+
+One reason that we care about data types is that it changes
+the types of plots that we can create. Here is a scatter plot
+of two numeric variables:
 
 
 {% highlight r %}
-qplot(male_mass, egg_mass, data = birds)
+qplot(birds$male_mass, birds$egg_mass)
 {% endhighlight %}
 
 <img src="../assets/class04-variable-types/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
+
+And a bar plot of a categorical one:
 
 
 {% highlight r %}
@@ -194,8 +229,15 @@ qplot(type, data = birds)
 
 <img src="../assets/class04-variable-types/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
 
+Other functions related to graphics and modelling also change
+based on the type of a variable, so it is quite important to
+make a note of these.
+
 ### Converting to Characters
 
+We can use the `as.character` function to convert from a number
+to a category. For example, here is a bar plot of the display
+integer codes:
 
 
 {% highlight r %}
@@ -204,7 +246,14 @@ qplot(as.character(birds$display))
 
 <img src="../assets/class04-variable-types/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
 
+Does it make sense in this context to describe the display variable
+as a categorical variable?
+
 ### Grouping Numeric Data
+
+We can also use the `cut` function to break a numeric variable into
+contiguous groups. We have to specify the number of groups in a second
+argument to the function, like this:
 
 
 {% highlight r %}
@@ -212,4 +261,11 @@ qplot(cut(birds$egg_mass, breaks = 4))
 {% endhighlight %}
 
 <img src="../assets/class04-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+
+The function breaks the range of the numeric variable into equal chunks.
+Unlike the `as.character` function, the `cut` function makes sense for
+any numeric variable. Would `as.character` be useful on the variable
+`egg_mass`?
+
+
 
