@@ -62,7 +62,10 @@ create simple plots of a data set; impressive!
 would ask someone for (1) a job interview, (2) friend
 interview, and (3) college admissions; divide class
 so that different people work on different tasks, maybe
-pairs?
+pairs? Make sure that you have numeric as well as short
+answers / categories
+- pull up the notes and describe variable types a schema
+of the eggs dataset
 - what is a schema? names of variables and variable
 types:
   - integers
@@ -75,8 +78,7 @@ data types of each question
 - what is a data dictionary? a description of the schema
 along with descriptions of the variables
 
-- pull up the notes and describe the scheme of the eggs
-dataset
+- pull notes back up
 - what do we care? show how variable type influences plots;
 also cannot, for example, take the mean of a categorical variable
 - sometimes variables can be a bit of both, like the mating
