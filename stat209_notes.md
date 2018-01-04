@@ -105,4 +105,4 @@ of northern ireland:
   618 => 100%
 
 - how to measure the spread of the data? go to the notes
-- Lab?
+- give a lab

@@ -74,8 +74,15 @@ do in this course.
 Often it will be useful to access a single variable within
 a data frame by name. To do so, we use the name of the data
 frame, followed by a dollar sign, followed by the name of
-the variable. For example, here are all of the female births
-in the dataset:
+the variable. For example, let's load the Arbuthnot dataset
+once again:
+
+
+{% highlight r %}
+births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
+{% endhighlight %}
+
+Here are all of the female births in the dataset:
 
 
 {% highlight r %}
@@ -85,7 +92,12 @@ births$girls
 
 
 {% highlight text %}
-## Error in eval(expr, envir, enclos): object 'births' not found
+##  [1] 4683 4457 4102 4590 4839 4820 4928 4605 4457 4952 4784 5332 5200 4910
+## [15] 4617 3997 3919 3395 3536 3181 2746 2722 2840 2908 2959 3179 3349 3382
+## [29] 3289 3013 2781 3247 4107 4803 4881 5681 4858 4319 5322 5560 5829 5719
+## [43] 6061 6120 5822 5738 5717 5847 6203 6033 6041 6299 6533 6744 7158 7127
+## [57] 7246 7119 7214 7101 7167 7302 7392 7316 7483 6647 6713 7229 7767 7626
+## [71] 7452 7061 7514 7656 7683 5738 7779 7417 7687 7623 7380 7288
 {% endhighlight %}
 
 The function `mean` computes the average of a numeric variable.
@@ -100,7 +112,7 @@ mean(births$girls)
 
 
 {% highlight text %}
-## Error in mean(births$girls): object 'births' not found
+## [1] 5534.646
 {% endhighlight %}
 
 Similarly, the function `qplot` produces a basic plot of a variable:
@@ -110,11 +122,7 @@ Similarly, the function `qplot` produces a basic plot of a variable:
 qplot(births$head_of_state)
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## Error in eval(aesthetics$x, data, env): object 'births' not found
-{% endhighlight %}
+<img src="../assets/class03-describing-data/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
 
 Try it will the other variables and notice the differences. We'll cover
 much more about data visualization in the coming weeks.

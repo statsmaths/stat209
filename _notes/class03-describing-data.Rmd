@@ -87,8 +87,14 @@ do in this course.
 Often it will be useful to access a single variable within
 a data frame by name. To do so, we use the name of the data
 frame, followed by a dollar sign, followed by the name of
-the variable. For example, here are all of the female births
-in the dataset:
+the variable. For example, let's load the Arbuthnot dataset
+once again:
+
+```{r, message = FALSE}
+births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
+```
+
+Here are all of the female births in the dataset:
 
 ```{r}
 births$girls

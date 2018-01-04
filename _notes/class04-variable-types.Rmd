@@ -23,6 +23,14 @@ library(kableExtra)
 
 ### Variable Types
 
+
+- integers
+- doubles
+- characters
+- dates
+- date-times
+
+
 ```{r, message = FALSE}
 birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/birds.csv")
 ```
@@ -60,7 +68,7 @@ head(birds, 10) %>%
 - **clutch_size** (dbl): average number of eggs produced per clutch
 
 
-### Simple Plots
+### Plot by Variable Type
 
 ```{r}
 qplot(male_mass, egg_mass, data = birds)
