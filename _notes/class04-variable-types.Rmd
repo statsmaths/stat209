@@ -70,31 +70,16 @@ qplot(male_mass, egg_mass, data = birds)
 qplot(type, data = birds)
 ```
 
-### Converting to Levels to Characters
+### Converting to Characters
 
-
-```{r}
-birds$display_chr <- as.character(birds$display)
-```
 
 ```{r, message = FALSE}
-qplot(display_chr, data = birds)
-```
-
-```{r}
-table(birds$display_chr)
+qplot(as.character(birds$display))
 ```
 
 ### Grouping Numeric Data
 
 ```{r}
-birds$egg_mass_cut <- cut(birds$egg_mass, breaks = 4)
+qplot(cut(birds$egg_mass, breaks = 4))
 ```
 
-```{r}
-qplot(egg_mass_cut, data = birds)
-```
-
-```{r}
-table(birds$display_chr, birds$egg_mass_cut)
-```

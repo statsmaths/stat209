@@ -136,5 +136,4 @@ package, for instance, we would run the following:
 library(readr)
 {% endhighlight %}
 
-Once loaded, we can run commands from the readr package. We will
-do this in just a moment.
+Once loaded, we can run commands from the readr package.

@@ -194,61 +194,22 @@ qplot(type, data = birds)
 
 <img src="../assets/class04-variable-types/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
 
-### Converting to Levels to Characters
+### Converting to Characters
 
 
 
 {% highlight r %}
-birds$display_chr <- as.character(birds$display)
+qplot(as.character(birds$display))
 {% endhighlight %}
 
-
-{% highlight r %}
-qplot(display_chr, data = birds)
-{% endhighlight %}
-
-<img src="../assets/class04-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
-
-
-{% highlight r %}
-table(birds$display_chr)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## 
-##  1  2  3  4  5 
-## 42 10 35 13  1
-{% endhighlight %}
+<img src="../assets/class04-variable-types/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
 
 ### Grouping Numeric Data
 
 
 {% highlight r %}
-birds$egg_mass_cut <- cut(birds$egg_mass, breaks = 4)
+qplot(cut(birds$egg_mass, breaks = 4))
 {% endhighlight %}
 
+<img src="../assets/class04-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
 
-{% highlight r %}
-qplot(egg_mass_cut, data = birds)
-{% endhighlight %}
-
-<img src="../assets/class04-variable-types/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
-
-
-{% highlight r %}
-table(birds$display_chr, birds$egg_mass_cut)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-##    
-##     (0.607,122] (122,243] (243,363] (363,484]
-##   1          41         1         0         0
-##   2          10         0         0         0
-##   3          30         1         2         2
-##   4          13         0         0         0
-##   5           1         0         0         0
-{% endhighlight %}
