@@ -10,6 +10,9 @@ output: html_notebook
 
 ### Variable Types
 
+Thesenotes use a set of data describing the commuting patterns in
+906 metropolitan areas within the United States.
+
 
 {% highlight r %}
 commute <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/acs_commute.csv")
@@ -35,7 +38,8 @@ commute <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-p
 ## #   time_0900_0959 <dbl>
 {% endhighlight %}
 
-### Data Dictionary
+The variables available for analysis are described by the following
+data dictionary and schema:
 
 - **name** (chr): name of the metropolitan or micropolitan area
 - **lat** (dbl): latitude of the centroid of the area
@@ -50,9 +54,19 @@ commute <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-p
 - **public_transit** (dbl): proportion of workers commuting by public transit (0-100)
 - **time_0900_0959** (dbl): proportion of workers commuting to work between 9am and 10am (0-100)
 
+We will look more closely at this interesting dataset throughout
+the week.
+
 ### Measures of Central Tendency
 
+A common measurment of the *typical* value of a numeric variable
+is the average or mean, mathematically described by:
+
 $$ \text{mean}(x) = \frac{x_1 + x_2 + \cdots + x_n}{n} $$
+
+As we have seen, the function `mean` in R computes this summary
+for a numeric variable. Here is the average duration of commutes
+in the US metropolitan areas (in minutes):
 
 
 {% highlight r %}
@@ -65,6 +79,9 @@ mean(commute$avg_duration)
 ## [1] 21.53447
 {% endhighlight %}
 
+The average percentage, across areas, of commuters who drive alone
+to work:
+
 
 {% highlight r %}
 mean(commute$car_alone)
@@ -75,6 +92,11 @@ mean(commute$car_alone)
 {% highlight text %}
 ## [1] 80.15011
 {% endhighlight %}
+
+The median is another measurment of the most typical values of a variable,
+defined as the number for which half of the data is above and half of the
+data is below the value (rules exist for taking the median of variables
+with ties and even number of points, but the specifics are not important).
 
 
 {% highlight r %}
@@ -87,22 +109,14 @@ median(commute$avg_duration)
 ## [1] 21.46115
 {% endhighlight %}
 
+Notice that this is not very different from the `mean` function. What is
+an example of a variable that would differ greatly between the mean and
+the median?
 
 ### Measures of Distribution
 
-
-{% highlight r %}
-deciles(commute$avg_duration)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-##       0%      10%      20%      30%      40%      50%      60%      70% 
-## 11.17422 17.16132 18.55514 19.69376 20.60294 21.46115 22.31963 23.22254 
-##      80%      90%     100% 
-## 24.30367 25.96911 38.86715
-{% endhighlight %}
+The median can also be described as the 50 percentile. Other percentiles
+can be found with the `percentiles` function:
 
 
 {% highlight r %}
@@ -128,14 +142,55 @@ percentiles(commute$public_transit)
 ##    2    3    3    3    3    4    4    5    7    9   30
 {% endhighlight %}
 
+Can you describe what the 25 percentile means, roughly speaking? Often
+we only want the *deciles* of a variable, for which the `deciles` function
+is used:
+
+
+{% highlight r %}
+deciles(commute$avg_duration)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##       0%      10%      20%      30%      40%      50%      60%      70% 
+## 11.17422 17.16132 18.55514 19.69376 20.60294 21.46115 22.31963 23.22254 
+##      80%      90%     100% 
+## 24.30367 25.96911 38.86715
+{% endhighlight %}
+
+How do these eleven numbers tell a bigger picture than the single mean or
+median?
+
 ### Measures of Variation
+
+In addition of measuring percentiles, often it is useful to give a single
+number to describe how spread out a variable is. One common measurment is
+the variance, the average distance of points from the mean:
 
 $$ \text{var}(x) = \frac{(x_1 - mean(x))^2 + (x_2 - mean(x))^2 + \cdots + (x_n - mean(x))^2}{n - 1} $$
 
+If we take the variance of the `avg_duration` variable:
 
+
+{% highlight r %}
+var(commute$median_income)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 90582868
+{% endhighlight %}
+
+What are the units? Minutes squared. That doesn't make much sense, so often
+we take the square root of the variance instead to arrive at the standard
+deviation:
 
 $$ \text{sd}(x) = \sqrt{\text{var}(x)} $$
 
+Which is computed with the `sd` function:
 
 
 {% highlight r %}
@@ -148,7 +203,15 @@ sd(commute$median_income)
 ## [1] 9517.503
 {% endhighlight %}
 
-### Standard Deviation Rule (66-95-99.6)
+Higher standard deviations indicate that the variable is spread over a larger
+range and lower deviations indicate that the variable is spread over a smaller
+range.
+
+### Standard Deviation Rules
+
+The standard deviation can feel a bit abstract, but it is best to think
+of it as a rough measurment of how far data tends to be away from the mean.
+For example, take the mean of the median age across the metropolitan areas:
 
 
 {% highlight r %}
@@ -161,6 +224,8 @@ mean(commute$median_age)
 ## [1] 38.40971
 {% endhighlight %}
 
+And the standard deviation of this variable.
+
 
 {% highlight r %}
 sd(commute$median_age)
@@ -172,12 +237,19 @@ sd(commute$median_age)
 ## [1] 4.817763
 {% endhighlight %}
 
-Expect 66% of the data from 33.6 to 43.2 years and 95%
-between 28.8 and 48 years.
+As a general rule, we would expect 66% of the data to be within 1
+standard deviation of the mean. That is, two-thirds of the metropolitan
+areas should have median ages between 33.6 and 43.2 years.
+Similarly, 95% of the data should be within two standard deviations of
+the mean. That is, between 28.8 and 48 years.
 
 
 {% highlight r %}
 qplot(median_age, data = commute)
 {% endhighlight %}
 
-<img src="../assets/class05-numeric-summaries/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
+<img src="../assets/class05-numeric-summaries/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" />
+
+Does the graphic confirm these rules of thumb? Note that the rules
+generally apply only to data that is (very) roughly shaped like a bell
+curve.
