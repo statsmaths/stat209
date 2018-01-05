@@ -107,4 +107,8 @@ of northern ireland:
   618 => 100%
 
 - how to measure the spread of the data? go to the notes
-- give a lab
+- work on the lab
+
+## Class 06 - Numeric Summaries
+
+

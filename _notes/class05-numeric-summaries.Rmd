@@ -24,7 +24,7 @@ library(kableExtra)
 
 ### Variable Types
 
-Thesenotes use a set of data describing the commuting patterns in
+These notes use a set of data describing the commuting patterns in
 906 metropolitan areas within the United States.
 
 ```{r, message = FALSE}
@@ -126,7 +126,7 @@ If we take the variance of the `avg_duration` variable:
 var(commute$median_income)
 ```
 
-What are the units? Minutes squared. That doesn't make much sense, so often
+What are the units? Dollars-squared. That doesn't make much sense, so often
 we take the square root of the variance instead to arrive at the standard
 deviation:
 

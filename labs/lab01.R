@@ -57,26 +57,6 @@
 
 
 
-##############################################################################
-# 9. We can also read data in from another file. Here we load a dataset from
-# the course website and assign it to a variable named `births`. The first
-# line loads the **readr** package, which gives us the read_csv function.
-
-library(readr)
-births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
-
-##############################################################################
-# 10. Click on the dataset in the upper right-hand corner of RStudio. You
-# should see a tabular view of the data. How many girls were born in England
-# in 1643?
-
-# Answer:
-
-##############################################################################
-# 11. Save and store this completed lab somewhere you can find it on this
-# computers (perhaps the Desktop). Then open your stat209 GitHub page and drag
-# this file into the web browser. Make sure to commit the file! Then double
-# check that the lab01.R file exists in the repository.
 
 
 
