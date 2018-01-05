@@ -30,19 +30,15 @@ few suggestions:
 - pick a favorite magazine and collect data about the ads:
 what pages are they on; what's the product; how many words are
 there; how many people are in the ad (ect).
-
 - sit on a bench somewhere during a busy time of day and count
 how many people walk in two minute intervals in each direction
 past you; create a categorical flag for whether someone asks
 what you're doing
-
 - make a dataset with one observation for various family and
 friends; record the last date you saw each person; give each
 person a score from 1 to 10 for how much you like them
-
 - watch TV for a few hours and collect data about the ads:
 product in question; time of the ad; length of the add (ect.)
-
 - make a desperate plea on social media for data (hopefully you
 have more than 75 friends); append a column for how well you
 know each person
