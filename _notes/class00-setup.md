@@ -90,7 +90,7 @@ longer. If you run into any problems, please let me know!
 {% highlight r %}
 pkgs <- c("dplyr", "ggplot2", "stringr", "ggmap", "ggrepel",
           "devtools", "viridis", "plotly", "jsonlite", "lazyeval",
-          "knitr", "readr", "forcats")
+          "knitr", "readr")
 
 install.packages(pkgs,
                  repos = "https://cloud.r-project.org",

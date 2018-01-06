@@ -4,32 +4,19 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = TRUE)
-knitr::opts_chunk$set(fig.path = "../assets/class06-analysis-prop-housing/")
-knitr::opts_chunk$set(fig.height = 5)
-knitr::opts_chunk$set(fig.width = 8.5)
-knitr::opts_chunk$set(out.width = "100%")
-knitr::opts_chunk$set(dpi = 300)
-```
 
-```{r, message = FALSE, include = FALSE}
-library(readr)
-library(ggplot2)
-library(dplyr)
-library(viridis)
-library(smodels)
-library(kableExtra)
-```
+
+
 
 ### ACS Commuting to Work Dataset
 
 Today, we will again look at the data describing the commuting
 patterns in 906 metropolitan areas within the United States.
 
-```{r, message = FALSE}
+
+{% highlight r %}
 commute <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/acs_commute.csv")
-```
+{% endhighlight %}
 
 Here is a description of just some of the variables available for
 analysis:
@@ -53,9 +40,12 @@ spend a large amount of their income on housing.
 I would suggest addressing this question by drawing two-dimensional scatter
 plots such as this:
 
-```{r}
+
+{% highlight r %}
 qplot(commute$lon, commute$lat)
-```
+{% endhighlight %}
+
+<img src="../assets/class13-analysis-prop-housing/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" />
 
 But, use `prop_housing` as the y-variable.
 
@@ -93,9 +83,16 @@ or Knit buttons, but we can also run just this block by hitting
 the play button to the right of the block. Here, let's add
 1 and 1 together:
 
-```{r}
+
+{% highlight r %}
 1 + 1
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 2
+{% endhighlight %}
 
 Your projects will be submitted in RMarkdown. I will give you
 a template with which to work from.

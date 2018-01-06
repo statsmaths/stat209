@@ -1,23 +1,23 @@
 ---
-title: "Assessment C"
+title: "Assessment B"
 author: "Taylor Arnold"
 output: html_notebook
 ---
 
-For the third in-class assessment, you should be able to:
+For the second in-class assessment, you should
+be familiar with the syntax and ideas behind
+the following:
 
-- compute the mean, median, percentiles, variance, and
-standard deviation of small datasets by hand
-- compute the mean, median, percentiles, variance, and
-standard deviation of small datasets by calling functions
-in R
-- determine when the median would differ greatly from the
-mean
-- apply the 66% and 95% rules for the standard deviation
-to numeric data; this includes the reverse: looking at a
-or percentiles and determining the standard deviation
-from them
+- understand the difference between integers, doubles,
+characters, dates, and date-times
+- understand the naming conventions for variables in this class
+- know how to properly space around the `<-` sign
+- know how to construct a full data schema
+- know how to extract a variable from a data frame
+- know how to produce a simple plot of a variable
+- know how to convert a variable to character variable with `as.character`
+- know how, and understand what is going on, to convert a numeric variable to a character variable with `cut`
 
-If I ask you do arithmetic, it will be either very easy to
-compute the answer or you can leave it unsimplified. No
-calculators are needed or allowed.
+Remember, the assessment includes fill in the blank questions, not
+just multiple choice, so make sure you remember the specific
+function commands.

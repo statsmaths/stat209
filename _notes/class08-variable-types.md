@@ -218,7 +218,7 @@ of two numeric variables:
 qplot(birds$male_mass, birds$egg_mass)
 {% endhighlight %}
 
-<img src="../assets/class04-variable-types/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
+<img src="../assets/class08-variable-types/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
 
 And a bar plot of a categorical one:
 
@@ -227,7 +227,7 @@ And a bar plot of a categorical one:
 qplot(type, data = birds)
 {% endhighlight %}
 
-<img src="../assets/class04-variable-types/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
+<img src="../assets/class08-variable-types/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
 
 Other functions related to graphics and modelling also change
 based on the type of a variable, so it is quite important to
@@ -244,7 +244,7 @@ integer codes:
 qplot(as.character(birds$display))
 {% endhighlight %}
 
-<img src="../assets/class04-variable-types/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
+<img src="../assets/class08-variable-types/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
 
 Does it make sense in this context to describe the display variable
 as a categorical variable?
@@ -260,7 +260,7 @@ argument to the function, like this:
 qplot(cut(birds$egg_mass, breaks = 4))
 {% endhighlight %}
 
-<img src="../assets/class04-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+<img src="../assets/class08-variable-types/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
 
 The function breaks the range of the numeric variable into equal chunks.
 Unlike the `as.character` function, the `cut` function makes sense for

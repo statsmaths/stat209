@@ -1,49 +1,60 @@
-# Title: "Numeric Summaries"
+# Title: "Introduction to R and RStudio"
 # Name:
 
 ##############################################################################
-# 01. In this lab, we will look at information about a set of automobiles. To
-# read it in we use the `read_csv` function as usual:
+# 1. R will evaluate any command and by default it will print the answer to
+# the console in the lower lefthand pane of RStudio. Let's try some simple
+# math. Run the following command by highlighting the row and hitting the Run
+# button in the upper left hand corner.
 
-mpg <- read_csv("https://statsmaths.github.io/stat_data/mpg.csv")
+1 + 1
 
-# The variables in the dataset are:
-#
-#   manufacturer - name of the car's manufacturer
-#   model        - name of the car model
-#   displ        - the car's engine size, in litres
-#   year         - year model year
-#   cyl          - number of cylinders in the engine
-#   trans        - transmition type
-#   drv          - is the car 4 wheel drive ("4"), front wheel drive ("f") or
-#                  rear wheel drive ("r")
-#   cty          - number of miles you would expect to get for each gallon of
-#                  fuel in a city environment
-#   hwy          - number of miles you would expect to get for each gallon of
-#                  fuel on the highway
-#   fl           - fuel type
-#   class        - type of car class
+# There's your result, 2. It's printed on the console right after your entry.
 
 ##############################################################################
-# 02. What is the mean of the variable "year"? Is this a useful measurment
-# to describe the dataset?
+# 2. Type the string "Hello there!" in the code below. (Don't forget the
+# quotes!) Then highlight it and Run the code. It should just spit out the
+# string verbatim back at you.
 
 
 
 ##############################################################################
-# 03. What manufacturer is most common in the dataset?
+# 3. Now try multiplying 6 times 7 (* is the multiplication operator). Again,
+# write the code below, highlight, and click run.
 
 
 
 ##############################################################################
-# 04. Compute the standard deviation of the variables `cty` and `hwy`. Which
-# seems to be more variant?
+# 4. Some expressions return a "logical value": TRUE or FALSE. (Many
+# programming languages refer to these as "boolean" values.) Let's try running
+# an expression that gives us a logical value:
+
+3 < 5
+
+##############################################################################
+# 5. And another logical value (note that you need a double-equals sign to
+# check whether two values are equal - a single-equals sign won't work):
+
+2 + 2 == 5
+
+##############################################################################
+# 6. As in other programming languages, you can store values into a variable
+# to access it later. Type x <- 42 below and run it to store a value in x.
+# You should notice the variable show up in the right hand corner of the
+# RStudio screen.
 
 
 
 ##############################################################################
-# 05. Plot the distribution of the variably `hwy`. Does the standard deviation
-# rule (66% and 95%) roughly apply to this variable?
+# 7. The object x can now be used in expressions in place of the original
+# result. Try dividing x by 2 (/ is the division operator).
+
+
+
+##############################################################################
+# 8. You can re-assign any value to a variable at any time. Try assigning the
+# string "Arr, matey!" to x.
+
 
 
 
