@@ -78,7 +78,7 @@ interesting that you've found.
 For next class, please read the introduction to the text *The Art
 of Data Science* by Roger Peng and Elizabeth Matsui:
 
-[What is Statistics](../assets/pdf/art-of-data-science.pdf)
+[What is Statistics](../assets/pdfs/art-of-data-science.pdf)
 
 It is a very quick read that will help frame the discussion for
 next week.

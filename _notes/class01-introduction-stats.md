@@ -211,10 +211,10 @@ by Emery N. Brown and Robert E. Kass. Specifically, read sections
 1, 2, and 6 as well as the comment by Iain Johnstone (pg. 8)
 and the comment by David MadiganADIGAN and Andrew Gelman (pg. 11)
 
-[What is Statistics](../assets/pdf/what-is-statistics.pdf)
+[What is Statistics](../assets/pdfs/what-is-statistics.pdf)
 
 This essay, and perhaps even more particularly the two selected
 comments, establish the modern call of statistics. It is written
 for an audience of statisticians, so some of the exact examples
 may not be familiar; just skim what you can and try to understand
-the overall point.
+the overall point. We will discuss this on Thursday.
