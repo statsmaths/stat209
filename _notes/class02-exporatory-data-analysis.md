@@ -26,17 +26,17 @@ When I talk about data I tend to think of a broader meaning to the
 term than most people might. Data can include such things as text,
 images, maps and sound. Here is one with text:
 
-![Google search suggestions by country](https://noahveltman.com/suggest/)
+[Google search suggestions by country](https://noahveltman.com/suggest/)
 
 Maps:
 
-![NYC Taxi's: A Day in the Life](http://chriswhong.github.io/nyctaxi/)
+[NYC Taxi's: A Day in the Life](http://chriswhong.github.io/nyctaxi/)
 
 And even sound:
 
-![Off the Staff](https://www.c82.net/offthestaff/)
+[Off the Staff](https://www.c82.net/offthestaff/)
 
-![Video](https://www.youtube.com/watch?list=PLw6QMmIiPBlU_dElMDoJn4RUBvpp_bUwi&v=DxkpN4PUOzA)
+[Video](https://www.youtube.com/watch?list=PLw6QMmIiPBlU_dElMDoJn4RUBvpp_bUwi&v=DxkpN4PUOzA)
 
 What's the point of all this exploratory analysis? At a high level
 we are trying to understand something about the world around us.
@@ -52,17 +52,17 @@ Now, its your turn. I have gather several interactive visualizations
 that I find particularly interesting. You'll be split into groups of
 about 3 people and assigned one of these datasets.
 
-![A Day in the Life](http://flowingdata.com/2015/12/15/a-day-in-the-life-of-americans/)
+[A Day in the Life](http://flowingdata.com/2015/12/15/a-day-in-the-life-of-americans/)
 
-![Visualizing MBTA Data](http://mbtaviz.github.io/)
+[Visualizing MBTA Data](http://mbtaviz.github.io/)
 
-![The Wizards’ shooting stars](http://www.washingtonpost.com/wp-srv/special/sports/wizards-shooting-stars/)
+[The Wizards’ shooting stars](http://www.washingtonpost.com/wp-srv/special/sports/wizards-shooting-stars/)
 
-![The Voting Habits of Americans Like You](https://www.nytimes.com/interactive/2016/06/10/upshot/voting-habits.html)
+[The Voting Habits of Americans Like You](https://www.nytimes.com/interactive/2016/06/10/upshot/voting-habits.html)
 
-![The Rythm of Food](http://rhythm-of-food.net/#explore)
+[The Rythm of Food](http://rhythm-of-food.net/#explore)
 
-![How You Will Die](http://flowingdata.com/2016/01/19/how-you-will-die/)
+[How You Will Die](http://flowingdata.com/2016/01/19/how-you-will-die/)
 
 Spend at least 5-10 minutes playing around with the visualization and
 understanding the data within it. Then, pull out 1-2 of the most
