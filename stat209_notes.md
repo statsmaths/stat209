@@ -1,4 +1,4 @@
-## Class 01 - Introduction and R/GitHub Setup
+## Class 05 - Introduction and R/GitHub Setup
 
 - start by going through syllabus; this is not
 mathematics nor is it AP statistics; holistic
@@ -21,7 +21,7 @@ walk through the basics of the notes:
 your own machine
 - hand out class survey
 
-## Class 02 - Data Basics
+## Class 06 - Data Basics
 
 - start the class by having students go to each board
 and construct a dataset of sorts:
@@ -43,7 +43,7 @@ then manipulate
 - can also load data from a file remotely, such as in the
 notes
 
-## Class 03 - Describing Data
+## Class 07 - Describing Data
 
 - show notes of a data dictionary
 - extracting a variable from a data frame
@@ -54,9 +54,9 @@ from class 02; read the dataset in and make some plots/tables
 - regroup and summarize: we can create, describe, read, and
 create simple plots of a data set; impressive!
 
-- QUIZ A
+- QUIZ B
 
-## Class 04 - Variable Types
+## Class 08 - Variable Types
 
 - activity: go to boards and describe 6 questions you
 would ask someone for (1) a job interview, (2) friend
@@ -88,7 +88,10 @@ category where appropriate
 - can also use the `cut` function to break a numeric variable
 into categories based on a range
 
-## Class 05 - Numeric Summaries
+## Class 13 - Application?
+
+
+## Class 14 - Numeric Summaries
 
 - write a very small dataset of populations in the six counties
 of northern ireland:
@@ -109,6 +112,5 @@ of northern ireland:
 - how to measure the spread of the data? go to the notes
 - work on the lab
 
-## Class 06 - Numeric Summaries
 
 
