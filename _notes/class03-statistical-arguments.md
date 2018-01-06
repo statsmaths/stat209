@@ -12,7 +12,7 @@ step further by investigating how the results of these
 exploratory analyses can actually be used to make broader
 claims.
 
-### rhetorical persuasion
+## rhetorical persuasion
 
 Before we begin, let's briefly refresh ourselves of what
 exactly it means to *make an argument*, as obvious as that
@@ -54,7 +54,7 @@ establish appeals to character or appeals to emotion.
 **Describe an example of where you have recently used each of
 these methods to make an argument.**
 
-### thesis statement
+## thesis statement
 
 You have certainly heard of a thesis statement, but may not
 be able to formally define what it is. A thesis statement:
@@ -76,7 +76,7 @@ If you are designing an experiment or collecting data, you will
 have a hypothesis. When you are writing a paper or giving a
 presentation you will have a thesis.
 
-### types of argumentation
+## types of argumentation
 
 Within logos, there are two subtypes of arguments that
 have a place in making arguments from data. These are:
@@ -105,7 +105,7 @@ While the data provides strong evidence for the conclusion, it does
 not guarantee its validity even if the assumption and logic is
 infallible.
 
-### data-driven logical arguments
+## data-driven logical arguments
 
 Deductive reasoning occurs in statistics when some of our
 facts (assumptions) are derived from an analysis of a dataset.
@@ -133,7 +133,7 @@ While inductive reasoning is more traditionally associated with
 statistics, the deductive case is quite common in both industry
 and academia.
 
-### hybrid approach in statistics
+## hybrid approach in statistics
 
 Often, in an analysis of data I have observed a hybrid approach.
 Namely, deductive reasoning is used to draw concrete conclusions
@@ -153,7 +153,7 @@ to assert that a particular model is appropriate to apply in a given
 situation. This model is then used to establish a thesis by inductive
 reason that plays on the audience's emotions.
 
-### examples
+## examples
 
 Okay, enough theory. Let's look at some actual data-drive arguments.
 These are
@@ -194,7 +194,7 @@ sports fans? general audiences? Democrats/Republicans?
 
 We'll take some time to look at these and then regroup as a class.
 
-### Assignment
+## Assignment
 
 For next class, please read the introduction to the text *The Art
 of Data Science* by Roger Peng and Elizabeth Matsui:
