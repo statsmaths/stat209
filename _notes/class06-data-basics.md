@@ -160,23 +160,11 @@ package. Specifically, we use something like this:
 qplot(food$cuisine)
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## Error in qplot(food$cuisine): could not find function "qplot"
-{% endhighlight %}
-
 To get a bar plot of the cuisine types. Or,
 
 
 {% highlight r %}
 qplot(food$year, food$cost)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in qplot(food$year, food$cost): could not find function "qplot"
 {% endhighlight %}
 
 For a scatter plot of how often you visit each year and the average cost.

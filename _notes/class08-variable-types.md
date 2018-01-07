@@ -8,6 +8,19 @@ output: html_notebook
 
 
 
+### Data creation
+
+To start, we will construct some data set examples on the white boards.
+Specifically, write down six questions for one of these:
+
+- a job interview
+- friend interview
+- college admissions
+
+And then give variable names to describe the answer to each. Make sure you
+have at least a couple questions with numeric answers (e.g., how many times
+per week do you play sports?)
+
 ### Variable Types
 
 Variables in R have different *types* depending on the kind of
@@ -32,6 +45,7 @@ can be stored in a data frame:
 
 
 {% highlight r %}
+library(readr)
 birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/birds.csv")
 {% endhighlight %}
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
@@ -173,11 +187,11 @@ birds <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pag
 
 Do any of the data types surprise you? Hopefully not!
 
-### Schema / Data Dictionary
+### Data Dictionary
 
-We have already discussed a data dictionary. A schema is simply
-a data dictionary that also includes a description of the data
-types. Here is a data dictionary of the birds data:
+We have already discussed a basic data dictionary. It is helpful, to include
+the variable types in the dictionary, which we will do now going forward.
+Here is a data dictionary of the birds data:
 
 - **genus** (chr): taxonomic rank of the bird
 - **species** (chr): scientific species name of the bird
@@ -215,6 +229,7 @@ of two numeric variables:
 
 
 {% highlight r %}
+library(ggplot2)
 qplot(birds$male_mass, birds$egg_mass)
 {% endhighlight %}
 
@@ -266,6 +281,32 @@ The function breaks the range of the numeric variable into equal chunks.
 Unlike the `as.character` function, the `cut` function makes sense for
 any numeric variable. Would `as.character` be useful on the variable
 `egg_mass`?
+
+### GitHub Classroom
+
+In order to submit the projects, you'll need to create a GitHub account and
+set-up GitHub classroom. I will do this interactively in class, but here are
+the steps in case you are returning to these notes at a later
+time:
+
+1. I will send a link to your e-mail that you should follow
+and accept. Assuming you have a valid GitHub account, this
+will set up a repository where all of your projects for this semester
+should be posted.
+2. Download the project starter code and open it in RStudio.
+3. When you are finished, select the `Knit to HTML` button. This
+should create an html file in the same location that you saved
+the Rmd file. You should also have a file `class01_submit.csv`
+in the same location.
+4. Return to GitHub and drag and drop the three files into your
+repository. Commit these to the repository with the **Commit changes**
+button and then you are done! If dragging and dropping does not work
+(only officially support on Chrome I believe), select **Upload files**
+and do so manually.
+
+Remember that I will not accept late submissions of the projects.
+It is always better to hand *something* in on time.
+
 
 
 

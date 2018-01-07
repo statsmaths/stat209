@@ -115,13 +115,13 @@ when we start working on the projects.
 Recall that we can create plots with the `qplot` function from the **ggplot2**
 package. Specifically, we use something like this:
 
-```{r}
+```{r, eval = FALSE}
 qplot(food$cuisine)
 ```
 
 To get a bar plot of the cuisine types. Or,
 
-```{r}
+```{r, eval = FALSE}
 qplot(food$year, food$cost)
 ```
 
