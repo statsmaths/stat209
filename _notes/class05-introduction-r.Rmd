@@ -178,7 +178,7 @@ the pattern here?
 Finally, let's use one more package function to create an interactive
 plot:
 
-```{r}
+```{r, message=FALSE}
 library(plotly)
 ggplotly()
 ```

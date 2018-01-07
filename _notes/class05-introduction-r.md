@@ -235,50 +235,7 @@ plot:
 
 {% highlight r %}
 library(plotly)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## 
-## Attaching package: 'plotly'
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## The following object is masked from 'package:ggplot2':
-## 
-##     last_plot
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## The following object is masked from 'package:stats':
-## 
-##     filter
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## The following object is masked from 'package:graphics':
-## 
-##     layout
-{% endhighlight %}
-
-
-
-{% highlight r %}
 ggplotly()
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## We recommend that you use the dev version of ggplot2 with `ggplotly()`
-## Install it with: `devtools::install_github('hadley/ggplot2')`
 {% endhighlight %}
 
 <img src="../assets/class05-introduction/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
