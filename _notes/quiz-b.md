@@ -1,22 +1,21 @@
 ---
-title: "Assessment A"
+title: "Assessment B"
 author: "Taylor Arnold"
 output: html_notebook
 ---
 
-For the first in-class assessment, you should
-be familiar with the syntax and ideas behind
-the following:
+For the second in-class assessment, you should
+be able to:
 
-- loading an R package (use `library(packagename)`)
-- assigning a value to a variable (`var <- 3.14`)
-- applying a function to a variable (`mean(var)`)
-- loading a CSV file into R (using `read_csv`)
-- describe the layout of a CSV file; you should be able
-to construct one from hand based on a description of a dataset
-- identify and describe observations (rows), variables (columns)
-and know that these are stored in a data frame
+- explain the concepts of ethos, pathos, and
+logos, as well as draw examples of each
+- define a thesis statement
+- define a hypothesis
+- explain and differentiate inductive and deductive
+reasoning
+- explain, in a sentence or two, the difference between
+predictive models and exploratory methods
+- define the terms population, variable of interest,
+and sample in the context of statistical inference
 
-The assessment includes fill in the blank questions, not
-just multiple choice, so make sure you remember the specific
-function commands (`library`, `read_csv`, ect.).
+

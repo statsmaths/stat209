@@ -1,23 +1,22 @@
 ---
-title: "Assessment B"
+title: "Assessment C"
 author: "Taylor Arnold"
 output: html_notebook
 ---
 
-For the second in-class assessment, you should
+For the third in-class assessment, you should
 be familiar with the syntax and ideas behind
 the following:
 
-- understand the difference between integers, doubles,
-characters, dates, and date-times
-- understand the naming conventions for variables in this class
-- know how to properly space around the `<-` sign
-- know how to construct a full data schema
-- know how to extract a variable from a data frame
-- know how to produce a simple plot of a variable
-- know how to convert a variable to character variable with `as.character`
-- know how, and understand what is going on, to convert a numeric variable to a character variable with `cut`
+- loading an R package (use `library(packagename)`)
+- assigning a value to a variable (`var <- 3.14`)
+- applying a function to a variable (`mean(var)`)
+- loading a CSV file into R (using `read_csv`)
+- describe the layout of a CSV file; you should be able
+to construct one from hand based on a description of a dataset
+- identify and describe observations (rows), variables (columns)
+and know that these are stored in a data frame
 
-Remember, the assessment includes fill in the blank questions, not
+The assessment includes fill in the blank questions, not
 just multiple choice, so make sure you remember the specific
-function commands.
+function commands (`library`, `read_csv`, ect.).
