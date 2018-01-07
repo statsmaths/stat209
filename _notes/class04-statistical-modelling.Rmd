@@ -22,7 +22,7 @@ predictive statistical models.
 
 ## Predictive Models
 
-Our favorite site FiveThirtyEight has plenty of examples of predictive models.
+FiveThirtyEight also has plenty of examples of predictive models.
 For example, here are several on-going sports and politics links on the site
 that try to predict who will win a given sports game, win a given election, or
 the estimate the current popularity of the president:
@@ -142,7 +142,7 @@ statistical analyses for ourselves.
 For next class, please read the introduction to the text *The Art
 of Data Science* by Roger Peng and Elizabeth Matsui:
 
-- [What is Statistics](../assets/pdfs/art-of-data-science.pdf)
+- [The Art of Data Science](../assets/pdfs/art-of-data-science.pdf)
 
 This should be a quick and easy read. It will help frame the discussion of the
 steps involved in making use of data in an analysis.

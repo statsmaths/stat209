@@ -1,12 +1,45 @@
+## Class 01 - Introduction to Statistics
+
+- you can basically start by just going through the
+class notes; what is statistics; about me; Hans Roslin;
+R; past projects; syllabus
+- hand out survey for the class
+- stick around for questions after
+
+Assignment: What is Statistics (Madigan and Gelman)
+
+## Class 02 - Exploratory Data Analysis
+
+- start by discussing "What is Statistics"
+  - what is the point of the article
+  - anything confuse you?
+  - anything surprise you?
+  - agree / disagree?
+- then, again just walk through the class notes
+- reminder about ASSESSMENT A
+
+Assignment: Find a news article that uses data or
+graphics.
+
+## Class 03 - Statistical Evidence
+
+- start with the class notes
+- answer questions about the 538 article
+- answer questions with your article
+- ASSESSMENT A
+
+Assignment: None
+
+## Class 04 - Statistical Modelling
+
+- start with the notes
+- show the ML video, time permitting
+- look at NEJoM example
+- look at another example from one of the other sources
+
+Assignment: Introductory chapters in "The Art of Data Science"
+
 ## Class 05 - Introduction and R/GitHub Setup
-
-- start by going through syllabus; this is not
-mathematics nor is it AP statistics; holistic
-grading approach; use classroom computers to
-reduce distractions / issues
-- show the Hans Rosling video:
-
-   - https://www.youtube.com/watch?v=Z8t4k0Q8e8Y
 
 - have everyone open RStudio on the lab machines;
 walk through the basics of the notes:
@@ -19,14 +52,14 @@ walk through the basics of the notes:
 
 - talk about downloading and installing R on
 your own machine
-- hand out class survey
+- ASSESSMENT B
 
 ## Class 06 - Data Basics
 
 - start the class by having students go to each board
 and construct a dataset of sorts:
 
-  - four favorite restaurts: name; location; cuisine;
+  - four favorite restaurants: name; location; cuisine;
     fav dish; cost of a meal; last time you visited
 
 - return to seats and talk about putting the data

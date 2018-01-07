@@ -10,7 +10,7 @@ output: html_notebook
 
 This course broadly covers the entire process of collecting,
 cleaning, visualizing, modeling, and presenting datasets. It
-has a MATH designation but is not a \textit{mathematics} course.
+has a MATH designation but is not a *mathematics* course.
 The focus is on applied statistics and data analysis
 rather than a detailed study of symbolic mathematics.
 
@@ -129,7 +129,7 @@ details on the class website with the exact topics on each assessment.
 
 While the assessments serve to make sure you are following along
 with the general concepts, the core aim of the course is to teach
-you how to \textit{apply} statistics to real-world questions. To
+you how to *apply* statistics to real-world questions. To
 this end, we will complete several data-oriented projects. These
 are the real heart of the course.
 
@@ -209,7 +209,7 @@ me for clarification at any point in the semester.
 For next class, please read the article "What is Statistics"
 by Emery N. Brown and Robert E. Kass. Specifically, read sections
 1, 2, and 6 as well as the comment by Iain Johnstone (pg. 8)
-and the comment by David MadiganADIGAN and Andrew Gelman (pg. 11)
+and the comment by David Madigan and Andrew Gelman (pg. 11)
 
 [What is Statistics](../assets/pdfs/what-is-statistics.pdf)
 

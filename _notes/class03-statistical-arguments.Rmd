@@ -38,50 +38,49 @@ agree, though, that the concept was first formalized by
 Aristotle's incredibly influential text *Rhetoric*.
 
 To Aristotle, there are three primary ways of making an
-argument (what is often translated as persuasion):
+argument:
 
 1. *appeal to character (ethos; ἦθος)*: claims are
-persuasive primarily because we trust the speaker on the
+believed primarily because we trust the speaker on the
 matter and hand. This requires that they (i) have a practical
 understanding of the subject, (ii) are a 'virtuous character',
 and (iii) they harbor some degree of good will towards their
-audience
-2. *appeal to emotion (pathos; πάθος)*: claims are persuasive
-because the audience is brought to a certain emotional state
-3. *appeal to argument (logos; λόγος)*: claims are persuasive
-by the use of some logical statement and statements
+audience.
+2. *appeal to emotion (pathos; πάθος)*: claims are believed
+because the audience is brought to a certain emotional state.
+3. *appeal to argument (logos; λόγος)*: claims are believed
+by the use of some logical statement and statements.
 
 Good written and oral arguments often draw from one or more
 of these methods. When I teach, for example, I draw from both
 ethos and logos. Data — through visualizations, summary statistics,
 and models — is primarily used for appeals to logos. Of course,
-they may also factor indirectly into rhetorical persuasion to
-establish appeals to character or appeals to emotion.
+they may also factor indirectly to establish appeals to character
+or appeals to emotion.
 
 **Describe an example of where you have recently used each of
 these methods to make an argument.**
 
 ## Thesis Statement
 
-You have certainly heard of a thesis statement, but may not
-be able to formally define what it is. A thesis statement:
+You have certainly heard of a thesis statement, but may struggle
+to formally define what it is. A thesis statement:
 
 > offers a concise summary of the main point or claim of the essay,
 > research paper
 
-In contrast, a hypothesis is:
+A hypothesis, which is not the same concept, is:
 
 > a supposition or proposed explanation made on the basis of
 > limited evidence as a starting point for further investigation
 
 That is, a hypothesis is a fixed explanation of something. A
 thesis is a particular rhetorical element that exists within a
-single document or speech and is intended for a particular
-audience.
-
+document or speech and is intended for a particular audience.
 If you are designing an experiment or collecting data, you will
 have a hypothesis. When you are writing a paper or giving a
-presentation you will have a thesis.
+presentation you will have a thesis (and that thesis may help to
+confirm or contradict a prior hypothesis).
 
 ## Types of Argumentation
 
@@ -109,7 +108,7 @@ based on patterns seen in particular examples. For instance:
 > students.
 
 While the data provides strong evidence for the conclusion, it does
-not guarantee its validity even if the assumption and logic is
+not guarantee its validity even if the assumptions and logic is
 infallible.
 
 ## Data-Driven Logical Arguments
@@ -117,10 +116,9 @@ infallible.
 Deductive reasoning occurs in statistics when some of our
 facts (assumptions) are derived from an analysis of a dataset.
 Generally this occurs when we are drawing data from a particular
-**population**.
-
-For example, say we are looking at election results from every
-county in the United States. The following is a deductive argument:
+population. For example, say we are looking at election results
+from every county in the United States. The following is a
+deductive argument:
 
 > A presidential candidate that has more than 270 electoral votes
 > wins the election (assumption). Candidate A had 300 elector votes
@@ -139,26 +137,6 @@ While inductive reasoning is more traditionally associated with
 statistics, the deductive case is quite common in both industry
 and academia.
 
-## Hybrid Approach in Statistics
-
-Often, in an analysis of data I have observed a hybrid approach.
-Namely, deductive reasoning is used to draw concrete conclusions
-from data. These conclusions are then used as part of a larger
-inductive reasoning.
-
-For example, assume that you are a statistician working for a large
-company and analyzing financial data. Using the data, you may
-confirm that the company has increased year-over-year profits by
-232% (by deductive reasoning). From this evidence, the company
-decided to proceed with an IPO (by inductive reasoning).
-
-Furthermore, these two logical approaches are also blended with
-aspects of ethos and pathos. These can occur in non-obvious ways.
-For example, I may draw on my own authority as a Ph.D. statistician
-to assert that a particular model is appropriate to apply in a given
-situation. This model is then used to establish a thesis by inductive
-reason that plays on the audience's emotions.
-
 ## Examples
 
 Okay, enough theory. Let's look at some actual data-drive arguments.
@@ -171,7 +149,6 @@ Sports, Media, and Science).
 - [What Would Happen If We Just Gave People Money?](http://fivethirtyeight.com/features/universal-basic-income/)
 - [What Went From in the Flight Water Crisis in Michigan](https://fivethirtyeight.com/features/what-went-wrong-in-flint-water-crisis-michigan/) (Just read Part I)
 - [Shut Up About Harvard](https://fivethirtyeight.com/features/shut-up-about-harvard/)
-- [You Can’t Trust What You Read About Nutrition](http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/)
 - [How Trump's Supreme Court Could Overturn Roe v. Wade Without Overturning It](http://fivethirtyeight.com/features/how-trumps-supreme-court-could-overturn-roe-v-wade-without-overturning-it/)
 - [Tom Brady Doesn't Need Gronk or Moss or Welker to Win](http://fivethirtyeight.com/features/tom-brady-doesnt-need-gronk-or-moss-or-welker-to-win/)
 - [A Plagiarism Scandal Is Unfolding In The Crossword World](http://fivethirtyeight.com/features/a-plagiarism-scandal-is-unfolding-in-the-crossword-world/)
@@ -194,18 +171,25 @@ sports fans? general audiences? Democrats/Republicans?
 
 We'll take some time to look at these and then regroup as a class.
 
-## Assignment
+## Hybrid Approach in Statistics
 
-For next class, we will discuss an excerpt from Leo Breiman's
-"Statistical Modeling: The Two Cultures". Please just read the
-first three sections; you'll find some of the terminology foreign,
-but please struggle through to the end. The examples in section
-three will help elucidate what Breiman is talking about in the
-first section.
+Often, in an analysis of data I have observed a hybrid approach.
+Namely, deductive reasoning is used to draw concrete conclusions
+from data. These conclusions are then used as part of a larger
+inductive reasoning.
 
-- [Statistical Modeling: The Two Cultures](https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726)
+For example, assume that you are a statistician working for a large
+company and analyzing financial data. Using the data, you may
+confirm that the company has increased year-over-year profits by
+232% (by deductive reasoning). From this evidence, the company
+decided to proceed with an IPO (by inductive reasoning).
 
-We will dive into the concepts in this paper on Thursday.
+Furthermore, these two logical approaches are also blended with
+aspects of ethos and pathos. These can occur in non-obvious ways.
+For example, I may draw on my own authority as a Ph.D. statistician
+to assert that a particular model is appropriate to apply in a given
+situation. This model is then used to establish a thesis by inductive
+reason that plays on the audience's emotions.
 
 
 
