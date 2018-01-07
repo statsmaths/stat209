@@ -73,16 +73,31 @@ a pattern that was not made explicit in the text). Finally, designate
 one person to come up and explain the dataset and show something
 interesting that you've found.
 
+### Modes of Analysis in EDA
+
+Generally, we doing EDA we are looking at understanding patterns
+contained within the data. I tend see that interesting observations
+come in one of three forms:
+
+- *pattern description*: an observation about a general pattern
+or trend found in the dataset
+- *anomaly detection*: identification of data points that, in some
+way, seem to not follow the general pattern or otherwise behave
+in some extreme or anomalous way
+- *perspective*: we have a special interest in a small set of data
+points (often just one) and are interested in how this point falls
+relative to the rest of the data; like anomaly detection, but we
+decide which points to care about ahead of the analysis
+
+These do not function in a vacuum and good analyses will often pull
+from multiple types of observations.
+
 ### Assignment
 
-For next class, please read the introduction to the text *The Art
-of Data Science* by Roger Peng and Elizabeth Matsui:
-
-[What is Statistics](../assets/pdfs/art-of-data-science.pdf)
-
-It is a very quick read that will help frame the discussion for
-next week.
-
+For next class, please find a news article that includes statistical
+arguments. This can be a simple plot, map, or table of data. Anything
+in which there is a representation of data along with a larger text
+that uses the data in some way. We will use these in class next week.
 
 
 

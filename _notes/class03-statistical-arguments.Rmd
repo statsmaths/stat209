@@ -162,7 +162,9 @@ reason that plays on the audience's emotions.
 ## Examples
 
 Okay, enough theory. Let's look at some actual data-drive arguments.
-These are
+Below are ten articles from the website FiveThirtyEight. I tried to
+grab articles that covered a good range of topics (Politics, Economics,
+Sports, Media, and Science).
 
 - [Hollywood Studios Barely Promoted Non-White Actors And Films](https://fivethirtyeight.com/features/oscars-diversity-hollywood-ad-campaign/)
 - [The Minimum Wage Movement is Learning Tipped Workers Behind](https://fivethirtyeight.com/features/the-minimum-wage-movement-is-leaving-tipped-workers-behind/)
@@ -176,7 +178,9 @@ These are
 - [The Chris Paul Conundrum](https://fivethirtyeight.com/features/the-chris-paul-conundrum/)
 - [Under a New System Clinton Could Have Won the Popular Vote by 5 Points and Still Lost](http://fivethirtyeight.com/features/under-a-new-system-clinton-could-have-won-the-popular-vote-by-5-points-and-still-lost/)
 
-For each article answer these questions:
+We will work in groups to read one of these (I recommend looking at
+a few more outside of class as well). For each article answer these
+questions:
 
 1. what types of logic (logos, pathos, ethos; inductive or deductive) are
 used in the piece
@@ -192,13 +196,16 @@ We'll take some time to look at these and then regroup as a class.
 
 ## Assignment
 
-For next class, please read the introduction to the text *The Art
-of Data Science* by Roger Peng and Elizabeth Matsui:
+For next class, we will discuss an excerpt from Leo Breiman's
+"Statistical Modeling: The Two Cultures". Please just read the
+first three sections; you'll find some of the terminology foreign,
+but please struggle through to the end. The examples in section
+three will help elucidate what Breiman is talking about in the
+first section.
 
-- [What is Statistics](../assets/pdfs/art-of-data-science.pdf)
+- [Statistical Modeling: The Two Cultures](https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726)
 
-It is a very quick read that will help frame the discussion of how
-we actually use data in an analysis.
+We will dive into the concepts in this paper on Thursday.
 
 
 
