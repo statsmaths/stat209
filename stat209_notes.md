@@ -78,14 +78,10 @@ notes
 
 ## Class 07 - Describing Data
 
-- show notes of a data dictionary
-- extracting a variable from a data frame
-- apply a function to a variable (such as the mean)
-- talk about style guidelines for code
-- Activity: In pairs, write a data dictionary for the data
-from class 02; read the dataset in and make some plots/tables
-- regroup and summarize: we can create, describe, read, and
-create simple plots of a data set; impressive!
+- go through notes on data consistency and data dictionary
+- explain Project A and RMarkdown
+- time remaining: construct the data dictionary for the class dataset from
+last week
 
 - QUIZ B
 
