@@ -50,19 +50,15 @@ Now, its your turn. I have gather several interactive visualizations
 that I find particularly interesting. You'll be split into groups of
 about 3 people and assigned one of these datasets.
 
-[A Day in the Life](http://flowingdata.com/2015/12/15/a-day-in-the-life-of-americans/)
+- [A Day in the Life](http://flowingdata.com/2015/12/15/a-day-in-the-life-of-americans/)
+- [Visualizing MBTA Data](http://mbtaviz.github.io/)
+- [The Wizards’ shooting stars](http://www.washingtonpost.com/wp-srv/special/sports/wizards-shooting-stars/)
+- [The Voting Habits of Americans Like You](https://www.nytimes.com/interactive/2016/06/10/upshot/voting-habits.html)
+- [The Rythm of Food](http://rhythm-of-food.net/#explore)
+- [Executive Abroad](https://dsl.richmond.edu/panorama/executiveabroad/)
+- [Foreign Born Population (1850-2000)](https://dsl.richmond.edu/panorama/foreignborn/)
 
-[Visualizing MBTA Data](http://mbtaviz.github.io/)
-
-[The Wizards’ shooting stars](http://www.washingtonpost.com/wp-srv/special/sports/wizards-shooting-stars/)
-
-[The Voting Habits of Americans Like You](https://www.nytimes.com/interactive/2016/06/10/upshot/voting-habits.html)
-
-[The Rythm of Food](http://rhythm-of-food.net/#explore)
-
-[How You Will Die](http://flowingdata.com/2016/01/19/how-you-will-die/)
-
-Spend at least 5-10 minutes playing around with the visualization and
+Spend about 15 minutes playing around with the visualization and
 understanding the data within it. Then, pull out 1-2 of the most
 interesting patterns that you found and think about what type of
 article or further analysis you would want to do to extrapolate
