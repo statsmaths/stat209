@@ -26,25 +26,23 @@ When I talk about data I tend to think of a broader meaning to the
 term than most people might. Data can include such things as text,
 images, maps and sound. Here is one with text:
 
-[Google search suggestions by country](https://noahveltman.com/suggest/)
+- [Google search suggestions by country](https://noahveltman.com/suggest/)
 
 Maps:
 
-[NYC Taxi's: A Day in the Life](http://chriswhong.github.io/nyctaxi/)
+- [NYC Taxi's: A Day in the Life](http://chriswhong.github.io/nyctaxi/)
+- [Forced Migration of Enslaved People](https://dsl.richmond.edu/panorama/forcedmigration/)
 
 And even sound:
 
-[Off the Staff](https://www.c82.net/offthestaff/)
-
-[Video](https://www.youtube.com/watch?list=PLw6QMmIiPBlU_dElMDoJn4RUBvpp_bUwi&v=DxkpN4PUOzA)
+- [Off the Staff](https://www.c82.net/offthestaff/)
+- [Video](https://www.youtube.com/watch?list=PLw6QMmIiPBlU_dElMDoJn4RUBvpp_bUwi&v=DxkpN4PUOzA)
 
 What's the point of all this exploratory analysis? At a high level
 we are trying to understand something about the world around us.
 The EDA phase of analysis let's us discover what the data at hand
 is specifically telling us and indicates directions for future
-studies. Next week we will see examples of how these explorations,
-which do have values in and of themselves, can be used to build
-larger arguments and inferences.
+studies.
 
 ### Groups
 
