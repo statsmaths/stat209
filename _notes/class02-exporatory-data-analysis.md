@@ -86,12 +86,15 @@ decide which points to care about ahead of the analysis
 These do not function in a vacuum and good analyses will often pull
 from multiple types of observations.
 
-### Assignment
+## Assignment
 
-For next class, please find a news article that includes statistical
-arguments. This can be a simple plot, map, or table of data. Anything
-in which there is a representation of data along with a larger text
-that uses the data in some way. We will use these in class next week.
+For next class, please read the introduction to the text *The Art
+of Data Science* by Roger Peng and Elizabeth Matsui:
+
+- [The Art of Data Science](../assets/pdfs/art-of-data-science.pdf)
+
+This should be a quick and easy read. It will help frame the discussion of the
+steps involved in making use of data in an analysis.
 
 
 

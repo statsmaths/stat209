@@ -184,18 +184,12 @@ to assert that a particular model is appropriate to apply in a given
 situation. This model is then used to establish a thesis by inductive
 reason that plays on the audience's emotions.
 
-## Assignment
+### Assignment
 
-For next class, we will discuss an excerpt from Leo Breiman's
-"Statistical Modeling: The Two Cultures". Please just read the
-first three sections; you'll find some of the terminology foreign,
-but please struggle through to the end. The examples in section
-three will help elucidate what Breiman is talking about in the
-first section.
-
-- [Statistical Modeling: The Two Cultures](https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726)
-
-We will dive into the concepts in this paper on Thursday.
+For next class, please find a news article that includes statistical
+arguments. This can be a simple plot, map, or table of data. Anything
+in which there is a representation of data along with a larger text
+that uses the data in some way. We will use these in class next week.
 
 
 

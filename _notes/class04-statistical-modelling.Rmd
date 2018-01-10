@@ -137,12 +137,3 @@ collect data, how to clean it for analysis, how to visualize it  without a
 fancy pre-made website, how to construct inferential models, and how to write
 statistical analyses for ourselves.
 
-## Assignment
-
-For next class, please read the introduction to the text *The Art
-of Data Science* by Roger Peng and Elizabeth Matsui:
-
-- [The Art of Data Science](../assets/pdfs/art-of-data-science.pdf)
-
-This should be a quick and easy read. It will help frame the discussion of the
-steps involved in making use of data in an analysis.
