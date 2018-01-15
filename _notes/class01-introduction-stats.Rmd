@@ -213,15 +213,15 @@ me for clarification at any point in the semester.
 
 ### Assignment
 
-For next class, please read the article "What is Statistics"
-by Emery N. Brown and Robert E. Kass. Specifically, read sections
-1, 2, and 6 as well as the comment by Iain Johnstone (pg. 8)
-and the comment by David Madigan and Andrew Gelman (pg. 11)
+For the next class, please read two short comments from the article
+"What is Statistics" by Emery N. Brown and Robert E. Kass. The original
+article is great but its written for academic statisticians who already
+know the field very well. The comments by David Madigan and Andrew Gelman
+(Columbia) and Deborah Nolan and Duncan Temple Lang (Berkley and UC Davis),
+in contrast, are addressed to a more generalist audience:
 
-[What is Statistics](../assets/pdfs/what-is-statistics.pdf)
+[What is Statistics (Comments)](../assets/pdfs/what-is-statistics.pdf)
 
-This essay, and perhaps even more particularly the two selected
-comments, establish the modern call of statistics. It is written
-for an audience of statisticians, so some of the exact examples
-may not be familiar; just skim what you can and try to understand
-the overall point. We will discuss this on Thursday.
+These comments establish the modern call of statistics. Some of the
+exact examples may not be familiar; just skim what you can and try to
+understand the overall point. We will discuss this on Thursday.
