@@ -214,15 +214,12 @@ me for clarification at any point in the semester.
 
 ### Assignment
 
-For the next class, please read two short comments from the article
+For the next class, please read the following short comment from the article
 "What is Statistics" by Emery N. Brown and Robert E. Kass. The original
 article is great but its written for academic statisticians who already
 know the field very well. The comments by David Madigan and Andrew Gelman
-(Columbia) and Deborah Nolan and Duncan Temple Lang (Berkley and UC Davis),
-in contrast, are addressed to a more generalist audience:
+(Columbia) are addressed to a more generalist audience:
 
 [What is Statistics (Comments)](../assets/pdfs/what-is-statistics-sub.pdf)
 
-These comments establish the modern call of statistics. Some of the
-exact examples may not be familiar; just skim what you can and try to
-understand the overall point. We will discuss this on Thursday.
+We will discuss this on Thursday.

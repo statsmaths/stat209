@@ -7,11 +7,11 @@ output: html_notebook
 For the first in-class assessment, you should
 be able to:
 
-- example the major points of the course syllabus,
+- explain the major points of the course syllabus,
 particularly the policies for attendance, final
 grades, and late work
 - be able to describe in a few sentences the big
-picture of the "What is Statistics article"
+picture of the article of Madigan and Gelman
 - give an example from the datasets that we saw in
 class of the three general EDA observations: pattern
 description, anomaly detection,  and perspective
