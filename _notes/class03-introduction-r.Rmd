@@ -24,7 +24,7 @@ library(kableExtra)
 ## R Basics
 
 The notes here establish the most basic aspects of using
-R. You will understand the basic components of R studio,
+R. You will understand the components of R studio,
 how to create and access variables in R, how to apply simple
 functions, how to load R packages, and how to read in a CSV
 dataset. Make sure you understand these notes very well for
@@ -48,55 +48,48 @@ console:
 2 + 4
 ```
 
-As in other programming languages, you can store values into an
-object called a variable. The variable can then be accessed and
-manipulated by its name. To assign a variable in R use an arrow
-`<-`. Here we will assign the number 95 to the variable called
-`happy`:
-
-```{r}
-happy <- 95
-```
-
-Run this. Notice that the variable `happy` show up in the environment box in
-the upper left-hand corner. We can then add one to the variable and see the
-output
-
-```{r}
-happy + 1
-```
-
-Notice that this **does not** change the variable `happy`. The variable is
-still equal to `95`, not `96`. To change the variable we have to re-assign a
-new value to happy. So, to make `happy` equal to 100 we could do this:
-
-```{r}
-happy <- happy + 5
-happy
-```
-
-This behavior, that functions do not change variables unless we
-redefine the variable using `<-`, is ubiquitous in R.
+We will now see how to do more complex calculations using functions.
 
 ### Functions
 
-In R, we can apply what are known as functions in order to do things
-to the variables and data present in the current environment. For
-example, the function `seq_len` takes a single number and create a
-sequence of the integers from 1 to that number:
+In R, we can apply functions to values and datasets. These range for
+very simple cases, such as trigonometric functions mimicking those of
+high-school mathematics courses, to very complex modelling functions
+that can take years to fully understand.
+
+To apply a function, we use the convention you have probably seen in
+an algebra or calculus class:
 
 ```{r}
-seq_len(happy)
+sin(0.5)
 ```
 
-Note that this is exactly the same as calling `seq_len(95)`. We can save the
-output as a variable as well using (once again) the arrow operator:
+Running this code computes the sine of the value `0.5`. Functions
+that work similarly include `tan` and `sqrt`. The function `runif`
+returns a number of randomly chosen values on an interval. The first
+input to the function tells R how many values to return:
 
 ```{r}
-hundred <- seq_len(happy)
+runif(10)
 ```
 
-We will cover more details about R functions in the upcoming classes.
+By default these values are computer between 0 and 1. We can change
+this by specifying additional inputs (or arguments) to the function:
+
+```{r}
+runif(10, min = 5, max = 10)
+```
+
+These inputs, `min` and `max`, have default values (0 and 1, respectively)
+so we do not need to specify them. Note that we can also call the same
+function as above without naming the arguments, it is just harder to read:
+
+```{r}
+runif(10, 5, 10)
+```
+
+There are thousands of functions in R; we will cover only a small set
+of them in this semester. If you want to kn
 
 ### Code files
 
@@ -112,9 +105,8 @@ will see something like this:
 Try typing the code we had before in the editor:
 
 ```{r}
-happy <- happy + 5
-hundred <- seq_len(happy)
-hundred
+sin(0.5)
+runif(10, min = 5, max = 10)
 ```
 
 To run these lines, highlight them all and hit the run button on the top of
@@ -157,26 +149,44 @@ births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pa
 ```
 
 This is loading a dataset showing the number of children born in London on
-an annual basis, separated by their sex. Interactively in RStudio, you can see
-the data by clicking on the table in the upper right-hand corner. **What years
-are included in the study?**
+an annual basis, separated by their sex. The `<-` symbol has saved this dataset
+as an object called `births`. Notice that it appears in the environment pane in
+the upper right-hand corner of the plot.
 
+Interactively in RStudio, you can see the data by clicking on the table in the
+upper right-hand corner. **What years are included in the study?**
 
-Now will load the **ggplot2** package and the `qplot` function to produce a
-scatter plot. Again, just copy this for now. We will go into the mechanics
-more fully in the next few classes:
+To access a particular variable within R, take the name of the dataset.
+follow it by the `$` and the name of the variable:
+
+```{r}
+births$girls
+```
+
+We can then use this as an input to a function, such as the function `mean`:
+
+```{r}
+mean(births$girls)
+```
+
+To get the average number of girls born each year of the course of the dataset.
+
+### Visualization
+
+Now will load the **ggplot2** package to produce a plot. Again, just
+copy this for now. We will go into the mechanics more fully next week:
 
 ```{r}
 library(ggplot2)
-qplot(births$year, births$total)
+ggplot(births, aes(year, total)) +
+  geom_line()
 ```
 
 You should see a plot of the data show up in the bottom right. You can click
 on the magnification symbol to make the plot larger. How would you describe
 the pattern here?
 
-Finally, let's use one more package function to create an interactive
-plot:
+Finally, let's use one more package function to create an interactive plot:
 
 ```{r, message=FALSE}
 library(plotly)
@@ -199,7 +209,10 @@ the first week using interactive websites built for a particular dataset.
 
 ### Assignment
 
-I have posted notes on the website, called **Class 00**, for installing R,
+I have posted a file called `lab03.R` (Note: lab numbers correspond to the class
+number). Open this in R and follow the instructions. 
+
+I have also posted notes on the website, called **Class 00**, for installing R,
 RStudio and all of the required packages on your own machine. If you plan on
 using your own computer in this course, which I highly recommend (you'll need
 to write all of the projects using RStudio), please follow this instructions

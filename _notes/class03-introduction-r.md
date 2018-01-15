@@ -11,7 +11,7 @@ output: html_notebook
 ## R Basics
 
 The notes here establish the most basic aspects of using
-R. You will understand the basic components of R studio,
+R. You will understand the components of R studio,
 how to create and access variables in R, how to apply simple
 functions, how to load R packages, and how to read in a CSV
 dataset. Make sure you understand these notes very well for
@@ -42,83 +42,79 @@ console:
 ## [1] 6
 {% endhighlight %}
 
-As in other programming languages, you can store values into an
-object called a variable. The variable can then be accessed and
-manipulated by its name. To assign a variable in R use an arrow
-`<-`. Here we will assign the number 95 to the variable called
-`happy`:
-
-
-{% highlight r %}
-happy <- 95
-{% endhighlight %}
-
-Run this. Notice that the variable `happy` show up in the environment box in
-the upper left-hand corner. We can then add one to the variable and see the
-output
-
-
-{% highlight r %}
-happy + 1
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] 96
-{% endhighlight %}
-
-Notice that this **does not** change the variable `happy`. The variable is
-still equal to `95`, not `96`. To change the variable we have to re-assign a
-new value to happy. So, to make `happy` equal to 100 we could do this:
-
-
-{% highlight r %}
-happy <- happy + 5
-happy
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] 100
-{% endhighlight %}
-
-This behavior, that functions do not change variables unless we
-redefine the variable using `<-`, is ubiquitous in R.
+We will now see how to do more complex calculations using functions.
 
 ### Functions
 
-In R, we can apply what are known as functions in order to do things
-to the variables and data present in the current environment. For
-example, the function `seq_len` takes a single number and create a
-sequence of the integers from 1 to that number:
+In R, we can apply functions to values and datasets. These range for
+very simple cases, such as trigonometric functions mimicking those of
+high-school mathematics courses, to very complex modelling functions
+that can take years to fully understand.
+
+To apply a function, we use the convention you have probably seen in
+an algebra or calculus class:
 
 
 {% highlight r %}
-seq_len(happy)
+sin(0.5)
 {% endhighlight %}
 
 
 
 {% highlight text %}
-##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
-##  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
-##  [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
-##  [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
-##  [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
-##  [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
+## [1] 0.4794255
 {% endhighlight %}
 
-Note that this is exactly the same as calling `seq_len(95)`. We can save the
-output as a variable as well using (once again) the arrow operator:
+Running this code computes the sine of the value `0.5`. Functions
+that work similarly include `tan` and `sqrt`. The function `runif`
+returns a number of randomly chosen values on an interval. The first
+input to the function tells R how many values to return:
 
 
 {% highlight r %}
-hundred <- seq_len(happy)
+runif(10)
 {% endhighlight %}
 
-We will cover more details about R functions in the upcoming classes.
+
+
+{% highlight text %}
+##  [1] 0.1919877 0.9048163 0.4360245 0.5563414 0.1771601 0.5139584 0.5694975
+##  [8] 0.8655054 0.9610985 0.8481033
+{% endhighlight %}
+
+By default these values are computer between 0 and 1. We can change
+this by specifying additional inputs (or arguments) to the function:
+
+
+{% highlight r %}
+runif(10, min = 5, max = 10)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##  [1] 8.134408 9.831230 8.682582 7.629209 6.266051 6.057745 8.250404
+##  [8] 9.253535 8.488865 6.400520
+{% endhighlight %}
+
+These inputs, `min` and `max`, have default values (0 and 1, respectively)
+so we do not need to specify them. Note that we can also call the same
+function as above without naming the arguments, it is just harder to read:
+
+
+{% highlight r %}
+runif(10, 5, 10)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##  [1] 5.826240 8.143826 5.633262 9.132376 6.545283 9.696840 5.896738
+##  [8] 8.237813 5.606390 7.792904
+{% endhighlight %}
+
+There are thousands of functions in R; we will cover only a small set
+of them in this semester. If you want to kn
 
 ### Code files
 
@@ -135,21 +131,26 @@ Try typing the code we had before in the editor:
 
 
 {% highlight r %}
-happy <- happy + 5
-hundred <- seq_len(happy)
-hundred
+sin(0.5)
 {% endhighlight %}
 
 
 
 {% highlight text %}
-##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
-##  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
-##  [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
-##  [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
-##  [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
-##  [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100 101 102
-## [103] 103 104 105
+## [1] 0.4794255
+{% endhighlight %}
+
+
+
+{% highlight r %}
+runif(10, min = 5, max = 10)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##  [1] 6.493070 6.314060 9.860064 7.254032 7.592583 7.095110 7.494942
+##  [8] 9.196885 6.902607 9.553970
 {% endhighlight %}
 
 To run these lines, highlight them all and hit the run button on the top of
@@ -208,29 +209,66 @@ births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pa
 {% endhighlight %}
 
 This is loading a dataset showing the number of children born in London on
-an annual basis, separated by their sex. Interactively in RStudio, you can see
-the data by clicking on the table in the upper right-hand corner. **What years
-are included in the study?**
+an annual basis, separated by their sex. The `<-` symbol has saved this dataset
+as an object called `births`. Notice that it appears in the environment pane in
+the upper right-hand corner of the plot.
+
+Interactively in RStudio, you can see the data by clicking on the table in the
+upper right-hand corner. **What years are included in the study?**
+
+To access a particular variable within R, take the name of the dataset.
+follow it by the `$` and the name of the variable:
 
 
-Now will load the **ggplot2** package and the `qplot` function to produce a
-scatter plot. Again, just copy this for now. We will go into the mechanics
-more fully in the next few classes:
+{% highlight r %}
+births$girls
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##  [1] 4683 4457 4102 4590 4839 4820 4928 4605 4457 4952 4784 5332 5200 4910
+## [15] 4617 3997 3919 3395 3536 3181 2746 2722 2840 2908 2959 3179 3349 3382
+## [29] 3289 3013 2781 3247 4107 4803 4881 5681 4858 4319 5322 5560 5829 5719
+## [43] 6061 6120 5822 5738 5717 5847 6203 6033 6041 6299 6533 6744 7158 7127
+## [57] 7246 7119 7214 7101 7167 7302 7392 7316 7483 6647 6713 7229 7767 7626
+## [71] 7452 7061 7514 7656 7683 5738 7779 7417 7687 7623 7380 7288
+{% endhighlight %}
+
+We can then use this as an input to a function, such as the function `mean`:
+
+
+{% highlight r %}
+mean(births$girls)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 5534.646
+{% endhighlight %}
+
+To get the average number of girls born each year of the course of the dataset.
+
+### Visualization
+
+Now will load the **ggplot2** package to produce a plot. Again, just
+copy this for now. We will go into the mechanics more fully next week:
 
 
 {% highlight r %}
 library(ggplot2)
-qplot(births$year, births$total)
+ggplot(births, aes(year, total)) +
+  geom_line()
 {% endhighlight %}
 
-<img src="../assets/class05-introduction/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="100%" />
+<img src="../assets/class05-introduction/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
 
 You should see a plot of the data show up in the bottom right. You can click
 on the magnification symbol to make the plot larger. How would you describe
 the pattern here?
 
-Finally, let's use one more package function to create an interactive
-plot:
+Finally, let's use one more package function to create an interactive plot:
 
 
 {% highlight r %}
@@ -238,7 +276,11 @@ library(plotly)
 ggplotly()
 {% endhighlight %}
 
-<img src="../assets/class05-introduction/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" />
+
+
+{% highlight text %}
+## Error in loadNamespace(name): there is no package called 'webshot'
+{% endhighlight %}
 
 By default, this function will make whatever the last plot you created
 interactive (you can also zoom into this one as well). You can't see it here,
@@ -256,7 +298,10 @@ the first week using interactive websites built for a particular dataset.
 
 ### Assignment
 
-I have posted notes on the website, called **Class 00**, for installing R,
+I have posted a file called `lab03.R` (Note: lab numbers correspond to the class
+number). Open this in R and follow the instructions. 
+
+I have also posted notes on the website, called **Class 00**, for installing R,
 RStudio and all of the required packages on your own machine. If you plan on
 using your own computer in this course, which I highly recommend (you'll need
 to write all of the projects using RStudio), please follow this instructions

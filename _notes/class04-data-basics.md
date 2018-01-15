@@ -4,30 +4,65 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = TRUE)
-knitr::opts_chunk$set(fig.path = "../assets/class06-data-basics/")
-knitr::opts_chunk$set(fig.height = 5)
-knitr::opts_chunk$set(fig.width = 8.5)
-knitr::opts_chunk$set(out.width = "100%")
-knitr::opts_chunk$set(dpi = 300)
-```
+
 
 ### Tabular data formats
 
 In this course we will store data in a tabular format.
 These tables will have **observations** stored in rows and
-**variables** stored in columns. So, each row represents a
+**variables** stored in columns. The individual elements are
+called **values**. So, each row represents a
 particular object in our dataset and each column represents
 some feature of the objects.
 
+![](../assets/img/tidy-1.png)
+
 Let's look at the births dataset again from last time:
 
-```{r}
+
+{% highlight r %}
 library(readr)
 births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Parsed with column specification:
+## cols(
+##   head_of_state = col_character(),
+##   year = col_integer(),
+##   boys = col_integer(),
+##   girls = col_integer(),
+##   total = col_integer(),
+##   boy_to_girl_ratio = col_double()
+## )
+{% endhighlight %}
+
+
+
+{% highlight r %}
 births
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 82 x 6
+##    head_of_state  year  boys girls total boy_to_girl_ratio
+##            <chr> <int> <int> <int> <int>             <dbl>
+##  1     Charles I  1629  5218  4683  9901             1.114
+##  2     Charles I  1630  4858  4457  9315             1.090
+##  3     Charles I  1631  4422  4102  8524             1.078
+##  4     Charles I  1632  4994  4590  9584             1.088
+##  5     Charles I  1633  5158  4839  9997             1.066
+##  6     Charles I  1634  5035  4820  9855             1.045
+##  7     Charles I  1635  5106  4928 10034             1.036
+##  8     Charles I  1636  4917  4605  9522             1.068
+##  9     Charles I  1637  4703  4457  9160             1.055
+## 10     Charles I  1638  5359  4952 10311             1.082
+## # ... with 72 more rows
+{% endhighlight %}
 
 The observations here are *years* and the variables are: `head_of_state`,
 `year`, `boys`, `girls`, `total`, and `boy_to_girl_ratio`. Each variable
@@ -94,17 +129,25 @@ Once we have collectively downloaded the file `fav_restaurants.csv`, place it
 someone on your computer's Desktop. To read the file in using the computers
 in the lab, you will need to run the following command:
 
-```{r, eval = FALSE}
+
+{% highlight r %}
 food <- read_csv("C:\\Users\\Public\\Desktop\fav_restaurants.csv")
-```
+{% endhighlight %}
 
 Notice that I have called it something short but memorable to make it easier
 to write code about the dataset. If you are later doing this on MacOS, try
 this instead:
 
-```{r}
+
+{% highlight r %}
 food <- read_csv("~/Desktop/fav_restaurants.csv")
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error: '~/Desktop/fav_restaurants.csv' does not exist.
+{% endhighlight %}
 
 That should work on any Mac. If you have a windows computer with a different
 set-up, you may need a slightly different path. I am happy to assist with this
@@ -115,22 +158,27 @@ when we start working on the projects.
 Recall that we can create plots with the `qplot` function from the **ggplot2**
 package. Specifically, we use something like this:
 
-```{r, eval = FALSE}
-qplot(food$cuisine)
-```
+
+{% highlight r %}
+ggplot(food, aes(cuisine)) +
+  geom_bar()
+{% endhighlight %}
 
 To get a bar plot of the cuisine types. Or,
 
-```{r, eval = FALSE}
-qplot(food$year, food$cost)
-```
+
+{% highlight r %}
+ggplot(food, aes(year, cost)) +
+  geom_point()
+{% endhighlight %}
 
 For a scatter plot of how often you visit each year and the average cost.
-Are there any surprises in using these commands to create plots? Depending on
-the class, we may notice several inconsistencies. We will address these next
-week as we talk about data schema.
+Are there any surprises in using these commands to create plots? 
 
 ### Assignment
+
+I have posted a file called `lab04.R`. Open this in R, follow the instructions,
+and complete for the next class.
 
 For next class, please just come prepared for the next assessment. Note that
 this one will require you to be able to write R code from memory, an important
