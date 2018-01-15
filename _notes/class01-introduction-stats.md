@@ -167,8 +167,9 @@ please consult me before turning in an assignment.
 - **Special approval:** If you have special approval forms for extra
 time on exams or any other circumstances I should know about, please speak
 with me as early as possible so that we can best accommodate your needs.
-- **Late work:** You are expected to submit all work on-time. Late
-reports will not be considered; always hand in something even if it is not perfect.
+- **Late work:** You are expected to submit all work on-time. Late reports
+will be accepted after the due date with a full letter grade deduction for each
+24 hour period it is late (rounded up).
 - **Attendance:** You are expected to both attend and participate in most
 class meetings. If you must be absent due to illness or other pressing
 need, please let me know by email as soon as possible. A habit of arriving
@@ -213,7 +214,7 @@ know the field very well. The comments by David Madigan and Andrew Gelman
 (Columbia) and Deborah Nolan and Duncan Temple Lang (Berkley and UC Davis),
 in contrast, are addressed to a more generalist audience:
 
-[What is Statistics (Comments)](../assets/pdfs/what-is-statistics.pdf)
+[What is Statistics (Comments)](../assets/pdfs/what-is-statistics-sub.pdf)
 
 These comments establish the modern call of statistics. Some of the
 exact examples may not be familiar; just skim what you can and try to
