@@ -54,9 +54,11 @@ about 3 people and assigned one of these datasets.
 - [Visualizing MBTA Data](http://mbtaviz.github.io/)
 - [The Wizards’ shooting stars](http://www.washingtonpost.com/wp-srv/special/sports/wizards-shooting-stars/)
 - [The Voting Habits of Americans Like You](https://www.nytimes.com/interactive/2016/06/10/upshot/voting-habits.html)
-- [The Rythm of Food](http://rhythm-of-food.net/#explore)
+- [The Rhythm of Food](http://rhythm-of-food.net/#explore)
 - [Executive Abroad](https://dsl.richmond.edu/panorama/executiveabroad/)
 - [Foreign Born Population (1850-2000)](https://dsl.richmond.edu/panorama/foreignborn/)
+- [#SOTU2014: See the State of The Union address minute by minute on Twitter](http://twitter.github.io/interactive/sotu2014/#p1)
+- [A Map of Baseball Nation](https://www.nytimes.com/interactive/2014/04/24/upshot/facebook-baseball-map.html)
 
 Spend about 15 minutes playing around with the visualization and
 understanding the data within it. Then, pull out 1-2 of the most
