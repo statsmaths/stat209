@@ -7,9 +7,10 @@ output: html_notebook
 
 
 Exploratory data analysis (EDA) is the process of trying to
-understand a dataset without a particular agenda at stake.
-It is a very important aspect of data analysis and will contribute
-a large part of what we work on this semester.
+understand what a dataset can tell us outside of a narrowly focused
+probability statement. It relies heavily on graphical devices and summary
+statistics. EDA is a very important aspect of data analysis and will
+contribute a large part of what we work on this semester.
 
 ### Today
 
