@@ -82,8 +82,7 @@ visualizations:
 
 1. What is the source of the data?
 2. What types of visualizations are being used?
-3. What is an argument made by the visualization?
-4. What are 2-3 interesting observations you found in the dataset?
+3. What are 2-3 interesting observations you found in the dataset?
 
 I'll answer these for the Forced Migration dataset, then let you work on these
 questions in small groups.
