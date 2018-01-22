@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taylor Arnold - STAT 209</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Last class we looked at how we can explore data to uncover
+interesting patterns and examples. Today we take this one
+step further by investigating how the results of these
+exploratory analyses can actually be used to make broader
+claims.
+
+" />
+    <meta property="og:description" content="Last class we looked at how we can explore data to uncover
+interesting patterns and examples. Today we take this one
+step further by investigating how the results of these
+exploratory analyses can actually be used to make broader
+claims.
+
+" />
+    
+    <meta name="author" content="Taylor Arnold" />
+
+    
+    <meta property="og:title" content="Statistical Evidence" />
+    <meta property="twitter:title" content="Statistical Evidence" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/stat209/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Taylor Arnold - Assistant Professor of Statistics, University of Richmond" href="/stat209/feed.xml" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/stat209/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/stat209/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/stat209/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/stat209/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/stat209/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/stat209/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/stat209/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/stat209/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/stat209/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/stat209/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/stat209/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/stat209/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/stat209/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/stat209/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/stat209/" class="site-avatar"><img src="https://avatars3.githubusercontent.com/u/5752184?v=3&s=460" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://statsmaths.github.io/">Taylor Arnold</a></h1>
+            <p class="site-description">Assistant Professor of Statistics, University of Richmond</p>
+          </div>
+
+          <nav>
+            <a href="https://statsmaths.github.io/courses/">Courses</a>
+            <a href="https://statsmaths.github.io/blog/">Blog</a>
+            <a href="https://statsmaths.github.io/research/">Research</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Statistical Evidence</h1>
+
+  <div class="entry">
+    <p>Last class we looked at how we can explore data to uncover
+interesting patterns and examples. Today we take this one
+step further by investigating how the results of these
+exploratory analyses can actually be used to make broader
+claims.</p>
+
+<h2 id="rhetorical-persuasion">Rhetorical Persuasion</h2>
+
+<p>Before we begin, let’s briefly refresh ourselves of what
+exactly it means to <em>make an argument</em>, as obvious as that
+may at first sound. Formally, we are talking about the
+concept of <strong>Rhetoric</strong>, defined as:</p>
+
+<blockquote>
+  <p>Rhetoric is the art of discourse, wherein a writer or
+speaker strives to inform, persuade or motivate particular
+audiences in specific situations</p>
+</blockquote>
+
+<p>Hold on for a second here, because we are going to briefly
+dip into some philosophy (and not for the only time this
+semester). There is extensive research on the meaning and
+content of exactly what constitute Rhetoric; most would
+agree, though, that the concept was first formalized by
+Aristotle’s incredibly influential text <em>Rhetoric</em>.</p>
+
+<p>To Aristotle, there are three primary ways of making an
+argument:</p>
+
+<ol>
+  <li><em>appeal to character (ethos; ἦθος)</em>: claims are
+believed primarily because we trust the speaker on the
+matter and hand. This requires that they (i) have a practical
+understanding of the subject, (ii) are a ‘virtuous character’,
+and (iii) they harbor some degree of good will towards their
+audience.</li>
+  <li><em>appeal to emotion (pathos; πάθος)</em>: claims are believed
+because the audience is brought to a certain emotional state.</li>
+  <li><em>appeal to argument (logos; λόγος)</em>: claims are believed
+by the use of some logical statement and statements.</li>
+</ol>
+
+<p>Good written and oral arguments often draw from one or more
+of these methods. When I teach, for example, I draw from both
+ethos and logos. Data — through visualizations, summary statistics,
+and models — is primarily used for appeals to logos. Of course,
+they may also factor indirectly to establish appeals to character
+or appeals to emotion.</p>
+
+<p><strong>Describe an example of where you have recently used each of
+these methods to make an argument.</strong></p>
+
+<h2 id="thesis-statement">Thesis Statement</h2>
+
+<p>You have certainly heard of a thesis statement, but may struggle
+to formally define what it is. A thesis statement:</p>
+
+<blockquote>
+  <p>offers a concise summary of the main point or claim of the essay,
+research paper</p>
+</blockquote>
+
+<p>A hypothesis, which is not the same concept, is:</p>
+
+<blockquote>
+  <p>a supposition or proposed explanation made on the basis of
+limited evidence as a starting point for further investigation</p>
+</blockquote>
+
+<p>That is, a hypothesis is a fixed explanation of something. A
+thesis is a particular rhetorical element that exists within a
+document or speech and is intended for a particular audience.
+If you are designing an experiment or collecting data, you will
+have a hypothesis. When you are writing a paper or giving a
+presentation you will have a thesis (and that thesis may help to
+confirm or contradict a prior hypothesis).</p>
+
+<h2 id="types-of-argumentation">Types of Argumentation</h2>
+
+<p>Within logos, there are two subtypes of arguments that
+have a place in making arguments from data. These are:</p>
+
+<ul>
+  <li><strong>deductive reasoning</strong></li>
+  <li><strong>inductive reasoning</strong></li>
+</ul>
+
+<p>In deductive reasoning we start with general assumptions and
+show that certain conclusions logically follow from them. A
+classic example is:</p>
+
+<blockquote>
+  <p>Socrates is a man. All men are mortal. Therefore, Socrates is
+mortal.</p>
+</blockquote>
+
+<p>If the assumptions of this statement (first two sentences) are
+true, the conclusions <strong>must</strong> be true.</p>
+
+<p>Inductive reasoning, in contrast, builds a conclusion by inferring
+based on patterns seen in particular examples. For instance:</p>
+
+<blockquote>
+  <p>I have taught a total of 700 students over the past 5 years. I
+enjoyed teaching all 700 of them. Therefore, I enjoy teaching all
+students.</p>
+</blockquote>
+
+<p>While the data provides strong evidence for the conclusion, it does
+not guarantee its validity even if the assumptions and logic is
+infallible.</p>
+
+<h2 id="data-driven-logical-arguments">Data-Driven Logical Arguments</h2>
+
+<p>Deductive reasoning occurs in statistics when some of our
+facts (assumptions) are derived from an analysis of a dataset.
+Generally this occurs when we are drawing data from a particular
+population. For example, say we are looking at election results
+from every county in the United States. The following is a
+deductive argument:</p>
+
+<blockquote>
+  <p>A presidential candidate that has more than 270 electoral votes
+wins the election (assumption). Candidate A had 300 elector votes
+in 2020 (assumption derived from data). Therefore, candidate A
+won the election.</p>
+</blockquote>
+
+<p>Notice that often not <strong>all</strong> facts are derived from data, but
+often some of them are. Inductive reasoning usually occurs in
+statistics when sampling from a larger population or observing a
+random process. For example:</p>
+
+<blockquote>
+  <p>Only 1 of the 1000 patients injected with the vaccine had serious
+side-effects. Therefore, the vaccine is safe for distribution.</p>
+</blockquote>
+
+<p>While inductive reasoning is more traditionally associated with
+statistics, the deductive case is quite common in both industry
+and academia.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>Okay, enough theory. Let’s look at some actual data-drive arguments.
+Below are ten articles from the website FiveThirtyEight. I tried to
+grab articles that covered a good range of topics (Politics, Economics,
+Sports, Media, and Science).</p>
+
+<ul>
+  <li><a href="https://fivethirtyeight.com/features/oscars-diversity-hollywood-ad-campaign/">Hollywood Studios Barely Promoted Non-White Actors And Films</a></li>
+  <li><a href="https://fivethirtyeight.com/features/the-minimum-wage-movement-is-leaving-tipped-workers-behind/">The Minimum Wage Movement is Learning Tipped Workers Behind</a></li>
+  <li><a href="http://fivethirtyeight.com/features/universal-basic-income/">What Would Happen If We Just Gave People Money?</a></li>
+  <li><a href="https://fivethirtyeight.com/features/what-went-wrong-in-flint-water-crisis-michigan/">What Went From in the Flight Water Crisis in Michigan</a> (Just read Part I)</li>
+  <li><a href="https://fivethirtyeight.com/features/shut-up-about-harvard/">Shut Up About Harvard</a></li>
+  <li><a href="http://fivethirtyeight.com/features/how-trumps-supreme-court-could-overturn-roe-v-wade-without-overturning-it/">How Trump’s Supreme Court Could Overturn Roe v. Wade Without Overturning It</a></li>
+  <li><a href="http://fivethirtyeight.com/features/tom-brady-doesnt-need-gronk-or-moss-or-welker-to-win/">Tom Brady Doesn’t Need Gronk or Moss or Welker to Win</a></li>
+  <li><a href="http://fivethirtyeight.com/features/a-plagiarism-scandal-is-unfolding-in-the-crossword-world/">A Plagiarism Scandal Is Unfolding In The Crossword World</a></li>
+  <li><a href="https://fivethirtyeight.com/features/the-chris-paul-conundrum/">The Chris Paul Conundrum</a></li>
+  <li><a href="http://fivethirtyeight.com/features/under-a-new-system-clinton-could-have-won-the-popular-vote-by-5-points-and-still-lost/">Under a New System Clinton Could Have Won the Popular Vote by 5 Points and Still Lost</a></li>
+</ul>
+
+<p>We will work in groups to read one of these (I recommend looking at
+a few more outside of class as well). For each article answer these
+questions:</p>
+
+<ol>
+  <li>what types of logic (logos, pathos, ethos; inductive or deductive) are
+used in the piece</li>
+  <li>is there an explicit thesis statement in the article? if so, what is it?
+if not, what do you think the implicit thesis statement is?</li>
+  <li>how many graphics and tables are included in the article?</li>
+  <li>how are the graphics or tables used in constructing an argument in the article?</li>
+  <li>where in the article do the graphics or tables come into play</li>
+  <li>what is the audience of the article? all college educated Americans?
+sports fans? general audiences? Democrats/Republicans?</li>
+</ol>
+
+<p>We’ll take some time to look at these and then regroup as a class.</p>
+
+<h2 id="hybrid-approach-in-statistics">Hybrid Approach in Statistics</h2>
+
+<p>Often, in an analysis of data I have observed a hybrid approach.
+Namely, deductive reasoning is used to draw concrete conclusions
+from data. These conclusions are then used as part of a larger
+inductive reasoning.</p>
+
+<p>For example, assume that you are a statistician working for a large
+company and analyzing financial data. Using the data, you may
+confirm that the company has increased year-over-year profits by
+232% (by deductive reasoning). From this evidence, the company
+decided to proceed with an IPO (by inductive reasoning).</p>
+
+<p>Furthermore, these two logical approaches are also blended with
+aspects of ethos and pathos. These can occur in non-obvious ways.
+For example, I may draw on my own authority as a Ph.D. statistician
+to assert that a particular model is appropriate to apply in a given
+situation. This model is then used to establish a thesis by inductive
+reason that plays on the audience’s emotions.</p>
+
+<h3 id="assignment">Assignment</h3>
+
+<p>For next class, please find a news article that includes statistical
+arguments. This can be a simple plot, map, or table of data. Anything
+in which there is a representation of data along with a larger text
+that uses the data in some way. We will use these in class next week.</p>
+
+
+  </div>
+</article>
+
+    </div>
+  </body>
+
+  <footer>
+  </footer>
+</html>

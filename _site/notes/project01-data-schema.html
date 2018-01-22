@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taylor Arnold - STAT 209</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Due: 2018-01-13 (start of class)
+
+" />
+    <meta property="og:description" content="Due: 2018-01-13 (start of class)
+
+" />
+    
+    <meta name="author" content="Taylor Arnold" />
+
+    
+    <meta property="og:title" content="Project 01: Data Schema with Collected Data" />
+    <meta property="twitter:title" content="Project 01: Data Schema with Collected Data" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/stat209/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Taylor Arnold - Assistant Professor of Statistics, University of Richmond" href="/stat209/feed.xml" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/stat209/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/stat209/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/stat209/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/stat209/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/stat209/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/stat209/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/stat209/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/stat209/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/stat209/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/stat209/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/stat209/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/stat209/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/stat209/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/stat209/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/stat209/" class="site-avatar"><img src="https://avatars3.githubusercontent.com/u/5752184?v=3&s=460" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://statsmaths.github.io/">Taylor Arnold</a></h1>
+            <p class="site-description">Assistant Professor of Statistics, University of Richmond</p>
+          </div>
+
+          <nav>
+            <a href="https://statsmaths.github.io/courses/">Courses</a>
+            <a href="https://statsmaths.github.io/blog/">Blog</a>
+            <a href="https://statsmaths.github.io/research/">Research</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Project 01: Data Schema with Collected Data</h1>
+
+  <div class="entry">
+    <p><strong>Due</strong>: 2018-01-13 (start of class)</p>
+
+<p><strong>Starter code</strong>: <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project01.Rmd">project01.Rmd</a></p>
+
+<p><strong>Rubric</strong>: <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/projects/rubic_project01.pdf">rubic_project01.pdf</a></p>
+
+<p>The overarching goal of the first project is to collect a
+data set, produce a data schema, and provide a basic
+exploration of the variables from your data.</p>
+
+<p>The first step is to decide what data set you would like to
+collect. Your data set should follow these rules:</p>
+
+<ul>
+  <li>at least 75 observations</li>
+  <li>at least 5 variables, with:
+    <ul>
+      <li>at least 2 numeric variables (time counts as a numeric variable)</li>
+      <li>at least one character variable of categories</li>
+      <li>at least one variable that you physically collect yourself</li>
+    </ul>
+  </li>
+  <li>be uploaded to GitHub as a csv file along with your report</li>
+</ul>
+
+<p>This is a chance to do something creative. Here are just a
+few suggestions:</p>
+
+<ul>
+  <li>pick a favorite magazine and collect data about the ads:
+what pages are they on; what’s the product; how many words are
+there; how many people are in the ad (ect).</li>
+  <li>sit on a bench somewhere during a busy time of day and count
+how many people walk in two minute intervals in each direction
+past you; create a categorical flag for whether someone asks
+what you’re doing</li>
+  <li>make a dataset with one observation for various family and
+friends; record the last date you saw each person; give each
+person a score from 1 to 10 for how much you like them</li>
+  <li>watch TV for a few hours and collect data about the ads:
+product in question; time of the ad; length of the add (ect.)</li>
+  <li>make a desperate plea on social media for data (hopefully you
+have more than 75 friends); append a column for how well you
+know each person</li>
+</ul>
+
+<p>You’re not restricted to these ideas. In fact, I encourage you
+to find other interesting things to discover. For details on
+the format of the report and how it will be graded, please see
+the rubric and starter code.</p>
+
+
+  </div>
+</article>
+
+    </div>
+  </body>
+
+  <footer>
+  </footer>
+</html>

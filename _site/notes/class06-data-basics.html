@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taylor Arnold - STAT 209</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Tabular data formats
+
+" />
+    <meta property="og:description" content="Tabular data formats
+
+" />
+    
+    <meta name="author" content="Taylor Arnold" />
+
+    
+    <meta property="og:title" content="Data Basics" />
+    <meta property="twitter:title" content="Data Basics" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/stat209/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Taylor Arnold - Assistant Professor of Statistics, University of Richmond" href="/stat209/feed.xml" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/stat209/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/stat209/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/stat209/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/stat209/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/stat209/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/stat209/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/stat209/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/stat209/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/stat209/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/stat209/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/stat209/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/stat209/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/stat209/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/stat209/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/stat209/" class="site-avatar"><img src="https://avatars3.githubusercontent.com/u/5752184?v=3&s=460" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://statsmaths.github.io/">Taylor Arnold</a></h1>
+            <p class="site-description">Assistant Professor of Statistics, University of Richmond</p>
+          </div>
+
+          <nav>
+            <a href="https://statsmaths.github.io/courses/">Courses</a>
+            <a href="https://statsmaths.github.io/blog/">Blog</a>
+            <a href="https://statsmaths.github.io/research/">Research</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Data Basics</h1>
+
+  <div class="entry">
+    <h3 id="tabular-data-formats">Tabular data formats</h3>
+
+<p>In this course we will store data in a tabular format.
+These tables will have <strong>observations</strong> stored in rows and
+<strong>variables</strong> stored in columns. So, each row represents a
+particular object in our dataset and each column represents
+some feature of the objects.</p>
+
+<p>Let’s look at the births dataset again from last time:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span><span class="w">
+</span><span class="n">births</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv"</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## Parsed with column specification:
+## cols(
+##   head_of_state = col_character(),
+##   year = col_integer(),
+##   boys = col_integer(),
+##   girls = col_integer(),
+##   total = col_integer(),
+##   boy_to_girl_ratio = col_double()
+## )</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">births</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## # A tibble: 82 x 6
+##    head_of_state  year  boys girls total boy_to_girl_ratio
+##            &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;             &lt;dbl&gt;
+##  1     Charles I  1629  5218  4683  9901             1.114
+##  2     Charles I  1630  4858  4457  9315             1.090
+##  3     Charles I  1631  4422  4102  8524             1.078
+##  4     Charles I  1632  4994  4590  9584             1.088
+##  5     Charles I  1633  5158  4839  9997             1.066
+##  6     Charles I  1634  5035  4820  9855             1.045
+##  7     Charles I  1635  5106  4928 10034             1.036
+##  8     Charles I  1636  4917  4605  9522             1.068
+##  9     Charles I  1637  4703  4457  9160             1.055
+## 10     Charles I  1638  5359  4952 10311             1.082
+## # ... with 72 more rows</code></pre></figure>
+
+<p>The observations here are <em>years</em> and the variables are: <code class="highlighter-rouge">head_of_state</code>,
+<code class="highlighter-rouge">year</code>, <code class="highlighter-rouge">boys</code>, <code class="highlighter-rouge">girls</code>, <code class="highlighter-rouge">total</code>, and <code class="highlighter-rouge">boy_to_girl_ratio</code>. Each variable
+measures something about a given observation. What exactly
+constitutes a row of the data is called a <strong>unit of analysis</strong>.
+Keeping in mind what the unit of analysis is will be very
+important as we think about how data is being used.</p>
+
+<h3 id="comma-separated-values">Comma separated values</h3>
+
+<p>The type of R object that stores such a dataset is called a
+<strong>data frame</strong>. Data frames store tabular data for us within R. We also
+need a way to store tabular data as a file. One option would be to store
+data as Google sheets or Excel file. While these programs are
+great for data input, it is not a good idea to store raw data in
+these formats. Instead, we want a minimal <strong>plain text</strong> format.
+That is, the file should be readable by any basic text editor.</p>
+
+<p>The plan text data format that we will use is called a
+<strong>comma-separated values</strong> or CSV file. In this format, each
+column of the data is (as the name suggests) separated by a
+comma. Every observation is stored on its own row. The first
+row gives the names of the columns. Here are what the first few
+rows of the births dataset look like stored as a CSV file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>head_of_state,year,boys,girls,total,boy_to_girl_ratio
+Charles I,1629,5218,4683,9901,1.114
+Charles I,1630,4858,4457,9315,1.09
+Charles I,1631,4422,4102,8524,1.078
+Charles I,1632,4994,4590,9584,1.088
+Charles I,1633,5158,4839,9997,1.066
+Charles I,1634,5035,4820,9855,1.045
+</code></pre></div></div>
+
+<p>A CSV file can be created and read by R, Excel, GoogeSheets,
+OpenOffice, and most other data processing and statistical tools.
+It is one of the most common formats that you will see data stored
+as online. By convention, a CSV file has the extension “.csv”.</p>
+
+<p>As we have seen, we can read a dataset using the <code class="highlighter-rouge">read_csv</code> function. The
+function either takes a URL, as we have above, or a path to the file on your
+computer. We will test out the second example now.</p>
+
+<h3 id="activity-data-creation">Activity: Data creation</h3>
+
+<p>We are now going to collect some data as a class. Specifically, you will each
+record information about your four favorite restaurants:</p>
+
+<ul>
+  <li>name of the restaurant</li>
+  <li>location</li>
+  <li>cuisine</li>
+  <li>favorite dish</li>
+  <li>cost of a typical meal per person</li>
+  <li>how many times you visit each year</li>
+  <li>last time that you visited</li>
+</ul>
+
+<p>Let’s start by doing this on the white boards and we will then collect this
+as a class and store it as a CSV file (I’ll explain these steps in person).</p>
+
+<h3 id="reading-in-a-local-file">Reading in a local file</h3>
+
+<p>Once we have collectively downloaded the file <code class="highlighter-rouge">fav_restaurants.csv</code>, place it
+someone on your computer’s Desktop. To read the file in using the computers
+in the lab, you will need to run the following command:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">food</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"C:\\Users\\Public\\Desktop\fav_restaurants.csv"</span><span class="p">)</span></code></pre></figure>
+
+<p>Notice that I have called it something short but memorable to make it easier
+to write code about the dataset. If you are later doing this on MacOS, try
+this instead:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">food</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"~/Desktop/fav_restaurants.csv"</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## Error: '~/Desktop/fav_restaurants.csv' does not exist.</code></pre></figure>
+
+<p>That should work on any Mac. If you have a windows computer with a different
+set-up, you may need a slightly different path. I am happy to assist with this
+when we start working on the projects.</p>
+
+<h3 id="simple-plotting-again">Simple plotting, again</h3>
+
+<p>Recall that we can create plots with the <code class="highlighter-rouge">qplot</code> function from the <strong>ggplot2</strong>
+package. Specifically, we use something like this:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">qplot</span><span class="p">(</span><span class="n">food</span><span class="o">$</span><span class="n">cuisine</span><span class="p">)</span></code></pre></figure>
+
+<p>To get a bar plot of the cuisine types. Or,</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">qplot</span><span class="p">(</span><span class="n">food</span><span class="o">$</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">food</span><span class="o">$</span><span class="n">cost</span><span class="p">)</span></code></pre></figure>
+
+<p>For a scatter plot of how often you visit each year and the average cost.
+Are there any surprises in using these commands to create plots? Depending on
+the class, we may notice several inconsistencies. We will address these next
+week as we talk about data schema.</p>
+
+<h3 id="assignment">Assignment</h3>
+
+<p>For next class, please just come prepared for the next assessment. Note that
+this one will require you to be able to write R code from memory, an important
+skill (having to look up every single command stops us from getting in the
+flow of doing exploratory work).</p>
+
+
+  </div>
+</article>
+
+    </div>
+  </body>
+
+  <footer>
+  </footer>
+</html>

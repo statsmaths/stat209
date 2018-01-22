@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taylor Arnold - STAT 209</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="In the last class we discussed at a high level how data can be used in the
+construction of persuasive arguments. In the class before that, we saw how
+exploratory data analysis can be used to understand the patterns within a
+dataset and to extract useful observations, graphics, and summary statistics.
+Today we look at how we can extract information from data through the use of
+predictive statistical models.
+
+" />
+    <meta property="og:description" content="In the last class we discussed at a high level how data can be used in the
+construction of persuasive arguments. In the class before that, we saw how
+exploratory data analysis can be used to understand the patterns within a
+dataset and to extract useful observations, graphics, and summary statistics.
+Today we look at how we can extract information from data through the use of
+predictive statistical models.
+
+" />
+    
+    <meta name="author" content="Taylor Arnold" />
+
+    
+    <meta property="og:title" content="Statistical Modelling" />
+    <meta property="twitter:title" content="Statistical Modelling" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/stat209/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Taylor Arnold - Assistant Professor of Statistics, University of Richmond" href="/stat209/feed.xml" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/stat209/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/stat209/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/stat209/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/stat209/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/stat209/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/stat209/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/stat209/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/stat209/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/stat209/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/stat209/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/stat209/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/stat209/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/stat209/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/stat209/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/stat209/" class="site-avatar"><img src="https://avatars3.githubusercontent.com/u/5752184?v=3&s=460" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://statsmaths.github.io/">Taylor Arnold</a></h1>
+            <p class="site-description">Assistant Professor of Statistics, University of Richmond</p>
+          </div>
+
+          <nav>
+            <a href="https://statsmaths.github.io/courses/">Courses</a>
+            <a href="https://statsmaths.github.io/blog/">Blog</a>
+            <a href="https://statsmaths.github.io/research/">Research</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Statistical Modelling</h1>
+
+  <div class="entry">
+    <p>In the last class we discussed at a high level how data can be used in the
+construction of persuasive arguments. In the class before that, we saw how
+exploratory data analysis can be used to understand the patterns within a
+dataset and to extract useful observations, graphics, and summary statistics.
+Today we look at how we can extract information from data through the use of
+predictive statistical models.</p>
+
+<h2 id="predictive-models">Predictive Models</h2>
+
+<p>FiveThirtyEight also has plenty of examples of predictive models.
+For example, here are several on-going sports and politics links on the site
+that try to predict who will win a given sports game, win a given election, or
+the estimate the current popularity of the president:</p>
+
+<ul>
+  <li><a href="https://projects.fivethirtyeight.com/soccer-predictions/">Club Soccer Predictions</a></li>
+  <li><a href="https://projects.fivethirtyeight.com/2018-nba-predictions/">2017-18 NBA Predictions</a></li>
+  <li><a href="https://projects.fivethirtyeight.com/2017-nfl-predictions/">2017 NFL Predictions</a></li>
+  <li><a href="https://projects.fivethirtyeight.com/congress-generic-ballot-polls/?ex_cid=rrpromo">Are Democrats/Republicans Winning The Race For Congress?</a></li>
+  <li><a href="https://projects.fivethirtyeight.com/trump-approval-ratings/">How (un)popular is Donald Trump?</a></li>
+</ul>
+
+<p>These are continually updated as games are played and polls released. The site
+includes many more such predictive models around US federal elections,
+particularly during presidential elections.</p>
+
+<p>Predictive models can be used as evidence within a persuasive argument just as
+exploratory methods. For some examples, see:</p>
+
+<ul>
+  <li><a href="http://fivethirtyeight.com/features/casey-affleck-and-denzel-washington-are-neck-and-neck-in-the-oscar-race/">Casey Affleck And Denzel Washington Are Neck And Neck In The Oscar Race (Feb. 14, 2017)</a></li>
+  <li><a href="https://fivethirtyeight.com/features/the-virginia-governors-race-might-not-be-predictive-but-it-could-really-matter/">Northam Heads Into Virginia Governor’s Race With A Small Lead (Nov. 6, 2017)</a></li>
+</ul>
+
+<p>What then makes predictive models different than exploratory techniques? In
+my view: <em>exploratory methods explain the observed data; predictive models
+make an explicit attempt to explain unobserved data</em>. The difference here is
+subtle and not always clear-cut, but understanding the fundamental distinction
+is important.</p>
+
+<h2 id="statisticalmachine-learning">Statistical/Machine Learning</h2>
+
+<p>We will not spend much time discussing the general task of predictive
+modelling. If you are interested, here is a great 5 minute
+tour of the big picture behind building predictive models:</p>
+
+<p><a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">A Visual Introduction to Machine Learning</a></p>
+
+<p>I teach an entire class on this subject, <em>Statistical Learning</em>, if you are
+interested in taking more statistics courses in the future.</p>
+
+<h2 id="statistical-inference">Statistical Inference</h2>
+
+<p>There is one particular type of predictive model that we will look at this
+semester, which falls under the task of statistical inference. Inference has
+a particular structure to it, with the following elements:</p>
+
+<ul>
+  <li>a <strong>population</strong> of which we are interested in understanding; for example,
+this could be all Americans over the age of 18, all UR students, or the set of
+all wild chimpanzees</li>
+  <li>a <strong>variable of interest</strong> that we wish to understand about the population;
+this could be, for example, the average height or age of all members in a
+population</li>
+  <li>a subset of the population, know as a <strong>sample</strong>; for example, this could be
+1000 randomly chosen households, the students in this class, or the
+chimpanzees  held at a particular zoo</li>
+</ul>
+
+<p>This set up is important in many fields. For example, medicine:</p>
+
+<blockquote>
+  <p>How many heart attack patients (the  population) will survive in the next 5
+years if given the new drug Z (variable of interest)? Let’s test it on 200
+heart attack patients at our hospital (sample)!</p>
+</blockquote>
+
+<p>Or psychology:</p>
+
+<blockquote>
+  <p>How long, on average, does it take an adult chimpanzee (population) to learn
+the optimal strategy for playing tic-tac-toe (variable of interest)? Let’s
+test it on the 12 chimpanzees we have in our lab!</p>
+</blockquote>
+
+<p>Statistical inference is used to take the properties observed regarding the
+variable of interest in the sample and estimating properties of the
+population. We will talk about this process, which is where all the
+mathematics comes into statistics, but unlike “old style” statistics courses
+this will only be a small part of the larger picture of learning to work with
+data.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>Statistical inference is most often used in academic writing. Let’s take a
+look, to start, at articles from the :</p>
+
+<p>-<a href="http://www.nejm.org/medical-articles/research">NEJM: Browse Research</a></p>
+
+<p>You’ll be able to see a summary of most articles on this page, though
+generally not the entire text. The summary should be enough for our purposes.
+We will all pick an article to work with. For your article, write down:</p>
+
+<ul>
+  <li>what is the population of study?</li>
+  <li>what is the variable(s) of interest?</li>
+  <li>what is the sample (how many patients, how selected, ect.)?</li>
+  <li>what were the results?</li>
+</ul>
+
+<p>You may not understand all of the technical terms. Try to look up those that
+are foreign to you, within reason.</p>
+
+<p>Let’s repeat with a second journal (choose an article from one and repeat
+the questions above):</p>
+
+<ul>
+  <li><a href="http://science.sciencemag.org/">Science</a></li>
+  <li><a href="http://www.pedneur.com/current">Pediatric Neurology</a></li>
+  <li><a href="https://ajps.org/ajps-articles/current-issue/">American Journal of Political Science</a></li>
+  <li><a href="http://psycnet.apa.org/PsycARTICLES/journal/apl/102/12">Journal of Applied Psychology</a></li>
+</ul>
+
+<p>We will cover in much more detail the process of statistical inference later
+in the semester, but now at least we have an understanding of the approach at
+a very high level.</p>
+
+<h2 id="summary-where-we-are-and-where-we-are-going">Summary: Where we are and where we are going</h2>
+
+<p>In the first two weeks of the semester we have taken a bird’s eye view of the
+statistical process which data is explored, modelled, and used in constructing
+larger arguments about the world around us.</p>
+
+<p>Next week we begin to learn the tools and techniques for ourselves: how to
+collect data, how to clean it for analysis, how to visualize it  without a
+fancy pre-made website, how to construct inferential models, and how to write
+statistical analyses for ourselves.</p>
+
+
+  </div>
+</article>
+
+    </div>
+  </body>
+
+  <footer>
+  </footer>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taylor Arnold - STAT 209</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="In class, you will be using the lab computers to work with
+the R programming language. I strongly suggest that you also
+setup R on your own machine for working with the homework and
+data reports. R is an open source programming language, meaning
+that you can install it for free on nearly any operating system.
+The note here guide you through install the core R system, the
+RStudio IDE, and relevant R packages.
+
+" />
+    <meta property="og:description" content="In class, you will be using the lab computers to work with
+the R programming language. I strongly suggest that you also
+setup R on your own machine for working with the homework and
+data reports. R is an open source programming language, meaning
+that you can install it for free on nearly any operating system.
+The note here guide you through install the core R system, the
+RStudio IDE, and relevant R packages.
+
+" />
+    
+    <meta name="author" content="Taylor Arnold" />
+
+    
+    <meta property="og:title" content="Installing R" />
+    <meta property="twitter:title" content="Installing R" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/stat209/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Taylor Arnold - Assistant Professor of Statistics, University of Richmond" href="/stat209/feed.xml" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/stat209/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/stat209/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/stat209/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/stat209/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/stat209/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/stat209/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/stat209/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/stat209/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/stat209/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/stat209/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/stat209/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/stat209/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/stat209/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/stat209/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/stat209/" class="site-avatar"><img src="https://avatars3.githubusercontent.com/u/5752184?v=3&s=460" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://statsmaths.github.io/">Taylor Arnold</a></h1>
+            <p class="site-description">Assistant Professor of Statistics, University of Richmond</p>
+          </div>
+
+          <nav>
+            <a href="https://statsmaths.github.io/courses/">Courses</a>
+            <a href="https://statsmaths.github.io/blog/">Blog</a>
+            <a href="https://statsmaths.github.io/research/">Research</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Installing R</h1>
+
+  <div class="entry">
+    <p>In class, you will be using the lab computers to work with
+the R programming language. I strongly suggest that you also
+setup R on your own machine for working with the homework and
+data reports. R is an open source programming language, meaning
+that you can install it for free on nearly any operating system.
+The note here guide you through install the core R system, the
+RStudio IDE, and relevant R packages.</p>
+
+<h2 id="download-r">Download R</h2>
+
+<p>The first step is to download the R programming language. To do
+this go to <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>
+and select your platform:</p>
+
+<p><img src="../assets/img/cran01.jpeg" alt="" /></p>
+
+<p>For macOS, just download R-3.4.1 (or whatever is the most recent):</p>
+
+<p><img src="../assets/img/cran02.jpeg" alt="" /></p>
+
+<p>For Windows, first select <strong>base</strong></p>
+
+<p><img src="../assets/img/cran03.jpeg" alt="" /></p>
+
+<p>And then <em>Download R 3.4.1</em></p>
+
+<p><img src="../assets/img/cran04.jpeg" alt="" /></p>
+
+<p>One you have the .pkg (macOS) or .exe (Windows) file,
+install this on your computer according to the default
+settings.</p>
+
+<h2 id="rstudio">RStudio</h2>
+
+<p>The files we just downloaded are the core R language files
+doing all the hard work of processing data. Next, we’ll
+install a helpful GUI frontend that make calling R easier.</p>
+
+<p>Go to <a href="https://www.rstudio.com/">https://www.rstudio.com/</a>.
+Click on Products =&gt; RStudio.</p>
+
+<p><img src="../assets/img/rstudio01.jpeg" alt="" /></p>
+
+<p>Scroll down to the <strong>DOWNLOAD RSTUDIO DESKTOP</strong> button
+and click on it.</p>
+
+<p><img src="../assets/img/rstudio02.jpeg" alt="" /></p>
+
+<p>Scroll down again to the <strong>Installers for Supported Platforms</strong>.
+The Windows link gives you an exe:</p>
+
+<p><img src="../assets/img/rstudio03.jpeg" alt="" /></p>
+
+<p>And the macOS link gives a dmg:</p>
+
+<p><img src="../assets/img/rstudio04.jpeg" alt="" /></p>
+
+<p>Now, install R or RStudio as you would any other program. It
+should link automatically to the version of R you just
+installed.</p>
+
+<h2 id="installing-r-packages">Installing R packages</h2>
+
+<p>The final step is to download all of the R packages that we will
+need for the semester. It is generally easier to do these all at
+once rather than as we go along.</p>
+
+<p>Go ahead and launch RStudio. You should see a window that looks like
+this, as we saw on the class computers:</p>
+
+<p><img src="../assets/img/r-interface-2016.png" alt="" /></p>
+
+<p>To install the packages required for class, run the following lines
+of code in the console. There may be a warning about one or two
+packages not being available. Note that this may take 5-10 minutes
+to finish; on slower connections or older computers, it may take even
+longer. If you run into any problems, please let me know!</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">pkgs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"dplyr"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ggplot2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"stringr"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ggmap"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ggrepel"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"devtools"</span><span class="p">,</span><span class="w"> </span><span class="s2">"viridis"</span><span class="p">,</span><span class="w"> </span><span class="s2">"plotly"</span><span class="p">,</span><span class="w"> </span><span class="s2">"jsonlite"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lazyeval"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"knitr"</span><span class="p">,</span><span class="w"> </span><span class="s2">"readr"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">install.packages</span><span class="p">(</span><span class="n">pkgs</span><span class="p">,</span><span class="w">
+                 </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://cloud.r-project.org"</span><span class="p">,</span><span class="w">
+                 </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"binary"</span><span class="p">,</span><span class="w">
+                 </span><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w">
+                 </span><span class="n">quiet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span></code></pre></figure>
+
+<p>Now, you will also need install the <code class="highlighter-rouge">smodels</code> package. I have written
+this package for this course, so you need to install it in a slightly
+different way.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">devtools</span><span class="o">::</span><span class="n">install_github</span><span class="p">(</span><span class="s2">"statsmaths/smodels"</span><span class="p">)</span></code></pre></figure>
+
+<p>Finally, make the following changes in the RStudio IDE. These
+are very important, so don’t skip this step:</p>
+
+<ul>
+  <li>In the RStudio menu click on <code class="highlighter-rouge">Tools &gt; Global Options...</code></li>
+  <li>Look for the first drop-down: <code class="highlighter-rouge">Save the workspace to .RData on exit</code></li>
+  <li>Change this first drop-down to <code class="highlighter-rouge">Never</code></li>
+  <li>All of the check-boxes above this dropdown should be unchecked.</li>
+</ul>
+
+<p>And that should be it! You now have the same system running on
+your machine that we have in class. If you run into any issues,
+please let me know. It is likely that I will need to see your
+computer to help, so bring your laptop to class or office hours
+and I will help get you setup.</p>
+
+
+  </div>
+</article>
+
+    </div>
+  </body>
+
+  <footer>
+  </footer>
+</html>

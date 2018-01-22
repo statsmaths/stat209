@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taylor Arnold - STAT 209</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Variable Types
+
+" />
+    <meta property="og:description" content="Variable Types
+
+" />
+    
+    <meta name="author" content="Taylor Arnold" />
+
+    
+    <meta property="og:title" content="Numeric Summaries" />
+    <meta property="twitter:title" content="Numeric Summaries" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/stat209/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Taylor Arnold - Assistant Professor of Statistics, University of Richmond" href="/stat209/feed.xml" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/stat209/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/stat209/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/stat209/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/stat209/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/stat209/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/stat209/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/stat209/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/stat209/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/stat209/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/stat209/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/stat209/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/stat209/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/stat209/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/stat209/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/stat209/" class="site-avatar"><img src="https://avatars3.githubusercontent.com/u/5752184?v=3&s=460" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://statsmaths.github.io/">Taylor Arnold</a></h1>
+            <p class="site-description">Assistant Professor of Statistics, University of Richmond</p>
+          </div>
+
+          <nav>
+            <a href="https://statsmaths.github.io/courses/">Courses</a>
+            <a href="https://statsmaths.github.io/blog/">Blog</a>
+            <a href="https://statsmaths.github.io/research/">Research</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Numeric Summaries</h1>
+
+  <div class="entry">
+    <h3 id="variable-types">Variable Types</h3>
+
+<p>These notes use a set of data describing the commuting patterns in
+906 metropolitan areas within the United States.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">commute</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/acs_commute.csv"</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## # A tibble: 906 x 12
+##                           name      lat        lon prop_housing
+##                          &lt;chr&gt;    &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+##  1                Aberdeen, SD 45.52158  -98.69595     16.16231
+##  2                Aberdeen, WA 47.14445 -123.82847     21.54960
+##  3                 Abilene, TX 32.44969  -99.71768     19.82418
+##  4                     Ada, OK 34.72800  -96.68444     18.07076
+##  5                  Adrian, MI 41.89508  -84.06637     21.17295
+##  6                   Akron, OH 41.14873  -81.34953     20.58453
+##  7              Alamogordo, NM 32.61316 -105.74168     19.70749
+##  8                  Albany, GA 31.58951  -84.17389     24.45320
+##  9                  Albany, OR 44.48868 -122.53432     23.96531
+## 10 Albany-Schenectady-Troy, NY 42.78851  -73.94198     20.53007
+## # ... with 896 more rows, and 8 more variables: median_income &lt;dbl&gt;,
+## #   avg_duration &lt;dbl&gt;, median_age &lt;dbl&gt;, same_house &lt;dbl&gt;,
+## #   same_county &lt;dbl&gt;, car_alone &lt;dbl&gt;, public_transit &lt;dbl&gt;,
+## #   time_0900_0959 &lt;dbl&gt;</code></pre></figure>
+
+<p>The variables available for analysis are described by the following
+data dictionary and schema:</p>
+
+<ul>
+  <li><strong>name</strong> (chr): name of the metropolitan or micropolitan area</li>
+  <li><strong>lat</strong> (dbl): latitude of the centroid of the area</li>
+  <li><strong>lon</strong> (dbl): longitude of the centroid of the area</li>
+  <li><strong>prop_housing</strong> (dbl): average proportion of income spent on housing (0-100)</li>
+  <li><strong>median_income</strong> (dbl): median annual household income (dollars)</li>
+  <li><strong>avg_duration</strong> (dbl): average duration of commute (in minutes)</li>
+  <li><strong>median_age</strong> (dbl): median age of all people in the area</li>
+  <li><strong>same_house</strong> (dbl): proportion of households in the same house one year prior (0-100)</li>
+  <li><strong>same_county</strong> (dbl): proportion of households in the same county one year prior (0-100)</li>
+  <li><strong>car_alone</strong> (dbl): proportion of workers commuting by car alone (0-100)</li>
+  <li><strong>public_transit</strong> (dbl): proportion of workers commuting by public transit (0-100)</li>
+  <li><strong>time_0900_0959</strong> (dbl): proportion of workers commuting to work between 9am and 10am (0-100)</li>
+</ul>
+
+<p>We will look more closely at this interesting dataset throughout
+the week.</p>
+
+<h3 id="measures-of-central-tendency">Measures of Central Tendency</h3>
+
+<p>A common measurment of the <em>typical</em> value of a numeric variable
+is the average or mean, mathematically described by:</p>
+
+<script type="math/tex; mode=display">\text{mean}(x) = \frac{x_1 + x_2 + \cdots + x_n}{n}</script>
+
+<p>As we have seen, the function <code class="highlighter-rouge">mean</code> in R computes this summary
+for a numeric variable. Here is the average duration of commutes
+in the US metropolitan areas (in minutes):</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mean</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">avg_duration</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 21.53447</code></pre></figure>
+
+<p>The average percentage, across areas, of commuters who drive alone
+to work:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mean</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">car_alone</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 80.15011</code></pre></figure>
+
+<p>The median is another measurment of the most typical values of a variable,
+defined as the number for which half of the data is above and half of the
+data is below the value (rules exist for taking the median of variables
+with ties and even number of points, but the specifics are not important).</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">median</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">avg_duration</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 21.46115</code></pre></figure>
+
+<p>Notice that this is not very different from the <code class="highlighter-rouge">mean</code> function. What is
+an example of a variable that would differ greatly between the mean and
+the median?</p>
+
+<h3 id="measures-of-distribution">Measures of Distribution</h3>
+
+<p>The median can also be described as the 50 percentile. Other percentiles
+can be found with the <code class="highlighter-rouge">percentiles</code> function:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">percentiles</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">public_transit</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">##   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14% 
+##    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 
+##  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29% 
+##    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 
+##  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44% 
+##    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 
+##  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59% 
+##    0    0    0    0    0    1    1    1    1    1    1    1    1    1    1 
+##  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74% 
+##    1    1    1    1    1    1    1    1    1    1    1    1    1    1    1 
+##  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89% 
+##    1    1    1    1    1    1    1    1    2    2    2    2    2    2    2 
+##  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100% 
+##    2    3    3    3    3    4    4    5    7    9   30</code></pre></figure>
+
+<p>Can you describe what the 25 percentile means, roughly speaking? Often
+we only want the <em>deciles</em> of a variable, for which the <code class="highlighter-rouge">deciles</code> function
+is used:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">deciles</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">avg_duration</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">##       0%      10%      20%      30%      40%      50%      60%      70% 
+## 11.17422 17.16132 18.55514 19.69376 20.60294 21.46115 22.31963 23.22254 
+##      80%      90%     100% 
+## 24.30367 25.96911 38.86715</code></pre></figure>
+
+<p>How do these eleven numbers tell a bigger picture than the single mean or
+median?</p>
+
+<h3 id="measures-of-variation">Measures of Variation</h3>
+
+<p>In addition of measuring percentiles, often it is useful to give a single
+number to describe how spread out a variable is. One common measurment is
+the variance, the average distance of points from the mean:</p>
+
+<script type="math/tex; mode=display">\text{var}(x) = \frac{(x_1 - mean(x))^2 + (x_2 - mean(x))^2 + \cdots + (x_n - mean(x))^2}{n - 1}</script>
+
+<p>If we take the variance of the <code class="highlighter-rouge">avg_duration</code> variable:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">var</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">median_income</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 90582868</code></pre></figure>
+
+<p>What are the units? Dollars-squared. That doesn’t make much sense, so often
+we take the square root of the variance instead to arrive at the standard
+deviation:</p>
+
+<script type="math/tex; mode=display">\text{sd}(x) = \sqrt{\text{var}(x)}</script>
+
+<p>Which is computed with the <code class="highlighter-rouge">sd</code> function:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sd</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">median_income</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 9517.503</code></pre></figure>
+
+<p>Higher standard deviations indicate that the variable is spread over a larger
+range and lower deviations indicate that the variable is spread over a smaller
+range.</p>
+
+<h3 id="standard-deviation-rules">Standard Deviation Rules</h3>
+
+<p>The standard deviation can feel a bit abstract, but it is best to think
+of it as a rough measurment of how far data tends to be away from the mean.
+For example, take the mean of the median age across the metropolitan areas:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">mean</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">median_age</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 38.40971</code></pre></figure>
+
+<p>And the standard deviation of this variable.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sd</span><span class="p">(</span><span class="n">commute</span><span class="o">$</span><span class="n">median_age</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 4.817763</code></pre></figure>
+
+<p>As a general rule, we would expect 66% of the data to be within 1
+standard deviation of the mean. That is, two-thirds of the metropolitan
+areas should have median ages between 33.6 and 43.2 years.
+Similarly, 95% of the data should be within two standard deviations of
+the mean. That is, between 28.8 and 48 years.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">qplot</span><span class="p">(</span><span class="n">median_age</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">commute</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="../assets/class14-numeric-summaries/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" /></p>
+
+<p>Does the graphic confirm these rules of thumb? Note that the rules
+generally apply only to data that is (very) roughly shaped like a bell
+curve.</p>
+
+  </div>
+</article>
+
+    </div>
+  </body>
+
+  <footer>
+  </footer>
+</html>

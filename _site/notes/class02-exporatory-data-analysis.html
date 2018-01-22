@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taylor Arnold - STAT 209</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Exploratory data analysis (EDA) is the process of trying to
+understand what a dataset can tell us outside of a narrowly focused
+probability statement. It relies heavily on graphical devices and summary
+statistics. EDA is a very important aspect of data analysis and will
+contribute a large part of what we work on this semester.
+
+" />
+    <meta property="og:description" content="Exploratory data analysis (EDA) is the process of trying to
+understand what a dataset can tell us outside of a narrowly focused
+probability statement. It relies heavily on graphical devices and summary
+statistics. EDA is a very important aspect of data analysis and will
+contribute a large part of what we work on this semester.
+
+" />
+    
+    <meta name="author" content="Taylor Arnold" />
+
+    
+    <meta property="og:title" content="Exploratory Data Analysis" />
+    <meta property="twitter:title" content="Exploratory Data Analysis" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/stat209/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Taylor Arnold - Assistant Professor of Statistics, University of Richmond" href="/stat209/feed.xml" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/stat209/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/stat209/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/stat209/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/stat209/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/stat209/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/stat209/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/stat209/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/stat209/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/stat209/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/stat209/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/stat209/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/stat209/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/stat209/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/stat209/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/stat209/" class="site-avatar"><img src="https://avatars3.githubusercontent.com/u/5752184?v=3&s=460" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://statsmaths.github.io/">Taylor Arnold</a></h1>
+            <p class="site-description">Assistant Professor of Statistics, University of Richmond</p>
+          </div>
+
+          <nav>
+            <a href="https://statsmaths.github.io/courses/">Courses</a>
+            <a href="https://statsmaths.github.io/blog/">Blog</a>
+            <a href="https://statsmaths.github.io/research/">Research</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>Exploratory Data Analysis</h1>
+
+  <div class="entry">
+    <p>Exploratory data analysis (EDA) is the process of trying to
+understand what a dataset can tell us outside of a narrowly focused
+probability statement. It relies heavily on graphical devices and summary
+statistics. EDA is a very important aspect of data analysis and will
+contribute a large part of what we work on this semester.</p>
+
+<h3 id="today">Today</h3>
+
+<p>It will take a few weeks before we have covered all of the core
+skills needed to do an exploratory analysis of a dataset. We’ll get
+there eventually, but I think it is useful to see at the start what
+exactly is involved in such an analysis. So, today, we will be
+looking at some online, interactive visualizations that we can
+explore without involving R or any data processing skills.</p>
+
+<h3 id="types-of-data-sets">Types of data sets</h3>
+
+<p>When I talk about data I tend to think of a broader meaning to the
+term than some people might. Data can include such things as text:</p>
+
+<ul>
+  <li><a href="https://noahveltman.com/suggest/">Google search suggestions by country</a></li>
+</ul>
+
+<p>Maps:</p>
+
+<ul>
+  <li><a href="http://chriswhong.github.io/nyctaxi/">NYC Taxi’s: A Day in the Life</a></li>
+</ul>
+
+<p>And here, even one with sound:</p>
+
+<ul>
+  <li><a href="https://www.c82.net/offthestaff/">Off the Staff</a></li>
+  <li><a href="https://www.youtube.com/watch?list=PLw6QMmIiPBlU_dElMDoJn4RUBvpp_bUwi&amp;v=DxkpN4PUOzA">Video</a></li>
+</ul>
+
+<p>Today the projects groups will look at will cover a similarly wide range of
+data set types.</p>
+
+<h3 id="exploratory-data-analysis">Exploratory data analysis</h3>
+
+<p>What’s the point an exploratory, visual analysis? At a high level we are
+trying to understand something about the world around us. The EDA phase of
+analysis let’s us discover what the data at hand is specifically telling us
+and indicates directions for future studies.</p>
+
+<p>Here is a project from the Digital Scholarship Lab (DSL) at the University of
+Richmond that does a great job of showing how visualizations can be powerful
+argumentative tools:</p>
+
+<ul>
+  <li><a href="https://dsl.richmond.edu/panorama/forcedmigration/">Forced Migration of Enslaved People</a></li>
+</ul>
+
+<p>If you are not familiar with the DSL, I encourage you to check out their
+projects and visit the group’s space in the library. I plan to have
+someone from the DSL join us for a class later in the semester.</p>
+
+<h3 id="modes-of-analysis-in-eda">Modes of Analysis in EDA</h3>
+
+<p>Generally, when doing EDA we are looking at understanding patterns
+contained within the data. I tend see that interesting observations
+come in one of three forms:</p>
+
+<ul>
+  <li><em>pattern description</em>: an observation about a general pattern
+or trend found in the dataset</li>
+  <li><em>anomaly detection</em>: identification of data points that, in some
+way, seem to not follow the general pattern or otherwise behave
+in some extreme or anomalous way</li>
+  <li><em>perspective</em>: we have a special interest in a small set of data
+points (often just one) and are interested in how this point falls
+relative to the rest of the data; like anomaly detection, but we
+decide which points to care about ahead of the analysis</li>
+</ul>
+
+<p>These do not function in a vacuum and good analyses will often pull
+from multiple types of observations.</p>
+
+<h3 id="questions">Questions</h3>
+
+<p>For today, here are some questions to answer about as we look at interactive
+visualizations:</p>
+
+<ol>
+  <li>What is the source of the data?</li>
+  <li>What types of visualizations are being used?</li>
+  <li>What are 2-3 interesting observations you found in the dataset?</li>
+</ol>
+
+<p>I’ll answer these for the Forced Migration dataset, then let you work on these
+questions in small groups.</p>
+
+<h3 id="groups">Groups</h3>
+
+<p>Now, its your turn. I have gather several interactive visualizations
+that I find particularly interesting. You’ll be split into groups of
+about 3 people and assigned one of these datasets.</p>
+
+<ul>
+  <li><a href="http://flowingdata.com/2015/12/15/a-day-in-the-life-of-americans/">A Day in the Life</a></li>
+  <li><a href="http://mbtaviz.github.io/">Visualizing MBTA Data</a></li>
+  <li><a href="http://www.washingtonpost.com/wp-srv/special/sports/wizards-shooting-stars/">The Wizards’ shooting stars</a></li>
+  <li><a href="https://www.nytimes.com/interactive/2016/06/10/upshot/voting-habits.html">The Voting Habits of Americans Like You</a></li>
+  <li><a href="http://rhythm-of-food.net/#explore">The Rhythm of Food</a></li>
+  <li><a href="https://dsl.richmond.edu/panorama/executiveabroad/">Executive Abroad</a></li>
+  <li><a href="https://dsl.richmond.edu/panorama/foreignborn/">Foreign Born Population (1850-2000)</a></li>
+  <li><a href="http://twitter.github.io/interactive/sotu2014/#p1">#SOTU2014: See the State of The Union address minute by minute on Twitter</a></li>
+  <li><a href="https://www.nytimes.com/interactive/2014/04/24/upshot/facebook-baseball-map.html">A Map of Baseball Nation</a></li>
+</ul>
+
+<p>Spend about 15 minutes playing around with the visualization and
+understanding the data within it. Then, answer the four questions above.
+Finally, designate one person to come up and explain the answers to your
+dataset.</p>
+
+<h2 id="assignment">Assignment</h2>
+
+<p>For next class, please read the introduction to the text <em>The Art
+of Data Science</em> by Roger Peng and Elizabeth Matsui:</p>
+
+<ul>
+  <li><a href="../assets/pdfs/art-of-data-science.pdf">The Art of Data Science</a></li>
+</ul>
+
+<p>This should be a quick and easy read. It will help frame the discussion of the
+steps involved in making use of data in an analysis.</p>
+
+
+  </div>
+</article>
+
+    </div>
+  </body>
+
+  <footer>
+  </footer>
+</html>

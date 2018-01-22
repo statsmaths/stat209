@@ -22,26 +22,8 @@ Let's look at the births dataset again from last time:
 
 {% highlight r %}
 library(readr)
-births <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/arbuthnot.csv")
-{% endhighlight %}
 
-
-
-{% highlight text %}
-## Parsed with column specification:
-## cols(
-##   head_of_state = col_character(),
-##   year = col_integer(),
-##   boys = col_integer(),
-##   girls = col_integer(),
-##   total = col_integer(),
-##   boy_to_girl_ratio = col_double()
-## )
-{% endhighlight %}
-
-
-
-{% highlight r %}
+births <- read_csv("https://statsmaths.github.io/stat_data/arbuthnot.csv")
 births
 {% endhighlight %}
 
@@ -120,18 +102,18 @@ record information about your four favorite restaurants:
   - how many times you visit each year
   - last time that you visited
 
-Let's start by doing this on the white boards and we will then collect this
-as a class and store it as a CSV file (I'll explain these steps in person).
+Let's start by doing this individually in Google Sheets (I'll explain these
+steps in person). Once you are done, download the dataset as a CSV file.
 
 ### Reading in a local file
 
-Once we have collectively downloaded the file `fav_restaurants.csv`, place it
+Once you have downloaded the file, rename it to `my_restaurants.csv`, place it
 someone on your computer's Desktop. To read the file in using the computers
 in the lab, you will need to run the following command:
 
 
 {% highlight r %}
-food <- read_csv("C:\\Users\\Public\\Desktop\fav_restaurants.csv")
+mine <- read_csv("C:\\Users\\Public\\Desktop\my_restaurants.csv")
 {% endhighlight %}
 
 Notice that I have called it something short but memorable to make it easier
@@ -140,18 +122,30 @@ this instead:
 
 
 {% highlight r %}
-food <- read_csv("~/Desktop/fav_restaurants.csv")
+mine <- read_csv("~/Desktop/my_restaurants.csv")
 {% endhighlight %}
 
 
 
 {% highlight text %}
-## Error: '~/Desktop/fav_restaurants.csv' does not exist.
+## Error: '~/Desktop/my_restaurants.csv' does not exist.
 {% endhighlight %}
 
 That should work on any Mac. If you have a windows computer with a different
 set-up, you may need a slightly different path. I am happy to assist with this
 when we start working on the projects.
+
+### Combining the data
+
+It will be much more interesting if we can combine the data from everyone in
+the class. Use the links here to link into the collective Google Sheet and
+add your data to the appropriate sheet:
+
+- [Favorite Restaurants](https://docs.google.com/spreadsheets/d/10LFQMcRRBiRXEauX1aUfv3dYhiJ4zS616BwyDnXC3kc/edit?usp=sharing)
+
+Once we are finished with the, you will then download the entire class' data
+as a single file. Download it and name the file `class_restaurants.csv`. Load
+it into R as a dataset called `class`.
 
 ### Simple plotting, again
 
@@ -160,7 +154,7 @@ package. Specifically, we use something like this:
 
 
 {% highlight r %}
-ggplot(food, aes(cuisine)) +
+ggplot(class, aes(cuisine)) +
   geom_bar()
 {% endhighlight %}
 
@@ -168,17 +162,31 @@ To get a bar plot of the cuisine types. Or,
 
 
 {% highlight r %}
-ggplot(food, aes(year, cost)) +
+ggplot(class, aes(year, cost)) +
   geom_point()
 {% endhighlight %}
 
 For a scatter plot of how often you visit each year and the average cost.
-Are there any surprises in using these commands to create plots? 
+
+*Q: Are there any surprises in using these commands to create plots?*
+
+### Consistency
+
+Depending on how the class goes, we may find that there are inconsistencies in
+how the data is formatted from student to student. Of most importance is that
+if any value in a variable does not look like a number the entire column will
+be considered as a categorical variable. With the time remaining we will try
+to adjust this
+
+Next week we will dig deeper in to the specific types of data in R and how the
+effect our graphics and analyses.
+
+### New variables (time remaining)
+
+If we have time remaining, we will add additional variables to our dataset
+such as the latitude and longitude of the restaurant.
 
 ### Assignment
-
-I have posted a file called `lab04.R`. Open this in R, follow the instructions,
-and complete for the next class.
 
 For next class, please just come prepared for the next assessment. Note that
 this one will require you to be able to write R code from memory, an important

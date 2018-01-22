@@ -9,7 +9,11 @@ be familiar with the syntax and ideas behind
 the following:
 
 - loading an R package (use `library(packagename)`)
-- applying a function to a variable (`mean(births$girls)`)
+- draw a scatterplot of two variables, for example:
+```{r}
+ggplot(births, aes(year, girls)) +
+  geom_point()
+```
 - loading a CSV file into R (using `read_csv`)
 - describe the layout of a CSV file; you should be able
 to construct one from hand based on a description of a dataset
