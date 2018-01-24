@@ -106,13 +106,36 @@ Notice that I have called it something short but memorable to make it easier
 to write code about the dataset. If you are later doing this on MacOS, try
 this instead:
 
-```{r}
+```{r, eval = FALSE}
 mine <- read_csv("~/Desktop/my_restaurants.csv")
 ```
 
 That should work on any Mac. If you have a windows computer with a different
 set-up, you may need a slightly different path. I am happy to assist with this
 when we start working on the projects.
+
+### Simple plotting, again
+
+Recall that we can create plots with the `qplot` function from the **ggplot2**
+package. Specifically, we use something like this:
+
+```{r, eval = FALSE}
+ggplot(mine, aes(cuisine)) +
+  geom_bar()
+```
+
+To get a bar plot of the cuisine types. Or,
+
+```{r, eval = FALSE}
+ggplot(mine, aes(year, cost)) +
+  geom_point()
+```
+
+For a scatter plot of how often you visit each year and the average cost.
+Construct several plots of the various variables in the dataset. If you have
+time, try to include color as well.
+
+*Q: Are there any surprises in the output of these commands?*
 
 ### Combining the data
 
@@ -126,26 +149,14 @@ Once we are finished with the, you will then download the entire class' data
 as a single file. Download it and name the file `class_restaurants.csv`. Load
 it into R as a dataset called `class`.
 
-### Simple plotting, again
+### Plotting, once again
 
-Recall that we can create plots with the `qplot` function from the **ggplot2**
-package. Specifically, we use something like this:
+Now, repeat the plots with the class dataset. Compare them to the ones you
+had with your own data. Other than the increased size note any interesting
+differences.
 
-```{r, eval = FALSE}
-ggplot(class, aes(cuisine)) +
-  geom_bar()
-```
-
-To get a bar plot of the cuisine types. Or,
-
-```{r, eval = FALSE}
-ggplot(class, aes(year, cost)) +
-  geom_point()
-```
-
-For a scatter plot of how often you visit each year and the average cost.
-
-*Q: Are there any surprises in using these commands to create plots?*
+*Q: As you explore the dataset, are there any interesting patterns or outliers
+in the data?*
 
 ### Consistency
 
@@ -169,5 +180,9 @@ For next class, please just come prepared for the next assessment. Note that
 this one will require you to be able to write R code from memory, an important
 skill (having to look up every single command stops us from getting in the
 flow of doing exploratory work).
+
+Starting next week, we will set up your GitHub accounts and I will assign the
+first project.
+
 
 

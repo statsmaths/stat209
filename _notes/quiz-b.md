@@ -9,16 +9,15 @@ be familiar with the syntax and ideas behind
 the following:
 
 - loading an R package (use `library(packagename)`)
-- draw a scatterplot of two variables, for example:
-```{r}
-ggplot(births, aes(year, girls)) +
-  geom_point()
-```
+- compute the mean or sum of a variable inside a dataset
+(use `mean(dataname$variable)` or `sum(dataname$variable)`)
 - loading a CSV file into R (using `read_csv`)
 - describe the layout of a CSV file; you should be able
 to construct one from hand based on a description of a dataset
 - identify and describe observations (rows), variables (columns)
 and know that these are stored in a data frame
+- describe what the **unit of analysis** of a given dataset
+is by looking at the data
 
 The assessment includes fill in the blank questions, not
 just multiple choice, so make sure you remember the specific
