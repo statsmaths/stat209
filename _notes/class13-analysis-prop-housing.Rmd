@@ -1,5 +1,5 @@
 ---
-title: "Analysis: Proportiong of Income Spent on Housing"
+title: "Analysis: Proportion of Income Spent on Housing"
 author: "Taylor Arnold"
 output: html_notebook
 ---

@@ -92,7 +92,7 @@ computer. We will test out the second example now.
 ### Activity: Data creation
 
 We are now going to collect some data as a class. Specifically, you will each
-record information about your four favorite restaurants:
+record information about your six favorite restaurants:
 
   - name of the restaurant
   - location
@@ -113,7 +113,7 @@ in the lab, you will need to run the following command:
 
 
 {% highlight r %}
-mine <- read_csv("C:\\Users\\Public\\Desktop\my_restaurants.csv")
+mine <- read_csv("C:\\Users\\Public\\Desktop\\my_restaurants.csv")
 {% endhighlight %}
 
 Notice that I have called it something short but memorable to make it easier
