@@ -96,10 +96,11 @@ steps in person). Once you are done, download the dataset as a CSV file.
 
 Once you have downloaded the file, rename it to `my_restaurants.csv`, place it
 someone on your computer's Desktop. To read the file in using the computers
-in the lab, you will need to run the following command:
+in the lab, you will need to run the following command with your user name
+filled in (mine, for example, is *tarnold2*):
 
 ```{r, eval = FALSE}
-mine <- read_csv("C:\\Users\\Public\\Desktop\\my_restaurants.csv")
+mine <- read_csv("C:\\Users\\USERNAME\\Desktop\\my_restaurants.csv")
 ```
 
 Notice that I have called it something short but memorable to make it easier
