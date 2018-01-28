@@ -31,7 +31,7 @@ type is appropriate.
 
 There are other data types that we will discuss later, including special
 formats for dates and times. Numeric and character types, however, will
-capture most of our needs this week.
+capture out needs for this week.
 
 ### Activity: Questionnaire
 
@@ -101,7 +101,7 @@ simply use and document whatever codes make the most sense to you.
 
 ### Data Dictionary
 
-We have just covered all of the things that need to be considered before
+We have just covered several things that need to be considered before
 collecting a dataset. A **data dictionary** is a written description
 documenting all of the decisions that go into constructing a dataset.
 A data dictionary includes: (1) variable names, (2) variable data types,
@@ -124,7 +124,7 @@ the restaurant. Possible options are:
     - "American"
     - "Chinese"
     - "Dessert"
-    - "Fast Food" (include fast Mexican such as Chipotle)
+    - "Fast Food" (including fast Mexican such as Chipotle)
     - "Indian"
     - "Italian"
     - "Japanese" (including sushi)

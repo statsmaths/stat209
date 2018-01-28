@@ -29,7 +29,7 @@ If you do not already have an account, go to the main webpage and create a
 free account. Try to pick a professional name as you may find that you want
 to make this public at some point:
 
-- https://github.com/
+- [https://github.com/](https://github.com/)
 
 Next, follow this link and accept the invitation:
 
@@ -45,7 +45,7 @@ your repository show up as a website. It can sometimes take a while (upwards
 of 30 minutes or more) for this first push to work, so that is why we are
 starting here. Eventually your website will show up at:
 
-- [https://urstats.github.io/stat209-projects-YOURUSERNAME/](https://urstats.github.io/stat209-projects-YOURUSERNAME)
+- [https://urstats.github.io/stat209-s18-YOURUSERNAME/](https://urstats.github.io/stat209-s18-YOURUSERNAME)
 
 With your particular GitHub username filled in. In case there is a delay in
 getting these set-up, eventually the site will look similar to this one:
@@ -104,10 +104,10 @@ document. Follow these steps:
 document).
 2. In the first chunk, add lines loading the following packages: **dplyr**,
 **readr**, and **ggplot2**.
-3. Now add two sections using `##`: **Reading the data**,
+3. Now add two sections using `##`. Call these **Reading the Data**,
 **Plotting the Data**
 4. In the first section, write two sentences describing the dataset and follow
-this with a code chunk that read in the dataset.
+this with a code chunk that reads in the dataset.
 5. In the second section, create three code chunks that each show a different
 plot. Before each chunk write a short description of what the plot illustrates
 to you. You'll need to actually run the code to see the plots so that you can
