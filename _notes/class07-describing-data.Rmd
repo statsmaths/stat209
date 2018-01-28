@@ -73,7 +73,7 @@ representing London
 - **boy_to_girl_ratio**: ratio of male births to female births
 in London in a given year
 
-Notice that you probably guess the basic meaning of many of these,
+Notice that you could probably guess the basic meaning of many of these,
 but may not have been aware of some of the specifics.
 
 ### Style Guide

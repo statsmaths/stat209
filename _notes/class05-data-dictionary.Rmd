@@ -1,0 +1,188 @@
+---
+title: "Data Dictionary"
+author: "Taylor Arnold"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(fig.path = "../assets/class05-data-dictionary/")
+knitr::opts_chunk$set(fig.height = 5)
+knitr::opts_chunk$set(fig.width = 8.5)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+```
+
+### Overview
+
+Today's goal is to follow up on our experiment in collecting data last week.
+We will formalize the concept of a data type and discuss the important and
+means of documenting data consistency.
+
+### Data Types
+
+Variables (the columns in a data set) in R are each defined as belonging to
+a particular **data type**. When reading in a CSV file, R will make an
+intelligent guess as to what data type to assign to each variable. We saw in
+the plots from last time that the type of a variable has a significant effect
+on the way plots are displayed.
+
+Two data types are by far the most commonly seen in datasets:
+
+- **numeric**: numbers. R will assign this data type if and only
+if every single value is formated as a number with no additional marks (e.g.,
+not `$5`, `6s`, or `5'3''`).
+- **character**: strings consisting of letters, numbers, spaces, and special
+characters. R will assign this whenever it cannot determine that another
+type is appropriate.
+
+There are other data types that we will discuss later, including special
+formats for dates and times. Numeric and character types, however, will
+capture most of our needs this week.
+
+### Activity: Questionnaire
+
+For today we are going to split into groups of 2-3 people and construct six
+hypothetical questions that would want to ask someone for the following
+scenarios:
+
+1. a job interview for a babysitter
+2. an interview for a potential new roommate
+3. an interview for college admissions
+4. a job interview for a dog walker
+5. an interview for a new friend
+6. an interview for a new bass player for your college band
+7. questions for a car dealer when buying a new car
+8. questions for dinner party guests
+
+Make sure that your questions have a mix of numeric answers, short character
+answers (e.g., the answer is a single word), and longer character answers
+(e.g., the answer may be several sentences). Label each question as either
+being a numeric variable or a character variable.
+
+### Consistency
+
+As we saw in class, it is important when collecting data to maintain a strict
+consistency between observations of the same variable. R forces our hand with
+having a fixed, consistent format for numeric data. Other forms of consistency
+are also important to maintain the integrity of our data and subsequent
+analyses.
+
+For numeric data, we need to decide (1) precisely what we are counting and
+(2) in what units are we recording the variable. Note that what is being
+counting often seems obvious at first glance even if it is not. For example,
+when I asked you for the average price of a meal at your favorite restaurants
+did this include tax? Tip? Drinks? Being explicit is always better than being
+implicit.
+
+For character data, we also need to describe what the field is capturing.
+When possible and/or applicable, it is also best to describe the format of the
+data as well. For example, if a variable captures someones name does you want
+it formated "Given Name Family Name" or "Family Name, Given Name"?
+
+### Categorical Data
+
+There is a special type of character variable that we will call
+**categorical**. These variables are distinguished from other character
+data types because the allowed answers only come from a fixed set of options.
+In some cases it is inherently obvious that a variable must be categorical,
+such as: `month`, `final_letter_grade`, or `country`.
+
+In other examples a variable may or may not be from a fixed set. It is up to
+the data collector to decide. For example, the cuisine type that we had in
+our class survey could have had a fixed set of options or, as we did last
+time, could be selected freely.
+
+Whenever we have data that should be categorical, it is important to describe
+ahead of time the exact allowed values that a variable can take on. When
+available, it is considered best practice to use commonly accepted standards:
+
+- [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) for currency codes
+(e.g., USD, EUR, GBP)
+- [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) for country codes
+(e.g., USA, FRA, CAN)
+- Postal abbreviations for US states (e.g., VA, NC, ME)
+
+In many cases these standardized lists will not exist, however, and you should
+simply use and document whatever codes make the most sense to you.
+
+### Data Dictionary
+
+We have just covered all of the things that need to be considered before
+collecting a dataset. A **data dictionary** is a written description
+documenting all of the decisions that go into constructing a dataset.
+A data dictionary includes: (1) variable names, (2) variable data types,
+(3) an explicit description of what the variable captures about a particular
+observation, (4) the units of the variable, if applicable, (5) the format of
+the variable, if applicable, and (6) the allowed categories for categorical
+variables.
+
+Here is an example of a possible data dictionary for the dataset we
+constructed in the last class:
+
+- **student_name**: a character variable giving each student's given (i.e.,
+what we would call "First Name" in English) or preferred name
+- **name**: a character variable giving the full proper name of the restaurant
+- **location**: a character variable giving the location of the restaurant
+as "City, State", with state represented using the two-character state postal
+code
+- **cuisine**: a categorical variable describing the primary cuisine type of
+the restaurant. Possible options are:
+    - "American"
+    - "Chinese"
+    - "Dessert"
+    - "Fast Food" (include fast Mexican such as Chipotle)
+    - "Indian"
+    - "Italian"
+    - "Japanese" (including sushi)
+    - "Korean"
+    - "Mexican"
+    - "Pizza"
+    - "Thai"
+    - "Vietnamese"
+    - "Other"
+- **fav_dish**: a character variable describing student's favorite dish
+- **cost_per_person**: numeric variable describing approximate total amount in
+dollars, after tax in tip, that the student typically spends per person when
+visiting the restaurant
+- **yearly_visits**: numeric number of times student typically visits the
+restaurant in a given 12-month period. Use only whole numbers. If less than 1,
+round down to zero.
+- **last_visit**: character variable describing the last time the student
+visited the restaurant. Format as "YYYY-MM" with the four digit year and two
+digit month.
+
+### Variable names
+
+Before constructing our own data dictionaries, let's formalize the variable
+naming conventions I mentioned last time in class:
+
+- use all lower case letters in variable names
+- never use spaces; use an underscore `_` instead (e.g., `head_of_state`)
+- do not use numbers unless they have an extrinsic meaning (so `year_1990`
+is okay, but `births2` is not)
+
+These variable rules apply to raw R objects (such as what we name the dataset
+as) as well as the variable names in a dataset.
+
+### Activity: Build a Data Dictionary
+
+Now, open a text file (your choice: Word, Google Docs, Sublime, or whatever
+else you usually use) on the lab computer. Individually, construct a data
+dictionary to capture the questions on your board. Note that you'll have to
+make some decisions here. Try to describe at least one question as a
+categorical variable.
+
+### Assignment
+
+For the next class, update the information from the class dataset we collected
+last time to conform to the data dictionary I have provided. Note that the
+name of the first column has changed from `student_num` to `student_name`, so
+at a minimum you'll need to change that field.
+
+
+
+
+
+
+
