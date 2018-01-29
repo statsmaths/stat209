@@ -146,9 +146,7 @@ Drag and drop the `figure.jpg` image into the directory. You should now have
 this file show up on your class website (it may take a few minutes and require
 you to manually refresh the page).
 
-Also, make sure to come prepared for the next Assessment. The format is
-different from the others, so you'll want to be prepared.
-
-
+Finally, look at the first project assignment. I will answer further questions
+and offer more exposition about this in our next class meeting.
 
 

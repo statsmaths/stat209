@@ -4,7 +4,7 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-For the third in-class assessment, you should
+For the second in-class assessment, you should
 be familiar with the syntax and ideas behind
 the following:
 

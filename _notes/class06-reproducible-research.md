@@ -9,7 +9,7 @@ output: html_notebook
 ### Overview
 
 Today we will cover a new code format that will be used in your data projects,
-set up GitHub and GitHub Pages, and assign the first project. As usual, I will
+set up GitHub, and setup GitHub Pages. As usual, I will
 try to put as many details on possible on the website. Note however that there
 will likely be details (particularly in setting up GitHub) that are only
 covered fully in class.
@@ -133,16 +133,13 @@ and have the markdown-generated website pop up.
 
 ### Assignment
 
-For next class you have two assignments. First, find a photo of your self,
-convert to a JPEG file, and name it `figure.jpg`. Go to your GitHub repository
-and click on the `img` directory. Drag and drop the `figure.jpg` image into
-the directory. You should now have this file show up on your class website (it
-may take a few minutes and require you to manually refresh the page).
+For next class, find a photo of your self, convert to a JPEG file, and name it
+`figure.jpg`. Go to your GitHub repository and click on the `img` directory.
+Drag and drop the `figure.jpg` image into the directory. You should now have
+this file show up on your class website (it may take a few minutes and require
+you to manually refresh the page).
 
-Secondly, take a look at the first project assignment. Think about what data
-you may want to collect. We will discuss the details more fully next class.
-
-
-
+Finally, look at the first project assignment. I will answer further questions
+and offer more exposition about this in our next class meeting.
 
 

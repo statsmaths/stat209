@@ -6,9 +6,9 @@ output: html_notebook
 
 **Due**: 2018-02-20 (start of class)
 
-**Starter code**: [project-a.Rmd](https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project-a.Rmd)
+**Starter code**: [*forthcoming*]
 
-**Rubric**: [rubic_project-a.pdf](https://raw.githubusercontent.com/statsmaths/stat209/master/projects/rubic_project-a.pdf)
+**Rubric**: [*forthcoming*]
 
 The overarching goal of the first project is to collect a
 data set, produce a data dictionary (with variable types), and provide a basic

@@ -4,17 +4,18 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-The format of the third in-class assessment differs from the first two (and
-most of the remaining assessments). Rather than pen and paper, this assessment
-will be done on the lab computers. Also, I'll give you about 40 minutes to
-complete it instead of the usual 15.
+For the third in-class assessment, you should
+be able to:
 
-Specifically, I will give you a very small dataset to construct in Excel. You
-will need to export this file into a CSV format and then open a new RMarkdown
-file. In this file you will have to load R packages, read the dataset, and
-produce two simple plots (a scatter plot and a barplot) using the `ggplot`
-commands. Finally, you'll email me the completed dataset, markdown file, and
-HTML file.
+- identify and describe the difference between numeric and character variables
+- accurately produce a full data dictionary for a dataset
+- understand what makes a character variable a categorical one
+- understand the naming rules for variables (no capital letters, no arbitrary
+numbers, no spaces or other special characters, underscores in place of spaces
+)
+- be able to write the **ggplot2** command to build a simple scatter plot
+(`geom_point`) from a data frame
 
-All of these steps must be done with no notes or access to other digital
-resources.
+Remember that, as was the case with Assessment B, you will be expected to
+produce R code not just select the correct answers from a multiple choice list
+of options.
