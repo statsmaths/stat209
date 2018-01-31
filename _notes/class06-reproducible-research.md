@@ -10,7 +10,7 @@ output: html_notebook
 
 Today we will cover a new code format that will be used in your data projects,
 set up GitHub, and setup GitHub Pages. As usual, I will
-try to put as many details on possible on the website. Note however that there
+try to put as many details as possible on the website. However, there
 will likely be details (particularly in setting up GitHub) that are only
 covered fully in class.
 
@@ -18,10 +18,10 @@ covered fully in class.
 
 Recall that the final third of the data analysis pipeline consists in
 communicating our results to the world. If this step is lacking, the rest of
-the statistical process is rendered nearly meaningless. To make this point
-particularly clear, you are each going to build a public-facing website to
-house our data analysis reports. We'll start with setting this site up and
-then move to details of how to format the reports.
+the statistical process is rendered nearly meaningless. To make the importance
+of this point particularly clear, you are each going to build a public-facing
+website to house our data analysis reports. We'll start with setting this site
+up and then move to details of how to format the reports.
 
 ### GitHub
 
@@ -48,9 +48,10 @@ starting here. Eventually your website will show up at:
 - [https://urstats.github.io/stat209-s18-YOURUSERNAME/](https://urstats.github.io/stat209-s18-YOURUSERNAME)
 
 With your particular GitHub username filled in. In case there is a delay in
-getting these set-up, eventually the site will look similar to this one:
+getting these set-up, eventually the site will look similar to this one
+(specifically, it is my site):
 
-- [https://statsmaths.github.io/stat209-projects/](https://statsmaths.github.io/stat209-projects/)
+- [https://urstats.github.io/stat209-s18-statsmaths/](https://urstats.github.io/stat209-s18-statsmaths/)
 
 Next, click on the file `index.html` in the repository. Then click on the
 pencil button on the right hand side to the right of the Raw/Blame/History
@@ -74,15 +75,15 @@ large chapter title, two a section title, three a sub-section, and four a
 sub-sub-section. There needs to be blank lines before and after the title and
 a single space after the pounds before the title
 - plain text, which is where we can type as if we were in a notepad program
-- code blocks contained within triple backticks (this is the same key we saw
-when dealing with variables that have spaces in them; it is right below the
-tilde key on most US keyboards) and then `{r}`.
+- code blocks contained within triple backticks (this is the same character we
+saw when dealing with variables that have spaces in them; it is right below
+the tilde key on most US keyboards) and then `{r}`.
 
 The idea of an Rmarkdown file is that we can integrate code and text together.
 This makes it self-documenting and allows analyses to be reproducible.
 
 You can run the R commands in the code chunks in two different ways. In the
-first, you either either highlight and click run at the top (as before) or
+first, you either highlight and click run at the top (as before) or
 use the play  button at the start of the chunk. These copy the code into the
 console, constructing data in the environment tab and plots in the plot tab.
 This is a good way of starting an analysis.
@@ -106,30 +107,61 @@ document).
 **readr**, and **ggplot2**.
 3. Now add two sections using `##`. Call these **Reading the Data**,
 **Plotting the Data**
-4. In the first section, write two sentences describing the dataset and follow
+4. Download the class data, now newly formatted, as a CSV file.
+5. In the first section, write two sentences describing the dataset and follow
 this with a code chunk that reads in the dataset.
-5. In the second section, create three code chunks that each show a different
+6. In the second section, create three code chunks that each show a different
 plot. Before each chunk write a short description of what the plot illustrates
 to you. You'll need to actually run the code to see the plots so that you can
 answer these questions.
 
 When you are done with this, knit the entire file and look at the output.
 
-**Note:** Timing permitting, notice that the first chunk of code includes the
-option `include=FALSE`. This makes it so that, while the code runs when knit,
-the code and any output is not included in the text. Other options include
-`echo=FALSE`, where output is show but not the source code and `message=FALSE`
-to suppress any messages. Experiment with setting this options and note the
-differences in the output.
-
 ### Upload to GitHub
 
-As a final step, we will upload the files you just created to GitHub. Go to
+We will now upload the files you just created to GitHub. Go to
 the main page of your repository. Drag and drop **both** `first.Rmd` and
 `first.html` into the repository. This should load them into GitHub. Scroll to
 the bottom and click "Commit Changes". Once finished, these two files should
 show up on your website. You should even be able to click on the second link
 and have the markdown-generated website pop up.
+
+### Extending RMarkdown (time permitting)
+
+I have expanded on only a few elements of the RMarkdown format. Several others
+will be useful in preparing your data projects.
+
+Notice that the first chunk of code includes the option `include=FALSE`. This
+makes it so that, while the code runs when knit, the code and any output is
+not included in the text. Other options include `echo=FALSE`, where output is
+shown but not the source code and `message=FALSE` to suppress any messages.
+Experiment with setting this options and note the differences in the output.
+
+You can also use special markings to make words in bold (put them between
+double `*` symbols) or italics (put them between single `*` symbols). For a
+complete reference see the RMarkdown cheatsheet:
+
+- [RMarkdown Cheatsheet]https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+- [RMarkdown: HTML Documents](http://rmarkdown.rstudio.com/html_document_format.html)
+
+These are great references for all of the possible things we can do with
+RMarkdown.
+
+### Reproducible Data
+
+One element of our current pipeline prohibits our analysis from being
+completely reproducible. While others would have our code and analysis
+together, they cannot actually run the script without our data. To fix
+this, now upload the class dataset to your GitHub repository. You will see
+that it is then possible to read the data in from the web like this:
+
+
+{% highlight r %}
+food <- read_csv("https://raw.githubusercontent.com/URstats/stat209-s18-USERNAME/master/DATANAME.csv")
+{% endhighlight %}
+
+Finally, change this line in your RMarkdown file and reupload the HTML and
+Rmd file.
 
 ### Assignment
 
@@ -138,6 +170,11 @@ For next class, find a photo of your self, convert to a JPEG file, and name it
 Drag and drop the `figure.jpg` image into the directory. You should now have
 this file show up on your class website (it may take a few minutes and require
 you to manually refresh the page).
+
+Then, look at the RMarkdown cheat sheet. Add one new element from the sheet
+into your markdown file and re-upload (Note you can download the file to work
+on your own computer by clicking 'Raw' and then downloading the file
+directly).
 
 Finally, look at the first project assignment. I will answer further questions
 and offer more exposition about this in our next class meeting.
