@@ -6,7 +6,7 @@ output: html_notebook
 
 **Due**: 2018-02-20 (start of class)
 
-**Starter code**: [project-a.Rmd](https://github.com/statsmaths/stat209/blob/master/projects/project-a.Rmd)
+**Starter code**: [project-a.Rmd](https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project-a.Rmd)
 
 **Rubric**: [project-a-rubric.csv](https://github.com/statsmaths/stat209/blob/master/projects/project-a-rubric.csv)
 
