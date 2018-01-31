@@ -6,20 +6,34 @@ output: html_notebook
 
 **Due**: 2018-02-20 (start of class)
 
-**Starter code**: [*forthcoming*]
+**Starter code**: [project-a.Rmd](https://github.com/statsmaths/stat209/blob/master/projects/project-a.Rmd)
 
-**Rubric**: [*forthcoming*]
+**Rubric**: [project-a-rubric.csv](https://github.com/statsmaths/stat209/blob/master/projects/project-a-rubric.csv)
 
 The overarching goal of the first project is to collect a
-data set, produce a data dictionary (with variable types), and provide a basic
+data set, produce a data dictionary, and provide a basic
 exploration of the variables from your data.
 
-The first step is to decide what data set you would like to
-collect. Your data set should follow these rules:
+Please take note of the rubric linked to above before submitting your report.
+Make sure you have followed all of the instructions. Note that the
+relationship between points and letter grades may not follow the standard
+conventions (that is, 90\% may not be an A-), and generally components will
+not receive partial credit.
+
+The first step is to decide what data set you would like to collect. The most
+important aspect of choosing your dataset is to pick something that has an
+overarching object of study. This is an exploratory analysis (EDA), so this
+does not mean a concrete yes/no question; rather, you should have a general
+theme of interest that you want to understanding. For example, you should not
+have a question such as "do male students typically eat later than female
+students?". Instead, you should have a question along the lines of: "what
+patterns exist in the dining times of UR students?".
+
+Your data set should follow these specifications:
 
 - at least 75 observations
 - at least 5 variables, with:
-    - at least 2 numeric variables (time counts as a numeric variable)
+    - at least 2 numeric variables
     - at least one character variable of categories
     - at least one variable that you physically collect yourself
 - be uploaded to GitHub as a CSV file along with your report
