@@ -1,0 +1,91 @@
+---
+title: "Lab 07: Grammar of Graphics"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(ggplot2)
+library(dplyr)
+```
+
+This is our first "lab" of the semester. Each will be structured similarly, with
+questions interwoven with code snippets. Note that they are numbered to align with
+the class number. You should put the completed lab in your GitHub repository ahead
+of the next class meeting.
+
+## Miles Per Gallon
+
+Make sure to start by running the setup chunk above to load the required packages.
+Then, read in the mpg dataset. There is one row for each particular type of car,
+with information about the fuel efficiency and other metadata.
+
+```{r, message=FALSE}
+mpg <- read_csv("https://statsmaths.github.io/stat_data/mpg.csv")
+```
+
+The variable `displ` gives the size of the engine in litres and `cty` the reported
+miles per gallon of the car while driving in stop-and-go city traffic. Likewise,
+`hwy` is the miles per gallon for a car on the highway.
+
+Start by making a scatter plot (i.e., points) of engine size on the x-axis and the
+highway fuel efficency on the y-axis. (In case this wasn't clear, write the code in
+the block below and verify that the plot looks as expected)
+
+```{r}
+
+```
+
+Verify that the pattern in this plot makes sense.
+
+Next, modify the plot so that the color of the points show the class of the vehicle.
+
+```{r}
+
+```
+
+Identify a few different classes and verify that they appear where you would expect
+on the plot.
+
+Now, make all of the points in the plot twice as big and color them all the color
+green.
+
+```{r}
+
+```
+
+Then, create two scatter plots at once by adding together `geom_point` layers where one
+layer uses `hwy` as the y-axis and the other users `cty` as the y-axis.
+
+```{r}
+
+```
+
+
+In the previous plot, it is impossible to distinguish between the points that are of the highway
+fuel efficiencies values and the city fuel efficiencies. Change this by making the city fuel
+efficiencies colored in red.
+
+```{r}
+
+```
+
+The default y-axis label is no longer correct because it actually measures two different
+fuel efficiencies. Add the layer `ylab("Miles Per Gallon")` to the plot to fix this:
+
+```{r}
+
+```
+
+Finally, do the same with the `xlab` and `ggtitle` functions to add a better x-axis and
+title.
+
+```{r}
+
+```
+
+
+
+
+

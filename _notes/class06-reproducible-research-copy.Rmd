@@ -48,10 +48,22 @@ all of your projects for this semester should be posted.
 You should now see what is called a repository. This is where you will save
 all of your projects this semester. Next, click on the Settings tab. Scroll to
 the GitHub Pages section. Select "master Branch" under Source. This will make
-your repository show up as a website.
+your repository show up as a website. It can sometimes take a while (upwards
+of 30 minutes or more) for this first push to work, so that is why we are
+starting here. Eventually your website will show up at:
 
-**I have been having trouble with this today, so let's just attempt to do this
-today but we'll come back to it on Tuesday**
+- [https://urstats.github.io/stat209-s18-YOURUSERNAME/](https://urstats.github.io/stat209-s18-YOURUSERNAME)
+
+With your particular GitHub username filled in. In case there is a delay in
+getting these set-up, eventually the site will look similar to this one
+(specifically, it is my site):
+
+- [https://urstats.github.io/stat209-s18-statsmaths/](https://urstats.github.io/stat209-s18-statsmaths/)
+
+Next, click on the file `index.html` in the repository. Then click on the
+pencil button on the right hand side to the right of the Raw/Blame/History
+buttons. You can now edit the file. Change my name on line 16 to your name.
+Scroll down and click "Commit changes".
 
 ### RMarkdown
 
@@ -112,6 +124,15 @@ answer these questions.
 
 When you are done with this, knit the entire file and look at the output.
 
+### Upload to GitHub
+
+We will now upload the files you just created to GitHub. Go to
+the main page of your repository. Drag and drop **both** `first.Rmd` and
+`first.html` into the repository. This should load them into GitHub. Scroll to
+the bottom and click "Commit Changes". Once finished, these two files should
+show up on your website. You should even be able to click on the second link
+and have the markdown-generated website pop up.
+
 ### Extending RMarkdown (time permitting)
 
 I have expanded on only a few elements of the RMarkdown format. Several others
@@ -132,5 +153,36 @@ complete reference see the RMarkdown cheatsheet:
 
 These are great references for all of the possible things we can do with
 RMarkdown.
+
+### Reproducible Data
+
+One element of our current pipeline prohibits our analysis from being
+completely reproducible. While others would have our code and analysis
+together, they cannot actually run the script without our data. To fix
+this, now upload the class dataset to your GitHub repository. You will see
+that it is then possible to read the data in from the web like this:
+
+```{r, eval = FALSE}
+food <- read_csv("https://raw.githubusercontent.com/URstats/stat209-s18-USERNAME/master/DATANAME.csv")
+```
+
+Finally, change this line in your RMarkdown file and reupload the HTML and
+Rmd file.
+
+### Assignment
+
+For next class, find a photo of your self, convert to a JPEG file, and name it
+`figure.jpg`. Go to your GitHub repository and click on the `img` directory.
+Drag and drop the `figure.jpg` image into the directory. You should now have
+this file show up on your class website (it may take a few minutes and require
+you to manually refresh the page).
+
+Then, look at the RMarkdown cheat sheet. Add one new element from the sheet
+into your markdown file and re-upload (Note you can download the file to work
+on your own computer by clicking 'Raw' and then downloading the file
+directly).
+
+Finally, look at the first project assignment. I will answer further questions
+and offer more exposition about this in our next class meeting.
 
 
