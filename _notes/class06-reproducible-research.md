@@ -105,25 +105,19 @@ answer these questions.
 
 When you are done with this, knit the entire file and look at the output.
 
-### Extending RMarkdown (time permitting)
+### Assignment
 
-I have expanded on only a few elements of the RMarkdown format. Several others
-will be useful in preparing your data projects.
+For next class, in addition to preparing for the Assessment C, please make
+sure to do the following:
 
-Notice that the first chunk of code includes the option `include=FALSE`. This
-makes it so that, while the code runs when knit, the code and any output is
-not included in the text. Other options include `echo=FALSE`, where output is
-shown but not the source code and `message=FALSE` to suppress any messages.
-Experiment with setting this options and note the differences in the output.
+- verify that your GitHub page is working
+- upload the work from class today to GitHub
+- start-up GitHub pages
+- bring a digital photo that you want to use for your website
 
-You can also use special markings to make words in bold (put them between
-double `*` symbols) or italics (put them between single `*` symbols). For a
-complete reference see the RMarkdown cheatsheet:
 
-- [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
-- [RMarkdown: HTML Documents](http://rmarkdown.rstudio.com/html_document_format.html)
 
-These are great references for all of the possible things we can do with
-RMarkdown.
+
+
 
 
