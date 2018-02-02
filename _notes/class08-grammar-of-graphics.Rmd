@@ -6,7 +6,7 @@ output: html_notebook
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = TRUE)
-knitr::opts_chunk$set(fig.path = "../assets/class07-grammar-of-graphics/")
+knitr::opts_chunk$set(fig.path = "../assets/class08-grammar-of-graphics/")
 knitr::opts_chunk$set(fig.height = 5)
 knitr::opts_chunk$set(fig.width = 8.5)
 knitr::opts_chunk$set(out.width = "100%")
@@ -20,16 +20,6 @@ library(dplyr)
 library(viridis)
 library(kableExtra)
 ```
-
-### Project 1
-
-Details for the first project are now available on the website. The project is
-due at the start of class on Tuesday, February 20th. Note that the
-instructions are spread across three documents: a webpage with a the basic
-outline, an RMarkdown file to be used as a template, and a rubric with a
-detailed breakdown of the expected elements. Please do not wait until the last
-minute to work on this project and also please make sure to triple check that
-you are following the instructions as specified.
 
 ### Grammar of Graphics
 
@@ -177,9 +167,11 @@ value from a variable, within the **ggplot2** syntax.
 We have covered a lot of new commands today. Practicing them is incredibly
 important to keeping up with this course. You will not learn how to do these
 properly without spending a reasonable amount of time practicing these skills
-outside of class. For next time, download the lab07.Rmd file and work through
-the exercises. Upload your script (no need to include the HTML file) to GitHub
-ahead of the next class.
+outside of class. Download the
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab08.Rmd" download="lab08.Rmd" target="_blank">lab08.Rmd</a>
+file and work through the exercises.
+Upload your script (no need to include the HTML file) to GitHub ahead of the
+next class.
 
 
 

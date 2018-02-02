@@ -8,16 +8,6 @@ output: html_notebook
 
 
 
-### Project 1
-
-Details for the first project are now available on the website. The project is
-due at the start of class on Tuesday, February 20th. Note that the
-instructions are spread across three documents: a webpage with a the basic
-outline, an RMarkdown file to be used as a template, and a rubric with a
-detailed breakdown of the expected elements. Please do not wait until the last
-minute to work on this project and also please make sure to triple check that
-you are following the instructions as specified.
-
 ### Grammar of Graphics
 
 As you have seen in examples already, we will be using the **ggplot2** package
@@ -90,11 +80,11 @@ code to construct it in just a few moments). Note that R writes the population
 key in scientific notation (2.5e+08 is the same as 2.5 time 10 to the power of
 eight).
 
-<img src="../assets/class07-grammar-of-graphics/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" />
+<img src="../assets/class08-grammar-of-graphics/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" />
 
 Here, two of our three elements should be clear: dataset is `gapminder_2007`
-and the plot users the points geometric (`geom_point`, which we have already
-seen). How does the final aesthetics element function? There are four
+and the plot uses the points geometry (`geom_point`, which we have already
+seen). How do the aesthetic elements function? There are four visible
 aesthetics here, each matched to a particular variable in the dataset:
 
 1. the variable `gdp_per_cap` is mapped to the `x`-axis
@@ -144,7 +134,7 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point()
 {% endhighlight %}
 
-<img src="../assets/class07-grammar-of-graphics/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
+<img src="../assets/class08-grammar-of-graphics/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
 
 In some cases we want to change an aesthetic to a different fixed value than
 the default. To do this, we include the specification of the aesthetic
@@ -156,7 +146,7 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point(color = "blue")
 {% endhighlight %}
 
-<img src="../assets/class07-grammar-of-graphics/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
+<img src="../assets/class08-grammar-of-graphics/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
 
 It is possible to mix aesthetics so that some are mapped to variables and
 others to fixed values. Simply specify the fixed values outside of the `aes`
@@ -169,7 +159,7 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point(aes(color = continent), size = 0.4)
 {% endhighlight %}
 
-<img src="../assets/class07-grammar-of-graphics/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
+<img src="../assets/class08-grammar-of-graphics/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
 
 You'll notice that I put the color blue in quotes but left the size
 specification as-is. This comes back to the notion of a data type in R. A
@@ -192,7 +182,7 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_text(aes(label = country), size = 2)
 {% endhighlight %}
 
-<img src="../assets/class07-grammar-of-graphics/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
+<img src="../assets/class08-grammar-of-graphics/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
 
 The top row of the ggplot command gives defaults for the y-axis aesthetic. It
 is possible to override this in a particular layer. Why might this be useful?
@@ -206,7 +196,7 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_text(aes(y = life_exp - 0.5, label = country), size = 2)
 {% endhighlight %}
 
-<img src="../assets/class07-grammar-of-graphics/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
+<img src="../assets/class08-grammar-of-graphics/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
 
 Notice that we can modify the variable in-line, such as subtracting a fixed
 value from a variable, within the **ggplot2** syntax.
@@ -216,9 +206,11 @@ value from a variable, within the **ggplot2** syntax.
 We have covered a lot of new commands today. Practicing them is incredibly
 important to keeping up with this course. You will not learn how to do these
 properly without spending a reasonable amount of time practicing these skills
-outside of class. For next time, download the lab07.Rmd file and work through
-the exercises. Upload your script (no need to include the HTML file) to GitHub
-ahead of the next class.
+outside of class. Download the
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab08.Rmd" download="lab08.Rmd" target="_blank">lab08.Rmd</a>
+file and work through the exercises.
+Upload your script (no need to include the HTML file) to GitHub ahead of the
+next class.
 
 
 
