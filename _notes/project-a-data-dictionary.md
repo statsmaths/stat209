@@ -6,9 +6,14 @@ output: html_notebook
 
 **Due**: 2018-02-20 (start of class)
 
-**Starter code**: [project-a.Rmd](https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project-a.Rmd)
+**Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project-a.Rmd" download="project-a.Rmd">project-a.Rmd</a>
 
 **Rubric**: [project-a-rubric.csv](https://github.com/statsmaths/stat209/blob/master/projects/project-a-rubric.csv)
+
+**Questions deadline**:  2018-02-19; 5pm (Friday) - If you would like help
+with the project, please see/e-mail me before this deadline. After this time
+I will only help with technical issues, such as R crashing or GitHub being
+down.
 
 The overarching goal of the first project is to collect a
 data set, produce a data dictionary, and provide a basic
@@ -24,7 +29,7 @@ The first step is to decide what data set you would like to collect. The most
 important aspect of choosing your dataset is to pick something that has an
 overarching object of study. This is an exploratory analysis (EDA), so this
 does not mean a concrete yes/no question; rather, you should have a general
-theme of interest that you want to understanding. For example, you should not
+theme of interest that you want to understand. For example, you should not
 have a question such as "do male students typically eat later than female
 students?". Instead, you should have a question along the lines of: "what
 patterns exist in the dining times of UR students?".
@@ -35,8 +40,9 @@ Your data set should follow these specifications:
 - at least 5 variables, with:
     - at least 2 numeric variables
     - at least one character variable of categories
-    - at least one variable that you physically collect yourself
-- be uploaded to GitHub as a CSV file along with your report
+- not be externally available
+- must be uploaded to GitHub as a CSV file along with your report (you should
+read it in from GitHub through the RMarkdown document)
 
 This is a chance to do something creative. Here are just a
 few suggestions:
@@ -44,12 +50,12 @@ few suggestions:
 - pick a favorite magazine and collect data about the ads:
 what pages are they on; what's the product; how many words are
 there; how many people are in the ad (ect).
-- sit on a bench somewhere during a busy time of day and count
-how many people walk in two minute intervals in each direction
-past you; create a categorical flag for whether someone asks
-what you're doing
-- make a dataset with one observation for various family and
-friends; record the last date you saw each person; give each
+- sit on a bench somewhere during a busy time of day and record
+information about groups of people walking by you; how many people are in
+the group? which direction are they traveling? are they talking, texting, or
+just walking?
+- make a dataset with one observation for different people that you know;
+record the last date you saw each person; give each
 person a score from 1 to 10 for how much you like them
 - watch TV for a few hours and collect data about the ads:
 product in question; time of the ad; length of the add (ect.)

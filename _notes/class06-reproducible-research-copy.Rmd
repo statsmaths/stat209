@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Research"
+title: "Plot Types"
 author: "Taylor Arnold"
 output: html_notebook
 ---
@@ -15,11 +15,8 @@ knitr::opts_chunk$set(dpi = 300)
 
 ### Overview
 
-Today we will cover a new code format that will be used in your data projects,
-set up GitHub, and setup GitHub Pages. As usual, I will
-try to put as many details as possible on the website. However, there
-will likely be details (particularly in setting up GitHub) that are only
-covered fully in class.
+Today we will finish talking about GitHub and the first project. We then
+move on to talking about five basic plot types.
 
 ### Reproducibility
 
