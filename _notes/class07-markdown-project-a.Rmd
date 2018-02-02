@@ -69,7 +69,7 @@ class <- read_csv("https://raw.githubusercontent.com/URstats/stat209-s18-USERNAM
 
 Verify that this produces the data you were expecting.
 
-### Extending RMarkdown (time permitting)
+### Extending RMarkdown
 
 I have expanded on only a few elements of the RMarkdown format. Several others
 will be useful in preparing your data projects.
