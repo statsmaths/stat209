@@ -1,5 +1,5 @@
 ---
-title: "Lab 07: Grammar of Graphics"
+title: "Lab 08: Grammar of Graphics"
 output: html_document
 ---
 
@@ -30,7 +30,7 @@ miles per gallon of the car while driving in stop-and-go city traffic. Likewise,
 `hwy` is the miles per gallon for a car on the highway.
 
 Start by making a scatter plot (i.e., points) of engine size on the x-axis and the
-highway fuel efficency on the y-axis. (In case this wasn't clear, write the code in
+highway fuel efficiency on the y-axis. (In case this wasn't clear, write the code in
 the block below and verify that the plot looks as expected)
 
 ```{r}
@@ -45,45 +45,90 @@ Next, modify the plot so that the color of the points show the class of the vehi
 
 ```
 
-Identify a few different classes and verify that they appear where you would expect
-on the plot.
+Identify a few different classes of vehicles and verify that they appear where
+you would expect on the plot.
 
-Now, make all of the points in the plot twice as big and color them all the color
+Now, make all of the points in the plot twice as big and color them the color
 green.
 
 ```{r}
 
 ```
 
-Then, create two scatter plots at once by adding together `geom_point` layers where one
-layer uses `hwy` as the y-axis and the other users `cty` as the y-axis.
+Next, create two scatter plots at once by adding together `geom_point` layers
+where one layer uses `hwy` as the y-axis and the other users `cty` as the
+y-axis (yes, you can override the y aesthetic just like any other).
 
 ```{r}
 
 ```
 
 
-In the previous plot, it is impossible to distinguish between the points that are of the highway
-fuel efficiencies values and the city fuel efficiencies. Change this by making the city fuel
-efficiencies colored in red.
+In the previous plot, it is impossible to distinguish between the points that
+are of the highway fuel efficiencies values and the city fuel efficiencies.
+Change this by making the city fuel efficiencies colored in red.
 
 ```{r}
 
 ```
 
-The default y-axis label is no longer correct because it actually measures two different
-fuel efficiencies. Add the layer `ylab("Miles Per Gallon")` to the plot to fix this:
+The default y-axis label is no longer correct because it actually measures two
+different fuel efficiencies. Add the layer `ylab("Miles Per Gallon")` to the
+plot to fix this:
 
 ```{r}
 
 ```
 
-Finally, do the same with the `xlab` and `ggtitle` functions to add a better x-axis and
-title.
+Finally, do the same with the `xlab` and `ggtitle` functions to add a better
+x-axis and title.
 
 ```{r}
 
 ```
+
+## Democratic Primary 2016
+
+Now, load data from the 2016 Democratic Primary elections. The data is given
+at the county level (this is the **unit of analysis**).
+
+```{r}
+primary <- read_csv("https://statsmaths.github.io/stat_data/primary2016.csv")
+```
+
+Start by drawing a scatter plot of latitude and longitude (it is up to you
+to determine which goes on the x and y axes):
+
+```{r}
+
+```
+
+Next, color the points based on the variable `division`.
+
+```{r}
+
+```
+
+Then, color the points based on the variable `prop_hillary` (the proportion of
+votes Hillary Clinton received).
+
+```{r}
+
+```
+
+Notice any interesting patterns here? Try loading the **viridis** package:
+
+```{r}
+library(viridis)
+```
+
+And add `scale_color_viridis()` to the plot:
+
+```{r}
+
+```
+
+It should look much more readable. Do you notice any patterns now?
 
 
 

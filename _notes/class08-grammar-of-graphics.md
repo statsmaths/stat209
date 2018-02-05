@@ -21,7 +21,7 @@ To build a statistical graphic, we will be building different layers that fit
 together to produce plots. Each layer requires three elements:
 
 - a geometry describing what type of layer is being added; for example, this
-might be a points, lines, or text
+might be a point, line, or text geometry
 - a dataset from which to build the layer
 - a mapping from variables in the dataset into elements called aesthetics that
 control the way the plot looks
@@ -82,10 +82,10 @@ eight).
 
 <img src="../assets/class08-grammar-of-graphics/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" />
 
-Here, two of our three elements should be clear: dataset is `gapminder_2007`
-and the plot uses the points geometry (`geom_point`, which we have already
-seen). How do the aesthetic elements function? There are four visible
-aesthetics here, each matched to a particular variable in the dataset:
+Here, two of our three elements should be clear: the dataset is
+`gapminder_2007` and the plot uses the point geometry (`geom_point`, which we
+have already seen). How do the aesthetic elements function? There are four
+visible aesthetics here, each matched to a particular variable in the dataset:
 
 1. the variable `gdp_per_cap` is mapped to the `x`-axis
 2. the variable `life_exp` is mapped to the `y`-axis
@@ -101,8 +101,8 @@ code written out in its entirety.
 
 
 {% highlight r %}
-ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
-  geom_point(aes(color=continent, size=pop))
+ggplot(data = gapminder_2007, aes(x = gdp_per_cap, y = life_exp)) +
+  geom_point(aes(color = continent, size = pop))
 {% endhighlight %}
 
 Equivalently, we can leave off the names in the first row. R knows by default
@@ -112,7 +112,7 @@ the third is the y-variable.
 
 {% highlight r %}
 ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
-  geom_point(aes(color=continent, size=pop))
+  geom_point(aes(color = continent, size = pop))
 {% endhighlight %}
 
 Let's dive a bit deeper into what this plot is doing. The first line sets up
@@ -184,22 +184,43 @@ ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
 
 <img src="../assets/class08-grammar-of-graphics/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
 
-The top row of the ggplot command gives defaults for the y-axis aesthetic. It
-is possible to override this in a particular layer. Why might this be useful?
-It might be a good idea to move the country labels slightly below their
-respective dots:
+Although it makes little sense here, we could also add a line plot to the
+graphic:
 
 
 {% highlight r %}
 ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
   geom_point(aes(color = continent), size = 0.4) +
-  geom_text(aes(y = life_exp - 0.5, label = country), size = 2)
+  geom_text(aes(label = country), size = 2) +
+  geom_line()
 {% endhighlight %}
 
 <img src="../assets/class08-grammar-of-graphics/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
 
-Notice that we can modify the variable in-line, such as subtracting a fixed
-value from a variable, within the **ggplot2** syntax.
+As we go through this material today, take particular note of the format for
+the next quiz.
+
+### Prototype and References
+
+Some students, depending on their learning style, find it easiest to learn
+from a prototype showing exactly how `ggplot2` commands are structured. In
+the code below, anything in square brackets and captialised should be changed;
+other elements should generally be kept as-is:
+
+
+{% highlight r %}
+ggplot([DATA NAME], aes([X VARIABLE NAME], [Y VARIABLE NAME])) +
+  geom_[GEOM NAME](aes([VARIABLE AESTHETICS]), [FIXED AESTHETICS])
+{% endhighlight %}
+If you would like more references, here is a cheat-sheet and online notes that
+extend what we have done today:
+
+- [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [R4DS]()
+
+These cover much more than we have shown today, and you are only responsible
+for the notes here. However, you may find the exercises and examples useful
+if this material is new to you.
 
 ### Practice
 
