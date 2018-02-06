@@ -1,5 +1,5 @@
 ---
-title: "Project 01: Data Dictionary with Collected Data"
+title: "Project A: Data Dictionary with Collected Data"
 author: "Taylor Arnold"
 output: html_notebook
 ---
