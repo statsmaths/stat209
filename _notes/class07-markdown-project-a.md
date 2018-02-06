@@ -8,8 +8,7 @@ output: html_notebook
 
 ### Overview
 
-Today we will finish talking about GitHub and the first project. We then
-move on to talking about five basic plot types.
+Today we will finish talking about GitHub, RMarkdown, and the first project.
 
 ### GitHub (part 2)
 
