@@ -10,7 +10,7 @@ output: html_notebook
 
 **Rubric**: [project-a-rubric.csv](https://github.com/statsmaths/stat209/blob/master/projects/project-a-rubric.csv)
 
-**Questions deadline**:  2018-02-19; 5pm (Friday) - If you would like help
+**Questions deadline**:  2018-02-16; 5pm (Friday) - If you would like help
 with the project, please see/e-mail me before this deadline. After this time
 I will only help with technical issues, such as R crashing or GitHub being
 down.
