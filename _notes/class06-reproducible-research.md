@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Research"
+title: "Class 06: Reproducible Research"
 author: "Taylor Arnold"
 output: html_notebook
 ---

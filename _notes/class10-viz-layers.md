@@ -1,5 +1,5 @@
 ---
-title: "Further Visualization Layers"
+title: "Class 10: Further Visualization Layers"
 author: "Taylor Arnold"
 output: html_notebook
 ---

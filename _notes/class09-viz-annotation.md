@@ -1,5 +1,5 @@
 ---
-title: "Annotating Data Visualizations"
+title: "Class 09: Annotating Data Visualizations"
 author: "Taylor Arnold"
 output: html_notebook
 ---

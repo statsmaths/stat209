@@ -1,5 +1,5 @@
 ---
-title: "Plot Types"
+title: "Class 06: Plot Types"
 author: "Taylor Arnold"
 output: html_notebook
 ---

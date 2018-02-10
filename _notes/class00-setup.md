@@ -1,5 +1,5 @@
 ---
-title: "Installing R"
+title: "Class 00: Installing R"
 author: "Taylor Arnold"
 output: html_notebook
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Grammar of Graphics"
+title: "Class 08: Grammar of Graphics"
 author: "Taylor Arnold"
 output: html_notebook
 ---

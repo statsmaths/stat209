@@ -1,5 +1,5 @@
 ---
-title: "Data Dictionary"
+title: "Class 05: Data Dictionary"
 author: "Taylor Arnold"
 output: html_notebook
 ---

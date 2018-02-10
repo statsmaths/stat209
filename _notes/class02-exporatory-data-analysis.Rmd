@@ -1,5 +1,5 @@
 ---
-title: "Exploratory Data Analysis"
+title: "Class 02: Exploratory Data Analysis"
 author: "Taylor Arnold"
 output: html_notebook
 ---

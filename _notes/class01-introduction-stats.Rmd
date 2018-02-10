@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Statistics"
+title: "Class 01: Introduction to Statistics"
 author: "Taylor Arnold"
 output: html_notebook
 ---
