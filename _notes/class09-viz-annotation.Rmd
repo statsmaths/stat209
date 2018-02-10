@@ -117,7 +117,7 @@ Similarly, I could label the US on the plot:
 ```{r, message = FALSE}
 ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
   geom_point(aes(size=pop, color = continent)) +
-  annotate("text", x = 42950, y = 767, label = "USA")
+  annotate("text", x = 42950, y = 76.7, label = "USA")
 ```
 
 Or, highlight the healthy and wealthy part of the plot:
@@ -125,7 +125,7 @@ Or, highlight the healthy and wealthy part of the plot:
 ```{r, message = FALSE}
 ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
   annotate("rect", xmin = 30000, xmax = 50000,
-                   ymin = 75, ymax = 83,
+                   ymin = 75, ymax = 85,
                    fill = "purple", alpha = 0.1) +
   geom_point(aes(size=pop)) +
   annotate("text", x = 40000, y = 76,

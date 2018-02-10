@@ -116,7 +116,7 @@ Similarly, I could label the US on the plot:
 {% highlight r %}
 ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
   geom_point(aes(size=pop, color = continent)) +
-  annotate("text", x = 42950, y = 767, label = "USA")
+  annotate("text", x = 42950, y = 76.7, label = "USA")
 {% endhighlight %}
 
 <img src="../assets/class09-viz-annotation/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
@@ -127,7 +127,7 @@ Or, highlight the healthy and wealthy part of the plot:
 {% highlight r %}
 ggplot(data=gapminder_2007, aes(x=gdp_per_cap, y=life_exp)) +
   annotate("rect", xmin = 30000, xmax = 50000,
-                   ymin = 75, ymax = 83,
+                   ymin = 75, ymax = 85,
                    fill = "purple", alpha = 0.1) +
   geom_point(aes(size=pop)) +
   annotate("text", x = 40000, y = 76,
