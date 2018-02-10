@@ -175,7 +175,7 @@ ggplot([DATA NAME], aes([X VARIABLE NAME], [Y VARIABLE NAME])) +
 If you would like more references, here is a cheat-sheet and online notes that
 extend what we have done today:
 
-- [RMarkdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+- [ggplot2 cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
 - [R4DS: Data Viz](http://r4ds.had.co.nz/data-visualisation.html)
 
 These cover much more than we have shown today, and you are only responsible
