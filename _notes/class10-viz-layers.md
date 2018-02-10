@@ -109,37 +109,6 @@ plots from **ggplot2** graphics. Simply load the package:
 library(plotly)
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## 
-## Attaching package: 'plotly'
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## The following object is masked from 'package:ggplot2':
-## 
-##     last_plot
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## The following object is masked from 'package:stats':
-## 
-##     filter
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## The following object is masked from 'package:graphics':
-## 
-##     layout
-{% endhighlight %}
-
 Then, in order to make an interactive plot just call `ggplotly` after the
 plot has been made:
 
@@ -173,7 +142,7 @@ not ideal for integration into a paper or presentation.
 
 ### Practice
 
-For today's class, we will work on lab10:
+For today's class, we will work on:
 <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab10.Rmd" download="lab10.Rmd" target="_blank">lab10.Rmd</a>.
 
 Upload your script (no need to include the HTML file) to GitHub ahead of the

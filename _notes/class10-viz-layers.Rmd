@@ -103,7 +103,7 @@ plot.
 There exists a very handy package called **plotly** for making interactive
 plots from **ggplot2** graphics. Simply load the package:
 
-```{r}
+```{r, message = FALSE, warning = FALSE}
 library(plotly)
 ```
 
@@ -138,7 +138,7 @@ not ideal for integration into a paper or presentation.
 
 ### Practice
 
-For today's class, we will work on lab10:
+For today's class, we will work on:
 <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab10.Rmd" download="lab10.Rmd" target="_blank">lab10.Rmd</a>.
 
 Upload your script (no need to include the HTML file) to GitHub ahead of the
