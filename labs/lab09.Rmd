@@ -31,7 +31,7 @@ trump <- read_csv("https://statsmaths.github.io/stat_data/trump_approval.csv")
 Murder rates across different cities in the US:
 
 ```{r}
-trump <- read_csv("https://statsmaths.github.io/stat_data/murder_by_city.csv")
+murder <- read_csv("https://statsmaths.github.io/stat_data/murder_by_city.csv")
 ```
 
 Or the daily close values of the Dow Jones Industrial Average:
