@@ -1,5 +1,5 @@
 ---
-title: "Data Basics"
+title: "Class 04: Data Basics"
 author: "Taylor Arnold"
 output: html_notebook
 ---

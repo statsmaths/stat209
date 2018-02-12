@@ -1,5 +1,5 @@
 ---
-title: "Markdown and Project A"
+title: "Class07: Markdown and Project A"
 author: "Taylor Arnold"
 output: html_notebook
 ---

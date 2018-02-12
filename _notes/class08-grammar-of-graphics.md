@@ -1,5 +1,5 @@
 ---
-title: "Grammar of Graphics"
+title: "Class 08: Grammar of Graphics"
 author: "Taylor Arnold"
 output: html_notebook
 ---
@@ -60,18 +60,18 @@ gapminder_2007
 
 {% highlight text %}
 ## # A tibble: 142 x 5
-##    country     continent life_exp       pop gdp_per_cap
-##    <chr>       <chr>        <dbl>     <int>       <dbl>
-##  1 Afghanistan Asia          43.8  31889923         975
-##  2 Albania     Europe        76.4   3600523        5937
-##  3 Algeria     Africa        72.3  33333216        6223
-##  4 Angola      Africa        42.7  12420476        4797
-##  5 Argentina   Americas      75.3  40301927       12779
-##  6 Australia   Oceania       81.2  20434176       34435
-##  7 Austria     Europe        79.8   8199783       36126
-##  8 Bahrain     Asia          75.6    708573       29796
-##  9 Bangladesh  Asia          64.1 150448339        1391
-## 10 Belgium     Europe        79.4  10392226       33693
+##        country continent life_exp       pop gdp_per_cap
+##          <chr>     <chr>    <dbl>     <int>       <dbl>
+##  1 Afghanistan      Asia   43.828  31889923    974.5803
+##  2     Albania    Europe   76.423   3600523   5937.0295
+##  3     Algeria    Africa   72.301  33333216   6223.3675
+##  4      Angola    Africa   42.731  12420476   4797.2313
+##  5   Argentina  Americas   75.320  40301927  12779.3796
+##  6   Australia   Oceania   81.235  20434176  34435.3674
+##  7     Austria    Europe   79.829   8199783  36126.4927
+##  8     Bahrain      Asia   75.635    708573  29796.0483
+##  9  Bangladesh      Asia   64.062 150448339   1391.2538
+## 10     Belgium    Europe   79.441  10392226  33692.6051
 ## # ... with 132 more rows
 {% endhighlight %}
 
@@ -215,7 +215,7 @@ ggplot([DATA NAME], aes([X VARIABLE NAME], [Y VARIABLE NAME])) +
 If you would like more references, here is a cheat-sheet and online notes that
 extend what we have done today:
 
-- [RMarkdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+- [ggplot2 cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
 - [R4DS: Data Viz](http://r4ds.had.co.nz/data-visualisation.html)
 
 These cover much more than we have shown today, and you are only responsible
