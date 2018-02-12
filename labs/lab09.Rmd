@@ -1,5 +1,5 @@
 ---
-title: "Lab 09: Grammar of Graphics"
+title: "Lab 09: Annotating Data Visualizations"
 output: html_document
 ---
 

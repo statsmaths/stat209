@@ -267,7 +267,7 @@ professional looking graphics.
 ### Practice
 
 We will, once again, work on a lab for the remainder of the class:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab09.Rmd" download="lab10.Rmd" target="_blank">lab10.Rmd</a>
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab10.Rmd" download="lab10.Rmd" target="_blank">lab10.Rmd</a>
 Upload your script to GitHub ahead of the next class.
 
 
