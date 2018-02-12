@@ -47,7 +47,7 @@ new layers to the plot:
 - `ggtitle("text for the title/top of the plot")`
 - `labs(size = "label for the size legend")`
 
-Let's add these to the current plot: 
+Let's add these to the current plot:
 
 
 {% highlight r %}
@@ -145,7 +145,7 @@ rectangle.
 
 We will, once again, work on a lab for the remainder of the class:
 <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab09.Rmd" download="lab09.Rmd" target="_blank">lab09.Rmd</a>
-Upload your script (no need to include the HTML file) to GitHub ahead of the
+Upload your script and html file to GitHub ahead of the
 next class.
 
 
