@@ -258,7 +258,7 @@ ggplot(flights, aes(air_time, distance)) +
   geom_point(color = "red", data = flights_to_rva)
 {% endhighlight %}
 
-<img src="../assets/class09-viz-annotation/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
+<img src="../assets/class10-filtering/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
 
 This shows all of the Richmond flights in red on top of the remainder of the
 flights. Combined with annotations, these techniques can create very
