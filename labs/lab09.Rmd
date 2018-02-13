@@ -57,7 +57,7 @@ before settling on a final one for analysis. This time, make sure you that you
 upload both the Rmd and the html files to GitHub (remember, the final report
 should have just one single visualization).
 
-Also note that you will have to use the format `x = as.Data("2017-01-06")` to
+Also note that you will have to use the format `x = as.Date("2017-01-06")` to
 add annotations to an axis that uses time as a component.
 
 ## Analysis

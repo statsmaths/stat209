@@ -99,7 +99,7 @@ annotate("text", x = [X COORDINATE], y = [Y COORDINATE], label = [TEXT],
 Or a rect(angle):
 
 ```{r, eval = FALSE}
-annotate("text", xmin = [VALUE], xmax = [VALUE], ymin = [VALUE],
+annotate("rect", xmin = [VALUE], xmax = [VALUE], ymin = [VALUE],
                  ymax = [VALUE], [OTHER OPTIONS])
 ```
 

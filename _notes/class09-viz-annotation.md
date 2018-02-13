@@ -94,7 +94,7 @@ Or a rect(angle):
 
 
 {% highlight r %}
-annotate("text", xmin = [VALUE], xmax = [VALUE], ymin = [VALUE],
+annotate("rect", xmin = [VALUE], xmax = [VALUE], ymin = [VALUE],
                  ymax = [VALUE], [OTHER OPTIONS])
 {% endhighlight %}
 
