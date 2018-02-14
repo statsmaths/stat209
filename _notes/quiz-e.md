@@ -1,23 +1,12 @@
 ---
 title: "Assessment E"
 author: "Taylor Arnold"
-output: html_notebook
 ---
 
-For this in-class assessment, you should be able to:
+The next assessment will serve double purpose as both an assessment and a lab.
+We will not meet as a class on Tuesday, 2018-02-20. Instead I will post
+`Lab11.Rmd` on the website. Prior to the next class you should compete and
+upload the completed lab. You will be able to work on these with any notes
+or resources you would like, though I expect you to work on it on your own
+and not consult anyone else's final results.
 
-- compute the mean, median, percentiles, variance, and
-standard deviation of small datasets by hand
-- compute the mean, median, percentiles, variance, and
-standard deviation of small datasets by calling functions
-in R
-- determine when the median would differ greatly from the
-mean
-- apply the 66% and 95% rules for the standard deviation
-to numeric data; this includes the reverse: looking at a
-or percentiles and determining the standard deviation
-from them
-
-If I ask you do arithmetic, it will be either very easy to
-compute the answer or you can leave it unsimplified. No
-calculators are needed or allowed.

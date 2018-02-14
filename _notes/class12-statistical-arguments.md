@@ -4,14 +4,7 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = TRUE)
-knitr::opts_chunk$set(fig.path = "../assets/class03-statistical-arguments/")
-knitr::opts_chunk$set(fig.height = 5)
-knitr::opts_chunk$set(fig.width = 8.5)
-knitr::opts_chunk$set(out.width = "100%")
-knitr::opts_chunk$set(dpi = 300)
-```
+
 
 Last class we looked at how we can explore data to uncover
 interesting patterns and examples. Today we take this one
@@ -193,10 +186,7 @@ reason that plays on the audience's emotions.
 
 ### Assignment
 
-For next class, please find a news article that includes statistical
-arguments. This can be a simple plot, map, or table of data. Anything
-in which there is a representation of data along with a larger text
-that uses the data in some way. We will use these in class next week.
-
+We'll now go through the requirements for the second project. There is no
+separate lab today, so spend this time getting started on the project.
 
 
