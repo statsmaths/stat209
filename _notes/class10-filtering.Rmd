@@ -98,7 +98,7 @@ and `c` functions:
 
 ```{r}
 flights_summer <- filter(flights, month %in% c(7, 8, 9))
-flights_dc_metro <- filter(flights, month %in% c("DCA", "IAD", "BWI"))
+flights_dc_metro <- filter(flights, dest %in% c("DCA", "IAD", "BWI"))
 ```
 
 These approaches here should get you through most of your needs in filtering
@@ -126,6 +126,29 @@ ggplot(flights, aes(air_time, distance)) +
 This shows all of the Richmond flights in red on top of the remainder of the
 flights. Combined with annotations, these techniques can create very
 professional looking graphics.
+
+### Filtering dates
+
+To filter dates and date time objects we can also use the numeric comparison
+operators such as `>` and `<`. However, we have to convert the thing we are
+comparing to a date object using either `as.Date` (for just date data) or
+`as.POSIXct` (for date time data).
+
+For example, here is a way of filtering the flights dataset using the
+`time_hour` variable:
+
+```{r}
+flights_post_oct <- filter(flights, time_hour >= as.POSIXct("2013-11-01"))
+flights_post_oct
+```
+
+The special function `between` allows us to grab a range of dates:
+
+```{r}
+flights_xmas <- filter(flights, between(time_hour, as.POSIXct("2013-12-25"),
+                                        as.POSIXct("2013-12-26")))
+flights_xmas
+```
 
 ### Practice
 

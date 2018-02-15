@@ -232,7 +232,7 @@ and `c` functions:
 
 {% highlight r %}
 flights_summer <- filter(flights, month %in% c(7, 8, 9))
-flights_dc_metro <- filter(flights, month %in% c("DCA", "IAD", "BWI"))
+flights_dc_metro <- filter(flights, dest %in% c("DCA", "IAD", "BWI"))
 {% endhighlight %}
 
 These approaches here should get you through most of your needs in filtering
@@ -263,6 +263,75 @@ ggplot(flights, aes(air_time, distance)) +
 This shows all of the Richmond flights in red on top of the remainder of the
 flights. Combined with annotations, these techniques can create very
 professional looking graphics.
+
+### Filtering dates
+
+To filter dates and date time objects we can also use the numeric comparison
+operators such as `>` and `<`. However, we have to convert the thing we are
+comparing to a date object using either `as.Date` (for just date data) or
+`as.POSIXct` (for date time data).
+
+For example, here is a way of filtering the flights dataset using the
+`time_hour` variable:
+
+
+{% highlight r %}
+flights_post_oct <- filter(flights, time_hour >= as.POSIXct("2013-11-01"))
+flights_post_oct
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 53,991 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time
+##    <int> <int> <int>    <int>          <int>     <int>    <int>
+##  1  2013    11     1        5           2359         6      352
+##  2  2013    11     1       35           2250       105      123
+##  3  2013    11     1      455            500      -  5      641
+##  4  2013    11     1      539            545      -  6      856
+##  5  2013    11     1      542            545      -  3      831
+##  6  2013    11     1      549            600      - 11      912
+##  7  2013    11     1      550            600      - 10      705
+##  8  2013    11     1      554            600      -  6      659
+##  9  2013    11     1      554            600      -  6      826
+## 10  2013    11     1      554            600      -  6      749
+## # ... with 53,981 more rows, and 12 more variables: sched_arr_time <int>,
+## #   arr_delay <int>, carrier <chr>, flight <int>, tailnum <chr>,
+## #   origin <chr>, dest <chr>, air_time <int>, distance <int>, hour <int>,
+## #   minute <int>, time_hour <dttm>
+{% endhighlight %}
+
+The special function `between` allows us to grab a range of dates:
+
+
+{% highlight r %}
+flights_xmas <- filter(flights, between(time_hour, as.POSIXct("2013-12-25"),
+                                        as.POSIXct("2013-12-26")))
+flights_xmas
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 715 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time
+##    <int> <int> <int>    <int>          <int>     <int>    <int>
+##  1  2013    12    25      456            500        -4      649
+##  2  2013    12    25      524            515         9      805
+##  3  2013    12    25      542            540         2      832
+##  4  2013    12    25      546            550        -4     1022
+##  5  2013    12    25      556            600        -4      730
+##  6  2013    12    25      557            600        -3      743
+##  7  2013    12    25      557            600        -3      818
+##  8  2013    12    25      559            600        -1      855
+##  9  2013    12    25      559            600        -1      849
+## 10  2013    12    25      600            600         0      850
+## # ... with 705 more rows, and 12 more variables: sched_arr_time <int>,
+## #   arr_delay <int>, carrier <chr>, flight <int>, tailnum <chr>,
+## #   origin <chr>, dest <chr>, air_time <int>, distance <int>, hour <int>,
+## #   minute <int>, time_hour <dttm>
+{% endhighlight %}
 
 ### Practice
 
