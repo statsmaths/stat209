@@ -8,7 +8,7 @@ output: html_notebook
 
 **Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project-b.Rmd" download="project-b.Rmd" target="_blank">project-b.Rmd</a>
 
-**Data dictionary**: [project-b-data-dictionary](https://statsmaths.github.io/stat209/notes/project-b-data-dictionary)
+**Data dictionary**: [project-b-data-dictionary](https://statsmaths.github.io/stat209/notes/project-b-acs-dictionary)
 
 **Rubric**: [project-b-rubric.csv](https://github.com/statsmaths/stat209/blob/master/projects/project-b-rubric.csv)
 

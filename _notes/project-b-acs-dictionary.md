@@ -83,7 +83,7 @@ Time of commute, given as a percentage of commuters:
 - **leave_1200_1559**
 - **leave_1600_2359**
 
-Typical length of a commute, given as percentage of commuters:
+Typical length of a commute in minutes, given as percentage of commuters:
 
 - **ctime_00_05**
 - **ctime_05_09**
@@ -98,7 +98,8 @@ Typical length of a commute, given as percentage of commuters:
 - **ctime_60_89**
 - **ctime_90_99**
 
-Distribution of income, given as a percentage of households:
+Distribution of income in thousands of dollars, given as a percentage of
+households:
 
 - **income_000_010**
 - **income_010_015**
@@ -117,8 +118,8 @@ Distribution of income, given as a percentage of households:
 - **income_150_200**
 - **income_200_999**
 
-Distribution of rent prices, given as percentage of households who rent
-their residence:
+Distribution of proportion of income spent on rent, given as percentage
+of households who rent their residence:
 
 - **rent_by_income_00_10**
 - **rent_by_income_10_15**
