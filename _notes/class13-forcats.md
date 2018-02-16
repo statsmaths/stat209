@@ -4,25 +4,9 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = TRUE)
-knitr::opts_chunk$set(fig.path = "../assets/class13-forcats/")
-knitr::opts_chunk$set(fig.height = 5)
-knitr::opts_chunk$set(fig.width = 8.5)
-knitr::opts_chunk$set(out.width = "100%")
-knitr::opts_chunk$set(dpi = 300)
-```
 
-```{r, message = FALSE, include = FALSE}
-library(readr)
-library(ggplot2)
-library(dplyr)
-library(viridis)
-library(kableExtra)
-library(smodels)
 
-theme_set(theme_minimal())
-```
+
 
 ### Learning Objectives
 
@@ -34,10 +18,30 @@ in plots.
 
 For class today, let's load a dataset of teas offered by the website Adagio:
 
-```{r, message = FALSE}
+
+{% highlight r %}
 tea <- read_csv("https://statsmaths.github.io/stat_data/tea.csv")
 tea
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 238 x 5
+##    name                type  score price num_reviews
+##    <chr>               <chr> <int> <int>       <int>
+##  1 irish_breakfast     black    96    10        3675
+##  2 earl_grey_bravo     black    95    10        3520
+##  3 golden_monkey       black    95    27        1125
+##  4 black_dragon_pearls black    96    32        1748
+##  5 yunnan_noir         black    95    17         988
+##  6 earl_grey_moonlight black    95    10        2510
+##  7 english_breakfast   black    93    17        1008
+##  8 keemun_concerto     black    92    17         499
+##  9 yunnan_gold         black    95    40        1094
+## 10 ceylon_sonata       black    94    12        1525
+## # ... with 228 more rows
+{% endhighlight %}
 
 ### New Variables
 
@@ -47,27 +51,34 @@ is, we apply the functions to the variables within the plot. For example,
 the tea dataset gives prices in cents. We can make a plot of price in dollars
 against the score as follows:
 
-```{r}
+
+{% highlight r %}
 ggplot(tea, aes(price / 100, score)) +
   geom_point()
-```
+{% endhighlight %}
+
+<img src="../assets/class13-forcats/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" />
 
 Notice that the expression shows up verbatim in the plot. We can apply other
 functions such as `sqrt` or combine two variables similarly (note: this makes
 no practical sense here):
 
-```{r}
+
+{% highlight r %}
 ggplot(tea, aes(sqrt(price), score / num_reviews)) +
   geom_point()
-```
+{% endhighlight %}
+
+<img src="../assets/class13-forcats/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
 
 If a new variable is particularly useful or complex to construct, it may be
 useful to create a new variable to store it. The syntax to do this is as
 follows:
 
-```{r}
+
+{% highlight r %}
 tea$price_dollars <- tea$price / 100
-```
+{% endhighlight %}
 
 Notice that we need to start every variable name with `tea$`; otherwise R will
 not know which dataset we are working with. In **ggplot2** commands this is
@@ -88,25 +99,34 @@ The second two require an option named `n` that specifies the number of buckets.
 
 Let's take a look at how this works for factor:
 
-```{r}
+
+{% highlight r %}
 ggplot(tea, aes(price, num_reviews)) +
   geom_point(aes(color = factor(price)))
-```
+{% endhighlight %}
+
+<img src="../assets/class13-forcats/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
 
 Cut with 5 bins:
 
-```{r}
+
+{% highlight r %}
 ggplot(tea, aes(price, num_reviews)) +
   geom_point(aes(color = cut(price, 5)))
-```
+{% endhighlight %}
+
+<img src="../assets/class13-forcats/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
 
 And bin with 5 bins:
 
-```{r}
+
+{% highlight r %}
 library(smodels)
 ggplot(tea, aes(price, num_reviews)) +
   geom_point(aes(color = bin(price, 5)))
-```
+{% endhighlight %}
+
+<img src="../assets/class13-forcats/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
 
 You may find these useful, for one thing, when making maps in your second
 project.
@@ -126,25 +146,52 @@ specify the number of remaining categories
 
 We can see the effect of these most clearly on a bar plot, such as:
 
-```{r}
+
+{% highlight r %}
 ggplot(tea, aes(fct_infreq(type))) +
   geom_bar()
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in fct_infreq(type): could not find function "fct_infreq"
+{% endhighlight %}
+
+<img src="../assets/class13-forcats/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
 
 Or
 
-```{r}
+
+{% highlight r %}
 ggplot(tea, aes(fct_lump(type, n = 3))) +
   geom_bar()
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in fct_lump(type, n = 3): could not find function "fct_lump"
+{% endhighlight %}
+
+<img src="../assets/class13-forcats/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
 
 They are very useful for when you want to use color but have too many small
 categories:
 
-```{r}
+
+{% highlight r %}
 ggplot(tea, aes(price, num_reviews)) +
   geom_point(aes(color = fct_lump(type, n = 5)))
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in fct_lump(type, n = 5): could not find function "fct_lump"
+{% endhighlight %}
+
+<img src="../assets/class13-forcats/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="100%" />
 
 ### Practice
 
