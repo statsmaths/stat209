@@ -1,10 +1,17 @@
 ---
-title: "Statistical Evidence"
+title: "Class 17: Statistical Evidence"
 author: "Taylor Arnold"
 output: html_notebook
 ---
 
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(fig.path = "../assets/class17-statistical-arguments/")
+knitr::opts_chunk$set(fig.height = 5)
+knitr::opts_chunk$set(fig.width = 8.5)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+```
 
 Last class we looked at how we can explore data to uncover
 interesting patterns and examples. Today we take this one
@@ -186,7 +193,7 @@ reason that plays on the audience's emotions.
 
 ### Assignment
 
-We'll now go through the requirements for the second project. There is no
+We'll now go through the requirements for Project C. There is no
 separate lab today, so spend this time getting started on the project.
 
 

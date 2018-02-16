@@ -1,12 +1,12 @@
 ---
-title: "Class 12: Further Visualization Layers"
+title: "Class 15: Peer Review, Project B"
 author: "Taylor Arnold"
 output: html_notebook
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = TRUE)
-knitr::opts_chunk$set(fig.path = "../assets/class12-viz-layers/")
+knitr::opts_chunk$set(fig.path = "../assets/class13-forcats/")
 knitr::opts_chunk$set(fig.height = 5)
 knitr::opts_chunk$set(fig.width = 8.5)
 knitr::opts_chunk$set(out.width = "100%")

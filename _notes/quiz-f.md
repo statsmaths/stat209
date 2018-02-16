@@ -1,23 +1,20 @@
 ---
-title: "Assessment E"
+title: "Assessment F"
 author: "Taylor Arnold"
 output: html_notebook
 ---
 
-For this in-class assessment, you should be able to:
+This assessment will focus on your ability to filter a dataset using the
+`filter` function. Specifically, you should be able to:
 
-- compute the mean, median, percentiles, variance, and
-standard deviation of small datasets by hand
-- compute the mean, median, percentiles, variance, and
-standard deviation of small datasets by calling functions
-in R
-- determine when the median would differ greatly from the
-mean
-- apply the 66% and 95% rules for the standard deviation
-to numeric data; this includes the reverse: looking at a
-or percentiles and determining the standard deviation
-from them
+- filter based on a numeric variable by using the `>`, `>=`, and `<=` symbols
+- filter based on numeric or categorical variables using `==` (equals) and
+`!=` (not equals)
+- be able to use the `%in%` (contained in) operator correctly; remember that
+you need to use the function `c()` to describe the variables we are filtering
+on
 
-If I ask you do arithmetic, it will be either very easy to
-compute the answer or you can leave it unsimplified. No
-calculators are needed or allowed.
+For this assessment you **do no** need to memorize the commands for filtering
+dates and date times. These are useful, but I won't hold you to remembering
+them without your notes.
+

@@ -4,6 +4,8 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
+**Full Draft Due**: 2018-03-06 (Thursday, start of class)
+
 **Due**: 2018-03-08 (Thursday, start of class)
 
 **Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project-b.Rmd" download="project-b.Rmd" target="_blank">project-b.Rmd</a>
@@ -44,6 +46,11 @@ possible. Aim to have a final report around 750-1000 words. The word length is
 not a hard limit; it is just a guidelines to indicate the expected length
 of the report. All of the plots should be integrated into the essay in a
 meaningful way rather than all included at the start or end of the essay.
+Finally, you must have a completed draft ready in class on 2018-03-06. We
+will be reviewing drafts in class; **the drafts must have completely satisfied
+the requirements of the assignment**. Students who have not completed these
+will receive deductions in the grading rubric. Also, note that the project
+must be properly named as: `project-b.Rmd` and `project-b.html`.
 
 The grade for the assignment depends primarily on the effectiveness of the
 graphics in conveying information, the quality of the writing, and execution
