@@ -99,55 +99,9 @@ I won't quiz you on the details of these, but look back to these notes when
 you find ourself wanting to do something with the scales or range of the
 plot.
 
-### Interactive plots
-
-There exists a very handy package called **plotly** for making interactive
-plots from **ggplot2** graphics. Simply load the package:
-
-
-{% highlight r %}
-library(plotly)
-{% endhighlight %}
-
-Then, in order to make an interactive plot just call `ggplotly` after the
-plot has been made:
-
-
-{% highlight r %}
-ggplot(gapminder_2007, aes(gdp_per_cap, life_exp)) +
-  geom_point(aes(color = continent, size = pop)) +
-  scale_x_log10(breaks = c(500, 5000, 50000)) +
-  scale_y_continuous(breaks = c(40, 60, 80))
-
-ggplotly()
-{% endhighlight %}
-
-If you scroll over the points, you will be able to see any variables mapped
-to an aesthetic. The difficulty here is that you will not see variables that
-are not mapped to an aesthetic.
-
-
-{% highlight r %}
-ggplot(gapminder_2007, aes(gdp_per_cap, life_exp, fake = country)) +
-  geom_point(aes(color = continent, size = pop)) +
-  scale_x_log10(breaks = c(500, 5000, 50000)) +
-  scale_y_continuous(breaks = c(40, 60, 80))
-
-ggplotly()
-{% endhighlight %}
-
-Such interactive plots are, as you can image, excellent for exploratory analyses.
-However, they do become clunky when working with large datasets and are often
-not ideal for integration into a paper or presentation.
-
 ### Practice
 
-For today's class, we will work on:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab10.Rmd" download="lab10.Rmd" target="_blank">lab10.Rmd</a>.
-
-Upload your script (no need to include the HTML file) to GitHub ahead of the
-next class.
-
+For today's class, we will starting working on the next project, Project B.
 
 
 

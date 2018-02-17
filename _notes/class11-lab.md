@@ -1,5 +1,5 @@
 ---
-title: "Statistical Evidence"
+title: "Birds Lab"
 author: "Taylor Arnold"
 output: html_notebook
 ---
