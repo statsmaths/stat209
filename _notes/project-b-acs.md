@@ -4,7 +4,7 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-**Full Draft Due**: 2018-03-06 (Thursday, start of class)
+**Full Draft Due**: 2018-03-06 (Tuesday, start of class)
 
 **Due**: 2018-03-08 (Thursday, start of class)
 
