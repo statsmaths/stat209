@@ -60,7 +60,7 @@ Here is a full data dictionary describing all of the variables
 - **clutch_size** (dbl): average number of eggs produced per clutch
 
 Notice that the last two variables are integer codes. They are stored as numbers but
-correspond to a category. 
+correspond to a category.
 
 ## Starting plot
 
@@ -86,8 +86,9 @@ Answer:
 
 ## Parrots
 
-Create a new dataset called `parrots` consisting of just those birds that are parrots (hint: use the `type` variable; 
-double hint: look at the raw data for exactly how to format the filter query):
+Create a new dataset called `parrots` consisting of just those birds that are
+parrots (hint: use the `type` variable; double hint: look at the raw data for
+exactly how to format the filter query):
 
 ```{r}
 
@@ -95,7 +96,7 @@ double hint: look at the raw data for exactly how to format the filter query):
 
 Now add a layer to the previous plot (keeping the log scales) where the parrots are highlighted in the
 color "red". To make them stand out, make the base layer have an alpha value of 0.15. Finally, add
-a text annotation describing to the reader that the green points are parrots.
+a text annotation describing to the reader that the red points are parrots.
 
 ```{r}
 
