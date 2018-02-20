@@ -6,7 +6,7 @@ output: html_notebook
 
 **Full Draft Due**: 2018-03-06 (Tuesday, start of class)
 
-**Due**: 2018-03-08 (Thursday, start of class)
+**Final Due**: 2018-03-08 (Thursday, start of class)
 
 **Starter code**: <a href="https://raw.githubusercontent.com/statsmaths/stat209/master/projects/project-b.Rmd" download="project-b.Rmd" target="_blank">project-b.Rmd</a>
 
@@ -54,7 +54,9 @@ must be properly named as: `project-b.Rmd` and `project-b.html`.
 
 The grade for the assignment depends primarily on the effectiveness of the
 graphics in conveying information, the quality of the writing, and execution
-of how the writing and visualizations are integrated together.
+of how the writing and visualizations are integrated together. Also, half of
+the class will be selected to present their report to the class on 2018-03-08.
+The remainder of the class will present on Project C.
 
 ## Code Examples
 
