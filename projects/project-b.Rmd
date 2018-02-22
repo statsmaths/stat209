@@ -27,7 +27,7 @@ THE SECOND CHUNK SHOULD LOAD THE DATASET AND PRODUCE ANY
 FILTERED DATASETS THAT YOU NEED IN THE REST OF THE REPORT
 
 ```{r}
-
+tracts <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/acs_tract_data_2016.csv.gz")
 ```
 
 NOW, YOUR REPORT SHOULD GO HERE. FEEL FREE TO SPLIT IT UP
