@@ -112,7 +112,7 @@ flight_line
 ## # A tibble: 1 x 57
 ##   year_mean month_mean day_mean dep_time_mean sched_dep_time_mean
 ##       <dbl>      <dbl>    <dbl>         <dbl>               <dbl>
-## 1      2013       6.56     15.7          1349                1340
+## 1      2013   6.564803 15.74082       1348.79            1340.335
 ## # ... with 52 more variables: dep_delay_mean <dbl>, arr_time_mean <dbl>,
 ## #   sched_arr_time_mean <dbl>, arr_delay_mean <dbl>, flight_mean <dbl>,
 ## #   air_time_mean <dbl>, distance_mean <dbl>, hour_mean <dbl>,
@@ -160,21 +160,21 @@ print(flight_month, n = 12)
 
 {% highlight text %}
 ## # A tibble: 12 x 54
-##    month year_mean day_mean dep_time_mean sched_dep_time_m… dep_delay_mean
-##    <int>     <dbl>    <dbl>         <dbl>             <dbl>          <dbl>
-##  1     1      2013     15.8          1347              1339           9.99
-##  2     2      2013     15.0          1348              1340          10.8 
-##  3     3      2013     16.1          1359              1352          13.2 
-##  4     4      2013     15.4          1353              1345          13.8 
-##  5     5      2013     15.9          1351              1341          12.9 
-##  6     6      2013     15.5          1350              1336          20.7 
-##  7     7      2013     16.2          1352              1339          21.5 
-##  8     8      2013     15.9          1350              1342          12.6 
-##  9     9      2013     15.7          1334              1330           6.63
-## 10    10      2013     16.0          1340              1335           6.23
-## 11    11      2013     15.3          1345              1342           5.42
-## 12    12      2013     15.9          1357              1342          16.5 
-## # ... with 48 more variables: arr_time_mean <dbl>,
+##    month year_mean day_mean dep_time_mean sched_dep_time_mean
+##    <int>     <dbl>    <dbl>         <dbl>               <dbl>
+##  1     1      2013 15.84775      1346.628            1339.066
+##  2     2      2013 14.95498      1347.691            1340.016
+##  3     3      2013 16.13802      1359.336            1351.681
+##  4     4      2013 15.41384      1352.872            1344.696
+##  5     5      2013 15.93444      1350.588            1340.592
+##  6     6      2013 15.46984      1350.204            1336.275
+##  7     7      2013 16.22974      1351.879            1339.384
+##  8     8      2013 15.88152      1350.252            1341.918
+##  9     9      2013 15.67468      1333.900            1330.451
+## 10    10      2013 16.00321      1340.180            1335.061
+## 11    11      2013 15.30930      1344.589            1342.228
+## 12    12      2013 15.87372      1356.923            1342.379
+## # ... with 49 more variables: dep_delay_mean <dbl>, arr_time_mean <dbl>,
 ## #   sched_arr_time_mean <dbl>, arr_delay_mean <dbl>, flight_mean <dbl>,
 ## #   air_time_mean <dbl>, distance_mean <dbl>, hour_mean <dbl>,
 ## #   minute_mean <dbl>, year_median <dbl>, day_median <dbl>,

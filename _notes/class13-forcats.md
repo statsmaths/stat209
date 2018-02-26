@@ -28,18 +28,18 @@ tea
 
 {% highlight text %}
 ## # A tibble: 238 x 5
-##    name                type  score price num_reviews
-##    <chr>               <chr> <int> <int>       <int>
-##  1 irish_breakfast     black    96    10        3675
-##  2 earl_grey_bravo     black    95    10        3520
-##  3 golden_monkey       black    95    27        1125
+##                   name  type score price num_reviews
+##                  <chr> <chr> <int> <int>       <int>
+##  1     irish_breakfast black    96    10        3675
+##  2     earl_grey_bravo black    95    10        3520
+##  3       golden_monkey black    95    27        1125
 ##  4 black_dragon_pearls black    96    32        1748
-##  5 yunnan_noir         black    95    17         988
+##  5         yunnan_noir black    95    17         988
 ##  6 earl_grey_moonlight black    95    10        2510
-##  7 english_breakfast   black    93    17        1008
-##  8 keemun_concerto     black    92    17         499
-##  9 yunnan_gold         black    95    40        1094
-## 10 ceylon_sonata       black    94    12        1525
+##  7   english_breakfast black    93    17        1008
+##  8     keemun_concerto black    92    17         499
+##  9         yunnan_gold black    95    40        1094
+## 10       ceylon_sonata black    94    12        1525
 ## # ... with 228 more rows
 {% endhighlight %}
 
@@ -152,12 +152,6 @@ ggplot(tea, aes(fct_infreq(type))) +
   geom_bar()
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## Error in fct_infreq(type): could not find function "fct_infreq"
-{% endhighlight %}
-
 <img src="../assets/class13-forcats/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" />
 
 Or
@@ -166,12 +160,6 @@ Or
 {% highlight r %}
 ggplot(tea, aes(fct_lump(type, n = 3))) +
   geom_bar()
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in fct_lump(type, n = 3): could not find function "fct_lump"
 {% endhighlight %}
 
 <img src="../assets/class13-forcats/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />
@@ -183,12 +171,6 @@ categories:
 {% highlight r %}
 ggplot(tea, aes(price, num_reviews)) +
   geom_point(aes(color = fct_lump(type, n = 5)))
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in fct_lump(type, n = 5): could not find function "fct_lump"
 {% endhighlight %}
 
 <img src="../assets/class13-forcats/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="100%" />

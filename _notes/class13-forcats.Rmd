@@ -20,6 +20,7 @@ library(dplyr)
 library(viridis)
 library(kableExtra)
 library(smodels)
+library(forcats)
 
 theme_set(theme_minimal())
 ```
