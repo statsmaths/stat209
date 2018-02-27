@@ -92,5 +92,13 @@ acs$ctime_45_plus <- acs$ctime_45_59 + acs$ctime_60_89 + acs$ctime_90_99
 
 The name of the new variable (here, `ctime_45_plus`) is entirely up to you.
 
+Also, some students have wanted to create a variable that shows, for each tract, the maximum
+category from a group of variables. You can do this by the following code (replace `acs`
+with the name of your dataset) for the race variables:
 
+```{r}
+temp <- select(acs, starts_with("race_"))
+acs$max_race_category <- names(temp)[apply(temp, 1, which.max)]
+```
 
+It should be clear how to modify this for other variables (but if not, please ask!).
