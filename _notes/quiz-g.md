@@ -5,10 +5,10 @@ output: html_notebook
 ---
 
 This assessment will focus on your ability to use the factor commands and
-make use the `group_summarize` function. The assessment will be five
-multiple choice questions (so you do not need to write code yourself),
-how you will need to both understand the functions as well as broadly know
-the correct syntax. Specific items are:
+make use the `group_summarize` function. The assessment will be four questions.
+All of the coding related questions are multiple choice (so you do not need to
+write code yourself), however you will need to both understand the functions as
+well as broadly know the correct syntax. Specific items to know are:
 
 - understand what `cut`, `factor`, and `bin` are used for (and why you
 would use them)
