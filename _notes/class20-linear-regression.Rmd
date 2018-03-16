@@ -21,6 +21,66 @@ library(viridis)
 library(kableExtra)
 
 theme_set(theme_minimal())
+msleep <- na.omit(msleep)
+```
+
+
+We have seen how to use the `lm_basic` function to fit models for the
+mean of some response. We have used both a single mean for the entire
+dataset as well as multiple means based on a second categorical variable.
+What happens if we use the same set-up but instead use a numeric variable
+to predict the value of some response? The output is surprisingly similar,
+but the interpretation of the results differ slightly.
+
+As an example, let's predict the amount each mammal is awake as a function
+of its brain weight:
+
+```{r}
+model <- lm_basic(awake ~ 1 + sleep_rem, data = msleep)
+reg_table(model, level = 0.95)
+```
+
+There is once again an intercept term and a row of the table corresponding
+to the new variable `brainwt`. What do these numbers mean? It turns out
+that this is simply describing a best-fit line through the data. We have
+already seen how to do this graphically with `geom_smooth`. The line here
+is, exactly, the line given in this plot:
+
+```{r}
+qplot(sleep_rem, awake, data = msleep) + geom_smooth(method = "lm")
+```
+
+The `reg_table` function is just giving us the intercept and slope of
+this line, along with confidence interval bounds for both.^[Does it make
+sense that the slope here is negative? It should!] This should
+explain why the first term is called the intercept. As with the discrete
+case, there is a special meaning behind whether the confidence interval
+contains zero. If it does not, we say we have detected a statistically
+significant linear relationship between our two variables.
+
+Further, and finally, we can add multiple variables into a single regression.
+It is even possible to mix continuous and categorical variables into the
+same model:
+
+```{r}
+model <- lm_basic(awake ~ 1 + sleep_rem + vore, data = msleep)
+reg_table(model, level = 0.95)
+```
+
+The interpretation becomes, in this case, the change we would expect to
+see in the response given a *marginal* change in one of the explanatory
+variables on the right-hand side of the model. That is, how do we expect
+the mean to change if we modify one (and only one) of the other variables.
+
+As models become more complex it can become difficult to directly compute
+the predicted values and residuals that come from it.
+We can use the `add_prediction` function in R to append the residuals
+back into the original dataset. It also adds in the predicted values for each data point.
+These predictions are often called the **fitted values**.
+
+```{r}
+msleep <- add_prediction(msleep, model)
+msleep
 ```
 
 

@@ -21,7 +21,103 @@ library(viridis)
 library(kableExtra)
 
 theme_set(theme_minimal())
+
+coins <- data_frame(number = c(1,2,2,3,4,4,4,5))
+helicopter <- data_frame(flight_time = c(0.9, 1.11, 1.13, 0.92, 1.16, 1.11))
+coins2 <- data_frame(number = c(1,1,4,5,1,3,4,4), cup = c(rep("A", 4), rep("B", 4)))
 ```
+
+
+Today we turn our attention to modeling, the third and
+final aspect of data analysis. The first model we will look at is
+modeling the mean value of some random process. In this handout
+we will start to see how to implement this model directly in R and how
+to analyze how well it fits the data at hand.
+
+\section{A simple example}
+
+We want to take the observations of some numeric variable and provide
+an estimate of its **true** mean. The techniques we
+cover today will apply to two similar but conceptually different
+cases. These are:
+
+- a variable sampled independently from a larger population
+- a variable observed from repeated trials of a random process
+
+In the first case, the true mean is the mean of the entire population.
+For the second case, the true mean is the average value we would get from
+an infinite number of trials. As long as the sample from the population
+is taken at random and the output collected from each random trial
+is independent of prior trials, the same exact technique is used for
+estimating the mean of both situations.
+
+Consider a random sample of coins from a cup similar to the one we
+have in class:
+
+```{r}
+coins
+```
+
+Our best guess for the average value of all of the coins in the cups
+might be the mean of the sample we took:
+
+```{r}
+mean(coins$number)
+```
+
+Let's do this is a different way that will allow us to extrapolate
+on this single number:
+
+```{r}
+model <- lm_basic(number ~ 1, data = coins)
+```
+
+This says to construct a model for the variable `number` from the data
+set `coins`. The `1` indicates that we are fitting a
+single mean to the dataset; we will see later how to fit more
+complex models. To see the output of the model, run `reg_table`:
+
+```{r}
+reg_table(model)
+```
+
+The model calls the mean an intercept, for reasons that will become
+clear shortly, and it gives the exact same value as with our old
+technique. The other numbers above and below the table can be useful
+but are not our primary subject of interest at the moment.
+
+Why bother with this more involved method for finding a mean? For
+one thing, `reg_table` provides an option called `level` that can
+be set to a number between 0 and 1. For example:
+
+```{r}
+reg_table(model, level = 0.9)
+```
+
+The table now includes two additional numbers of the mean: the
+10th and 90th percentiles of a *confidence interval*. A confidence
+interval provides a guess for where the true mean^[defined in either
+of the ways described as above] actually lies. The construction of
+a confidence interval involves some surprisingly deep mathematics,
+including the law of large numbers and the central limit theorem.
+Using confidence intervals is, however, incredibly simple! The
+confidence level, here 90%, gives the probability that the testing
+procedure will lead to a correct result if a sample or experiment
+is repeated many times. Common confidence levels include 90%, 95%,
+and 99%.
+
+Taking a set of sampled flight times from paper helicopters, we
+can run the exact same analysis:
+
+```{r}
+model <- lm_basic(flight_time ~ 1, data = helicopter)
+reg_table(model, level = 0.95)
+```
+
+Unless we have a specific reason to use a different level, we will
+usually use a 95% confidence interval in this course.
+
+
 
 
 

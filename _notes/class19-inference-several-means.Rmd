@@ -21,8 +21,108 @@ library(viridis)
 library(kableExtra)
 
 theme_set(theme_minimal())
+
+coins <- data_frame(number = c(1,2,2,3,4,4,4,5))
+helicopter <- data_frame(flight_time = c(0.9, 1.11, 1.13, 0.92, 1.16, 1.11))
+coins2 <- data_frame(number = c(1,1,4,5,1,3,4,4), cup = c(rep("A", 4), rep("B", 4)))
 ```
 
+
+The `lm_basic` function allows for much more complex models than
+describing a simple mean. Consider a second set of data where
+coins have been taken from two different cups:
+
+```{r}
+coins2
+```
+
+In this case, we may want to model the mean of both cups. To
+do this with `lm_basic`, we just add the new variable to the
+formula:
+
+```{r}
+model <- lm_basic(number ~ 1 + cup, data = coins2)
+reg_table(model)
+```
+
+How do we read this new table? The intercept gives the mean
+value for the **A** cup and the second term, called a slope,
+gives the additional amount needed to get the mean of the
+coins from cup **B**. So, the best guess of cup B's mean is
+equal to 3. What does the table look like when we add confidence
+intervals:
+
+```{r}
+reg_table(model, level = 0.95)
+```
+
+The mean of cup A is predicted to be between 0.5872 and 4.913.
+The difference between cup B's mean and cup A's mean is somewhere
+between -2.8086 and 3.309. Because this difference includes zero,
+we say that there is no statistical evidence (at the 95% level)
+that the mean of the two cups is different.^[Think about this
+statement for a bit. Why would a value of zero be important in
+this model?]
+
+Let's apply this to a more complex situation using the mammals sleep
+dataset. We can model the average time spent awake as a function
+of the diet type of a given mammal:
+
+```{r}
+model <- lm_basic(awake ~ 1 + vore, data = msleep)
+reg_table(model, level = 0.95)
+```
+
+Now each of these values gives the difference between the base level,
+carnivores, and all of the others. So the predicted mean for hours
+spent awake for insectivores is 13.6263 + (-4.5662), or about 9 hours.
+The confidence intervals tell us whether there is evidence that a
+given diet type is different from carnivores. We see, for example,
+that there is statistical evidence that insectivores differ from
+carnivores, but no evidence for distinctions between carinvores
+and any other groups.
+
+The careful observer will notice that there is a problem with this
+approach: what if we want to compare two values when one is not the
+base level? To do so, use the `fct_relevel` command with the new
+baseline used as the second parameter:
+
+```{r}
+msleep <- mutate(msleep, vore_new = fct_relevel(vore, "insecti"))
+model <- lm_basic(awake ~ 1 + vore_new, data = msleep)
+reg_table(model, level = 0.95)
+```
+
+Now everything is compared to the insecti category.
+
+\section{Multiple R-squared}
+
+We will not discuss all of the output of the `reg_table` function in
+this course, but one other piece of information will come in handy:
+the Multiple R-squared. We define the residual of a model as the
+difference between the actual observered response minus the fitted
+mean. So, in this case we would have the following residuals:
+
+\begin{align*}
+\text{residual}_{\text{Cheetah}} &= \text{awake}_{\text{Cheetah}} - \text{mean}(\text{awake hours for all carnivores}) \\
+\text{residual}_{\text{Owl monkey}} &= \text{awake}_{\text{Owl monkey}} - \text{mean}(\text{awake hours for all omnivores}) \\
+\text{residual}_{\text{Mountain beaver}} &= \text{awake}_{\text{Mountain beaver}} - \text{mean}(\text{awake hours for all herbivores}) \\
+\text{residual}_{\text{Cow}} &= \text{awake}_{\text{Cow}} - \text{mean}(\text{awake hours for all herbivores}) \\
+&\vdots \\
+\text{residual}_{\text{Red fox}} &= \text{awake}_{\text{Red fox}} - \text{mean}(\text{awake hours for all carnivores})
+\end{align*}
+
+Then, the multiple R-squared is given by:
+
+\begin{align*}
+R^2 &= 1 - \frac{Var(\text{all residuals})}{Var(\text{all response values})}
+\end{align*}
+
+This quantity will always be between $0$ and $1$, with values closer to $1$ indicating
+that the model is describing a large proportion of the variation in the response variable.
+Notice that the $R^2$ value is always equal to $0$ for a simple model with just a single
+mean.^[Some people use an alternative definition of $R^2$ for models with just a single
+mean. I won't do that because its confusing and unnecessary.]
 
 
 

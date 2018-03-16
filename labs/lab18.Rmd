@@ -1,0 +1,134 @@
+---
+title: "Lab 18: Inference for the Mean"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(fig.height = 5)
+knitr::opts_chunk$set(fig.width = 8.5)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(viridis)
+library(forcats)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+## Instructions
+
+Below you will find several empty R code scripts and answer prompts. Your task
+is to fill in the required code snippets and answer the corresponding
+questions.
+
+# Title: "Inference for the Mean"
+# Name:
+
+# Load required functions and packages
+library(tidyverse)
+library(smodels)
+library(forcats)
+library(ggrepel)
+
+theme_set(theme_minimal())
+
+##############################################################################
+# 01. We will start today by looking at a small dataset containing teacher
+# salaries from 2009-2010 for 71 randomly choosen teachers employed by the
+# St. Louis Public School in in Michigan.
+
+teachers <- read_csv("https://statsmaths.github.io/stat_data/teachers_pay.csv")
+
+# The available variables are:
+#
+# base       - Base annual salary, in dollars
+# degree     - Highest educational degree attained: BA (Bachelor's) or
+#              MA (Master's)
+# years      - Number of years employeed
+
+##############################################################################
+# 02. Using the mean function, what is the average base pay of all teachers
+# in the dataset?
+
+
+
+##############################################################################
+# 03. Fit a model for the mean of the base pay variable using lm_basic. Save
+# the model as an object called "model":
+
+
+##############################################################################
+# 04. Using a call to `reg_table`, find the mean implied by the model:
+
+
+# Does the mean agree with your answer to question 2?
+
+# Answer:
+
+##############################################################################
+# 05. Add a 95% confidence interval to the regression table. What is the
+# range of mean salaries implied by the confidence interval?
+
+
+
+# Answer:
+
+##############################################################################
+# 06. Draw a histogram of the base salary values for the entire dataset.
+
+
+# Do most of the salary values fall within the range given in question 5?
+# WHY?!
+
+# Answer:
+
+##############################################################################
+# 07. Use the filter command to construct a new dataset called `masters`
+# consisting of just those teachers with a masters degree.
+
+
+##############################################################################
+# 08. Compute a 95% confidence interval for the mean pay of teachers with a
+# master's degree. Does this range intersect the one you had in question 5?
+
+
+# Answer:
+
+##############################################################################
+# 09. Now load the following dataset containing all murders that have occured
+# in London from 1 January 2006 to 7 September 7 2011.
+
+london <- read_csv("https://statsmaths.github.io/stat_data/london_murders.csv")
+
+# The available variables are:
+#
+# age       - age of the victim in years
+# year      - year of the murder
+# borough   - the London borough in which the murder took place
+
+##############################################################################
+# 10. Find an 80% confidence interval for the average age of the victim of a
+# murder in London.
+
+
+# Answer:
+
+##############################################################################
+# 11. Describe in words how the proceeding confidence interval could be
+# interpreted.
+
+# Answer:
+
+
+
+
+
+
+
+

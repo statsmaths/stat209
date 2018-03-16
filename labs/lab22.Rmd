@@ -1,0 +1,168 @@
+---
+title: "Lab 22: Sixteen Personality Factors II"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(fig.height = 5)
+knitr::opts_chunk$set(fig.width = 8.5)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(viridis)
+library(forcats)
+library(smodels)
+theme_set(theme_minimal())
+```
+
+## Instructions
+
+Below you will find several empty R code scripts and answer prompts. Your task
+is to fill in the required code snippets and answer the corresponding
+questions.
+
+# Title: "Sixteen Personality Factors II"
+# Name:
+
+# Load required functions and packages
+library(tidyverse)
+library(smodels)
+library(forcats)
+library(ggrepel)
+
+theme_set(theme_minimal())
+
+##############################################################################
+# 01. Once again we will load the survey response data from the Sixteen
+# Personality Factor Questionnaire:
+
+pf <- read_csv("https://statsmaths.github.io/stat_data/cattell_16pf.csv")
+
+# With the following fields
+#
+#    age                  - respondent's age in years
+#    gender               - respondent's self-selected gender
+#    country              - two letter IATA code for the respondent's IP
+#    elapsed              - time taken to complete quiz in seconds
+#    warmth               - personality score from 1-20
+#    reasoning            - personality score from 1-20
+#    emotional_stability  - personality score from 1-20
+#    dominance            - personality score from 1-20
+#    liveliness           - personality score from 1-20
+#    rule_consciousness   - personality score from 1-20
+#    social_boldness      - personality score from 1-20
+#    sensitivity          - personality score from 1-20
+#    vigilance            - personality score from 1-20
+#    abstractedness       - personality score from 1-20
+#    privateness          - personality score from 1-20
+#    apprehension         - personality score from 1-20
+#    openness_to_change   - personality score from 1-20
+#    self_reliance        - personality score from 1-20
+#    perfectionism        - personality score from 1-20
+#    tension              - personality score from 1-20
+#    baseline             - average score across all 16 personality traits
+
+##############################################################################
+# 02. Use the `percentiles` function to detect the 3th and 97th percentiles for
+# the amount of elapsed time taken to complete the quiz.
+
+
+# Answer:
+
+##############################################################################
+# 03. We want to construct a new variable called speed that tells us whether
+# someone was a fast test taking (less than the 3rd percentile), a slow test
+# taker (greater than the 97th percentile), or a normal test taker. To do
+# so, I'll use some code that we have not seen since the first week of class.
+# If the 3rd percentile was 100s and the 97th was 1000s, it would look like
+# this:
+
+pf$speed <- "normal" # the default
+pf$speed[pf$elapsed < 100] <- "fast"
+pf$speed[pf$elapsed > 1000] <- "slow"
+
+# Modify this code to use the cutoffs you found in the previous question.
+
+pf$speed <- "normal" # the default
+pf$speed[pf$elapsed < 369] <- "fast"
+pf$speed[pf$elapsed > 4107.46] <- "slow"
+
+##############################################################################
+# 04. Fit a linear model predicting the prefectionism variable as a function
+# of the speed variable.
+
+
+
+# How does the perfectionism score differ between the three groups? Are both
+# slopes significant?
+
+# Answer:
+
+##############################################################################
+# 05. In the last question it should have appeared that the perfectionism
+# score for the slow and normal groups were very similar. In the regression
+# as given there is no way to test whether these two groups have a
+# statistically significant difference because the slopes only relate to the
+# baseline level (here, "fast").
+#
+# It is possible to change the baseline level of a categorical variable in
+# R. To do so, use the function `fct_relevel`; its second argument gives the
+# desired baseline level:
+
+
+
+# Using this table, is there a statistically significant difference between
+# normal and slow users in their perfectionism score?
+
+##############################################################################
+# 06. (Critical Thinking) Based on the result in the previous describe a
+# plausible reason and a some people may finish quickly and a plausible reason
+# some may take a long time. Hint: Converting the 97th percentile to hours
+# may give you some ideas for the last part.
+
+# Answer:
+
+##############################################################################
+# 07. Take your personality trait from last class and select the one trait
+# that most closely contrasts with your trait and one that most closely
+# matches your trait. Fit a linear regression model that predicts your trait
+# as a function of both of these as well as the baseline variable.
+
+
+
+##############################################################################
+# 08. Interpret the significance and signs of the slopes in the previous model
+# for the two traits that you selected. Do their signs match what you would
+# have expected?
+
+# Answer:
+
+##############################################################################
+# 09. Take the previous model and add the variables `speed`, `gender`, and
+# `country`, the latter lumped into 5 categories.
+
+
+
+# Does this change the slopes for your two traits a lot?
+
+# Answer:
+
+##############################################################################
+# 10. Summarize the previous model (specifically the relationship between the
+# three traits) in words.
+
+# Answer:
+
+
+
+
+
+
+
+
