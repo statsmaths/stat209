@@ -19,33 +19,47 @@ library(ggplot2)
 library(dplyr)
 library(viridis)
 library(kableExtra)
+library(smodels)
 
 theme_set(theme_minimal())
+
+data(msleep)
+msleep <- select(msleep, -conservation, -sleep_cycle)
+msleep <- na.omit(msleep)
 ```
 
+## Objectives
 
-\newthought{Graphics are an excellent} way of summarizing and
+Develop tools for summarizing a dataset numerically, and how we can use these
+summaries to produce interesting new visualizations.
+
+## Motivation
+
+Graphics are an excellent way of summarizing and
 presenting information contained in a dataset. In many cases it
 can be useful to combine these with purely numeric summaries.
 These summaries are something colloquially called *statistics*,
 though I prefer to avoid this terminology.
 
-In this handout, as with the last, I will use the `msleep` dataset
-in order to show various numerical summaries. To read it in use
-the following:
+In these notes, I will use the `msleep` dataset
+in order to show various numerical summaries. Here is an example of
+the dataset:
 
 ```{r}
-data(msleep)
+msleep
 ```
+
+Each row corresponds to a type of mammal, and gives basic numeric values
+that describe their sleeping cycles.
 
 ## Mean
 
 The first statistical summary that most people learn about is the **mean**,
 also commonly known as an average. It is calculated by adding all of a
 variables values together and dividing by the total number of values. If
-we have a dataset of $n$ points with a variable $x$ (denoting $x_1$ as the
-first value, $x_2$ and the second, and so forth), the mean can be formally
-defined as:
+we have a dataset of n points with a variable x (denoting x with an underscore
+1 as the first value, with a 2 as the second, and so forth), the mean can be
+formally defined as:
 
 $$ \begin{align*}
 \text{mean}(x) &= \overline{x}\\
@@ -53,7 +67,7 @@ $$ \begin{align*}
 &= \frac{1}{n} \cdot \sum_i x_i
 \end{align*} $$
 
-The notation of using $\overline{x}$ to represent the mean is very common
+The notation of using x with a line above it to represent the mean is very common
 throughout the sciences and social sciences. It is often used in textbooks
 and papers without even being defined. To calculate means in R, as we have
 already, seen we can use the `mean` function. Here is an illustration that
@@ -65,9 +79,13 @@ mean(msleep$awake)
 sum(msleep$awake) / nrow(msleep)
 ```
 
+Note, I am showing in the second line a description of what the mean is doing
+and verifying that it works. Do **not** coyp and use the second form in your
+work.
+
 ## Quantiles
 
-Finally, there are a number of functions that allow us to compute quantiles,
+Also here are a number of functions that allow us to compute quantiles,
 a generalization of percentiles. For example, the `deciles` function splits
 the dataset into $10$ equally sized buckets:
 
@@ -75,11 +93,13 @@ the dataset into $10$ equally sized buckets:
 deciles(msleep$awake)
 ```
 
-Shows that about 1/2 of the mammals are awake less than 13.90 hours and about
+This shows that about 1/2 of the mammals are awake less than 13.90 hours and about
 1/2 are awake more than 13.90. I use the word "about" here due to subtitles
 regarding ties and repeated values; for all practical purposes this is generally not
-important.^[The 50% percentile has a special name that you have probably heard
-before: the *median*.] Similarly, we see that roughly 1/10 of the mammals are
+important. Note that the 50% percentile has a special name that you have probably heard
+before: the *median*.
+
+Similarly, we see that roughly 1/10 of the mammals are
 awake less than 8.12 hours and 1/10 are awake less than 20.8 hours. We also see
 that the sleepiest mammal is awake for only 4.1 hours and that one mammal is awake
 22.1 hours of the day.
@@ -96,14 +116,12 @@ the deciles above. There are also functions `ventiles` (20) and `percentiles` th
 can be quite useful:
 
 ```{r}
-ventiles(msleep$awake)
 percentiles(msleep$awake)
 ```
 
 Ventiles are a bit esoteric, but I have found in my work that they can be very
 useful in practice. Percentiles are often useful when we want to look at the
 extreme values, such as the 97th, 98th and 99th percentiles.
-
 
 ## Deviation
 
@@ -125,10 +143,18 @@ to create them:
 msleep$awake - mean(msleep$awake)
 ```
 
+Typically we will not need deviances themselves, but they are useful for
+understanding variation about a mean.
+
 ## Variance
 
-We can use deviations to measure how spread of a variable by computing the
-sum of their squares. These are calculated by the following formula:
+We can use deviations to measure the spread of a variable by adding the
+squared values of deviances. Why squares? For one thing, squaring the value
+makes negative deviations positive; though, same effect would come from applying
+the absolution value function. The specific reason specifically for choosing the
+square is a bit too technical for our discussion.
+
+The sume of squared deviances are calculated by the following formula:
 
 $$ \begin{align*}
 \text{sum of squares} &= (x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots (x_n - \overline{x})^2 \\
@@ -142,9 +168,9 @@ sum((msleep$awake - mean(msleep$awake))^2)
 ```
 
 The sum of squares cannot be used directly to compare datasets
-of different sizes as it grows with the number of points. In order to compare sums of squares
-across datasets, we use a measurement called **variance** which is simply the average of
-the sums of squares:
+of different sizes as it grows with the number of points. In order to compare
+sums of squares across datasets, we use a measurement called **variance**
+which is basically just the average of the sums of squares:
 
 $$ \begin{align*}
 \text{variance} &= s^2 \\
@@ -153,31 +179,86 @@ $$ \begin{align*}
 \end{align*} $$
 
 The notation of using $s^2$ to represent the variance of a dataset is quite common.
-Why do we use $n-1$ rather than $n$ to take the average? The technical reason is that if we want to
-measure the variance of a population using a sample from that population, we need to use $n-1$ in order
-to have an unbiased estimate of the population value.^[The short answer is not to worry about it, which
-I strongly suggest.] The variance can be computed using the `var` function, or manually as follows:
+
+Why do we use $n-1$ rather than $n$ to take the average? The technical reason is that
+if we want to measure the variance of a population using a sample from that population,
+we need to use $n-1$ in order to have an unbiased estimate of the population value...
+The short answer is not to worry about it, which I strongly suggest at this point.
+
+The variance can be computed manually as follows:
 
 ```{r}
 sum((msleep$awake - mean(msleep$awake))^2) / (nrow(msleep) - 1)
+```
+
+Or, using the `var` function, or manually as follows:
+
+```{r}
 var(msleep$awake)
 ```
 
+Note: like the `mean` function, you should **only** use the `var` function
+in your work. I show the other form simply as a demonstration of the definition.
+
 ## Standard deviation
 
-We often with a quantity called the **standard deviation**, defined as simply the square
-root of the variance. Why bother taking the square root? For one thing, it is a matter of units. In
-our example, the variance is given in "squared people" (a nearly meaningless quantity), but the
-standard deviation is given in "people" just like the variable itself. We can calculate the
-standard deviation for the five types of cancer using the function `sd`:
+We often work with a quantity called the **standard deviation**, defined as
+simply the square root of the variance.
+
+Why bother taking the square root? For one thing, it is a matter of units. In
+our example, the variance is given in "squared people" (a nearly meaningless
+quantity), but the standard deviation is given in "people" just like the variable
+itself. We can calculate the standard deviation for the awake variable using the
+function `sd`:
 
 ```{r}
 sd(msleep$awake)
 ```
 
+More interestingly, we can drag out the `group_summarize` function to compute the
+standard deviation of the awake variable by the type of mammal:
 
+```{r}
+food_type <- group_summarize(msleep, vore)
+ggplot(food_type, aes(vore, awake_sd)) +
+  geom_point(size = 3)
+```
 
+Where we see that omnivores have more consistent hours spent sleeping and insectivores
+have the largest variation of sleeping hours per day.
 
+## Graphing Variation
+
+Finally, we can use these measurments of distribution and variation in graphical
+forms. Typically, this comes up when we have a grouping categorical variable and 
+another numeric variable of interest.
+
+A boxplot shows, for each group on the x-axis, the distribution of the variable 
+on the y-axis. The solid bar indicates the y-axis variable's median and the height
+of the box and the "whiskers" indicate measurments of variation (see the link
+[boxplot](https://en.wikipedia.org/wiki/Box_plot) for more information about the
+different ways these can be computed).
+
+```{r}
+ggplot(msleep, aes(vore, awake)) +
+  geom_boxplot()
+```
+
+Similarly, a violin plot is a newer twist on the boxplot that attempts to show
+more details about the distribution by varying its width with the distribution
+of the points:
+
+```{r}
+ggplot(msleep, aes(vore, awake)) +
+  geom_violin()
+```
+
+### Practice
+
+We will work on the next lab for the remainder of the class:
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab17.Rmd" download="lab17.Rmd" target="_blank">lab17.Rmd</a>
+
+Please upload your script to GitHub ahead of the next class.
 
 
 

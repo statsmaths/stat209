@@ -4,28 +4,9 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = TRUE)
-knitr::opts_chunk$set(fig.path = "../assets/class18-inference-mean/")
-knitr::opts_chunk$set(fig.height = 5)
-knitr::opts_chunk$set(fig.width = 8.5)
-knitr::opts_chunk$set(out.width = "100%")
-knitr::opts_chunk$set(dpi = 300)
-```
 
-```{r, message = FALSE, include = FALSE}
-library(readr)
-library(ggplot2)
-library(dplyr)
-library(viridis)
-library(kableExtra)
 
-theme_set(theme_minimal())
 
-coins <- data_frame(number = c(1,2,2,3,4,4,4,5))
-helicopter <- data_frame(flight_time = c(0.9, 1.11, 1.13, 0.92, 1.16, 1.11))
-coins2 <- data_frame(number = c(1,1,4,5,1,3,4,4), cup = c(rep("A", 4), rep("B", 4)))
-```
 
 ## Objectives
 
@@ -55,32 +36,70 @@ estimating the mean of both situations.
 Consider a random sample of coins from a cup similar to the one we
 have in class:
 
-```{r}
+
+{% highlight r %}
 coins
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 8 x 1
+##   number
+##    <dbl>
+## 1   1.00
+## 2   2.00
+## 3   2.00
+## 4   3.00
+## 5   4.00
+## 6   4.00
+## 7   4.00
+## 8   5.00
+{% endhighlight %}
 
 Our best guess for the average value of all of the coins in the cups
 might be the mean of the sample we took:
 
-```{r}
+
+{% highlight r %}
 mean(coins$number)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 3.125
+{% endhighlight %}
 
 Let's do this is a different way that will allow us to extrapolate
 on this single number:
 
-```{r}
+
+{% highlight r %}
 model <- lm_basic(number ~ 1, data = coins)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in lm_basic(number ~ 1, data = coins): could not find function "lm_basic"
+{% endhighlight %}
 
 This says to construct a model for the variable `number` from the data
 set `coins`. The `1` indicates that we are fitting a
 single mean to the dataset; we will see later how to fit more
 complex models. To see the output of the model, run `reg_table`:
 
-```{r}
+
+{% highlight r %}
 reg_table(model)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in reg_table(model): could not find function "reg_table"
+{% endhighlight %}
 
 The model calls the mean an intercept, for reasons that will become
 clear shortly, and it gives the exact same value as with our old
@@ -91,9 +110,16 @@ Why bother with this more involved method for finding a mean? For
 one thing, `reg_table` provides an option called `level` that can
 be set to a number between 0 and 1. For example:
 
-```{r}
+
+{% highlight r %}
 reg_table(model, level = 0.9)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in reg_table(model, level = 0.9): could not find function "reg_table"
+{% endhighlight %}
 
 The table now includes two additional numbers of the mean: the
 10th and 90th percentiles of a *confidence interval*. A confidence
@@ -110,16 +136,41 @@ and 99%.
 
 Taking a set of sampled flight times from paper helicopters:
 
-```{r}
+
+{% highlight r %}
 flight_time
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in eval(expr, envir, enclos): object 'flight_time' not found
+{% endhighlight %}
 
 We can run the exact same analysis:
 
-```{r}
+
+{% highlight r %}
 model <- lm_basic(flight_time ~ 1, data = helicopter)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in lm_basic(flight_time ~ 1, data = helicopter): could not find function "lm_basic"
+{% endhighlight %}
+
+
+
+{% highlight r %}
 reg_table(model, level = 0.95)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in reg_table(model, level = 0.95): could not find function "reg_table"
+{% endhighlight %}
 
 Unless we have a specific reason to use a different level, we will
 usually use a 95% confidence interval in this course.
