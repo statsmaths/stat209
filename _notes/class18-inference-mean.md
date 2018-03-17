@@ -79,12 +79,6 @@ on this single number:
 model <- lm_basic(number ~ 1, data = coins)
 {% endhighlight %}
 
-
-
-{% highlight text %}
-## Error in lm_basic(number ~ 1, data = coins): could not find function "lm_basic"
-{% endhighlight %}
-
 This says to construct a model for the variable `number` from the data
 set `coins`. The `1` indicates that we are fitting a
 single mean to the dataset; we will see later how to fit more
@@ -98,7 +92,19 @@ reg_table(model)
 
 
 {% highlight text %}
-## Error in reg_table(model): could not find function "reg_table"
+## 
+## Call:
+## lm_basic(formula = number ~ 1, data = coins)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -2.125 -1.125  0.375  0.875  1.875 
+## 
+## Coefficients:
+##             Estimate
+## (Intercept)    3.125
+## 
+## Residual standard error: 1.356 on 7 degrees of freedom
 {% endhighlight %}
 
 The model calls the mean an intercept, for reasons that will become
@@ -118,7 +124,19 @@ reg_table(model, level = 0.9)
 
 
 {% highlight text %}
-## Error in reg_table(model, level = 0.9): could not find function "reg_table"
+## 
+## Call:
+## lm_basic(formula = number ~ 1, data = coins)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -2.125 -1.125  0.375  0.875  1.875 
+## 
+## Coefficients:
+##             Estimate   5 %  95 %
+## (Intercept)    3.125 2.217 4.033
+## 
+## Residual standard error: 1.356 on 7 degrees of freedom
 {% endhighlight %}
 
 The table now includes two additional numbers of the mean: the
@@ -152,24 +170,25 @@ We can run the exact same analysis:
 
 {% highlight r %}
 model <- lm_basic(flight_time ~ 1, data = helicopter)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in lm_basic(flight_time ~ 1, data = helicopter): could not find function "lm_basic"
-{% endhighlight %}
-
-
-
-{% highlight r %}
 reg_table(model, level = 0.95)
 {% endhighlight %}
 
 
 
 {% highlight text %}
-## Error in reg_table(model, level = 0.95): could not find function "reg_table"
+## 
+## Call:
+## lm_basic(formula = flight_time ~ 1, data = helicopter)
+## 
+## Residuals:
+##      1      2      3      4      5      6 
+## -0.155  0.055  0.075 -0.135  0.105  0.055 
+## 
+## Coefficients:
+##             Estimate  2.5 % 97.5 %
+## (Intercept)   1.0550 0.9354  1.175
+## 
+## Residual standard error: 0.114 on 5 degrees of freedom
 {% endhighlight %}
 
 Unless we have a specific reason to use a different level, we will

@@ -19,6 +19,7 @@ library(ggplot2)
 library(dplyr)
 library(viridis)
 library(kableExtra)
+library(smodels)
 
 theme_set(theme_minimal())
 
