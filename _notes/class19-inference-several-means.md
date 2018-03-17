@@ -4,29 +4,9 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = TRUE)
-knitr::opts_chunk$set(fig.path = "../assets/class19-inference-several-means/")
-knitr::opts_chunk$set(fig.height = 5)
-knitr::opts_chunk$set(fig.width = 8.5)
-knitr::opts_chunk$set(out.width = "100%")
-knitr::opts_chunk$set(dpi = 300)
-```
 
-```{r, message = FALSE, include = FALSE}
-library(readr)
-library(ggplot2)
-library(dplyr)
-library(viridis)
-library(smodels)
-library(kableExtra)
 
-theme_set(theme_minimal())
 
-coins <- data_frame(number = c(1,2,2,3,4,4,4,5))
-helicopter <- data_frame(flight_time = c(0.9, 1.11, 1.13, 0.92, 1.16, 1.11))
-coins2 <- data_frame(number = c(1,1,4,5,1,3,4,4), cup = c(rep("A", 4), rep("B", 4)))
-```
 
 ## Objectives
 
@@ -39,18 +19,57 @@ The `lm_basic` function allows for much more complex models than
 describing a simple mean. Consider a second set of data where
 coins have been taken from two different cups:
 
-```{r}
+
+{% highlight r %}
 coins2
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 8 x 2
+##   number cup  
+##    <dbl> <chr>
+## 1   1.00 A    
+## 2   1.00 A    
+## 3   4.00 A    
+## 4   5.00 A    
+## 5   1.00 B    
+## 6   3.00 B    
+## 7   4.00 B    
+## 8   4.00 B
+{% endhighlight %}
 
 In this case, we may want to model the mean of both cups. To
 do this with `lm_basic`, we just add the new variable to the
 formula:
 
-```{r}
+
+{% highlight r %}
 model <- lm_basic(number ~ 1 + cup, data = coins2)
 reg_table(model)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+## Call:
+## lm_basic(formula = number ~ 1 + cup, data = coins2)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -2.000 -1.750  0.500  1.062  2.250 
+## 
+## Coefficients:
+##             Estimate
+## (Intercept)     2.75
+## cupB            0.25
+## 
+## Residual standard error: 1.768 on 6 degrees of freedom
+## Multiple R-squared:  0.006623,	Adjusted R-squared:  -0.1589 
+## F-statistic:  0.04 on 1 and 6 DF,  p-value: 0.8481
+{% endhighlight %}
 
 How do we read this new table? The intercept gives the mean
 value for the **A** cup and the second term, called a slope,
@@ -59,9 +78,31 @@ coins from cup **B**. So, the best guess of cup B's mean is
 equal to 3. What does the table look like when we add confidence
 intervals:
 
-```{r}
+
+{% highlight r %}
 reg_table(model, level = 0.95)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+## Call:
+## lm_basic(formula = number ~ 1 + cup, data = coins2)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -2.000 -1.750  0.500  1.062  2.250 
+## 
+## Coefficients:
+##             Estimate   2.5 % 97.5 %
+## (Intercept)   2.7500  0.5872  4.913
+## cupB          0.2500 -2.8086  3.309
+## 
+## Residual standard error: 1.768 on 6 degrees of freedom
+## Multiple R-squared:  0.006623,	Adjusted R-squared:  -0.1589 
+## F-statistic:  0.04 on 1 and 6 DF,  p-value: 0.8481
+{% endhighlight %}
 
 The mean of cup A is predicted to be between 0.5872 and 4.913.
 The difference between cup B's mean and cup A's mean is somewhere
@@ -77,10 +118,35 @@ Let's apply this to a more complex situation using the mammals sleep
 dataset. We can model the average time spent awake as a function
 of the diet type of a given mammal:
 
-```{r}
+
+{% highlight r %}
 model <- lm_basic(awake ~ 1 + vore, data = msleep)
 reg_table(model, level = 0.95)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+## Call:
+## lm_basic(formula = awake ~ 1 + vore, data = msleep)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -9.0263 -4.0128  0.4237  3.4255  7.7237 
+## 
+## Coefficients:
+##             Estimate   2.5 % 97.5 %
+## (Intercept)  13.6263 11.5832 15.669
+## voreherbi     0.8643 -1.7150  3.444
+## voreinsecti  -4.5663 -9.0425 -0.090
+## voreomni     -0.5513 -3.4044  2.302
+## 
+## Residual standard error: 4.467 on 72 degrees of freedom
+##   (7 observations deleted due to missingness)
+## Multiple R-squared:  0.08514,	Adjusted R-squared:  0.04702 
+## F-statistic: 2.234 on 3 and 72 DF,  p-value: 0.09162
+{% endhighlight %}
 
 Now each of these values gives the difference between the base level,
 carnivores, and all of the others. So the predicted mean for hours
@@ -96,11 +162,58 @@ approach: what if we want to compare two values when one is not the
 base level? To do so, use the `fct_relevel` command with the new
 baseline used as the second parameter:
 
-```{r}
+
+{% highlight r %}
 msleep <- mutate(msleep, vore_new = fct_relevel(vore, "insecti"))
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in mutate_impl(.data, dots): Evaluation error: could not find function "fct_relevel".
+{% endhighlight %}
+
+
+
+{% highlight r %}
 model <- lm_basic(awake ~ 1 + vore_new, data = msleep)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Error in eval(predvars, data, env): object 'vore_new' not found
+{% endhighlight %}
+
+
+
+{% highlight r %}
 reg_table(model, level = 0.95)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+## Call:
+## lm_basic(formula = awake ~ 1 + vore, data = msleep)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -9.0263 -4.0128  0.4237  3.4255  7.7237 
+## 
+## Coefficients:
+##             Estimate   2.5 % 97.5 %
+## (Intercept)  13.6263 11.5832 15.669
+## voreherbi     0.8643 -1.7150  3.444
+## voreinsecti  -4.5663 -9.0425 -0.090
+## voreomni     -0.5513 -3.4044  2.302
+## 
+## Residual standard error: 4.467 on 72 degrees of freedom
+##   (7 observations deleted due to missingness)
+## Multiple R-squared:  0.08514,	Adjusted R-squared:  0.04702 
+## F-statistic: 2.234 on 3 and 72 DF,  p-value: 0.09162
+{% endhighlight %}
 
 Now everything is compared to the `insecti` category.
 
