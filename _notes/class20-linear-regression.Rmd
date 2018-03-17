@@ -19,11 +19,18 @@ library(ggplot2)
 library(dplyr)
 library(viridis)
 library(kableExtra)
+library(smodels)
 
 theme_set(theme_minimal())
 msleep <- na.omit(msleep)
 ```
 
+## Objectives
+
+In these notes we extend the inference ideas from the previous two classes to
+the relationship between two continuous variables.
+
+## Two continuous variables
 
 We have seen how to use the `lm_basic` function to fit models for the
 mean of some response. We have used both a single mean for the entire
@@ -51,12 +58,15 @@ qplot(sleep_rem, awake, data = msleep) + geom_smooth(method = "lm")
 ```
 
 The `reg_table` function is just giving us the intercept and slope of
-this line, along with confidence interval bounds for both.^[Does it make
-sense that the slope here is negative? It should!] This should
-explain why the first term is called the intercept. As with the discrete
-case, there is a special meaning behind whether the confidence interval
-contains zero. If it does not, we say we have detected a statistically
-significant linear relationship between our two variables.
+this line, along with confidence interval bounds for both. Does it make
+sense that the slope here is negative? It should!
+
+This should explain why the first term is called the intercept. As with
+the discrete case, there is a special meaning behind whether the confidence
+interval contains zero. If it does not, we say we have detected a
+statistically significant linear relationship between our two variables.
+
+## Multiple linear regression
 
 Further, and finally, we can add multiple variables into a single regression.
 It is even possible to mix continuous and categorical variables into the
@@ -71,17 +81,40 @@ The interpretation becomes, in this case, the change we would expect to
 see in the response given a *marginal* change in one of the explanatory
 variables on the right-hand side of the model. That is, how do we expect
 the mean to change if we modify one (and only one) of the other variables.
+We could spend a lot of time focusing on this distinction, but I don't want
+to go too far down this line of thinking.
+
+## Fitted Values
 
 As models become more complex it can become difficult to directly compute
-the predicted values and residuals that come from it.
-We can use the `add_prediction` function in R to append the residuals
-back into the original dataset. It also adds in the predicted values for each data point.
-These predictions are often called the **fitted values**.
+the predicted values and residuals that come from it. We can use the
+`add_prediction` function in R to append the residuals back into the original
+dataset.
 
 ```{r}
+model <- lm_basic(awake ~ 1 + sleep_rem, data = msleep)
 msleep <- add_prediction(msleep, model)
 msleep
 ```
+
+It also adds in the predicted values for each data point. These predictions
+are often called the **fitted values**. We can see what this is doing with
+a simple plot:
+
+```{r}
+ggplot(msleep, aes(sleep_rem, awake)) +
+  geom_point() +
+  geom_point(aes(y = model_pred), color = "orange")
+```
+
+As you can see, the predicted values all line along a single line.
+
+### Practice
+
+We will work on the next lab for the remainder of the class:
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab20.Rmd" download="lab20.Rmd" target="_blank">lab20.Rmd</a>
+
+Please upload your script to GitHub ahead of the next class.
 
 
 
