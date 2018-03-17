@@ -165,29 +165,7 @@ baseline used as the second parameter:
 
 {% highlight r %}
 msleep <- mutate(msleep, vore_new = fct_relevel(vore, "insecti"))
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in mutate_impl(.data, dots): Evaluation error: could not find function "fct_relevel".
-{% endhighlight %}
-
-
-
-{% highlight r %}
 model <- lm_basic(awake ~ 1 + vore_new, data = msleep)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Error in eval(predvars, data, env): object 'vore_new' not found
-{% endhighlight %}
-
-
-
-{% highlight r %}
 reg_table(model, level = 0.95)
 {% endhighlight %}
 
@@ -196,18 +174,18 @@ reg_table(model, level = 0.95)
 {% highlight text %}
 ## 
 ## Call:
-## lm_basic(formula = awake ~ 1 + vore, data = msleep)
+## lm_basic(formula = awake ~ 1 + vore_new, data = msleep)
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
 ## -9.0263 -4.0128  0.4237  3.4255  7.7237 
 ## 
 ## Coefficients:
-##             Estimate   2.5 % 97.5 %
-## (Intercept)  13.6263 11.5832 15.669
-## voreherbi     0.8643 -1.7150  3.444
-## voreinsecti  -4.5663 -9.0425 -0.090
-## voreomni     -0.5513 -3.4044  2.302
+##               Estimate   2.5 % 97.5 %
+## (Intercept)     9.0600  5.0773 13.043
+## vore_newcarni   4.5663  0.0901  9.043
+## vore_newherbi   5.4306  1.1480  9.713
+## vore_newomni    4.0150 -0.4378  8.468
 ## 
 ## Residual standard error: 4.467 on 72 degrees of freedom
 ##   (7 observations deleted due to missingness)
