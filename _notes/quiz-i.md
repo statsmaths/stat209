@@ -1,21 +1,16 @@
 ---
-title: "Assessment B"
+title: "Assessment I"
 author: "Taylor Arnold"
 output: html_notebook
 ---
 
-For the second in-class assessment, you should
-be able to:
+For this assessment I will give you two regression tables, one where a
+response is predicted from a categorical variable and another where the
+response comes from another numeric variable (a linear regression). You
+should be able to do the following things with them:
 
-- explain the concepts of ethos, pathos, and
-logos, as well as draw examples of each
-- define a thesis statement
-- define a hypothesis
-- explain and differentiate inductive and deductive
-reasoning
-- explain, in a sentence or two, the difference between
-predictive models and exploratory methods
-- define the terms population, variable of interest,
-and sample in the context of statistical inference
-
+- make predictions for new data points by hand
+- understand which variables are significant by looking at their confidence
+intervals
+- compare the predictive power of two models using the R-squared metric
 

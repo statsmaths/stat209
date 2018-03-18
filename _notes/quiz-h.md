@@ -1,23 +1,18 @@
 ---
-title: "Assessment E"
+title: "Assessment H"
 author: "Taylor Arnold"
 output: html_notebook
 ---
 
-For this in-class assessment, you should be able to:
+For this in-class assessment, you should be able to understand the following
+concepts. You should be able to compute them for a small dataset or use R
+commands to produce them from a larger dataset:
 
-- compute the mean, median, percentiles, variance, and
-standard deviation of small datasets by hand
-- compute the mean, median, percentiles, variance, and
-standard deviation of small datasets by calling functions
-in R
-- determine when the median would differ greatly from the
-mean
-- apply the 66% and 95% rules for the standard deviation
-to numeric data; this includes the reverse: looking at a
-or percentiles and determining the standard deviation
-from them
+- mean
+- median
+- quantiles (quartiles, deciles, ventiles, and percentiles)
+- variance (`var`)
+- standard deviation (`sd`)
 
-If I ask you do arithmetic, it will be either very easy to
-compute the answer or you can leave it unsimplified. No
-calculators are needed or allowed.
+You should also be able to read the output of the function `reg_table` and
+and estimate the standard deviation of a variable.
