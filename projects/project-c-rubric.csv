@@ -1,0 +1,12 @@
+element,component,max_score,score
+Dataset,the dataset was correctly formatted and uploaded to GitHub,5,
+Dataset,the variables in the dataset follow the course's naming conventions,5,
+Formatting,the report was correctly formatted and uploaded as an RMarkdown file,5,
+Introduction,The hypothesis statements are clear and unambiguous,20,
+Methods,the methods and format of the collected data are clearly defined,20,
+Methods,a clear and accurate description of the inferential models is given,20,
+Results,the regression functions are used correctly for each inference task,20,
+Results,graphical representations of the models are given as appropriate,10,
+Results,sufficient exposition is included in full sentences to follow the analysis,10,
+Conclusions,each of the regression analyses are correctly inferred from the output,30,
+Conclusions,the results are put into a practical context,20,

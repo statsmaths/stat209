@@ -1,7 +1,6 @@
 ---
 title: "Project A: Data Dictionary with Collected Data"
 author: "Taylor Arnold"
-output: html_notebook
 ---
 
 **Due**: 2018-02-20 (start of class)

@@ -1,0 +1,40 @@
+---
+title: "PUT YOUR TITLE HERE"
+author: "PUT YOUR NAME HERE"
+output: html_document
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(ggmap)
+library(viridis)
+library(forcats)
+library(smodels)
+```
+
+## Introduction
+
+
+## Methods
+
+
+## Results
+
+
+## Conclusions
+
+
+
+## References
+
+
+
+
