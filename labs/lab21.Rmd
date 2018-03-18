@@ -27,224 +27,171 @@ Below you will find several empty R code scripts and answer prompts. Your task
 is to fill in the required code snippets and answer the corresponding
 questions.
 
-# Title: "Sixteen Personality Factors I"
-# Name:
+## Sixteen Personality Factors: Pick Your Trait
 
-# Load required functions and packages
-library(tidyverse)
-library(smodels)
-library(forcats)
-library(ggrepel)
+Over the next two classes we are going to be looking at survey response
+data from the Sixteen Personality Factor Questionnaire in order to practice
+our skills at statistical inference:
 
-theme_set(theme_minimal())
-
-##############################################################################
-# 01. Over the next two classes we are going to be looking at survey response
-# data from the Sixteen Personality Factor Questionnaire:
-
+```{r}
 pf <- read_csv("https://statsmaths.github.io/stat_data/cattell_16pf.csv")
+```
 
-# With the following fields
-#
-#    age                  - respondent's age in years
-#    gender               - respondent's self-selected gender
-#    country              - two letter IATA code for the respondent's IP
-#    elapsed              - time taken to complete quiz in seconds
-#    warmth               - personality score from 1-20
-#    reasoning            - personality score from 1-20
-#    emotional_stability  - personality score from 1-20
-#    dominance            - personality score from 1-20
-#    liveliness           - personality score from 1-20
-#    rule_consciousness   - personality score from 1-20
-#    social_boldness      - personality score from 1-20
-#    sensitivity          - personality score from 1-20
-#    vigilance            - personality score from 1-20
-#    abstractedness       - personality score from 1-20
-#    privateness          - personality score from 1-20
-#    apprehension         - personality score from 1-20
-#    openness_to_change   - personality score from 1-20
-#    self_reliance        - personality score from 1-20
-#    perfectionism        - personality score from 1-20
-#    tension              - personality score from 1-20
-#    baseline             - average score across all 16 personality traits
+The dataset use the following fields:
+- age: respondent's age in years
+- gender: respondent's self-selected gender
+- country: two letter IATA code for the respondent's IP
+- elapsed: time taken to complete quiz in seconds
+- warmth: personality score from 1-20
+- reasoning: personality score from 1-20
+- emotional_stability: personality score from 1-20
+- dominance: personality score from 1-20
+- liveliness: personality score from 1-20
+- rule_consciousness: personality score from 1-20
+- social_boldness: personality score from 1-20
+- sensitivity: personality score from 1-20
+- vigilance: personality score from 1-20
+- abstractedness: personality score from 1-20
+- privateness: personality score from 1-20
+- apprehension: personality score from 1-20
+- openness_to_change: personality score from 1-20
+- self_reliance: personality score from 1-20
+- perfectionism: personality score from 1-20
+- tension: personality score from 1-20
+- baseline: average score across all 16 personality traits
 
-# To start with, select a particular trait that you will use for the first
-# bank of questions.
+*To start with, select a particular trait that you will use for the first
+bank of questions. You can pick any of the 16 other than sensitivity.*
 
-##############################################################################
-# 02. Produce a bar plot of the personality scores for your trait. Describe
-# the distribution. Why does a bar plot work here even though the variable is
-# numeric?
+Produce a bar plot of the personality scores for your trait.
 
+Describe the distribution. Why does a bar plot work here even though the
+variable is numeric?
 
-# Answer:
+**Answer**:
 
-##############################################################################
-# 03. Produce a confidence interval for the mean of your trait.
+Produce a confidence interval for the mean of your trait.
 
+```{r}
 
-# Answer:
+```
 
-##############################################################################
-# 04. Now, produce a dataset `temp` that consists only of responses from the
-# country of Hungary. The 2-letter country code for Hungary is "HU".
+Now, produce a dataset that consists only of responses from the country of
+Hungary. The 2-letter country code for Hungary is "HU". Produce a confidence
+interval for your trait on the Hungarian dataset.
 
+```{r}
 
-##############################################################################
-# 05. Produce a confidence interval for your trait on the dataset `temp`.
+```
 
+What do you notice about this confidence interval compared to the original
+one? Can you explain why this is the case?
 
+**Answer**:
 
-# Answer:
+Find a 95% confidence interval for the difference between the average
+male and female value for your personality trait on the Hungarian data.
 
-# What do you notice about this confidence interval compared to the original
-# one? Can you explain why this is the case?
 
-# Answer:
+**Answer**:
 
-##############################################################################
-# 06. Find a 95% confidence interval for the difference between the average
-# male and female value for your personality trait.
+Is there a statistically significant difference between men and women's
+average score? If so, what direction is this difference? Does this challenge
+or confirm traditional gender stereotypes (note: not all personality traits
+have one)?
 
+**Answer**:
 
-# Answer:
+Construct a new dataset that only has ages from 30-49 (from the original `pf`,
+not just the Hungarian subset). Hint: you can use the filter function twice.
 
-# Is there a statistically significant difference between men and women's
-# average score? If so, what direction is this difference? Does this challenge
-# or confirm traditional gender stereotypes (note: not all personality traits
-# have one)?
+```{r}
 
-# Answer:
+```
 
-##############################################################################
-# 07. Construct a dataset `temp` that only has ages from 30-49. Hint: use the
-# filter function twice.
+On the dataset of people ages 30 to 49, create a variable called `fourties` if
+age is greater than or equal to 40.
 
 
-##############################################################################
-# 08. On the dataset `temp` construct a variable `fourties` if age is greater
-# than or equal to 40.
+Fit a regression on with your personality trait as a response to test for the
+difference between its mean for people in their 30s versus people in their
+40s. Compute a confidence interval for this difference.
 
+```{r}
 
-##############################################################################
-# 09. Fit a regression on `temp` with your personality trait as a response to
-# test for the difference between its mean for people in their 30s versus
-# people in their 40s. Compute a confidence interval for this difference.
+```
 
+Is there a statistically significant difference between 30s and 40s average
+scores? If so, what direction is this difference? Does this challenge or
+confirm traditional age stereotypes (note: not all personality traits
+have one)?
 
-# Answer:
+**Answer**:
 
-# Is there a statistically significant difference between 30s and 40s average
-# scores? If so, what direction is this difference? Does this challenge or
-# confirm traditional age stereotypes (note: not all personality traits
-# have one)?
+Draw a bar plot of the variable `country` over the whole dataset. Take
+note of the number of countries with a very small number of responses.
 
-# Answer:
+```{r}
 
-##############################################################################
-# 10. Draw a bar plot of the variable `country` over the whole dataset. Take
-# note of the number of countries with a very small number of responses.
+```
 
+Fitting a model with all of these countries is possible but not very
+useful. When we only have a few responses from some places it makes those
+few regions with a lot of data harding to identify and analyze. Fortunately
+there is a solution in the function `fct_lump`.
 
-##############################################################################
-# 11. Fitting a model with all of these countries is possible but not very
-# useful. When we only have a few responses from some places it makes those
-# few regions with a lot of data harding to identify and analyze. Fortunately
-# there is a solution in the function `fct_lump`.
-#
-# fct_lump takes two arguments, the character variable followed by the number
-# of total levels you would like to include. Everything else gets lumped (can
-# you see where the name comes from?) into an "Other" category. Here we fit
-# a model predicting the baseline level with the top 5 most common countries:
+Fit a regression model on the entire dataset by the country variable lumped
+into 5 categories.
 
-model <- lm_basic(baseline ~ fct_lump(country, 5), data = pf)
-reg_table(model, 0.95)
+```{r}
 
-# The baseline level in this case is AU (Austrailia). You can see the
-# Anglophone bias in the dataset from the data from the top five counties.
-# Fit this model, changing the baseline variable to your variable of interest.
+```
 
+Using the previous model, which country (not including "Other") has the
+highest score for your trait? Which has the lowest?
 
-##############################################################################
-# 12. Using the previous model, which country (not including "Other") has the
-# highest score for your trait? Which has the lowest?
+**Answer**:
 
-# Answer:
+## Fitting Sensitivity Scores
 
-##############################################################################
-# 13. Fit a model that predicts sensitivity as a function of the baseline
-# score.
+Fit a model that predicts sensitivity as a function of the baseline
+score.
 
+```{r}
 
-# Is the slope statistically significantly different from 1? Why is this an
-# interesting question in the context of the data?
+```
 
-# Answer:
+Is the slope statistically significantly different from 1? Why is this an
+interesting question in the context of the data?
 
-##############################################################################
-# 14. Fit a regression model that uses both gender and the baseline score to
-# predict your trait.
+**Answer**:
 
+Fit a regression model that uses both gender and the baseline score to
+predict your trait.
 
+```{r}
 
-# Describe the slope for the gender term in words:
+```
 
-# Answer:
+Describe the slope for the gender term in words:
 
-##############################################################################
-# 15. Add predictions from the previous model to `pf`.
+**Answer**:
 
+Add predictions from the previous model to `pf`.
 
-# Plot the baseline score as a function of `model_pred`, coloring the points
-# base on the gender variable.
+```{r}
 
+```
 
-# What do the predicted values look like?
+Plot the baseline score as a function of `model_pred`, coloring the points
+base on the gender variable.
 
-# Answer:
+```{r}
 
-##############################################################################
-# 16. Instead of changing the intercept with gender, we can make them have
-# different slopes instead. Run the following model, changing the train to
-# your trait of interest:
+```
 
+What do the predicted values look like?
 
-
-# The result will have two different slope, one for each gender. Repeat the
-# previous question (add model to `pf` and draw the plot colored by gender).
-
-
-# Describe this plot.
-
-# Answer:
-
-##############################################################################
-# 17. It also possible to have a model with different slopes and intercepts
-# for each gender. In the absense of other covariates, this is equivalent to
-# running each regression seperately on a subset of the men and then over a
-# subset of the women. Run the following model, changing the train to
-# your trait of interest:
-
-
-
-# Repeat the previous question (add model to `pf` and draw the plot colored
-# by gender).
-
-
-
-# Describe this plot.
-
-# Answer:
-
-##############################################################################
-# 18. Take each row in the previous regression table, other than the intercept
-# and describe what it would mean if this variable were equal to zero.
-
-# Answer:
-
-
-
-
-
+**Answer**:
 
 
