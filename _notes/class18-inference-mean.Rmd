@@ -112,7 +112,7 @@ and 99%.
 Taking a set of sampled flight times from paper helicopters:
 
 ```{r}
-flight_time
+helicopter
 ```
 
 We can run the exact same analysis:

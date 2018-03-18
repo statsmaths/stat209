@@ -27,103 +27,111 @@ Below you will find several empty R code scripts and answer prompts. Your task
 is to fill in the required code snippets and answer the corresponding
 questions.
 
-# Title: "Inference for the Mean"
-# Name:
+## Teacher Salary
 
-# Load required functions and packages
-library(tidyverse)
-library(smodels)
-library(forcats)
-library(ggrepel)
+We will start today by looking at a small dataset containing teacher
+salaries from 2009-2010 for 71 randomly choosen teachers employed by the
+St. Louis Public School in in Michigan.
 
-theme_set(theme_minimal())
-
-##############################################################################
-# 01. We will start today by looking at a small dataset containing teacher
-# salaries from 2009-2010 for 71 randomly choosen teachers employed by the
-# St. Louis Public School in in Michigan.
-
+```{r}
 teachers <- read_csv("https://statsmaths.github.io/stat_data/teachers_pay.csv")
+```
 
-# The available variables are:
-#
-# base       - Base annual salary, in dollars
-# degree     - Highest educational degree attained: BA (Bachelor's) or
-#              MA (Master's)
-# years      - Number of years employeed
+The available variables are
 
-##############################################################################
-# 02. Using the mean function, what is the average base pay of all teachers
-# in the dataset?
+- base: Base annual salary, in dollars
+- degree: Highest educational degree attained: BA (Bachelor's) or MA (Master's)
+- years: Number of years employeed
 
+Using the mean function, what is the average base pay of all teachers
+in the dataset?
 
+```{r}
 
-##############################################################################
-# 03. Fit a model for the mean of the base pay variable using lm_basic. Save
-# the model as an object called "model":
+```
 
+Fit a model for the mean of the base pay variable using lm_basic. Save
+the model as an object called "model":
 
-##############################################################################
-# 04. Using a call to `reg_table`, find the mean implied by the model:
+```{r}
 
+```
 
-# Does the mean agree with your answer to question 2?
+Using a call to `reg_table`, find the mean implied by the model:
 
-# Answer:
+```{r}
 
-##############################################################################
-# 05. Add a 95% confidence interval to the regression table. What is the
-# range of mean salaries implied by the confidence interval?
+```
 
+Does the mean agree with your answer to question 2?
 
+**Answer**:
 
-# Answer:
+Add a 95% confidence interval to the regression table.
 
-##############################################################################
-# 06. Draw a histogram of the base salary values for the entire dataset.
+```{r}
 
+```
 
-# Do most of the salary values fall within the range given in question 5?
-# WHY?!
+What is the range of mean salaries implied by the confidence interval?
 
-# Answer:
+**Answer**:
 
-##############################################################################
-# 07. Use the filter command to construct a new dataset called `masters`
-# consisting of just those teachers with a masters degree.
+Draw a histogram of the base salary values for the entire dataset.
 
+```{r}
 
-##############################################################################
-# 08. Compute a 95% confidence interval for the mean pay of teachers with a
-# master's degree. Does this range intersect the one you had in question 5?
+```
 
+Do most of the salary values fall within the range given in question 5? Why
+or why not?
 
-# Answer:
+**Answer**:
 
-##############################################################################
-# 09. Now load the following dataset containing all murders that have occured
-# in London from 1 January 2006 to 7 September 7 2011.
+Use the filter command to construct a new dataset called `masters` consisting
+of just those teachers with a masters degree.
 
+```{r}
+
+```
+
+Compute a 95% confidence interval for the mean pay of teachers with a master's
+degree. Does this range intersect the one you had in question 5?
+
+```{r}
+
+```
+
+## Murder Data
+
+Now load the following dataset containing all murders that have occurred in
+London from 1 January 2006 to 7 September 7 2011.
+
+```{r}
 london <- read_csv("https://statsmaths.github.io/stat_data/london_murders.csv")
+```
 
-# The available variables are:
-#
-# age       - age of the victim in years
-# year      - year of the murder
-# borough   - the London borough in which the murder took place
+The available variables are:
 
-##############################################################################
-# 10. Find an 80% confidence interval for the average age of the victim of a
-# murder in London.
+- age: age of the victim in years
+- year: year of the murder
+- borough: the London borough in which the murder took place
 
+Find an 80% confidence interval for the average age of the victim of a
+murder in London.
 
-# Answer:
+```{r}
 
-##############################################################################
-# 11. Describe in words how the proceeding confidence interval could be
-# interpreted.
+```
 
-# Answer:
+Make sure you actually extract the answer here:
+
+**Answer**:
+
+Describe in words how the proceeding confidence interval should be
+interpreted.
+
+**Answer**:
 
 
 

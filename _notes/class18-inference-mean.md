@@ -156,13 +156,21 @@ Taking a set of sampled flight times from paper helicopters:
 
 
 {% highlight r %}
-flight_time
+helicopter
 {% endhighlight %}
 
 
 
 {% highlight text %}
-## Error in eval(expr, envir, enclos): object 'flight_time' not found
+## # A tibble: 6 x 1
+##   flight_time
+##         <dbl>
+## 1       0.900
+## 2       1.11 
+## 3       1.13 
+## 4       0.920
+## 5       1.16 
+## 6       1.11
 {% endhighlight %}
 
 We can run the exact same analysis:

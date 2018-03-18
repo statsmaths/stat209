@@ -27,250 +27,176 @@ Below you will find several empty R code scripts and answer prompts. Your task
 is to fill in the required code snippets and answer the corresponding
 questions.
 
-# Title: "Breakfast Cereals"
-# Name:
+## Cereal Data
 
-# Load required functions and packages
-library(tidyverse)
-library(smodels)
-library(forcats)
-library(ggrepel)
+Today, we start by looking at a collection of breakfast cereals:
 
-theme_set(theme_minimal())
-
-##############################################################################
-# 01. Today's lab looks at a collection of breakfast cereals:
-
+```{r}
 cereal <- read_csv("https://statsmaths.github.io/stat_data/cereal.csv")
+```
 
-# With variables:
-#
-#   name  - name of the specific cereal
-#   brand - name of the cereal's manufacturer
-#   sugar - amount of sugar per serving (g)
-#   score - healthiness score; 0-100; 100 is the best
-#   shelf - what shelf the cereal is typically stocked on in the store
+With variables:
 
-##############################################################################
-# 02. Produce a histogram of the sugar variable.
+- name: name of the specific cereal
+- brand: name of the cereal's manufacturer
+- sugar: amount of sugar per serving (g)
+- score: healthiness score; 0-100; 100 is the best
+- shelf: what shelf the cereal is typically stocked on in the store
 
+Produce a histogram of the sugar variable.
 
+```{r}
 
-##############################################################################
-# 03. What is the standard deviation of the variable `sugar`? Include the
-# units!
+```
 
+Now, compute the standard deviation of the variable `sugar`:
 
+```{r}
 
-# Answer:
+```
 
-##############################################################################
-# 04. Compute the deciles of the variable `score`.
-
+What are the units of this measurement?
 
 
-# Describe in words what the 30% value means.
+**Answer**:
 
-# Answer:
+Now, compute the deciles of the variable `score`:
 
-##############################################################################
-# 05. Draw a boxplot of score and brand.
+```{r}
 
+```
 
+What is the value of the 30th percentile. Describe what this means in words:
 
-# Which brand seems to have the healthiest cereals?
+**Answer**:
 
-# Answer:
+Produce a boxplot of score and brand.
 
-##############################################################################
-# 06. Draw a boxplot of score and shelf.
+```{r}
 
+```
 
+Which brand seems to have the healthiest cereals?
 
-# Draw a boxplot of sugar and shelf.
+**Answer**:
 
+Produce a boxplot of score and shelf.
 
+```{r}
 
-##############################################################################
-# 07. If I want a healthy but reasonably sweet cereal which shelf would be the
-# best to look on?
+```
 
-# Answer:
+Produce a boxplot of sugar and shelf.
 
-##############################################################################
-# 08. I want to add labels to the plot, but there are too many cereals to have
-# room to label all of them. Suppose I just want to look at General Mills
-# cereals. I could use the function `filter` to create a new dataset that
-# includes only these cereals:
+```{r}
 
-general_mills <- filter(cereal, brand == "General Mills")
+```
 
-# Construct a dataset named `middle` that contains only those cereals in the
-# middle shelf:
+If I want a healthy but reasonably sweet cereal which shelf would be the
+best to look on?
 
+**Answer**:
 
+## Tea Reviews
 
-##############################################################################
-# 09. Plot sugar (x-axis) against score (y-axis) for just those cereals in the
-# middle shelf:
+Next, we will take another look at a dataset of tea reviews that I used in
+a previous lecture:
 
-
-
-##############################################################################
-# 10. Modify the previous plot to include nicer labels and a title:
-
-
-
-##############################################################################
-# 11. Add a regression line to the previous plot using the command:
-# geom_smooth(method = "lm")
-
-
-
-##############################################################################
-# 12. Create a new plot of sugar (x-axis) against score (y-axis) from the
-# entire dataset. Make all of the General Mills cereals orange.
-
-
-
-##############################################################################
-# 13. Make the previous plot nicer: add labels, make the non-GM cereals have
-# an alpha value of 0.5, and label the GM cereals with their names:
-
-
-
-##############################################################################
-# 14. Now draw a sugar v. score plot, but add one smoothing line for all of
-# the cereals and another for just the GM cereals. Make sure to use color so
-# that the two lines can be differentiated.
-#
-# Note: We have not seen exactly how to do this, but it just involves putting
-# pieces together that we have already explored.
-
-
-
-##############################################################################
-# 15. Make one other advanced graphic that uses something new you learned
-# today.
-
-
-
-
-# Title: "Tea Reviews"
-# Name:
-
-# Load required functions and packages
-library(tidyverse)
-library(smodels)
-library(forcats)
-library(ggrepel)
-
-theme_set(theme_minimal())
-
-##############################################################################
-# 00. The dataset today consists of reviews from a collection of tea's for
-# sale online (see adagio.com):
-
+```{r}
 tea <- read_csv("https://statsmaths.github.io/stat_data/tea.csv")
+```
 
-# With variables:
-#   name  - the full name of the tea
-#   type  - the type of tea. One of:
-#
-#               - black
-#               - chai
-#               - decaf
-#               - flavors
-#               - green
-#               - herbal
-#               - masters
-#               - matcha
-#               - oolong
-#               - pu_erh
-#               - rooibos
-#               - white
-#
-#   score       - use rated score; from 0 to 100
-#   price       - estimated price of one cup of tea
-#   num_reviews - total number of online reviews
+With variables:
+- name: the full name of the tea
+- type: the type of tea. One of:
+    - black
+    - chai
+    - decaf
+    - flavors
+    - green
+    - herbal
+    - masters
+    - matcha
+    - oolong
+    - pu_erh
+    - rooibos
+    - white
+- score: user rated score; from 0 to 100
+- price: estimated price of one cup of tea
+- num_reviews: total number of online reviews
 
-##############################################################################
-# 01. Produce a bar plot showing a count of the types of tea in the dataset.
+Draw a scatterplot with num_reviews (x-axis) against score (y-axis) and add a
+regression line (recall: `geom_smooth(method="lm")`).
 
+```{r}
 
-# Which type has the smallest number of teas?
+```
 
-# Answer:
+Does the score tend to increase, decrease, or remain the same as the number
+of reviews increases?
 
-##############################################################################
-# 02. Draw a scatterplot with num_reviews (x-axis) against score (y-axis).
-# Add a regression line.
+**Answer**:
 
+Calculate the ventiles of the variable price.
 
-# Does the score tend to increase, decrease, or remain the same as the number
-# of reviews increases?
+```{r}
 
-# Answer:
+```
 
-##############################################################################
-# 03. Calculate the ventiles of the variable price.
+What is the 80th percentile? Describe it in words, include the units of the
+problem in your answer.
 
+**Answer**:
 
+Plot the number of reviews (x-axis) against the score variable. Color
+the points according to price binned into 5 buckets.
 
-# What is the 80th percentile? Describe it in words, include the units of the
-# problem in your answer.
+```{r}
 
-# Answer:
+```
 
-##############################################################################
-# 04. Plot the number of reviews (x-axis) against the score variable. Color
-# the points according to price binned into 5 buckets.
+What tends to be true about the number of reviews for the most expensive
+20% of teas?
 
+**Answer**:
 
+Create a dataset named `white` that consists of only white teas.
 
-# What tends to be true about the number of reviews for the most expensive
-# 20% of teas?
+```{r}
 
-# Answer:
+```
 
-##############################################################################
-# 05. Create a dataset named `temp` that consists of only white teas.
+Calculate the standard deviation of the price for white teas and the
+standard deviation of the price for all of the teas.
 
+```{r}
 
+```
 
-##############################################################################
-# 06. Calculate the standard deviation of the price for white teas and the
-# standard deviation of the price for all of the teas.
+Is the variation of the white tea prices smaller, larger, or about the same
+as the entire dataset?
 
+**Answer**:
 
-# Is the variation of the white tea prices smaller, larger, or about the same
-# as the entire dataset?
+Summarize the dataset by the type of tea and save the results as a variable
+named `tea_type`.
 
-# Answer:
+```{r}
 
-##############################################################################
-# 07. Draw a scatter plot of all of the teas with num_reviews (x-axis) against
-# score (y-axis). Color all of the white teas in red and label them with the
-# tea name using geom_text_repel.
+```
 
+Plot the average price (x-axis) against the average score (y-axis) of
+each type  of tea. Make the size of the points proportional to the number
+of teas in each category and label the points with geom_text_repel and the
+tea type.
 
+```{r}
 
-##############################################################################
-# 08. Summarize the dataset by the type of tea and save the results as a
-# variable named `temp`.
+```
 
+Describe an interesting pattern or set of outliers that you found in the
+previous plot. This does not need to take more than 1-2 sentences.
 
-##############################################################################
-# 09. Plot the average price (x-axis) against the average score (y-axis) of
-# each type  of tea. Make the size of the points proportional to the number
-# of teas in each category and label the points with geom_text_repel and the
-# tea type.
-
-
-##############################################################################
-# 10. Describe an interesting pattern or set of outliers that you found in the
-# previous plot. This does not need to take more than 1-2 sentences.
-
-# Answer:
+**Answer**:
 
 
