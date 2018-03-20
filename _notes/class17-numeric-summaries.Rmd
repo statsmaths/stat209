@@ -33,6 +33,32 @@ msleep <- na.omit(msleep)
 Develop tools for summarizing a dataset numerically, and how we can use these
 summaries to produce interesting new visualizations.
 
+## Mid-course survey summary
+
+Thank you all again for filling out the mid-course review forms. They were
+very helpful for me in planning the notes for the remainder of the semester.
+Some themes I saw:
+
+- generally happy with the format of the quizzes and the notes 🗒️ I provide
+- generally enjoy the short lecture followed by working on labs and projects
+- you like using your own computer 💻
+- enjoy working on the projects in class
+- a desire for more practice problems and labs 🔬
+- almost no comments on the pace 🏃 of the course (so I assume its good!)
+- some clarity on what is expected on the project drafts
+- request for more office hours ⏰ right before the projects are due
+
+It did not seem that there was a pattern of many other concerns (yay!). I've
+tried to add a little bit more practice to the labs, but mostly kept the
+format of the course consistent with what we have been doing lately. I'll try
+to clarify a bit more what is expected on the Project D drafts (there are no
+drafts for C). Also, I will have and announce extra office hours before the
+next assignment.
+
+Additionally, I did take other one-off comments that were made under
+consideration even if not listed here. If you have any other comments or
+concerns, please still let me know!
+
 ## Motivation
 
 Graphics are an excellent way of summarizing and
@@ -87,14 +113,14 @@ work.
 
 Also here are a number of functions that allow us to compute quantiles,
 a generalization of percentiles. For example, the `deciles` function splits
-the dataset into $10$ equally sized buckets:
+the dataset into 10 equally sized buckets:
 
 ```{r, eval = TRUE, echo = TRUE}
 deciles(msleep$awake)
 ```
 
-This shows that about 1/2 of the mammals are awake less than 13.90 hours and about
-1/2 are awake more than 13.90. I use the word "about" here due to subtitles
+This shows that about 1/2 of the mammals are awake less than 14.20 hours and about
+1/2 are awake more than 14.20. I use the word "about" here due to subtitles
 regarding ties and repeated values; for all practical purposes this is generally not
 important. Note that the 50% percentile has a special name that you have probably heard
 before: the *median*.
@@ -104,8 +130,8 @@ awake less than 8.12 hours and 1/10 are awake less than 20.8 hours. We also see
 that the sleepiest mammal is awake for only 4.1 hours and that one mammal is awake
 22.1 hours of the day.
 
-We can similarly calculate what are called quartiles, spliting the data into
-four equally  using the `quartiles` function:
+We can similarly calculate what are called quartiles, splitting the data into
+four equally sized groups using the `quartiles` function:
 
 ```{r}
 quartiles(msleep$awake)
@@ -143,18 +169,18 @@ to create them:
 msleep$awake - mean(msleep$awake)
 ```
 
-Typically we will not need deviances themselves, but they are useful for
-understanding variation about a mean.
+Typically we will not need deviances directly, but they are used in the calculation
+of quantities measuring the variation about a mean.
 
 ## Variance
 
 We can use deviations to measure the spread of a variable by adding the
 squared values of deviances. Why squares? For one thing, squaring the value
-makes negative deviations positive; though, same effect would come from applying
+makes negative deviations positive; though, the same effect would come from applying
 the absolution value function. The specific reason specifically for choosing the
 square is a bit too technical for our discussion.
 
-The sume of squared deviances are calculated by the following formula:
+The sum of squared deviances are calculated by the following formula:
 
 $$ \begin{align*}
 \text{sum of squares} &= (x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots (x_n - \overline{x})^2 \\
@@ -178,9 +204,9 @@ $$ \begin{align*}
 &= \frac{1}{n - 1} \cdot \sum_i (x_i - \overline{x})^2
 \end{align*} $$
 
-The notation of using $s^2$ to represent the variance of a dataset is quite common.
+The notation of using s^2 to represent the variance of a dataset is quite common.
 
-Why do we use $n-1$ rather than $n$ to take the average? The technical reason is that
+Why do we use (n-1) rather than (n) to take the average? The technical reason is that
 if we want to measure the variance of a population using a sample from that population,
 we need to use $n-1$ in order to have an unbiased estimate of the population value...
 The short answer is not to worry about it, which I strongly suggest at this point.
@@ -191,7 +217,7 @@ The variance can be computed manually as follows:
 sum((msleep$awake - mean(msleep$awake))^2) / (nrow(msleep) - 1)
 ```
 
-Or, using the `var` function, or manually as follows:
+Or, using the `var` function as follows:
 
 ```{r}
 var(msleep$awake)
@@ -215,7 +241,7 @@ function `sd`:
 sd(msleep$awake)
 ```
 
-More interestingly, we can drag out the `group_summarize` function to compute the
+Or, we can take out the `group_summarize` function to compute the
 standard deviation of the awake variable by the type of mammal:
 
 ```{r}
@@ -230,10 +256,10 @@ have the largest variation of sleeping hours per day.
 ## Graphing Variation
 
 Finally, we can use these measurments of distribution and variation in graphical
-forms. Typically, this comes up when we have a grouping categorical variable and 
+forms. Typically, this comes up when we have a grouping categorical variable and
 another numeric variable of interest.
 
-A boxplot shows, for each group on the x-axis, the distribution of the variable 
+A boxplot shows, for each group on the x-axis, the distribution of the variable
 on the y-axis. The solid bar indicates the y-axis variable's median and the height
 of the box and the "whiskers" indicate measurments of variation (see the link
 [boxplot](https://en.wikipedia.org/wiki/Box_plot) for more information about the
