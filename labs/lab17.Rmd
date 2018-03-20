@@ -18,6 +18,7 @@ library(dplyr)
 library(viridis)
 library(forcats)
 library(smodels)
+library(ggrepel)
 theme_set(theme_minimal())
 ```
 
