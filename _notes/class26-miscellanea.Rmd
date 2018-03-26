@@ -1,0 +1,223 @@
+---
+title: "Class 26: Extending Multivariate Models"
+author: "Taylor Arnold"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(fig.path = "../assets/class26-miscellanea/")
+knitr::opts_chunk$set(fig.height = 5)
+knitr::opts_chunk$set(fig.width = 8.5)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+```
+
+```{r, message = FALSE, include = FALSE}
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(viridis)
+library(kableExtra)
+library(smodels)
+
+theme_set(theme_minimal())
+msleep <- na.omit(msleep)
+```
+
+## Objectives
+
+Today we will cover some miscellaneous R functions for constructing different
+types of models beyond those that fit into the class proper.
+
+## Multivariate regression with categorical data
+
+### Cars Dataset
+
+Today we are, once again, going to look at our automobiles dataset:
+
+```{r, message = FALSE}
+cars <- read_csv("https://statsmaths.github.io/stat_data/mpg.csv")
+```
+
+Our goal today is to estimate the city fuel efficiency of each car.
+
+### Categorical predictors
+
+It would be reasonable to start with a regression model
+that uses `displ` to predict the response variable.
+We can just as easily add categorical data into our
+model. Next week we will cover the specifics of what
+is internally being done here, but for now let's just
+see what adding the `class` variable to the model does
+to the output:
+
+```{r}
+model <- lm(cty ~ displ + class,
+            data = cars)
+cars$cty_pred <- predict(model, newdata = cars)
+model
+```
+
+Notice that it appears that we now have a separate term for
+each class of car. If you look more carefully you'll see that
+there is no mention of "2seater" in the list. This value is
+excluded because otherwise we would have perfect collinearity
+between the variables (a violation of the model assumptions)
+
+The model created here can be thought of as a set of parallel
+lines, one for each class of car. We can see that here:
+
+```{r}
+ggplot(cars, aes(displ, cty_pred)) +
+  geom_line(aes(color = class)) +
+  geom_point(aes(color = class))
+```
+
+Notice, for example, that compact and midsize have very close
+estimates in the regression model and very close lines on the
+plot.
+
+Here, we have different offsets for each class but the same slope.
+It is possible, easy in fact, to have different slopes and the same
+intercept. We simply use the `:` sign instead of the `+` sign in
+the formula specification.
+
+```{r}
+model <- lm(cty ~ displ:class,
+            data = cars)
+cars$cty_pred <- predict(model, newdata = cars)
+model
+```
+
+Here, the model gives the difference between each classes slope and
+the baseline slope.
+
+```{r}
+ggplot(cars, aes(displ, cty_pred)) +
+  geom_line(aes(color = class)) +
+  geom_point(aes(color = class))
+```
+
+Finally, we could use a `*` in place of the `:` to have different slopes
+and intercepts.
+
+## Extensions to the linear model
+
+### Generalized linear models
+
+There are many other functions in R that have similar calling
+mechanisms to `lm` but run different underlying models.
+
+For example, `glm` fits generalized linear models. These can
+be used, amongst other things, for fitting a model to a binary
+response. The *logit* model assumes the following relationship
+between the response y and the inputs x:
+
+$$ \frac{\mathbb{P}[y_i = 1]}{1 - \mathbb{P}[y_i = 1]} = \alpha + x_{1,i} \beta_1 + \cdots + x_{p,i} \beta_p  $$
+
+Which is often simplified using the logit function itself:
+
+$$ \text{logit}(\mathbb{P}[Y_i = 1]) = \alpha + x_{1,i} \beta_1 + \cdots + x_{p,i} \beta_p $$
+
+Fitting the model is easy; we just use `glm` and specify the
+binomial model:
+
+```{r}
+df <- data_frame(y = c(0,0,0,0,1,1,1,1), x = rnorm(8))
+model <- glm(y ~ x, data = df, family = binomial())
+summary(model)
+```
+
+It is much harder, impossible perhaps, to fully understand the
+meaning of the coefficents (though we can make sense of the
+difference between it being negative, postive, and zero). To
+get predictions - which we will describe as the probability
+that y is equal to 1 - we would need to apply the inverse
+logit function:
+
+$$ \mathbb{P}[Y_i = 1] = \text{logit}^{-1} (\alpha + x_{1,i} \beta_1 + \cdots + x_{p,i} \beta_p) $$
+
+Be careful, because the `predict` by default returns the linear
+combination of the inputs without the inverse logit transformation.
+Notice here that the range is not between zero and one:
+
+```{r}
+df$pred <- predict(model, newdata = df)
+quantile(df$pred)
+```
+
+To get the predicted probabilities, we need to add an option to
+the predict function:
+
+```{r}
+df$pred <- predict(model, newdata = df, type = "response")
+quantile(df$pred)
+```
+
+Of course, we could also apply the inverse logit function
+ourselves, but that is more error prone and needs to be
+changed depending on the "family" choosen for the logistic
+regression.
+
+### Robust linear models
+
+In the **MASS** package (included with all standard R
+installations) is the `rlm` function for fitting robust
+linear regression:
+
+```{r}
+library(MASS)
+x <- rnorm(100)
+y <- 1 + x + rnorm(100, sd = 0.2)
+y[50] <- 1e4
+model_lm <- lm(y ~ x)
+model_rlm <- rlm(y ~ x)
+```
+
+We see that the robust version is much more accurate than
+the standard regression function in this case:
+
+```{r}
+summary(model_lm)
+summary(model_rlm)
+```
+
+### Other models
+
+If you have a need for a specific model, you can usually
+find an R package that support it. In most cases, the model
+will roughly resemble calling `lm`.
+
+Some common examples you may run into:
+
+- `gam::gam` for generalized additive models
+- `nls` for non-linear regression
+- `lme4::lmer` for mixed effects models
+- `quantreg::qr` for quantila regression
+- `glmnet::glmnet` for the generalized elastic net
+- `randomforest::randomforest` for random forest classifications
+- `forcast::auto.arima` for modeling time series
+
+### Thoughts on statistical inference
+
+I am personally quite sceptical of p-values from large linear models.
+Here is an excellent demo showing how easy *p-hacking* is:
+
+[Hack Your Way To Scientific Glory](https://fivethirtyeight.com/features/science-isnt-broken/#part1)
+
+In general, in order to be valid hypothesis tests, we need to decide
+on the exact model before seeing any of the data and only run one
+model on the dataset. While we can run more models and modify them
+as we observe results, these can only be used for exploratory purposes.
+
+
+
+
+
+
+
+
+
+
+
