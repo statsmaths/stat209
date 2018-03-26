@@ -28,16 +28,16 @@ coins2
 
 {% highlight text %}
 ## # A tibble: 8 x 2
-##   number cup  
+##   number   cup
 ##    <dbl> <chr>
-## 1   1.00 A    
-## 2   1.00 A    
-## 3   4.00 A    
-## 4   5.00 A    
-## 5   1.00 B    
-## 6   3.00 B    
-## 7   4.00 B    
-## 8   4.00 B
+## 1      1     A
+## 2      1     A
+## 3      4     A
+## 4      5     A
+## 5      1     B
+## 6      3     B
+## 7      4     B
+## 8      4     B
 {% endhighlight %}
 
 In this case, we may want to model the mean of both cups. To
@@ -164,7 +164,7 @@ baseline used as the second parameter:
 
 
 {% highlight r %}
-msleep <- mutate(msleep, vore_new = fct_relevel(vore, "insecti"))
+msleep$vore_new <- fct_relevel(msleep$vore, "insecti")
 model <- lm_basic(awake ~ 1 + vore_new, data = msleep)
 reg_table(model, level = 0.95)
 {% endhighlight %}

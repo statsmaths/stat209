@@ -98,7 +98,7 @@ base level? To do so, use the `fct_relevel` command with the new
 baseline used as the second parameter:
 
 ```{r}
-msleep <- mutate(msleep, vore_new = fct_relevel(vore, "insecti"))
+msleep$vore_new <- fct_relevel(msleep$vore, "insecti")
 model <- lm_basic(awake ~ 1 + vore_new, data = msleep)
 reg_table(model, level = 0.95)
 ```
