@@ -1,0 +1,44 @@
+---
+title: "Class 22: Sixteen Personality Factors II"
+author: "Taylor Arnold"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(fig.path = "../assets/class21-16pf/")
+knitr::opts_chunk$set(fig.height = 5)
+knitr::opts_chunk$set(fig.width = 8.5)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+```
+
+```{r, message = FALSE, include = FALSE}
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(viridis)
+library(kableExtra)
+library(smodels)
+
+theme_set(theme_minimal())
+msleep <- na.omit(msleep)
+```
+
+## Objectives
+
+Today we will continue to dive into the 16PF dataset.
+
+### Practice
+
+Today, work on the second lab concerned with the 16 personality factors:
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab22.Rmd" download="lab22.Rmd" target="_blank">lab22.Rmd</a>
+
+Please upload your script to GitHub ahead of the next class.
+
+
+
+
+
+
+

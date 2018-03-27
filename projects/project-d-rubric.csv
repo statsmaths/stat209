@@ -1,0 +1,8 @@
+element,component,max_score,score
+Formatting,the report was correctly formatted as an RMarkdown file,5,
+Formatting,the report was compiled to html using RMarkdown; both files were uploaded,5,
+Thesis,"the report contains a solid and interesting thesis statement",20,
+Support,"the graphics and models work to supply evidence to support the thesis statement",100,
+Exposition,"the main reports sections are well-written, with full sentences and limited errors",40,
+Presentation,"the presentation well prepared, interesting, and captured the main themes of the report",10,
+Overall,the report demonstrates an interesting and thorough analysis of the dataset,20,

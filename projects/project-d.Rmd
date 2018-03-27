@@ -1,0 +1,31 @@
+---
+title: "PUT YOUR TITLE HERE"
+author: "PUT YOUR NAME HERE"
+output: html_document
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(ggmap)
+library(viridis)
+library(forcats)
+library(smodels)
+```
+
+AVAILABLE DATASETS (choose one and delete the others)
+
+```{r}
+nfl <- read_csv("https://statsmaths.github.io/stat_data/nfl2015.csv")
+taxi <- read_csv("https://statsmaths.github.io/stat_data/nyc_taxi_50.csv")
+nba_shots <- read_csv("https://statsmaths.github.io/stat_data/nba_shots.csv")
+cancer <- read_csv("https://statsmaths.github.io/stat_data/cancer_inc_data.csv")
+```
+
