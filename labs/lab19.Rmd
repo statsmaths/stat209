@@ -95,7 +95,7 @@ Is the slope coefficient statistically significant (compared to zero)?
 
 **Answer**:
 
-Describe this in terms of your answer to question 5.
+Describe this in terms of your answers above.
 
 **Answer**:
 
@@ -151,8 +151,7 @@ high synergy?
 **Answer**:
 
 Finally, fit a regression model that predicts the overall score as a function
-of the variable `synergy` coded as a factor. There is no need to produce a
-regression table.
+of the variable `synergy` coded as a factor.
 
 ```{r}
 
