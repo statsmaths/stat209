@@ -126,7 +126,7 @@ dataset.
 
 
 {% highlight r %}
-model <- lm_basic(awake ~ 1 + sleep_rem, data = msleep)
+model <- lm_basic(awake ~ 1 + sleep_rem + vore, data = msleep)
 msleep <- add_prediction(msleep, model)
 msleep
 {% endhighlight %}
@@ -169,7 +169,8 @@ a simple plot:
 {% highlight r %}
 ggplot(msleep, aes(sleep_rem, awake)) +
   geom_point() +
-  geom_point(aes(y = model_pred), color = "orange")
+  geom_point(aes(y = model_pred, color = vore)) +
+  geom_line(aes(y = model_pred, color = vore))
 {% endhighlight %}
 
 <img src="../assets/class20-linear-regression/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />

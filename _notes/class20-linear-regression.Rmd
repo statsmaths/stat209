@@ -92,7 +92,7 @@ the predicted values and residuals that come from it. We can use the
 dataset.
 
 ```{r}
-model <- lm_basic(awake ~ 1 + sleep_rem, data = msleep)
+model <- lm_basic(awake ~ 1 + sleep_rem + vore, data = msleep)
 msleep <- add_prediction(msleep, model)
 msleep
 ```
@@ -104,7 +104,8 @@ a simple plot:
 ```{r}
 ggplot(msleep, aes(sleep_rem, awake)) +
   geom_point() +
-  geom_point(aes(y = model_pred), color = "orange")
+  geom_point(aes(y = model_pred, color = vore)) +
+  geom_line(aes(y = model_pred, color = vore))
 ```
 
 As you can see, the predicted values all line along a single line.
