@@ -38,6 +38,7 @@ pf <- read_csv("https://statsmaths.github.io/stat_data/cattell_16pf.csv")
 ```
 
 The dataset use the following fields:
+
 - age: respondent's age in years
 - gender: respondent's self-selected gender
 - country: two letter IATA code for the respondent's IP
@@ -61,7 +62,8 @@ The dataset use the following fields:
 - baseline: average score across all 16 personality traits
 
 *To start with, select a particular trait that you will use for the first
-bank of questions. You can pick any of the 16 other than sensitivity.*
+bank of questions. I suggest picking something that popped out when you took
+the test. You can pick any of the 16 other than sensitivity.*
 
 Produce a bar plot of the personality scores for your trait.
 
