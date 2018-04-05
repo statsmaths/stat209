@@ -27,17 +27,6 @@ Below you will find several empty R code scripts and answer prompts. Your task
 is to fill in the required code snippets and answer the corresponding
 questions.
 
-# Title: "Sixteen Personality Factors II"
-# Name:
-
-# Load required functions and packages
-library(tidyverse)
-library(smodels)
-library(forcats)
-library(ggrepel)
-
-theme_set(theme_minimal())
-
 ## 16PF Data, Again
 
 Once again we will load the survey response data from the Sixteen Personality
