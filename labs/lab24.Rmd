@@ -1,5 +1,5 @@
 ---
-title: "Lab 24: Chicago Crime Data I"
+title: "Lab 25: Chicago Crime Data II"
 output: html_document
 ---
 
@@ -20,6 +20,7 @@ library(forcats)
 library(smodels)
 theme_set(theme_minimal())
 ```
+
 
 ## Instructions
 
@@ -73,180 +74,64 @@ ca <- read_csv("https://statsmaths.github.io/stat_data/chicago_meta.csv")
 - `perc_20_units`: percentage of residential buildings with 20 or more units
 
 
-It is difficult to do much of anything directly with the raw data. We
-need to utilize the group_summarize function to get somewhere interesting.
-Before doing that on the whole dataset, let's make sure that we understand
-exactly what is going on by using the mean() and sum() functions directly.
-Take the mean of arrest_flag for the whole dataset:
+As before, it will be useful to group summarize the dataset and join the
+metadata. Do that here to construct the dataset `crimes_ca`:
+
+```{r}
+crimes_ca <- group_summarize(crimes, area_number)
+crimes_ca <- left_join(crimes_ca, ca)
+
+### Prompts
+
+Address one of the following prompts. Your end goal should be to produce
+a data visualization (make sure to include labels) and a 1-2 sentence thesis
+statement. Straight from Wikipedia, a thesis statement: "offers a concise
+summary of the main point or claim of the essay, research paper, ect."
+Note, these questions are jumping off points. You can deviate or extend
+from them if something related strikes your interest.
+
+1. How is the rate of battery crimes (that is the number of crimes per
+household) effected by how central a neighborhood is to the city of Chicago?
+Centrality can be measured by several variables, including the percentage
+of people who walk to work, number of households living in buildings with
+20+ units, or total commute time. You may want to differentiate between
+crimes at night and those during the day.
+
+2. What proportion of narcotics violations result in an arrest by neighborhood?
+Do any features of a neighborhood seem to effect this rate? If you see any
+outliers try to document and explain these.
+
+3. What is the relationship between the overall arrest rate and the
+crime rate in a given neighborhood? Does income effect or correlate
+with these in any expected or unexpected ways?
+
+4. How does the relationship between income and the rate of burglaries
+change between day and nighttime? You may want to highlight 1-2 particular
+neighborhoods to make your point.
+
+
+5. Robbery and theft are similar crimes, the difference being that robbery
+involves taking something by force whereas theft is simply the taking of
+another's property. Considering only crimes at night, how does the ratio
+of robberies to the number robberies and thefts relate to demographics
+in each neighborhood. Try to find a particularly interesting or predictive
+demographic.
+
+6. There are 6 community areas where over 47% of households have
+children. How does the relationship between the number of crimes
+that occur and night and the arrest rate in each neighborhood compare
+between these 9 areas and the others?
+
+7. How does the relationship between income and the rate of assault
+change between day and nighttime? You may want to highlight any particularly
+interesting outliers.
+
+### Exploratory Analysis
+
+Write you exploratory analysis here:
 
 ```{r}
 
 ```
-
-Describe what this means in words.
-
-**Answer**:
-
-Now, take the mean of the theft variable over the entire dataset:
-
-```{r}
-
-```
-
-Describe what this means in words.
-
-**Answer**:
-
-Take the sum of the theft variable:
-
-```{r}
-
-```
-
-Describe what this means in words.
-
-**Answer**:
-
-Take the dataset `ca` and calculate the sum of the variable `num_households`:
-
-```{r}
-
-```
-
-Divide the answer to the previous question by the sum of the number of
-households variable and multiply by 1000.
-
-```{r}
-
-```
-
-Describe what this means in words.
-
-**Answer**:
-
-Use the filter function to construct a dataset `temp` consisting only of
-those rows in `crimes` that come from area_number 23. This is the area
-named Humboldt Park.
-
-```{r}
-
-```
-
-Take the mean of the variable arrests on the data `temp`.
-
-```{r}
-
-```
-
-Is this smaller, larger, or about the same as the mean of the arrest flag
-over the entire dataset? Can we safely compare these measurements? If so
-describe the relationship in words.
-
-**Answer**:
-
-Take the mean of the variable `theft` on the data `temp`.
-
-``{r}
-
-```
-
-Is this smaller, larger, or about the same as the mean of the theft flag
-over the entire dataset? Can we safely compare these measurements? If so
-describe the relationship in words.
-
-**Answer**:
-
-Manually look up the number of households in area 23, Humboldt Park, by
-looking at the dataset `ca` in the data viewer.
-
-```{r}
-
-```
-
-Take the sum of the number of thefts in temp, divide this by the number of
-households in Humboldt Park, and multiply by 1000:
-
-```{r}
-
-```
-
-Is this smaller, larger, or about the same as the same measurement over the
-over the entire dataset? Can we safely compare these measurements? If so
-describe the relationship in words.
-
-**Answer**:
-
-You have the tools to get the number of households in Humboldt Park
-entirely using R code. Specifically, filter `ca` to only include area 23
-and then pull off `num_households` with the `$` operator. Try this here:
-
-```{r}
-
-```
-
-Now that we have an idea of what it means to take means and sums over
-this dataset, use `group_summarize` to summarize `crimes` at the community
-area level. Save the result as `crimes_ca`:
-
-```{r}
-
-```
-
-We want to combine the datasets `crimes_ca` and `ca`. To do this we use
-a new function `left_join`, as follows:
-
-```{r}
-
-```
-
-What variable is R using the match these datasets up?
-
-**Answer**:
-
-By default, R will use any commonly named variables to match the datasets
-up. If we need it, I will show you how to modify this behavior later.
-
-Construct a variable `theft_rate` equal to the number of thefts in each
-community area, divided by the number of households and multiplied by 1000.
-
-```{r}
-
-```
-
-Draw a scatter plot with median income on the x-axis and theft rate on
-the y-axis.
-
-```{r}
-
-```
-
-Describe the general pattern and any outliers.
-
-**Answer**: 
-
-Modify the previous plot so that the points are labeled with the area
-name:
-
-```{r}
-
-```
-
-What is the name of the outlier?
-
-**Answer**:
-
-(Critical Thinking) Look up the neighborhood that is the outlier on
-Wikipedia. Give an explanation for why this neighborhood has a high rate
-of theft per household. Hint: There are two distinct reasons.
-
-**Answer**:
-
-
-
-
-
-
-
-
 
 

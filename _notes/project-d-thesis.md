@@ -4,7 +4,7 @@ author: "Taylor Arnold"
 output: html_notebook
 ---
 
-**Full Draft Due**: 2018-04-24 (Tuesday, start of class)
+**Thesis Due**: 2018-04-24 (Tuesday, start of class)
 
 **Final Due**: 2018-04-26 (Thursday, start of class)
 
@@ -12,7 +12,7 @@ output: html_notebook
 
 **Rubric**: [project-d-rubric.csv](https://github.com/statsmaths/stat209/blob/master/projects/project-d-rubric.csv)
 
-**Questions deadline**:  2018-04-24; 5pm (Monday) - If you would like help
+**Questions deadline**:  2018-04-25; 5pm (Wednesday) - If you would like help
 with the project, please see/e-mail me before this deadline. After this time
 I will only help with technical issues, such as R crashing or GitHub being
 down.
@@ -30,7 +30,7 @@ taken in the city
 Links to all four are included in the starter code. Please delete the three
 that you do not plan on working with. Data dictionaries are provided below.
 
-The final report will resemble Project B, free flowing text without any 
+The final report will resemble Project B, free flowing text without any
 code or specific format. The only difference is that in addition to telling a
 story you must have a thesis statement included in the first paragraph of your
 report and each graphic or model should be offering support for your thesis.

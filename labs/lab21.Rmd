@@ -67,6 +67,10 @@ the test. You can pick any of the 16 other than sensitivity.*
 
 Produce a bar plot of the personality scores for your trait.
 
+```{r}
+
+```
+
 Describe the distribution. Why does a bar plot work here even though the
 variable is numeric?
 
@@ -94,8 +98,12 @@ one? Can you explain why this is the case?
 Find a 95% confidence interval for the difference between the average
 male and female value for your personality trait on the Hungarian data.
 
+```{r}
+
+```
 
 **Answer**:
+
 
 Is there a statistically significant difference between men and women's
 average score? If so, what direction is this difference? Does this challenge

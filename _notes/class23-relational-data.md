@@ -209,18 +209,18 @@ left_join(flights_sml, airlines, by = "carrier")
 
 {% highlight text %}
 ## # A tibble: 327,346 x 7
-##     year month   day  hour tailnum carrier                     name
-##    <int> <int> <int> <int>   <chr>   <chr>                    <chr>
-##  1  2013     1     1     5  N14228      UA    United Air Lines Inc.
-##  2  2013     1     1     5  N24211      UA    United Air Lines Inc.
-##  3  2013     1     1     5  N619AA      AA   American Airlines Inc.
-##  4  2013     1     1     5  N804JB      B6          JetBlue Airways
-##  5  2013     1     1     6  N668DN      DL     Delta Air Lines Inc.
-##  6  2013     1     1     5  N39463      UA    United Air Lines Inc.
-##  7  2013     1     1     6  N516JB      B6          JetBlue Airways
-##  8  2013     1     1     6  N829AS      EV ExpressJet Airlines Inc.
-##  9  2013     1     1     6  N593JB      B6          JetBlue Airways
-## 10  2013     1     1     6  N3ALAA      AA   American Airlines Inc.
+##     year month   day  hour tailnum carrier name                    
+##    <int> <int> <int> <int> <chr>   <chr>   <chr>                   
+##  1  2013     1     1     5 N14228  UA      United Air Lines Inc.   
+##  2  2013     1     1     5 N24211  UA      United Air Lines Inc.   
+##  3  2013     1     1     5 N619AA  AA      American Airlines Inc.  
+##  4  2013     1     1     5 N804JB  B6      JetBlue Airways         
+##  5  2013     1     1     6 N668DN  DL      Delta Air Lines Inc.    
+##  6  2013     1     1     5 N39463  UA      United Air Lines Inc.   
+##  7  2013     1     1     6 N516JB  B6      JetBlue Airways         
+##  8  2013     1     1     6 N829AS  EV      ExpressJet Airlines Inc.
+##  9  2013     1     1     6 N593JB  B6      JetBlue Airways         
+## 10  2013     1     1     6 N3ALAA  AA      American Airlines Inc.  
 ## # ... with 327,336 more rows
 {% endhighlight %}
 
@@ -240,20 +240,19 @@ left_join(flights_sml, airports, by = c("dest" = "faa"))
 
 {% highlight text %}
 ## # A tibble: 327,346 x 13
-##     year month   day  hour origin  dest                            name
-##    <int> <int> <int> <int>  <chr> <chr>                           <chr>
-##  1  2013     1     1     5    EWR   IAH    George Bush Intercontinental
-##  2  2013     1     1     5    LGA   IAH    George Bush Intercontinental
-##  3  2013     1     1     5    JFK   MIA                      Miami Intl
-##  4  2013     1     1     5    JFK   BQN                            <NA>
-##  5  2013     1     1     6    LGA   ATL Hartsfield Jackson Atlanta Intl
-##  6  2013     1     1     5    EWR   ORD              Chicago Ohare Intl
-##  7  2013     1     1     6    EWR   FLL  Fort Lauderdale Hollywood Intl
-##  8  2013     1     1     6    LGA   IAD          Washington Dulles Intl
-##  9  2013     1     1     6    JFK   MCO                    Orlando Intl
-## 10  2013     1     1     6    LGA   ORD              Chicago Ohare Intl
-## # ... with 327,336 more rows, and 6 more variables: lat <dbl>, lon <dbl>,
-## #   alt <int>, tz <int>, dst <chr>, tzone <chr>
+##     year month   day  hour origin dest  name         lat   lon   alt    tz
+##    <int> <int> <int> <int> <chr>  <chr> <chr>      <dbl> <dbl> <int> <int>
+##  1  2013     1     1     5 EWR    IAH   George Bu…  30.0 -95.3    97   - 6
+##  2  2013     1     1     5 LGA    IAH   George Bu…  30.0 -95.3    97   - 6
+##  3  2013     1     1     5 JFK    MIA   Miami Intl  25.8 -80.3     8   - 5
+##  4  2013     1     1     5 JFK    BQN   <NA>        NA    NA      NA    NA
+##  5  2013     1     1     6 LGA    ATL   Hartsfiel…  33.6 -84.4  1026   - 5
+##  6  2013     1     1     5 EWR    ORD   Chicago O…  42.0 -87.9   668   - 6
+##  7  2013     1     1     6 EWR    FLL   Fort Laud…  26.1 -80.2     9   - 5
+##  8  2013     1     1     6 LGA    IAD   Washingto…  38.9 -77.5   313   - 5
+##  9  2013     1     1     6 JFK    MCO   Orlando I…  28.4 -81.3    96   - 5
+## 10  2013     1     1     6 LGA    ORD   Chicago O…  42.0 -87.9   668   - 6
+## # ... with 327,336 more rows, and 2 more variables: dst <chr>, tzone <chr>
 {% endhighlight %}
 
 Notice that the destination for the fourth row did not match
@@ -305,18 +304,18 @@ inner_join(flights_sml, weather,
 
 {% highlight text %}
 ## # A tibble: 326,160 x 16
-##     year month   day  hour origin  dest  temp  dewp humid wind_dir
-##    <int> <int> <int> <int>  <chr> <chr> <dbl> <dbl> <dbl>    <int>
-##  1  2013     1     1     6    LGA   ATL 39.92 26.06 57.33      260
-##  2  2013     1     1     6    EWR   FLL 39.02 26.06 59.37      270
-##  3  2013     1     1     6    LGA   IAD 39.92 26.06 57.33      260
-##  4  2013     1     1     6    JFK   MCO 39.02 26.06 59.37      260
-##  5  2013     1     1     6    LGA   ORD 39.92 26.06 57.33      260
-##  6  2013     1     1     6    JFK   PBI 39.02 26.06 59.37      260
-##  7  2013     1     1     6    JFK   TPA 39.02 26.06 59.37      260
-##  8  2013     1     1     6    JFK   LAX 39.02 26.06 59.37      260
-##  9  2013     1     1     6    EWR   SFO 39.02 26.06 59.37      270
-## 10  2013     1     1     6    LGA   DFW 39.92 26.06 57.33      260
+##     year month   day  hour origin dest   temp  dewp humid wind_dir
+##    <int> <int> <int> <int> <chr>  <chr> <dbl> <dbl> <dbl>    <int>
+##  1  2013     1     1     6 LGA    ATL    39.9  26.1  57.3      260
+##  2  2013     1     1     6 EWR    FLL    39.0  26.1  59.4      270
+##  3  2013     1     1     6 LGA    IAD    39.9  26.1  57.3      260
+##  4  2013     1     1     6 JFK    MCO    39.0  26.1  59.4      260
+##  5  2013     1     1     6 LGA    ORD    39.9  26.1  57.3      260
+##  6  2013     1     1     6 JFK    PBI    39.0  26.1  59.4      260
+##  7  2013     1     1     6 JFK    TPA    39.0  26.1  59.4      260
+##  8  2013     1     1     6 JFK    LAX    39.0  26.1  59.4      260
+##  9  2013     1     1     6 EWR    SFO    39.0  26.1  59.4      270
+## 10  2013     1     1     6 LGA    DFW    39.9  26.1  57.3      260
 ## # ... with 326,150 more rows, and 6 more variables: wind_speed <dbl>,
 ## #   wind_gust <dbl>, precip <dbl>, pressure <dbl>, visib <dbl>,
 ## #   time_hour <dttm>
@@ -343,20 +342,20 @@ inner_join(flights_sml, planes,
 
 {% highlight text %}
 ## # A tibble: 279,017 x 12
-##    year.x month   day tailnum year.y                    type
-##     <int> <int> <int>   <chr>  <int>                   <chr>
-##  1   2013     1     1  N14228   1999 Fixed wing multi engine
-##  2   2013     1     1  N24211   1998 Fixed wing multi engine
-##  3   2013     1     1  N619AA   1990 Fixed wing multi engine
-##  4   2013     1     1  N804JB   2012 Fixed wing multi engine
-##  5   2013     1     1  N668DN   1991 Fixed wing multi engine
-##  6   2013     1     1  N39463   2012 Fixed wing multi engine
-##  7   2013     1     1  N516JB   2000 Fixed wing multi engine
-##  8   2013     1     1  N829AS   1998 Fixed wing multi engine
-##  9   2013     1     1  N593JB   2004 Fixed wing multi engine
-## 10   2013     1     1  N793JB   2011 Fixed wing multi engine
-## # ... with 279,007 more rows, and 6 more variables: manufacturer <chr>,
-## #   model <chr>, engines <int>, seats <int>, speed <int>, engine <chr>
+##    year.x month   day tailnum year.y type      manufacturer model  engines
+##     <int> <int> <int> <chr>    <int> <chr>     <chr>        <chr>    <int>
+##  1   2013     1     1 N14228    1999 Fixed wi… BOEING       737-8…       2
+##  2   2013     1     1 N24211    1998 Fixed wi… BOEING       737-8…       2
+##  3   2013     1     1 N619AA    1990 Fixed wi… BOEING       757-2…       2
+##  4   2013     1     1 N804JB    2012 Fixed wi… AIRBUS       A320-…       2
+##  5   2013     1     1 N668DN    1991 Fixed wi… BOEING       757-2…       2
+##  6   2013     1     1 N39463    2012 Fixed wi… BOEING       737-9…       2
+##  7   2013     1     1 N516JB    2000 Fixed wi… AIRBUS INDU… A320-…       2
+##  8   2013     1     1 N829AS    1998 Fixed wi… CANADAIR     CL-60…       2
+##  9   2013     1     1 N593JB    2004 Fixed wi… AIRBUS       A320-…       2
+## 10   2013     1     1 N793JB    2011 Fixed wi… AIRBUS       A320-…       2
+## # ... with 279,007 more rows, and 3 more variables: seats <int>,
+## #   speed <int>, engine <chr>
 {% endhighlight %}
 
 This behavior is fine, but it is better to manually describe
@@ -373,20 +372,20 @@ inner_join(flights_sml, planes,
 
 {% highlight text %}
 ## # A tibble: 279,017 x 12
-##     year month   day tailnum year_plane                    type
-##    <int> <int> <int>   <chr>      <int>                   <chr>
-##  1  2013     1     1  N14228       1999 Fixed wing multi engine
-##  2  2013     1     1  N24211       1998 Fixed wing multi engine
-##  3  2013     1     1  N619AA       1990 Fixed wing multi engine
-##  4  2013     1     1  N804JB       2012 Fixed wing multi engine
-##  5  2013     1     1  N668DN       1991 Fixed wing multi engine
-##  6  2013     1     1  N39463       2012 Fixed wing multi engine
-##  7  2013     1     1  N516JB       2000 Fixed wing multi engine
-##  8  2013     1     1  N829AS       1998 Fixed wing multi engine
-##  9  2013     1     1  N593JB       2004 Fixed wing multi engine
-## 10  2013     1     1  N793JB       2011 Fixed wing multi engine
-## # ... with 279,007 more rows, and 6 more variables: manufacturer <chr>,
-## #   model <chr>, engines <int>, seats <int>, speed <int>, engine <chr>
+##     year month   day tailnum year_plane type    manufacturer model engines
+##    <int> <int> <int> <chr>        <int> <chr>   <chr>        <chr>   <int>
+##  1  2013     1     1 N14228        1999 Fixed … BOEING       737-…       2
+##  2  2013     1     1 N24211        1998 Fixed … BOEING       737-…       2
+##  3  2013     1     1 N619AA        1990 Fixed … BOEING       757-…       2
+##  4  2013     1     1 N804JB        2012 Fixed … AIRBUS       A320…       2
+##  5  2013     1     1 N668DN        1991 Fixed … BOEING       757-…       2
+##  6  2013     1     1 N39463        2012 Fixed … BOEING       737-…       2
+##  7  2013     1     1 N516JB        2000 Fixed … AIRBUS INDU… A320…       2
+##  8  2013     1     1 N829AS        1998 Fixed … CANADAIR     CL-6…       2
+##  9  2013     1     1 N593JB        2004 Fixed … AIRBUS       A320…       2
+## 10  2013     1     1 N793JB        2011 Fixed … AIRBUS       A320…       2
+## # ... with 279,007 more rows, and 3 more variables: seats <int>,
+## #   speed <int>, engine <chr>
 {% endhighlight %}
 
 ### Unspecified key
