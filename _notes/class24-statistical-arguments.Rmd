@@ -25,47 +25,6 @@ theme_set(theme_minimal())
 msleep <- na.omit(msleep)
 ```
 
-## Rhetoric and Persuasion
-
-Before we begin, let's briefly refresh ourselves of what
-exactly it means to *make an argument*, as obvious as that
-may at first sound. Formally, we are talking about the
-concept of **Rhetoric**, defined as:
-
-> Rhetoric is the art of discourse, wherein a writer or
-> speaker strives to inform, persuade or motivate particular
-> audiences in specific situations
-
-Hold on for a second here, because we are going to briefly
-dip into some philosophy. There is extensive research on the meaning and
-content of exactly what constitute Rhetoric; most would
-agree, though, that the concept was first formalized by
-Aristotle's incredibly influential text *Rhetoric*.
-
-To Aristotle, there are three primary ways of making an
-argument:
-
-1. *appeal to character (ethos; ἦθος)*: claims are
-believed primarily because we trust the speaker on the
-matter and hand. This requires that they (i) have a practical
-understanding of the subject, (ii) are a 'virtuous character',
-and (iii) they harbor some degree of good will towards their
-audience.
-2. *appeal to emotion (pathos; πάθος)*: claims are believed
-because the audience is brought to a certain emotional state.
-3. *appeal to argument (logos; λόγος)*: claims are believed
-by the use of some logical statement and statements.
-
-Good written and oral arguments often draw from one or more
-of these methods. When I teach, for example, I draw from both
-ethos and logos. Data — through visualizations, summary statistics,
-and models — is primarily used for appeals to logos. Of course,
-they may also factor indirectly to establish appeals to character
-or appeals to emotion.
-
-**Describe an example of where you have recently used each of
-these methods to make an argument.**
-
 ## Thesis Statement
 
 You have certainly heard of a thesis statement, but may struggle
@@ -89,7 +48,7 @@ confirm or contradict a prior hypothesis).
 
 ## Types of Argumentation
 
-Within logos, there are two subtypes of arguments that
+Within logical arguments, there are two subtypes that
 have a place in making arguments from data. These are:
 
 - **deductive reasoning**
@@ -144,10 +103,8 @@ and academia.
 
 ## Examples
 
-Okay, enough theory. Let's look at some actual data-drive arguments.
-Below are ten articles from the website FiveThirtyEight. I tried to
-grab articles that covered a good range of topics (Politics, Economics,
-Sports, Media, and Science).
+If you would like some good examples of data-driven arguments, check out
+some of these articles:
 
 - [Hollywood Studios Barely Promoted Non-White Actors And Films](https://fivethirtyeight.com/features/oscars-diversity-hollywood-ad-campaign/)
 - [The Minimum Wage Movement is Learning Tipped Workers Behind](https://fivethirtyeight.com/features/the-minimum-wage-movement-is-leaving-tipped-workers-behind/)
@@ -159,22 +116,6 @@ Sports, Media, and Science).
 - [A Plagiarism Scandal Is Unfolding In The Crossword World](http://fivethirtyeight.com/features/a-plagiarism-scandal-is-unfolding-in-the-crossword-world/)
 - [The Chris Paul Conundrum](https://fivethirtyeight.com/features/the-chris-paul-conundrum/)
 - [Under a New System Clinton Could Have Won the Popular Vote by 5 Points and Still Lost](http://fivethirtyeight.com/features/under-a-new-system-clinton-could-have-won-the-popular-vote-by-5-points-and-still-lost/)
-
-We will work in groups to read one of these (I recommend looking at
-a few more outside of class as well). For each article answer these
-questions:
-
-1. what types of logic (logos, pathos, ethos; inductive or deductive) are
-used in the piece
-2. is there an explicit thesis statement in the article? if so, what is it?
-if not, what do you think the implicit thesis statement is?
-3. how many graphics and tables are included in the article?
-4. how are the graphics or tables used in constructing an argument in the article?
-5. where in the article do the graphics or tables come into play
-6. what is the audience of the article? all college educated Americans?
-sports fans? general audiences? Democrats/Republicans?
-
-We'll take some time to look at these and then regroup as a class.
 
 ## Hybrid Approach in Statistics
 
@@ -195,13 +136,6 @@ For example, I may draw on my own authority as a Ph.D. statistician
 to assert that a particular model is appropriate to apply in a given
 situation. This model is then used to establish a thesis by inductive
 reason that plays on the audience's emotions.
-
-### Assignment
-
-We'll now go through the requirements for Project C. There is no
-separate lab today, so spend this time getting started on the project.
-
-
 
 
 

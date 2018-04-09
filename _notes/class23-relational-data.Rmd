@@ -85,20 +85,6 @@ return some sort of new output. These are called **two table verbs**. In
 case you are wondering, there are no three table verbs. To work with more
 than two tables, simply chain together multiple two table verbs.
 
-## Mutating joins
-
-Mutating joins take two tables and combine them into a single table
-that contains all variables in either original table. We can use them
-for operations such as adding weather information to the flights dataset.
-
-Before moving forward, I'll create a smaller version of the flights
-dataset to make sure that this prints out well in the HTML notes:
-
-```{r}
-flights_sml <- flights %>%
-  select(year:day, hour, tailnum, carrier)
-```
-
 In my experience, the two table verb `left_join` is by far the most
 commonly used way of combining two tables. The function takes two
 tables as its first two arguments, followed by the input `by` that
@@ -110,107 +96,7 @@ as the `flights_sml` dataset but now with the full name of the carrier:
 left_join(flights_sml, airlines, by = "carrier")
 ```
 
-As mentioned before, the key of interest may have different names in each
-data set. The `by` option can be modified to specific the name of the key
-in the first table and the name of the key in the second table. Here we
-use it to combine the flights dataset with the airports data:
-
-```{r}
-flights_sml <- flights %>%
-  select(year:day, hour, origin, dest)
-left_join(flights_sml, airports, by = c("dest" = "faa"))
-```
-
-Notice that the destination for the fourth row did not match
-with any rows of the airports data. The airport "BQN" was not found
-(if you are curious, BQN is in Aguadilla, Puerto Rico; presumably
-the airports data onlyincludes those in the 50 US states).
-
-### Inner and outer joins
-
-There are four mutating joins available in **dplyr**. These have the
-same syntax. If the join key is a primary key in one table and there
-are no missing matches, they all function exactly the same. If the
-join key is a primary key in one table and not all foreign keys in
-the other table match an entry in the other, the following happens:
-
-- `left_join` only non-matching rows in the first dataset are kept
-- `right_join` only non-matching rows in the second dataset are kept
-- `full_join` non-matching rows are included from either table
-- `inner_join` only matching rows from both tables are included
-
-All of this can become quite complicated. I follow one simple rule
-that make this much easier:
-
-- make sure that the key used for the join is a primary key for
-the *second* dataset; that is, it unique defines each row of the
-second dataset (usually this dataset contains metadata about the
-first dataset)
-
-If you follow this rule, you only ever need `left_join` (if you are
-okay with missing values in the metadata) and `inner_join`
-(if you want to remove rows that did not have associated metadata).
-
-### Composite keys
-
-Recall that a key may consist of multiple variables. To
-join on many variables at once, provide a vector of all the names
-to the option `by`:
-
-```{r}
-flights_sml <- flights %>%
-  select(year:day, hour, origin, dest)
-
-inner_join(flights_sml, weather,
-          by = c("year", "month", "day", "hour", "origin"))
-```
-
-### Common variables
-
-Sometimes there may be a variable name present in two datasets that
-we want to merge together but that has a different meaning in each
-dataset. For example, `year` is the year of the flight in the `flights`
-dataset but the year of creating in the `airplanes` dataset. If
-we join these two, we see that a suffix is added to each variable:
-
-```{r}
-flights_sml <- flights %>%
-  select(year:day, tailnum)
-
-inner_join(flights_sml, planes,
-          by = c("tailnum"))
-```
-
-This behavior is fine, but it is better to manually describe
-what the suffix should be:
-
-```{r}
-inner_join(flights_sml, planes,
-          by = c("tailnum"),
-          suffix = c("", "_plane"))
-```
-
-### Unspecified key
-
-If we do not specify the key to join with in the `by` option, **dplyr**
-will assume that we want to join on all common keys. A warning will be
-produced warning which variables were choosen. This can be useful in a
-pinch, but generally is a bad idea to rely on.
-
-## Filtering joins
-
-There are two additional two table verbs that act like the `filter`
-command, returning a subset of the rows, rather than like `mutate`,
-which adds new columns. Specifically:
-
-- `semi_join(x, y)` keeps all rows in `x` that have a match in `y`
-- `anti_join(x, y)` keeps all rows in `x` that do not have a match in `y`
-
-Unlike mutating joins, we do not need to be nearly as careful to make
-sure that the joining key is a primary key for the second dataset.
-
-We will see that filtering joins are particularly useful when working
-with spatial and text data.
+And the resulting dataset combines all of the variables by the common key.
 
 ## Practice
 
