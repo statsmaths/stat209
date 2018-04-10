@@ -1,5 +1,5 @@
 ---
-title: "Class 23: Statistical Arguments"
+title: "Class 24: Statistical Arguments"
 author: "Taylor Arnold"
 output: html_notebook
 ---

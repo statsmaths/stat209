@@ -1,5 +1,5 @@
 ---
-title: "Class 24: Relational Data"
+title: "Class 23: Relational Data"
 author: "Taylor Arnold"
 output: html_notebook
 ---
@@ -25,12 +25,7 @@ theme_set(theme_minimal())
 msleep <- na.omit(msleep)
 ```
 
-## Objectives
-
-Today we will continue to dive into the Chicago Crime dataset.
-
-
-## Airline data again
+## Airline data
 
 Today we will once again look at the NYC flights dataset:
 
@@ -92,6 +87,10 @@ describes which variables are going to be used to join the tables.
 Here we see that it returns a new table with the same number of rows
 as the `flights_sml` dataset but now with the full name of the carrier:
 
+```{r, include=FALSE}
+flights_sml <- select(flights, year:day, hour, tailnum, carrier)
+```
+
 ```{r}
 left_join(flights_sml, airlines, by = "carrier")
 ```
@@ -101,7 +100,7 @@ And the resulting dataset combines all of the variables by the common key.
 ## Practice
 
 Today, work on the first lab concerned with the Chicago Crime data:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab24.Rmd" download="lab24.Rmd" target="_blank">lab24.Rmd</a>
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab23.Rmd" download="lab23.Rmd" target="_blank">lab23.Rmd</a>
 
 Please upload your script to GitHub ahead of the next class.
 

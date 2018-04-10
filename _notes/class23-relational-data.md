@@ -1,5 +1,5 @@
 ---
-title: "Class 24: Relational Data"
+title: "Class 23: Relational Data"
 author: "Taylor Arnold"
 output: html_notebook
 ---
@@ -8,12 +8,7 @@ output: html_notebook
 
 
 
-## Objectives
-
-Today we will continue to dive into the Chicago Crime dataset.
-
-
-## Airline data again
+## Airline data
 
 Today we will once again look at the NYC flights dataset:
 
@@ -186,6 +181,8 @@ Here we see that it returns a new table with the same number of rows
 as the `flights_sml` dataset but now with the full name of the carrier:
 
 
+
+
 {% highlight r %}
 left_join(flights_sml, airlines, by = "carrier")
 {% endhighlight %}
@@ -193,7 +190,20 @@ left_join(flights_sml, airlines, by = "carrier")
 
 
 {% highlight text %}
-## Error in left_join(flights_sml, airlines, by = "carrier"): object 'flights_sml' not found
+## # A tibble: 327,346 x 7
+##     year month   day  hour tailnum carrier name                    
+##    <int> <int> <int> <int> <chr>   <chr>   <chr>                   
+##  1  2013     1     1     5 N14228  UA      United Air Lines Inc.   
+##  2  2013     1     1     5 N24211  UA      United Air Lines Inc.   
+##  3  2013     1     1     5 N619AA  AA      American Airlines Inc.  
+##  4  2013     1     1     5 N804JB  B6      JetBlue Airways         
+##  5  2013     1     1     6 N668DN  DL      Delta Air Lines Inc.    
+##  6  2013     1     1     5 N39463  UA      United Air Lines Inc.   
+##  7  2013     1     1     6 N516JB  B6      JetBlue Airways         
+##  8  2013     1     1     6 N829AS  EV      ExpressJet Airlines Inc.
+##  9  2013     1     1     6 N593JB  B6      JetBlue Airways         
+## 10  2013     1     1     6 N3ALAA  AA      American Airlines Inc.  
+## # ... with 327,336 more rows
 {% endhighlight %}
 
 And the resulting dataset combines all of the variables by the common key.
@@ -201,7 +211,7 @@ And the resulting dataset combines all of the variables by the common key.
 ## Practice
 
 Today, work on the first lab concerned with the Chicago Crime data:
-<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab24.Rmd" download="lab24.Rmd" target="_blank">lab24.Rmd</a>
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab23.Rmd" download="lab23.Rmd" target="_blank">lab23.Rmd</a>
 
 Please upload your script to GitHub ahead of the next class.
 
