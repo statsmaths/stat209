@@ -113,7 +113,7 @@ Take the dataset `ca` and calculate the sum of the variable `num_households`:
 
 ```
 
-Divide the answer to the previous question by the sum of the number of
+Divide the sum of the theft variable by the sum of the number of
 households variable and multiply by 1000.
 
 ```{r}
@@ -157,14 +157,9 @@ describe the relationship in words.
 **Answer**:
 
 Manually look up the number of households in area 23, Humboldt Park, by
-looking at the dataset `ca` in the data viewer.
-
-```{r}
-
-```
-
-Take the sum of the number of thefts in temp, divide this by the number of
-households in Humboldt Park, and multiply by 1000:
+looking at the dataset `ca` in the data viewer. Take the sum of the number
+of thefts in temp, divide this by the number of households in Humboldt Park,
+and multiply by 1000:
 
 ```{r}
 
@@ -196,7 +191,7 @@ We want to combine the datasets `crimes_ca` and `ca`. To do this we use
 a new function `left_join`, as follows:
 
 ```{r}
-
+crimes_ca <- left_join(crimes_ca, ca)
 ```
 
 What variable is R using the match these datasets up?
