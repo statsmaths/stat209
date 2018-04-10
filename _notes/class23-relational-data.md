@@ -44,9 +44,37 @@ flights <- read_csv("https://statsmaths.github.io/stat_data/flights.csv")
 ## )
 {% endhighlight %}
 
-This time we will also look at several other tables that describe
-various aspects of the flights. Most of the names of these
-should be self-explanatory:
+
+{% highlight r %}
+flights <- select(flights, year:day, hour, tailnum, carrier)
+{% endhighlight %}
+
+
+{% highlight r %}
+flights
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## # A tibble: 327,346 x 6
+##     year month   day  hour tailnum carrier
+##    <int> <int> <int> <int> <chr>   <chr>  
+##  1  2013     1     1     5 N14228  UA     
+##  2  2013     1     1     5 N24211  UA     
+##  3  2013     1     1     5 N619AA  AA     
+##  4  2013     1     1     5 N804JB  B6     
+##  5  2013     1     1     6 N668DN  DL     
+##  6  2013     1     1     5 N39463  UA     
+##  7  2013     1     1     6 N516JB  B6     
+##  8  2013     1     1     6 N829AS  EV     
+##  9  2013     1     1     6 N593JB  B6     
+## 10  2013     1     1     6 N3ALAA  AA     
+## # ... with 327,336 more rows
+{% endhighlight %}
+
+This time we will also look at another table that describes each of the
+airlines.
 
 
 {% highlight r %}
@@ -66,125 +94,48 @@ airlines <- read_csv("https://statsmaths.github.io/stat_data/f_airlines.csv")
 
 
 {% highlight r %}
-airports <- read_csv("https://statsmaths.github.io/stat_data/f_airports.csv")
+airlines
 {% endhighlight %}
 
 
 
 {% highlight text %}
-## Parsed with column specification:
-## cols(
-##   faa = col_character(),
-##   name = col_character(),
-##   lat = col_double(),
-##   lon = col_double(),
-##   alt = col_integer(),
-##   tz = col_integer(),
-##   dst = col_character(),
-##   tzone = col_character()
-## )
+## # A tibble: 16 x 2
+##    carrier name                       
+##    <chr>   <chr>                      
+##  1 9E      Endeavor Air Inc.          
+##  2 AA      American Airlines Inc.     
+##  3 AS      Alaska Airlines Inc.       
+##  4 B6      JetBlue Airways            
+##  5 DL      Delta Air Lines Inc.       
+##  6 EV      ExpressJet Airlines Inc.   
+##  7 F9      Frontier Airlines Inc.     
+##  8 FL      AirTran Airways Corporation
+##  9 HA      Hawaiian Airlines Inc.     
+## 10 MQ      Envoy Air                  
+## 11 OO      SkyWest Airlines Inc.      
+## 12 UA      United Air Lines Inc.      
+## 13 US      US Airways Inc.            
+## 14 VX      Virgin America             
+## 15 WN      Southwest Airlines Co.     
+## 16 YV      Mesa Airlines Inc.
 {% endhighlight %}
 
-
-
-{% highlight r %}
-planes <- read_csv("https://statsmaths.github.io/stat_data/f_planes.csv")
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Parsed with column specification:
-## cols(
-##   tailnum = col_character(),
-##   year = col_integer(),
-##   type = col_character(),
-##   manufacturer = col_character(),
-##   model = col_character(),
-##   engines = col_integer(),
-##   seats = col_integer(),
-##   speed = col_integer(),
-##   engine = col_character()
-## )
-{% endhighlight %}
-
-
-
-{% highlight r %}
-weather <- read_csv("https://statsmaths.github.io/stat_data/f_weather.csv")
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Parsed with column specification:
-## cols(
-##   origin = col_character(),
-##   year = col_integer(),
-##   month = col_integer(),
-##   day = col_integer(),
-##   hour = col_integer(),
-##   temp = col_double(),
-##   dewp = col_double(),
-##   humid = col_double(),
-##   wind_dir = col_integer(),
-##   wind_speed = col_double(),
-##   wind_gust = col_double(),
-##   precip = col_double(),
-##   pressure = col_double(),
-##   visib = col_double(),
-##   time_hour = col_datetime(format = "")
-## )
-{% endhighlight %}
-
-## Relational data keys
-
-All of these tables are connected by way of common shared
-variables known in database theory as *keys*. A key may be
+These two tables are connected by way of a common shared
+variable, known in database theory as *keys*. A key may be
 a single variable or a collection of variables (known as
-a composite key). There are two types of keys:
+a composite key).
 
-- a **primary key** uniquely identifies a row in a data table
-- a **foreign key** uniquely identifies a row in another data table
-
-An individual variable may be part of both a primary and foreign
-key even within the same table. Notice that variables in a key
-may have a different name in another table. In fact, they may
-even map to multiple variables in another table. An example is the
-`faa` code in the airports dataset, which maps to both the
-origin and destination fields in the `flights` dataset.
-
-The diagram below shows all of the connections between the five
-tables that we have loaded:
-
-![](../assets/img/relational-nycflights.png)
-
-A primary key and the corresponding foreign key in another table form a *relation*.
-Typically a relation maps a single row in one dataset to many rows in another.
-For example, each flight has one origin, but each origin has many flights.
-
-# Two table verbs
-
-Recall that we called the functions from **dplyr** that take a dataset and
-return another dataset *verbs*. Specifically, all of the verbs we have learned
-so far are *one table verbs* as they take just a single table as an input.
-When working with relational data we need verbs that take two tables and
-return some sort of new output. These are called **two table verbs**. In
-case you are wondering, there are no three table verbs. To work with more
-than two tables, simply chain together multiple two table verbs.
-
-In my experience, the two table verb `left_join` is by far the most
-commonly used way of combining two tables. The function takes two
-tables as its first two arguments, followed by the input `by` that
-describes which variables are going to be used to join the tables.
-Here we see that it returns a new table with the same number of rows
-as the `flights_sml` dataset but now with the full name of the carrier:
+In order to combine them, by matching up along keys, we can make use of the
+function `left_join`. Here we see that it returns a new table with the same
+number of rows as the `flights_sml` dataset but now with the full name of the
+carrier:
 
 
 
 
 {% highlight r %}
-left_join(flights_sml, airlines, by = "carrier")
+left_join(flights, airlines, by = "carrier")
 {% endhighlight %}
 
 
