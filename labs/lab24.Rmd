@@ -80,6 +80,7 @@ metadata. Do that here to construct the dataset `crimes_ca`:
 ```{r}
 crimes_ca <- group_summarize(crimes, area_number)
 crimes_ca <- left_join(crimes_ca, ca)
+```
 
 ### Prompts
 
