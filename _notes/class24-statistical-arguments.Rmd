@@ -117,26 +117,12 @@ some of these articles:
 - [The Chris Paul Conundrum](https://fivethirtyeight.com/features/the-chris-paul-conundrum/)
 - [Under a New System Clinton Could Have Won the Popular Vote by 5 Points and Still Lost](http://fivethirtyeight.com/features/under-a-new-system-clinton-could-have-won-the-popular-vote-by-5-points-and-still-lost/)
 
-## Hybrid Approach in Statistics
+## Practice
 
-Often, in an analysis of data I have observed a hybrid approach.
-Namely, deductive reasoning is used to draw concrete conclusions
-from data. These conclusions are then used as part of a larger
-inductive reasoning.
+Today, will continue to work with the Chicago Crime data:
+<a href="https://raw.githubusercontent.com/statsmaths/stat209/master/labs/lab24.Rmd" download="lab24.Rmd" target="_blank">lab24.Rmd</a>
 
-For example, assume that you are a statistician working for a large
-company and analyzing financial data. Using the data, you may
-confirm that the company has increased year-over-year profits by
-232% (by deductive reasoning). From this evidence, the company
-decided to proceed with an IPO (by inductive reasoning).
-
-Furthermore, these two logical approaches are also blended with
-aspects of ethos and pathos. These can occur in non-obvious ways.
-For example, I may draw on my own authority as a Ph.D. statistician
-to assert that a particular model is appropriate to apply in a given
-situation. This model is then used to establish a thesis by inductive
-reason that plays on the audience's emotions.
-
+Today you will be working in small groups.
 
 
 
