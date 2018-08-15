@@ -1,0 +1,48 @@
+---
+title: "PUT YOUR TITLE HERE"
+author: "PUT YOUR NAME HERE"
+output: html_notebook
+---
+
+**BELOW ARE INSTRUCTIONS FOR HOW TO COMPLETE THE ASSIGNMENT;
+MAKE SURE THAT YOU DELETE ALL OF THE COMMENTS IN ALL CAPS
+(AS WELL AS THIS COMMENT), BEFORE SUBMITTING**
+
+THIS FIRST CHUNK SHOULD LOAD ALL OF THE PACKAGES (I THINK
+YOU WILL NOT NEED TO CHANGE THIS)
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(fig.height = 5)
+knitr::opts_chunk$set(fig.width = 8.5)
+knitr::opts_chunk$set(out.width = "100%")
+knitr::opts_chunk$set(dpi = 300)
+
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(ggmap)
+library(viridis)
+library(forcats)
+```
+
+THE SECOND CHUNK SHOULD LOAD THE DATASET AND PRODUCE ANY
+FILTERED DATASETS THAT YOU NEED IN THE REST OF THE REPORT
+
+```{r}
+tracts <- read_csv("https://raw.githubusercontent.com/statsmaths/stat_data/gh-pages/acs_tract_data_2016.csv.gz")
+```
+
+NOW, YOUR REPORT SHOULD GO HERE. FEEL FREE TO SPLIT IT UP
+WITH SECTIONS `##`, BUT THIS IS NOT REQUIRED. ADD CODE CHUNKS
+TO PRODUCE GRAPHICS WHERE THEY BELONG IN THE OUTPUT
+
+## References
+
+IF YOU CITE ANY EXTERNAL SOURCES INCLUDE PARANTHETICAL
+REFERENCES [SUCH AS: (Arnold, 2017)] IN THE TEXT AND
+ADD CITATIONS HERE.
+
+
